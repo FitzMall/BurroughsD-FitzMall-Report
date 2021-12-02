@@ -41,10 +41,16 @@ namespace WebApplication6.Models
         }
 
         // GET: ReportInventories/DrillDown/5
-        public ActionResult DrillDown(string StoreBranch, string Location, string Make, string StatusCode)
+        public ActionResult DrillDown(string StoreBranch, string Location, string Make, int? StatusCode)
         {
-           return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch));
-           
+            if (StatusCode > 0)
+            {
+                return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == "N"));
+            }
+            else
+            {
+                return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == "N"));
+            }
         }
 
         // POST: Inventories/Create

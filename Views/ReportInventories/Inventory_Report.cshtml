@@ -3,9 +3,7 @@
 
         @{
             ViewBag.Title = "Inventory Report";
-            String prevNewUsed = "";
             String prevStoreBranch = "";
-            String prevLocation = "";
             long total_CarStat1 = 0;
             long total_CarStat2 = 0;
             long total_CarStat4 = 0;
@@ -13,23 +11,16 @@
             long total_CarStat12 = 0;
             int total_CarStat14 = 0;
             int total_AllStat = 0;
-            string StatusString = "NEW";
 
         }
         <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css">
 
-        <h2>FitzMall.com New/Used Inventory By Status/AutoMall/New Make  @DateTime.Now.ToShortDateString()</h2>
+        <h2>FitzMall.com New Car Inventory By Status/AutoMall/Make  @DateTime.Now.ToShortDateString()</h2>
 
         <table class="table" width=30 % height=30 align=Right>
             <tr>
-                <th>
-                    New/Used
-                </th>
-                <th>
+                 <th>
                     Store/Branch
-                </th>
-                <th>
-                    Location
                 </th>
                 <th>
                     Make
@@ -61,21 +52,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
-                        @{ if ((prevNewUsed == item.NEWUSED.Trim()) == false)
-                            {
-                                StatusString = "NEW";
-                                if ((item.NEWUSED.Trim()) == "U")
-                                {
-                                    StatusString = "USED";
-
-                                }
-                                @StatusString
-                            }
-                            prevNewUsed = item.NEWUSED.Trim();
-                            }
-                    </td>
-                    <td>
+                      <td>
                         @{ if ((prevStoreBranch == item.STOREBRANCH.Trim()) == false)
                             {
                                 @Html.DisplayFor(modelItem => item.STOREBRANCH);
@@ -83,69 +60,121 @@
                             prevStoreBranch = item.STOREBRANCH.Trim();
                         }
                     </td>
-                    <td>
-                        @{ if ((prevLocation == item.LOCATION.Trim()) == false)
-                            {
-                                @Html.DisplayFor(modelItem => item.LOCATION);
-                            }
-                            prevLocation = item.LOCATION.Trim();
-                        }
-                    </td>
-                    <td>
+                     <td>
                         @Html.DisplayFor(modelItem => item.MAKE)
                     </td>
-                    <td>
+                     <td>
 
-                        @Html.ActionLink("" + item.CarStat1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1"})
+                         @{ if (item.CarStat1.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat1.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1" })
+                             }
+                             }
 
 
-                        @{
-                            total_CarStat1 += item.CarStat1.Value;
-                        }
-                    </td>
-                    <td width=30 % height=30>
-                        @Html.DisplayFor(modelItem => item.CarStat2)
-                        @{
-                            total_CarStat2 += item.CarStat2.Value;
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CarStat4)
-                        @{
-                            total_CarStat4 += item.CarStat4.Value;
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CarStat9)
-                        @{
-                            total_CarStat9 += item.CarStat9.Value;
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CarStat12)
-                        @{
-                            total_CarStat12 += item.CarStat12.Value;
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CarStat14)
-                        @{
-                            total_CarStat14 += item.CarStat14.Value;
-                        }
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TotalAllCarStat)
-                        @{
-                            total_AllStat += item.TotalAllCarStat.Value;
-                        }
-                    </td>
+                             @{
+                                 total_CarStat1 += item.CarStat1.Value;
+                             }
+                         </td>
+                     <td width=30 % height=30>
+                         @{ if (item.CarStat2.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat2.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2" })
+                             }
+                             }
+
+                             @{
+                                 total_CarStat2 += item.CarStat2.Value;
+                             }
+                         </td>
+                     <td>
+                         @{ if (item.CarStat4.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat4.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat4.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "4" })
+                             }
+                             }
+
+                             @{
+                                 total_CarStat4 += item.CarStat4.Value;
+                             }
+                         </td>
+                     <td>
+
+                         @{ if (item.CarStat9.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat9.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9" })
+                             }
+                             }
+
+                             @{
+                                 total_CarStat9 += item.CarStat9.Value;
+                             }
+                         </td>
+                     <td>
+                         @{ if (item.CarStat12.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat12.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12" })
+                             }
+                             }
+                             @{
+                                 total_CarStat12 += item.CarStat12.Value;
+                             }
+                         </td>
+                     <td>
+                         @{ if (item.CarStat14.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.CarStat14.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.CarStat14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14" })
+                             }
+                             }
+                             @{
+                                 total_CarStat14 += item.CarStat14.Value;
+                             }
+                         </td>
+                     <td>
+
+
+                         @{ if (item.TotalAllCarStat.Value == 0)
+                             {
+                                 @Html.DisplayFor(modelItem => item.TotalAllCarStat.Value);
+                             }
+                             else
+                             {
+                                 @Html.ActionLink("" + item.TotalAllCarStat.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "ALL" })
+                                 }
+                             }
+                                 @{
+                                     total_AllStat += item.TotalAllCarStat.Value;
+                                 }
+                             </td>
                 </tr>
             }
 
 
             <tr>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td>

@@ -281,24 +281,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ReportInventories">
-      <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
-        <MappingFragment StoreEntitySet="ReportInventory">
-          <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
-          <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
-          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-          <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-          <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
-          <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
-          <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
-          <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
-          <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
-          <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
-          <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
-          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InvSubSets">
       <EntityTypeMapping TypeName="InventoryModel.InvSubSet">
         <MappingFragment StoreEntitySet="InvSubSet">
@@ -801,5 +783,303 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="InventoryHistories">
+      <EntityTypeMapping TypeName="InventoryModel.InventoryHistory">
+        <MappingFragment StoreEntitySet="InventoryHistory">
+          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="IMPORT_DATE" ColumnName="IMPORT_DATE" />
+          <ScalarProperty Name="UDF_IRC_FLAG" ColumnName="UDF_IRC_FLAG" />
+          <ScalarProperty Name="UDF_DIFFERENCE" ColumnName="UDF_DIFFERENCE" />
+          <ScalarProperty Name="YR_Y4" ColumnName="YR_Y4" />
+          <ScalarProperty Name="VINPATTERN" ColumnName="VINPATTERN" />
+          <ScalarProperty Name="VEH_TYPE_DR" ColumnName="VEH_TYPE_DR" />
+          <ScalarProperty Name="VDC_VIN_REC" ColumnName="VDC_VIN_REC" />
+          <ScalarProperty Name="UVP_JNL_PFX" ColumnName="UVP_JNL_PFX" />
+          <ScalarProperty Name="USED_VEH_PUR_PFX_DR" ColumnName="USED_VEH_PUR_PFX_DR" />
+          <ScalarProperty Name="USED_GRP" ColumnName="USED_GRP" />
+          <ScalarProperty Name="TURBO_DV" ColumnName="TURBO_DV" />
+          <ScalarProperty Name="TI_STK_NO" ColumnName="TI_STK_NO" />
+          <ScalarProperty Name="TI_PAYOFF_AMT" ColumnName="TI_PAYOFF_AMT" />
+          <ScalarProperty Name="SYS_DATE_ALPHA_CAT" ColumnName="SYS_DATE_ALPHA_CAT" />
+          <ScalarProperty Name="STYLE_ID" ColumnName="STYLE_ID" />
+          <ScalarProperty Name="STORE_NO" ColumnName="STORE_NO" />
+          <ScalarProperty Name="STORE_NAME" ColumnName="STORE_NAME" />
+          <ScalarProperty Name="STOCK_NO2" ColumnName="STOCK_NO2" />
+          <ScalarProperty Name="STANDARDIZED" ColumnName="STANDARDIZED" />
+          <ScalarProperty Name="STANDARD_STYLE" ColumnName="STANDARD_STYLE" />
+          <ScalarProperty Name="SERSEQ" ColumnName="SERSEQ" />
+          <ScalarProperty Name="SER_UDF_9_DV" ColumnName="SER_UDF_9_DV" />
+          <ScalarProperty Name="SER_UDF_8_DV" ColumnName="SER_UDF_8_DV" />
+          <ScalarProperty Name="SER_UDF_7_DV" ColumnName="SER_UDF_7_DV" />
+          <ScalarProperty Name="SER_UDF_60_DV" ColumnName="SER_UDF_60_DV" />
+          <ScalarProperty Name="SER_UDF_6_DV" ColumnName="SER_UDF_6_DV" />
+          <ScalarProperty Name="SER_UDF_59_DV" ColumnName="SER_UDF_59_DV" />
+          <ScalarProperty Name="SER_UDF_58_DV" ColumnName="SER_UDF_58_DV" />
+          <ScalarProperty Name="SER_UDF_57_DV" ColumnName="SER_UDF_57_DV" />
+          <ScalarProperty Name="SER_UDF_56_DV" ColumnName="SER_UDF_56_DV" />
+          <ScalarProperty Name="SER_UDF_55_DV" ColumnName="SER_UDF_55_DV" />
+          <ScalarProperty Name="SER_UDF_54_DV" ColumnName="SER_UDF_54_DV" />
+          <ScalarProperty Name="SER_UDF_53_DV" ColumnName="SER_UDF_53_DV" />
+          <ScalarProperty Name="SER_UDF_52_DV" ColumnName="SER_UDF_52_DV" />
+          <ScalarProperty Name="SER_UDF_51_DV" ColumnName="SER_UDF_51_DV" />
+          <ScalarProperty Name="SER_UDF_50_DV" ColumnName="SER_UDF_50_DV" />
+          <ScalarProperty Name="SER_UDF_5_DV" ColumnName="SER_UDF_5_DV" />
+          <ScalarProperty Name="SER_UDF_49_DV" ColumnName="SER_UDF_49_DV" />
+          <ScalarProperty Name="SER_UDF_48_DV" ColumnName="SER_UDF_48_DV" />
+          <ScalarProperty Name="SER_UDF_47_DV" ColumnName="SER_UDF_47_DV" />
+          <ScalarProperty Name="SER_UDF_46_DV" ColumnName="SER_UDF_46_DV" />
+          <ScalarProperty Name="SER_UDF_45_DV" ColumnName="SER_UDF_45_DV" />
+          <ScalarProperty Name="SER_UDF_44_DV" ColumnName="SER_UDF_44_DV" />
+          <ScalarProperty Name="SER_UDF_43_DV" ColumnName="SER_UDF_43_DV" />
+          <ScalarProperty Name="SER_UDF_42_DV" ColumnName="SER_UDF_42_DV" />
+          <ScalarProperty Name="SER_UDF_41_DV" ColumnName="SER_UDF_41_DV" />
+          <ScalarProperty Name="SER_UDF_40_DV" ColumnName="SER_UDF_40_DV" />
+          <ScalarProperty Name="SER_UDF_4_DV" ColumnName="SER_UDF_4_DV" />
+          <ScalarProperty Name="SER_UDF_39_DV" ColumnName="SER_UDF_39_DV" />
+          <ScalarProperty Name="SER_UDF_38_DV" ColumnName="SER_UDF_38_DV" />
+          <ScalarProperty Name="SER_UDF_37_DV" ColumnName="SER_UDF_37_DV" />
+          <ScalarProperty Name="SER_UDF_36_DV" ColumnName="SER_UDF_36_DV" />
+          <ScalarProperty Name="SER_UDF_35_DV" ColumnName="SER_UDF_35_DV" />
+          <ScalarProperty Name="SER_UDF_34_DV" ColumnName="SER_UDF_34_DV" />
+          <ScalarProperty Name="SER_UDF_33_DV" ColumnName="SER_UDF_33_DV" />
+          <ScalarProperty Name="SER_UDF_32_DV" ColumnName="SER_UDF_32_DV" />
+          <ScalarProperty Name="SER_UDF_31_DV" ColumnName="SER_UDF_31_DV" />
+          <ScalarProperty Name="SER_UDF_30_DV" ColumnName="SER_UDF_30_DV" />
+          <ScalarProperty Name="SER_UDF_3_DV" ColumnName="SER_UDF_3_DV" />
+          <ScalarProperty Name="SER_UDF_29_DV" ColumnName="SER_UDF_29_DV" />
+          <ScalarProperty Name="SER_UDF_28_DV" ColumnName="SER_UDF_28_DV" />
+          <ScalarProperty Name="SER_UDF_27_DV" ColumnName="SER_UDF_27_DV" />
+          <ScalarProperty Name="SER_UDF_26_DV" ColumnName="SER_UDF_26_DV" />
+          <ScalarProperty Name="SER_UDF_25_DV" ColumnName="SER_UDF_25_DV" />
+          <ScalarProperty Name="SER_UDF_24_DV" ColumnName="SER_UDF_24_DV" />
+          <ScalarProperty Name="SER_UDF_23_DV" ColumnName="SER_UDF_23_DV" />
+          <ScalarProperty Name="SER_UDF_22_DV" ColumnName="SER_UDF_22_DV" />
+          <ScalarProperty Name="SER_UDF_21_DV" ColumnName="SER_UDF_21_DV" />
+          <ScalarProperty Name="SER_UDF_20_DV" ColumnName="SER_UDF_20_DV" />
+          <ScalarProperty Name="SER_UDF_2_DV" ColumnName="SER_UDF_2_DV" />
+          <ScalarProperty Name="SER_UDF_19_DV" ColumnName="SER_UDF_19_DV" />
+          <ScalarProperty Name="SER_UDF_18_DV" ColumnName="SER_UDF_18_DV" />
+          <ScalarProperty Name="SER_UDF_17_DV" ColumnName="SER_UDF_17_DV" />
+          <ScalarProperty Name="SER_UDF_16_DV" ColumnName="SER_UDF_16_DV" />
+          <ScalarProperty Name="SER_UDF_15_DV" ColumnName="SER_UDF_15_DV" />
+          <ScalarProperty Name="SER_UDF_14_DV" ColumnName="SER_UDF_14_DV" />
+          <ScalarProperty Name="SER_UDF_13_DV" ColumnName="SER_UDF_13_DV" />
+          <ScalarProperty Name="SER_UDF_12_DV" ColumnName="SER_UDF_12_DV" />
+          <ScalarProperty Name="SER_UDF_11_DV" ColumnName="SER_UDF_11_DV" />
+          <ScalarProperty Name="SER_UDF_10_DV" ColumnName="SER_UDF_10_DV" />
+          <ScalarProperty Name="SER_UDF_1_DV" ColumnName="SER_UDF_1_DV" />
+          <ScalarProperty Name="SECOND_BOOK_VALUE3_DR" ColumnName="SECOND_BOOK_VALUE3_DR" />
+          <ScalarProperty Name="SECOND_BOOK_VALUE2_DR" ColumnName="SECOND_BOOK_VALUE2_DR" />
+          <ScalarProperty Name="SECOND_BOOK_VALUE1_DR" ColumnName="SECOND_BOOK_VALUE1_DR" />
+          <ScalarProperty Name="SECOND_BOOK_CODE3_DR" ColumnName="SECOND_BOOK_CODE3_DR" />
+          <ScalarProperty Name="SECOND_BOOK_CODE2_DR" ColumnName="SECOND_BOOK_CODE2_DR" />
+          <ScalarProperty Name="SECOND_BOOK_CODE1_DR" ColumnName="SECOND_BOOK_CODE1_DR" />
+          <ScalarProperty Name="KEY_N_2" ColumnName="KEY_N_2" />
+          <ScalarProperty Name="KEY_N_1" ColumnName="KEY_N_1" />
+          <ScalarProperty Name="KEY_N" ColumnName="KEY_N" />
+          <ScalarProperty Name="KBB_TYPE" ColumnName="KBB_TYPE" />
+          <ScalarProperty Name="JRNL_PFX_UVP_DR" ColumnName="JRNL_PFX_UVP_DR" />
+          <ScalarProperty Name="INIT_RO_DATE_DV" ColumnName="INIT_RO_DATE_DV" />
+          <ScalarProperty Name="IN_SERV_DATE_DV" ColumnName="IN_SERV_DATE_DV" />
+          <ScalarProperty Name="FROM_TO_DR" ColumnName="FROM_TO_DR" />
+          <ScalarProperty Name="FACT_ACC_RTL" ColumnName="FACT_ACC_RTL" />
+          <ScalarProperty Name="FACT_ACC_DESC" ColumnName="FACT_ACC_DESC" />
+          <ScalarProperty Name="FACT_ACC_CODE" ColumnName="FACT_ACC_CODE" />
+          <ScalarProperty Name="FACT_ACC_AMT" ColumnName="FACT_ACC_AMT" />
+          <ScalarProperty Name="ENTRY_INFO" ColumnName="ENTRY_INFO" />
+          <ScalarProperty Name="DMV_AMT" ColumnName="DMV_AMT" />
+          <ScalarProperty Name="DLR_ACC_RTL" ColumnName="DLR_ACC_RTL" />
+          <ScalarProperty Name="DLR_ACC_REF_NO" ColumnName="DLR_ACC_REF_NO" />
+          <ScalarProperty Name="DLR_ACC_CODE_1" ColumnName="DLR_ACC_CODE_1" />
+          <ScalarProperty Name="DLR_ACC_CODE" ColumnName="DLR_ACC_CODE" />
+          <ScalarProperty Name="DLR_ACC_AMT" ColumnName="DLR_ACC_AMT" />
+          <ScalarProperty Name="DEALER_CODE_DV" ColumnName="DEALER_CODE_DV" />
+          <ScalarProperty Name="COST_PACK_AMT" ColumnName="COST_PACK_AMT" />
+          <ScalarProperty Name="COMMENTS_6" ColumnName="COMMENTS_6" />
+          <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
+          <ScalarProperty Name="KEY_NUM_1" ColumnName="KEY_NUM_1" />
+          <ScalarProperty Name="CLR_DV" ColumnName="CLR_DV" />
+          <ScalarProperty Name="CLR_CD" ColumnName="CLR_CD" />
+          <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+          <ScalarProperty Name="CHASSIS_NO_DV" ColumnName="CHASSIS_NO_DV" />
+          <ScalarProperty Name="CERTIFED" ColumnName="CERTIFED" />
+          <ScalarProperty Name="CERT_NO" ColumnName="CERT_NO" />
+          <ScalarProperty Name="CATEG_CODE" ColumnName="CATEG_CODE" />
+          <ScalarProperty Name="CAMP_NO_DV" ColumnName="CAMP_NO_DV" />
+          <ScalarProperty Name="BOOK_VALUE" ColumnName="BOOK_VALUE" />
+          <ScalarProperty Name="ALARM_NO_DV" ColumnName="ALARM_NO_DV" />
+          <ScalarProperty Name="ACTVY_DATE" ColumnName="ACTVY_DATE" />
+          <ScalarProperty Name="ACCT_PFX" ColumnName="ACCT_PFX" />
+          <ScalarProperty Name="ACC_DESC" ColumnName="ACC_DESC" />
+          <ScalarProperty Name="ACC_CODE" ColumnName="ACC_CODE" />
+          <ScalarProperty Name="BODYSIZE_DESC_DR" ColumnName="BODYSIZE_DESC_DR" />
+          <ScalarProperty Name="CLR_INT_DESC" ColumnName="CLR_INT_DESC" />
+          <ScalarProperty Name="CLR_INT_CODE" ColumnName="CLR_INT_CODE" />
+          <ScalarProperty Name="CLR_EXT_DESC" ColumnName="CLR_EXT_DESC" />
+          <ScalarProperty Name="CLR_EXT_CODE" ColumnName="CLR_EXT_CODE" />
+          <ScalarProperty Name="MIL" ColumnName="MIL" />
+          <ScalarProperty Name="LIC_FEE" ColumnName="LIC_FEE" />
+          <ScalarProperty Name="CODED_COST2" ColumnName="CODED_COST2" />
+          <ScalarProperty Name="LIST_PRICE" ColumnName="LIST_PRICE" />
+          <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+          <ScalarProperty Name="RCPT_DATE" ColumnName="RCPT_DATE" />
+          <ScalarProperty Name="DESC1" ColumnName="DESC1" />
+          <ScalarProperty Name="MAKE_PFX" ColumnName="MAKE_PFX" />
+          <ScalarProperty Name="YR" ColumnName="YR" />
+          <ScalarProperty Name="FLAG_NEW_USED_DV" ColumnName="FLAG_NEW_USED_DV" />
+          <ScalarProperty Name="WHEEL_BASE" ColumnName="WHEEL-BASE" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="VEND_NO" ColumnName="VEND-NO" />
+          <ScalarProperty Name="VEND_NAME" ColumnName="VEND-NAME" />
+          <ScalarProperty Name="VEH_TYPE" ColumnName="VEH-TYPE" />
+          <ScalarProperty Name="VEH_TRANSM_DR" ColumnName="VEH-TRANSM-DR" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="TURBO" ColumnName="TURBO" />
+          <ScalarProperty Name="TRIM" ColumnName="TRIM" />
+          <ScalarProperty Name="TRANSM" ColumnName="TRANSM" />
+          <ScalarProperty Name="TRAN_FLAG" ColumnName="TRAN-FLAG" />
+          <ScalarProperty Name="TOTAL_OPTION_INV" ColumnName="TOTAL-OPTION-INV" />
+          <ScalarProperty Name="TOT_DLR_ACC_COST_LB" ColumnName="TOT-DLR-ACC-COST-LB" />
+          <ScalarProperty Name="SYS_DATE_CAT" ColumnName="SYS-DATE-CAT" />
+          <ScalarProperty Name="SVC_DAYS_DV" ColumnName="SVC-DAYS-DV" />
+          <ScalarProperty Name="STYLE_LONG" ColumnName="STYLE-LONG" />
+          <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+          <ScalarProperty Name="STKNO" ColumnName="STKNO" />
+          <ScalarProperty Name="STK_TYPE" ColumnName="STK-TYPE" />
+          <ScalarProperty Name="STK_NO" ColumnName="STK-NO" />
+          <ScalarProperty Name="SLS_PRICE" ColumnName="SLS-PRICE" />
+          <ScalarProperty Name="SLS_COST" ColumnName="SLS-COST" />
+          <ScalarProperty Name="SLS_CODE" ColumnName="SLS-CODE" />
+          <ScalarProperty Name="SELLER_TYPE" ColumnName="SELLER-TYPE" />
+          <ScalarProperty Name="RPG_NO_OF_CYL" ColumnName="RPG-NO-OF-CYL" />
+          <ScalarProperty Name="ROOF_CLR" ColumnName="ROOF-CLR" />
+          <ScalarProperty Name="RECID" ColumnName="RECID" />
+          <ScalarProperty Name="RECALL_DATE4_DV" ColumnName="RECALL-DATE4-DV" />
+          <ScalarProperty Name="RECALL_DATE_DV" ColumnName="RECALL-DATE-DV" />
+          <ScalarProperty Name="PWRSTR" ColumnName="PWRSTR" />
+          <ScalarProperty Name="PURCH_REF_NO_DV" ColumnName="PURCH-REF-NO-DV" />
+          <ScalarProperty Name="PURCH_FROM_NAME_DR" ColumnName="PURCH-FROM-NAME-DR" />
+          <ScalarProperty Name="PURCH_DATE" ColumnName="PURCH-DATE" />
+          <ScalarProperty Name="PKG_CODE1_CAT" ColumnName="PKG-CODE1-CAT" />
+          <ScalarProperty Name="PKG_CODE_1" ColumnName="PKG-CODE-1" />
+          <ScalarProperty Name="ORDR_PRTY" ColumnName="ORDR-PRTY" />
+          <ScalarProperty Name="ORDR_PROC_DATE" ColumnName="ORDR-PROC-DATE" />
+          <ScalarProperty Name="ON_ORDER" ColumnName="ON-ORDER" />
+          <ScalarProperty Name="NO_OF_CYL" ColumnName="NO-OF-CYL" />
+          <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED-USER-ID" />
+          <ScalarProperty Name="MODIFIED_TIME" ColumnName="MODIFIED-TIME" />
+          <ScalarProperty Name="MODIFIED_STATION" ColumnName="MODIFIED-STATION" />
+          <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED-DATE" />
+          <ScalarProperty Name="MIL_PER_GAL" ColumnName="MIL-PER-GAL" />
+          <ScalarProperty Name="MFR_STAT_DATE" ColumnName="MFR-STAT-DATE" />
+          <ScalarProperty Name="MFR_STAT" ColumnName="MFR-STAT" />
+          <ScalarProperty Name="MFR_SCHED_DATE" ColumnName="MFR-SCHED-DATE" />
+          <ScalarProperty Name="MDL_YR_CD" ColumnName="MDL-YR-CD" />
+          <ScalarProperty Name="MDL_NO_10" ColumnName="MDL-NO-10" />
+          <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
+          <ScalarProperty Name="MAINT_CODE_DV" ColumnName="MAINT-CODE-DV" />
+          <ScalarProperty Name="LOC" ColumnName="LOC" />
+          <ScalarProperty Name="LABEL_DATE" ColumnName="LABEL-DATE" />
+          <ScalarProperty Name="KEYLESS_NO_DV" ColumnName="KEYLESS-NO-DV" />
+          <ScalarProperty Name="KEYCHIP_NO_DV" ColumnName="KEYCHIP-NO-DV" />
+          <ScalarProperty Name="JRNL_PURCH_DATE_DR" ColumnName="JRNL-PURCH-DATE-DR" />
+          <ScalarProperty Name="INV_AMT_3" ColumnName="INV-AMT-3" />
+          <ScalarProperty Name="INV_AMT_2" ColumnName="INV-AMT-2" />
+          <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
+          <ScalarProperty Name="INT_CLR_CD" ColumnName="INT-CLR-CD" />
+          <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
+          <ScalarProperty Name="HBK_AMT" ColumnName="HBK-AMT" />
+          <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
+          <ScalarProperty Name="EST_ARRIVAL_DATE" ColumnName="EST-ARRIVAL-DATE" />
+          <ScalarProperty Name="ENG_NO" ColumnName="ENG-NO" />
+          <ScalarProperty Name="DRIVE_TYPE" ColumnName="DRIVE-TYPE" />
+          <ScalarProperty Name="DLR_NO_DV" ColumnName="DLR-NO-DV" />
+          <ScalarProperty Name="DLR_NO_DESC" ColumnName="DLR-NO-DESC" />
+          <ScalarProperty Name="DLR_FLAG" ColumnName="DLR-FLAG" />
+          <ScalarProperty Name="DEMO_MIL_DV" ColumnName="DEMO-MIL-DV" />
+          <ScalarProperty Name="DEMO_DATE_DV" ColumnName="DEMO-DATE-DV" />
+          <ScalarProperty Name="DAYS_IN_STK" ColumnName="DAYS-IN-STK" />
+          <ScalarProperty Name="DATE_SOLD_DV" ColumnName="DATE-SOLD-DV" />
+          <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
+          <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
+          <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
+          <ScalarProperty Name="COST_PACK_LB" ColumnName="COST-PACK-LB" />
+          <ScalarProperty Name="CLR_GENERIC" ColumnName="CLR-GENERIC" />
+          <ScalarProperty Name="CLR_DESC_41" ColumnName="CLR-DESC-41" />
+          <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
+          <ScalarProperty Name="CLR_CODE_1" ColumnName="CLR-CODE-1" />
+          <ScalarProperty Name="CLR_CODE" ColumnName="CLR-CODE" />
+          <ScalarProperty Name="CHASSIS_NO_DR" ColumnName="CHASSIS-NO-DR" />
+          <ScalarProperty Name="CHASSIS_NO" ColumnName="CHASSIS-NO" />
+          <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
+          <ScalarProperty Name="BUILD_NAME_DV" ColumnName="BUILD-NAME-DV" />
+          <ScalarProperty Name="BUILD_DATE" ColumnName="BUILD-DATE" />
+          <ScalarProperty Name="BODY_CD" ColumnName="BODY-CD" />
+          <ScalarProperty Name="BEST_PRICE" ColumnName="BEST-PRICE" />
+          <ScalarProperty Name="ACCENT_CLR" ColumnName="ACCENT-CLR" />
+          <ScalarProperty Name="KEY_NO_2" ColumnName="KEY-NO-2" />
+          <ScalarProperty Name="KEY_NO_1" ColumnName="KEY-NO-1" />
+          <ScalarProperty Name="ORD_TYPE" ColumnName="ORD-TYPE" />
+          <ScalarProperty Name="ORD_DATE" ColumnName="ORD-DATE" />
+          <ScalarProperty Name="BODYSIZE_DESC" ColumnName="BODYSIZE-DESC" />
+          <ScalarProperty Name="BODYSIZE" ColumnName="BODYSIZE" />
+          <ScalarProperty Name="FUEL_DESC" ColumnName="FUEL-DESC" />
+          <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+          <ScalarProperty Name="MPG_HIGH" ColumnName="MPG-HIGH" />
+          <ScalarProperty Name="MPG_LOW" ColumnName="MPG-LOW" />
+          <ScalarProperty Name="MEMO2_CAT" ColumnName="MEMO2-CAT" />
+          <ScalarProperty Name="MEMO1_CAT" ColumnName="MEMO1-CAT" />
+          <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
+          <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
+          <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
+          <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
+          <ScalarProperty Name="ODOM_READING" ColumnName="ODOM-READING" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="STATUS_LOG_DR" ColumnName="STATUS-LOG-DR" />
+          <ScalarProperty Name="STATUS_LOG_DATE_DR" ColumnName="STATUS-LOG-DATE-DR" />
+          <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
+          <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
+          <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
+          <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
+          <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
+          <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
+          <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
+          <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+          <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
+          <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
+          <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="ACCOUNTING_MAKE" ColumnName="ACCOUNTING_MAKE" />
+          <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
+          <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+          <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+          <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
+          <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
+          <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
+          <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
+          <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportInventories">
+      <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
+        <MappingFragment StoreEntitySet="ReportInventory">
+          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
+          <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
+          <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
+          <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
+          <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
+          <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
+          <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
+          <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
+          <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

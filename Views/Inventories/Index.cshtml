@@ -657,11 +657,7 @@
     @foreach (var item in Model)
     {
         LimitRecordsShowCounter++;
-        { if (LimitRecordsShowCounter > 255 )
-            {
-                break;  }
-        }
-
+       
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.STORE_BRANCH)

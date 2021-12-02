@@ -12,7 +12,7 @@ namespace WebApplication6.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Inventory
+    public partial class InventoryHistory
     {
         public string STORE_BRANCH { get; set; }
         public string SERIAL_ { get; set; }

@@ -24,7 +24,7 @@ namespace WebApplication6.Models
         // GET: ReportInventories
         public ActionResult Inventory_Report()
         {
-            return View(db.ReportInventories.ToList());
+            return View(db.ReportInventories.OrderBy(a => a.STOREBRANCH).ToList());
         }
 
         // GET: ReportInventories/Details/5
@@ -46,8 +46,17 @@ namespace WebApplication6.Models
         public ActionResult DrillDown(string StoreBranch, string Location, string Make, string StatusCode)
         {
             //            return View(db.ReportInventories.ToList().Where(d => d.MAKE == Make && d.STOREBRANCH == StoreBranch));
+            int parStatusCode;
 
-            return RedirectToAction("DrillDown", "Inventories", new { Make = Make, StoreBranch = StoreBranch });
+            if (StatusCode == "ALL") {
+                parStatusCode = 0;
+            }
+            else {
+                parStatusCode = Convert.ToInt16(StatusCode);
+                    };
+
+
+            return RedirectToAction("DrillDown", "Inventories", new { Make = Make, StoreBranch = StoreBranch, StatusCode = parStatusCode });
 
         }
 

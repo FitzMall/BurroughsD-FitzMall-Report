@@ -28,8 +28,9 @@ namespace WebApplication6.Models
         }
     
         public virtual DbSet<Inventory> Inventories { get; set; }
-        public virtual DbSet<ReportInventory> ReportInventories { get; set; }
         public virtual DbSet<InvSubSet> InvSubSets { get; set; }
+        public virtual DbSet<InventoryHistory> InventoryHistories { get; set; }
+        public virtual DbSet<ReportInventory> ReportInventories { get; set; }
     
         public virtual ObjectResult<CARbySTOCK_Result> CARbySTOCK(string sTOCK)
         {

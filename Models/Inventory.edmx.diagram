@@ -6,8 +6,9 @@
     <edmx:Diagrams>
       <Diagram DiagramId="465ec711bfec4256a27a8984efcb3d36" Name="Diagram1" ZoomLevel="11">
         <EntityTypeShape EntityType="InventoryModel.Inventory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InventoryModel.ReportInventory" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InventoryModel.InvSubSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InventoryModel.InventoryHistory" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.ReportInventory" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -5,11 +5,8 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Inventory.dbo.Inventory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Inventory">
           <Key>
-            
             <PropertyRef Name="Id_Primary" />
           </Key>
           <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
@@ -284,7 +281,288 @@ warning 6002: The table/view 'Inventory.dbo.Inventory' does not have a primary k
           <Property Name="YR_Y4" Type="varchar" MaxLength="4" />
           <Property Name="UDF_DIFFERENCE" Type="money" />
           <Property Name="UDF_IRC_FLAG" Type="varchar" MaxLength="50" />
-          <Property Name="IMPORT_DATE" Type="datetime" Nullable="false" />
+          <Property Name="IMPORT_DATE" Type="date" />
+          <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="InventoryHistory">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
+          <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+          <Property Name="STOCK#" Type="varchar" MaxLength="15" />
+          <Property Name="ORDER#" Type="varchar" MaxLength="10" />
+          <Property Name="NEW USED" Type="varchar" MaxLength="1" />
+          <Property Name="YEAR" Type="int" />
+          <Property Name="MAKE" Type="varchar" MaxLength="25" />
+          <Property Name="MAKE_PREFIX" Type="varchar" MaxLength="3" />
+          <Property Name="ACCOUNTING_MAKE" Type="varchar" MaxLength="2" />
+          <Property Name="MODEL" Type="varchar" MaxLength="10" />
+          <Property Name="CARLINE" Type="varchar" MaxLength="20" />
+          <Property Name="CARLINE_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="DESC" Type="varchar" MaxLength="40" />
+          <Property Name="RECEIVED_DATE" Type="date" />
+          <Property Name="DAYS_IN_STOCK" Type="int" />
+          <Property Name="MSRP" Type="money" />
+          <Property Name="BASE-MSRP" Type="money" />
+          <Property Name="INVOICE" Type="money" />
+          <Property Name="INVEN-AMT" Type="money" />
+          <Property Name="INTERNET-PRICE" Type="money" />
+          <Property Name="CODED-COST" Type="money" />
+          <Property Name="FREIGHT" Type="money" />
+          <Property Name="STAT-CODE" Type="int" />
+          <Property Name="STATUS-LOG-DATE-DR" Type="date" />
+          <Property Name="STATUS-LOG-DR" Type="varchar" MaxLength="40" />
+          <Property Name="LOCATION" Type="varchar" MaxLength="10" />
+          <Property Name="ODOM-READING" Type="int" />
+          <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
+          <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
+          <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
+          <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
+          <Property Name="MEMO1-CAT" Type="varchar" MaxLength="50" />
+          <Property Name="MEMO2-CAT" Type="varchar" MaxLength="50" />
+          <Property Name="MPG-LOW" Type="float" />
+          <Property Name="MPG-HIGH" Type="float" />
+          <Property Name="FUEL" Type="varchar" MaxLength="1" />
+          <Property Name="FUEL-DESC" Type="varchar" MaxLength="8" />
+          <Property Name="BODYSIZE" Type="varchar" MaxLength="1" />
+          <Property Name="BODYSIZE-DESC" Type="varchar" MaxLength="12" />
+          <Property Name="ORD-DATE" Type="date" />
+          <Property Name="ORD-TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="KEY-NO-1" Type="varchar" MaxLength="20" />
+          <Property Name="KEY-NO-2" Type="varchar" MaxLength="20" />
+          <Property Name="ACCENT-CLR" Type="varchar" MaxLength="2" />
+          <Property Name="BEST-PRICE" Type="money" />
+          <Property Name="BODY-CD" Type="varchar" MaxLength="3" />
+          <Property Name="BUILD-DATE" Type="date" />
+          <Property Name="BUILD-NAME-DV" Type="varchar" MaxLength="40" />
+          <Property Name="CARLINE-CODE-DV" Type="varchar" MaxLength="2" />
+          <Property Name="CHASSIS-NO" Type="varchar" MaxLength="17" />
+          <Property Name="CHASSIS-NO-DR" Type="varchar" MaxLength="1" />
+          <Property Name="CLR-CODE" Type="varchar" MaxLength="15" />
+          <Property Name="CLR-CODE-1" Type="varchar" MaxLength="10" />
+          <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
+          <Property Name="CLR-DESC-41" Type="varchar" MaxLength="40" />
+          <Property Name="CLR-GENERIC" Type="varchar" MaxLength="3" />
+          <Property Name="COST-PACK-LB" Type="money" />
+          <Property Name="CREATE-DATE-DV" Type="date" />
+          <Property Name="CREATED-BY-DV" Type="varchar" MaxLength="10" />
+          <Property Name="DATE-ADDED-DR" Type="date" />
+          <Property Name="DATE-SOLD-DV" Type="varchar" MaxLength="10" />
+          <Property Name="DAYS-IN-STK" Type="int" />
+          <Property Name="DEMO-DATE-DV" Type="date" />
+          <Property Name="DEMO-MIL-DV" Type="int" />
+          <Property Name="DLR-FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="DLR-NO-DESC" Type="varchar" MaxLength="40" />
+          <Property Name="DLR-NO-DV" Type="varchar" MaxLength="10" />
+          <Property Name="DRIVE-TYPE" Type="varchar" MaxLength="3" />
+          <Property Name="ENG-NO" Type="varchar" MaxLength="15" />
+          <Property Name="EST-ARRIVAL-DATE" Type="date" />
+          <Property Name="EXT-CLR-CD" Type="varchar" MaxLength="4" />
+          <Property Name="HBK-AMT" Type="money" />
+          <Property Name="IN-STOCK" Type="int" />
+          <Property Name="INT-CLR-CD" Type="varchar" MaxLength="4" />
+          <Property Name="INV-AMT" Type="money" />
+          <Property Name="INV-AMT-2" Type="money" />
+          <Property Name="INV-AMT-3" Type="money" />
+          <Property Name="JRNL-PURCH-DATE-DR" Type="date" />
+          <Property Name="KEYCHIP-NO-DV" Type="varchar" MaxLength="1" />
+          <Property Name="KEYLESS-NO-DV" Type="varchar" MaxLength="1" />
+          <Property Name="LABEL-DATE" Type="date" />
+          <Property Name="LOC" Type="varchar" MaxLength="3" />
+          <Property Name="MAINT-CODE-DV" Type="varchar" MaxLength="4" />
+          <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
+          <Property Name="MDL-NO-10" Type="varchar" MaxLength="12" />
+          <Property Name="MDL-YR-CD" Type="varchar" MaxLength="1" />
+          <Property Name="MFR-SCHED-DATE" Type="date" />
+          <Property Name="MFR-STAT" Type="varchar" MaxLength="1" />
+          <Property Name="MFR-STAT-DATE" Type="date" />
+          <Property Name="MIL-PER-GAL" Type="varchar" MaxLength="4" />
+          <Property Name="MODIFIED-DATE" Type="date" />
+          <Property Name="MODIFIED-STATION" Type="varchar" MaxLength="3" />
+          <Property Name="MODIFIED-TIME" Type="varchar" MaxLength="12" />
+          <Property Name="MODIFIED-USER-ID" Type="varchar" MaxLength="2" />
+          <Property Name="NO-OF-CYL" Type="varchar" MaxLength="2" />
+          <Property Name="ON-ORDER" Type="int" />
+          <Property Name="ORDR-PROC-DATE" Type="date" />
+          <Property Name="ORDR-PRTY" Type="varchar" MaxLength="1" />
+          <Property Name="PKG-CODE-1" Type="varchar" MaxLength="2" />
+          <Property Name="PKG-CODE1-CAT" Type="varchar" MaxLength="2" />
+          <Property Name="PURCH-DATE" Type="date" />
+          <Property Name="PURCH-FROM-NAME-DR" Type="varchar" MaxLength="35" />
+          <Property Name="PURCH-REF-NO-DV" Type="varchar" MaxLength="10" />
+          <Property Name="PWRSTR" Type="varchar" MaxLength="1" />
+          <Property Name="RECALL-DATE-DV" Type="date" />
+          <Property Name="RECALL-DATE4-DV" Type="date" />
+          <Property Name="RECID" Type="varchar" MaxLength="10" />
+          <Property Name="ROOF-CLR" Type="varchar" MaxLength="1" />
+          <Property Name="RPG-NO-OF-CYL" Type="varchar" MaxLength="1" />
+          <Property Name="SELLER-TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="SLS-CODE" Type="varchar" MaxLength="4" />
+          <Property Name="SLS-COST" Type="money" />
+          <Property Name="SLS-PRICE" Type="money" />
+          <Property Name="STK-NO" Type="varchar" MaxLength="12" />
+          <Property Name="STK-TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="STKNO" Type="varchar" MaxLength="12" />
+          <Property Name="STYLE" Type="varchar" MaxLength="50" />
+          <Property Name="STYLE-LONG" Type="varchar" MaxLength="50" />
+          <Property Name="SVC-DAYS-DV" Type="int" />
+          <Property Name="SYS-DATE-CAT" Type="date" />
+          <Property Name="TOT-DLR-ACC-COST-LB" Type="money" />
+          <Property Name="TOTAL-OPTION-INV" Type="varchar" MaxLength="1" />
+          <Property Name="TRAN-FLAG" Type="varchar" MaxLength="1" />
+          <Property Name="TRANSM" Type="varchar" MaxLength="1" />
+          <Property Name="TRIM" Type="varchar" MaxLength="20" />
+          <Property Name="TURBO" Type="varchar" MaxLength="1" />
+          <Property Name="TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="VEH-TRANSM-DR" Type="varchar" MaxLength="1" />
+          <Property Name="VEH-TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="VEND-NAME" Type="varchar" MaxLength="30" />
+          <Property Name="VEND-NO" Type="varchar" MaxLength="6" />
+          <Property Name="WEIGHT" Type="int" />
+          <Property Name="WHEEL-BASE" Type="varchar" MaxLength="1" />
+          <Property Name="FLAG_NEW_USED_DV" Type="varchar" MaxLength="1" />
+          <Property Name="YR" Type="varchar" MaxLength="1" />
+          <Property Name="MAKE_PFX" Type="varchar" MaxLength="1" />
+          <Property Name="DESC1" Type="varchar" MaxLength="1" />
+          <Property Name="RCPT_DATE" Type="varchar" MaxLength="1" />
+          <Property Name="DAYS" Type="varchar" MaxLength="1" />
+          <Property Name="LIST_PRICE" Type="varchar" MaxLength="1" />
+          <Property Name="CODED_COST2" Type="varchar" MaxLength="1" />
+          <Property Name="LIC_FEE" Type="varchar" MaxLength="1" />
+          <Property Name="MIL" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_EXT_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_EXT_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_INT_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_INT_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="BODYSIZE_DESC_DR" Type="varchar" MaxLength="1" />
+          <Property Name="ACC_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="ACC_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="ACCT_PFX" Type="varchar" MaxLength="1" />
+          <Property Name="ACTVY_DATE" Type="varchar" MaxLength="1" />
+          <Property Name="ALARM_NO_DV" Type="varchar" MaxLength="1" />
+          <Property Name="BOOK_VALUE" Type="float" />
+          <Property Name="CAMP_NO_DV" Type="varchar" MaxLength="1" />
+          <Property Name="CATEG_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="CERT_NO" Type="varchar" MaxLength="1" />
+          <Property Name="CERTIFED" Type="varchar" MaxLength="1" />
+          <Property Name="CHASSIS_NO_DV" Type="varchar" MaxLength="1" />
+          <Property Name="CLASS" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_CD" Type="varchar" MaxLength="1" />
+          <Property Name="CLR_DV" Type="varchar" MaxLength="1" />
+          <Property Name="KEY_NUM_1" Type="varchar" MaxLength="1" />
+          <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="COMMENTS_6" Type="varchar" MaxLength="1" />
+          <Property Name="COST_PACK_AMT" Type="varchar" MaxLength="1" />
+          <Property Name="DEALER_CODE_DV" Type="varchar" MaxLength="1" />
+          <Property Name="DLR_ACC_AMT" Type="varchar" MaxLength="1" />
+          <Property Name="DLR_ACC_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="DLR_ACC_CODE_1" Type="varchar" MaxLength="1" />
+          <Property Name="DLR_ACC_REF_NO" Type="varchar" MaxLength="1" />
+          <Property Name="DLR_ACC_RTL" Type="varchar" MaxLength="1" />
+          <Property Name="DMV_AMT" Type="varchar" MaxLength="1" />
+          <Property Name="ENTRY_INFO" Type="varchar" MaxLength="1" />
+          <Property Name="FACT_ACC_AMT" Type="varchar" MaxLength="1" />
+          <Property Name="FACT_ACC_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="FACT_ACC_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="FACT_ACC_RTL" Type="varchar" MaxLength="1" />
+          <Property Name="FROM_TO_DR" Type="varchar" MaxLength="1" />
+          <Property Name="IN_SERV_DATE_DV" Type="varchar" MaxLength="1" />
+          <Property Name="INIT_RO_DATE_DV" Type="varchar" MaxLength="1" />
+          <Property Name="JRNL_PFX_UVP_DR" Type="varchar" MaxLength="1" />
+          <Property Name="KBB_TYPE" Type="varchar" MaxLength="1" />
+          <Property Name="KEY_N" Type="varchar" MaxLength="1" />
+          <Property Name="KEY_N_1" Type="varchar" MaxLength="1" />
+          <Property Name="KEY_N_2" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_CODE1_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_CODE2_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_CODE3_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_VALUE1_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_VALUE2_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SECOND_BOOK_VALUE3_DR" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_1_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_10_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_11_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_12_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_13_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_14_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_15_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_16_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_17_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_18_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_19_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_2_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_20_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_21_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_22_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_23_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_24_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_25_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_26_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_27_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_28_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_29_DV" Type="varchar" MaxLength="1" />
+          <Property Name="SER_UDF_3_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_30_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_31_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_32_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_33_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_34_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_35_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_36_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_37_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_38_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_39_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_4_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_40_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_41_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_42_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_43_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_44_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_45_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_46_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_47_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_48_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_49_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_5_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_50_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_51_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_52_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_53_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_54_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_55_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_56_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_57_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_58_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_59_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_6_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_60_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_7_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_8_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SER_UDF_9_DV" Type="varchar" MaxLength="2" />
+          <Property Name="SERSEQ" Type="varchar" MaxLength="8" />
+          <Property Name="STANDARD_STYLE" Type="varchar" MaxLength="50" />
+          <Property Name="STANDARDIZED" Type="varchar" MaxLength="2" />
+          <Property Name="STOCK_NO2" Type="varchar" MaxLength="2" />
+          <Property Name="STORE_NAME" Type="varchar" MaxLength="30" />
+          <Property Name="STORE_NO" Type="int" />
+          <Property Name="STYLE_ID" Type="varchar" MaxLength="8" />
+          <Property Name="SYS_DATE_ALPHA_CAT" Type="date" />
+          <Property Name="TI_PAYOFF_AMT" Type="money" />
+          <Property Name="TI_STK_NO" Type="varchar" MaxLength="10" />
+          <Property Name="TURBO_DV" Type="varchar" MaxLength="1" />
+          <Property Name="USED_GRP" Type="varchar" MaxLength="2" />
+          <Property Name="USED_VEH_PUR_PFX_DR" Type="varchar" MaxLength="4" />
+          <Property Name="UVP_JNL_PFX" Type="varchar" MaxLength="1" />
+          <Property Name="VDC_VIN_REC" Type="varchar" MaxLength="20" />
+          <Property Name="VEH_TYPE_DR" Type="varchar" MaxLength="1" />
+          <Property Name="VINPATTERN" Type="varchar" MaxLength="12" />
+          <Property Name="YR_Y4" Type="varchar" MaxLength="4" />
+          <Property Name="UDF_DIFFERENCE" Type="money" />
+          <Property Name="UDF_IRC_FLAG" Type="varchar" MaxLength="50" />
+          <Property Name="IMPORT_DATE" Type="date" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -599,284 +877,285 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
         <Function Name="PROC_InventoryReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="procDAB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="InventoryModelStoreContainer">
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ReportInventory" EntityType="Self.ReportInventory" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Inventory" EntityType="Self.Inventory" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="InventoryHistory" EntityType="Self.InventoryHistory" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Inventory].[STORE BRANCH] AS [STORE BRANCH], 
-    [Inventory].[SERIAL#] AS [SERIAL#], 
-    [Inventory].[STOCK#] AS [STOCK#], 
-    [Inventory].[ORDER#] AS [ORDER#], 
-    [Inventory].[NEW USED] AS [NEW USED], 
-    [Inventory].[YEAR] AS [YEAR], 
-    [Inventory].[MAKE] AS [MAKE], 
-    [Inventory].[MAKE_PREFIX] AS [MAKE_PREFIX], 
-    [Inventory].[ACCOUNTING_MAKE] AS [ACCOUNTING_MAKE], 
-    [Inventory].[MODEL] AS [MODEL], 
-    [Inventory].[CARLINE] AS [CARLINE], 
-    [Inventory].[CARLINE_CODE] AS [CARLINE_CODE], 
-    [Inventory].[DESC] AS [DESC], 
-    [Inventory].[RECEIVED_DATE] AS [RECEIVED_DATE], 
-    [Inventory].[DAYS_IN_STOCK] AS [DAYS_IN_STOCK], 
-    [Inventory].[MSRP] AS [MSRP], 
-    [Inventory].[BASE-MSRP] AS [BASE-MSRP], 
-    [Inventory].[INVOICE] AS [INVOICE], 
-    [Inventory].[INVEN-AMT] AS [INVEN-AMT], 
-    [Inventory].[INTERNET-PRICE] AS [INTERNET-PRICE], 
-    [Inventory].[CODED-COST] AS [CODED-COST], 
-    [Inventory].[FREIGHT] AS [FREIGHT], 
-    [Inventory].[STAT-CODE] AS [STAT-CODE], 
-    [Inventory].[STATUS-LOG-DATE-DR] AS [STATUS-LOG-DATE-DR], 
-    [Inventory].[STATUS-LOG-DR] AS [STATUS-LOG-DR], 
-    [Inventory].[LOCATION] AS [LOCATION], 
-    [Inventory].[ODOM-READING] AS [ODOM-READING], 
-    [Inventory].[EXT-COLOR] AS [EXT-COLOR], 
-    [Inventory].[EXT-CLR-DESC] AS [EXT-CLR-DESC], 
-    [Inventory].[INT-COLOR] AS [INT-COLOR], 
-    [Inventory].[INT-CLR-DESC] AS [INT-CLR-DESC], 
-    [Inventory].[MEMO1-CAT] AS [MEMO1-CAT], 
-    [Inventory].[MEMO2-CAT] AS [MEMO2-CAT], 
-    [Inventory].[MPG-LOW] AS [MPG-LOW], 
-    [Inventory].[MPG-HIGH] AS [MPG-HIGH], 
-    [Inventory].[FUEL] AS [FUEL], 
-    [Inventory].[FUEL-DESC] AS [FUEL-DESC], 
-    [Inventory].[BODYSIZE] AS [BODYSIZE], 
-    [Inventory].[BODYSIZE-DESC] AS [BODYSIZE-DESC], 
-    [Inventory].[ORD-DATE] AS [ORD-DATE], 
-    [Inventory].[ORD-TYPE] AS [ORD-TYPE], 
-    [Inventory].[KEY-NO-1] AS [KEY-NO-1], 
-    [Inventory].[KEY-NO-2] AS [KEY-NO-2], 
-    [Inventory].[ACCENT-CLR] AS [ACCENT-CLR], 
-    [Inventory].[BEST-PRICE] AS [BEST-PRICE], 
-    [Inventory].[BODY-CD] AS [BODY-CD], 
-    [Inventory].[BUILD-DATE] AS [BUILD-DATE], 
-    [Inventory].[BUILD-NAME-DV] AS [BUILD-NAME-DV], 
-    [Inventory].[CARLINE-CODE-DV] AS [CARLINE-CODE-DV], 
-    [Inventory].[CHASSIS-NO] AS [CHASSIS-NO], 
-    [Inventory].[CHASSIS-NO-DR] AS [CHASSIS-NO-DR], 
-    [Inventory].[CLR-CODE] AS [CLR-CODE], 
-    [Inventory].[CLR-CODE-1] AS [CLR-CODE-1], 
-    [Inventory].[CLR-DESC] AS [CLR-DESC], 
-    [Inventory].[CLR-DESC-41] AS [CLR-DESC-41], 
-    [Inventory].[CLR-GENERIC] AS [CLR-GENERIC], 
-    [Inventory].[COST-PACK-LB] AS [COST-PACK-LB], 
-    [Inventory].[CREATE-DATE-DV] AS [CREATE-DATE-DV], 
-    [Inventory].[CREATED-BY-DV] AS [CREATED-BY-DV], 
-    [Inventory].[DATE-ADDED-DR] AS [DATE-ADDED-DR], 
-    [Inventory].[DATE-SOLD-DV] AS [DATE-SOLD-DV], 
-    [Inventory].[DAYS-IN-STK] AS [DAYS-IN-STK], 
-    [Inventory].[DEMO-DATE-DV] AS [DEMO-DATE-DV], 
-    [Inventory].[DEMO-MIL-DV] AS [DEMO-MIL-DV], 
-    [Inventory].[DLR-FLAG] AS [DLR-FLAG], 
-    [Inventory].[DLR-NO-DESC] AS [DLR-NO-DESC], 
-    [Inventory].[DLR-NO-DV] AS [DLR-NO-DV], 
-    [Inventory].[DRIVE-TYPE] AS [DRIVE-TYPE], 
-    [Inventory].[ENG-NO] AS [ENG-NO], 
-    [Inventory].[EST-ARRIVAL-DATE] AS [EST-ARRIVAL-DATE], 
-    [Inventory].[EXT-CLR-CD] AS [EXT-CLR-CD], 
-    [Inventory].[HBK-AMT] AS [HBK-AMT], 
-    [Inventory].[IN-STOCK] AS [IN-STOCK], 
-    [Inventory].[INT-CLR-CD] AS [INT-CLR-CD], 
-    [Inventory].[INV-AMT] AS [INV-AMT], 
-    [Inventory].[INV-AMT-2] AS [INV-AMT-2], 
-    [Inventory].[INV-AMT-3] AS [INV-AMT-3], 
-    [Inventory].[JRNL-PURCH-DATE-DR] AS [JRNL-PURCH-DATE-DR], 
-    [Inventory].[KEYCHIP-NO-DV] AS [KEYCHIP-NO-DV], 
-    [Inventory].[KEYLESS-NO-DV] AS [KEYLESS-NO-DV], 
-    [Inventory].[LABEL-DATE] AS [LABEL-DATE], 
-    [Inventory].[LOC] AS [LOC], 
-    [Inventory].[MAINT-CODE-DV] AS [MAINT-CODE-DV], 
-    [Inventory].[MDL-NO] AS [MDL-NO], 
-    [Inventory].[MDL-NO-10] AS [MDL-NO-10], 
-    [Inventory].[MDL-YR-CD] AS [MDL-YR-CD], 
-    [Inventory].[MFR-SCHED-DATE] AS [MFR-SCHED-DATE], 
-    [Inventory].[MFR-STAT] AS [MFR-STAT], 
-    [Inventory].[MFR-STAT-DATE] AS [MFR-STAT-DATE], 
-    [Inventory].[MIL-PER-GAL] AS [MIL-PER-GAL], 
-    [Inventory].[MODIFIED-DATE] AS [MODIFIED-DATE], 
-    [Inventory].[MODIFIED-STATION] AS [MODIFIED-STATION], 
-    [Inventory].[MODIFIED-TIME] AS [MODIFIED-TIME], 
-    [Inventory].[MODIFIED-USER-ID] AS [MODIFIED-USER-ID], 
-    [Inventory].[NO-OF-CYL] AS [NO-OF-CYL], 
-    [Inventory].[ON-ORDER] AS [ON-ORDER], 
-    [Inventory].[ORDR-PROC-DATE] AS [ORDR-PROC-DATE], 
-    [Inventory].[ORDR-PRTY] AS [ORDR-PRTY], 
-    [Inventory].[PKG-CODE-1] AS [PKG-CODE-1], 
-    [Inventory].[PKG-CODE1-CAT] AS [PKG-CODE1-CAT], 
-    [Inventory].[PURCH-DATE] AS [PURCH-DATE], 
-    [Inventory].[PURCH-FROM-NAME-DR] AS [PURCH-FROM-NAME-DR], 
-    [Inventory].[PURCH-REF-NO-DV] AS [PURCH-REF-NO-DV], 
-    [Inventory].[PWRSTR] AS [PWRSTR], 
-    [Inventory].[RECALL-DATE-DV] AS [RECALL-DATE-DV], 
-    [Inventory].[RECALL-DATE4-DV] AS [RECALL-DATE4-DV], 
-    [Inventory].[RECID] AS [RECID], 
-    [Inventory].[ROOF-CLR] AS [ROOF-CLR], 
-    [Inventory].[RPG-NO-OF-CYL] AS [RPG-NO-OF-CYL], 
-    [Inventory].[SELLER-TYPE] AS [SELLER-TYPE], 
-    [Inventory].[SLS-CODE] AS [SLS-CODE], 
-    [Inventory].[SLS-COST] AS [SLS-COST], 
-    [Inventory].[SLS-PRICE] AS [SLS-PRICE], 
-    [Inventory].[STK-NO] AS [STK-NO], 
-    [Inventory].[STK-TYPE] AS [STK-TYPE], 
-    [Inventory].[STKNO] AS [STKNO], 
-    [Inventory].[STYLE] AS [STYLE], 
-    [Inventory].[STYLE-LONG] AS [STYLE-LONG], 
-    [Inventory].[SVC-DAYS-DV] AS [SVC-DAYS-DV], 
-    [Inventory].[SYS-DATE-CAT] AS [SYS-DATE-CAT], 
-    [Inventory].[TOT-DLR-ACC-COST-LB] AS [TOT-DLR-ACC-COST-LB], 
-    [Inventory].[TOTAL-OPTION-INV] AS [TOTAL-OPTION-INV], 
-    [Inventory].[TRAN-FLAG] AS [TRAN-FLAG], 
-    [Inventory].[TRANSM] AS [TRANSM], 
-    [Inventory].[TRIM] AS [TRIM], 
-    [Inventory].[TURBO] AS [TURBO], 
-    [Inventory].[TYPE] AS [TYPE], 
-    [Inventory].[VEH-TRANSM-DR] AS [VEH-TRANSM-DR], 
-    [Inventory].[VEH-TYPE] AS [VEH-TYPE], 
-    [Inventory].[VEND-NAME] AS [VEND-NAME], 
-    [Inventory].[VEND-NO] AS [VEND-NO], 
-    [Inventory].[WEIGHT] AS [WEIGHT], 
-    [Inventory].[WHEEL-BASE] AS [WHEEL-BASE], 
-    [Inventory].[FLAG_NEW_USED_DV] AS [FLAG_NEW_USED_DV], 
-    [Inventory].[YR] AS [YR], 
-    [Inventory].[MAKE_PFX] AS [MAKE_PFX], 
-    [Inventory].[DESC1] AS [DESC1], 
-    [Inventory].[RCPT_DATE] AS [RCPT_DATE], 
-    [Inventory].[DAYS] AS [DAYS], 
-    [Inventory].[LIST_PRICE] AS [LIST_PRICE], 
-    [Inventory].[CODED_COST2] AS [CODED_COST2], 
-    [Inventory].[LIC_FEE] AS [LIC_FEE], 
-    [Inventory].[MIL] AS [MIL], 
-    [Inventory].[CLR_EXT_CODE] AS [CLR_EXT_CODE], 
-    [Inventory].[CLR_EXT_DESC] AS [CLR_EXT_DESC], 
-    [Inventory].[CLR_INT_CODE] AS [CLR_INT_CODE], 
-    [Inventory].[CLR_INT_DESC] AS [CLR_INT_DESC], 
-    [Inventory].[BODYSIZE_DESC_DR] AS [BODYSIZE_DESC_DR], 
-    [Inventory].[ACC_CODE] AS [ACC_CODE], 
-    [Inventory].[ACC_DESC] AS [ACC_DESC], 
-    [Inventory].[ACCT_PFX] AS [ACCT_PFX], 
-    [Inventory].[ACTVY_DATE] AS [ACTVY_DATE], 
-    [Inventory].[ALARM_NO_DV] AS [ALARM_NO_DV], 
-    [Inventory].[BOOK_VALUE] AS [BOOK_VALUE], 
-    [Inventory].[CAMP_NO_DV] AS [CAMP_NO_DV], 
-    [Inventory].[CATEG_CODE] AS [CATEG_CODE], 
-    [Inventory].[CERT_NO] AS [CERT_NO], 
-    [Inventory].[CERTIFED] AS [CERTIFED], 
-    [Inventory].[CHASSIS_NO_DV] AS [CHASSIS_NO_DV], 
-    [Inventory].[CLASS] AS [CLASS], 
-    [Inventory].[CLR_CD] AS [CLR_CD], 
-    [Inventory].[CLR_DV] AS [CLR_DV], 
-    [Inventory].[KEY_NUM_1] AS [KEY_NUM_1], 
-    [Inventory].[COLOR_DESC] AS [COLOR_DESC], 
-    [Inventory].[COMMENTS_6] AS [COMMENTS_6], 
-    [Inventory].[COST_PACK_AMT] AS [COST_PACK_AMT], 
-    [Inventory].[DEALER_CODE_DV] AS [DEALER_CODE_DV], 
-    [Inventory].[DLR_ACC_AMT] AS [DLR_ACC_AMT], 
-    [Inventory].[DLR_ACC_CODE] AS [DLR_ACC_CODE], 
-    [Inventory].[DLR_ACC_CODE_1] AS [DLR_ACC_CODE_1], 
-    [Inventory].[DLR_ACC_REF_NO] AS [DLR_ACC_REF_NO], 
-    [Inventory].[DLR_ACC_RTL] AS [DLR_ACC_RTL], 
-    [Inventory].[DMV_AMT] AS [DMV_AMT], 
-    [Inventory].[ENTRY_INFO] AS [ENTRY_INFO], 
-    [Inventory].[FACT_ACC_AMT] AS [FACT_ACC_AMT], 
-    [Inventory].[FACT_ACC_CODE] AS [FACT_ACC_CODE], 
-    [Inventory].[FACT_ACC_DESC] AS [FACT_ACC_DESC], 
-    [Inventory].[FACT_ACC_RTL] AS [FACT_ACC_RTL], 
-    [Inventory].[FROM_TO_DR] AS [FROM_TO_DR], 
-    [Inventory].[IN_SERV_DATE_DV] AS [IN_SERV_DATE_DV], 
-    [Inventory].[INIT_RO_DATE_DV] AS [INIT_RO_DATE_DV], 
-    [Inventory].[JRNL_PFX_UVP_DR] AS [JRNL_PFX_UVP_DR], 
-    [Inventory].[KBB_TYPE] AS [KBB_TYPE], 
-    [Inventory].[KEY_N] AS [KEY_N], 
-    [Inventory].[KEY_N_1] AS [KEY_N_1], 
-    [Inventory].[KEY_N_2] AS [KEY_N_2], 
-    [Inventory].[SECOND_BOOK_CODE1_DR] AS [SECOND_BOOK_CODE1_DR], 
-    [Inventory].[SECOND_BOOK_CODE2_DR] AS [SECOND_BOOK_CODE2_DR], 
-    [Inventory].[SECOND_BOOK_CODE3_DR] AS [SECOND_BOOK_CODE3_DR], 
-    [Inventory].[SECOND_BOOK_VALUE1_DR] AS [SECOND_BOOK_VALUE1_DR], 
-    [Inventory].[SECOND_BOOK_VALUE2_DR] AS [SECOND_BOOK_VALUE2_DR], 
-    [Inventory].[SECOND_BOOK_VALUE3_DR] AS [SECOND_BOOK_VALUE3_DR], 
-    [Inventory].[SER_UDF_1_DV] AS [SER_UDF_1_DV], 
-    [Inventory].[SER_UDF_10_DV] AS [SER_UDF_10_DV], 
-    [Inventory].[SER_UDF_11_DV] AS [SER_UDF_11_DV], 
-    [Inventory].[SER_UDF_12_DV] AS [SER_UDF_12_DV], 
-    [Inventory].[SER_UDF_13_DV] AS [SER_UDF_13_DV], 
-    [Inventory].[SER_UDF_14_DV] AS [SER_UDF_14_DV], 
-    [Inventory].[SER_UDF_15_DV] AS [SER_UDF_15_DV], 
-    [Inventory].[SER_UDF_16_DV] AS [SER_UDF_16_DV], 
-    [Inventory].[SER_UDF_17_DV] AS [SER_UDF_17_DV], 
-    [Inventory].[SER_UDF_18_DV] AS [SER_UDF_18_DV], 
-    [Inventory].[SER_UDF_19_DV] AS [SER_UDF_19_DV], 
-    [Inventory].[SER_UDF_2_DV] AS [SER_UDF_2_DV], 
-    [Inventory].[SER_UDF_20_DV] AS [SER_UDF_20_DV], 
-    [Inventory].[SER_UDF_21_DV] AS [SER_UDF_21_DV], 
-    [Inventory].[SER_UDF_22_DV] AS [SER_UDF_22_DV], 
-    [Inventory].[SER_UDF_23_DV] AS [SER_UDF_23_DV], 
-    [Inventory].[SER_UDF_24_DV] AS [SER_UDF_24_DV], 
-    [Inventory].[SER_UDF_25_DV] AS [SER_UDF_25_DV], 
-    [Inventory].[SER_UDF_26_DV] AS [SER_UDF_26_DV], 
-    [Inventory].[SER_UDF_27_DV] AS [SER_UDF_27_DV], 
-    [Inventory].[SER_UDF_28_DV] AS [SER_UDF_28_DV], 
-    [Inventory].[SER_UDF_29_DV] AS [SER_UDF_29_DV], 
-    [Inventory].[SER_UDF_3_DV] AS [SER_UDF_3_DV], 
-    [Inventory].[SER_UDF_30_DV] AS [SER_UDF_30_DV], 
-    [Inventory].[SER_UDF_31_DV] AS [SER_UDF_31_DV], 
-    [Inventory].[SER_UDF_32_DV] AS [SER_UDF_32_DV], 
-    [Inventory].[SER_UDF_33_DV] AS [SER_UDF_33_DV], 
-    [Inventory].[SER_UDF_34_DV] AS [SER_UDF_34_DV], 
-    [Inventory].[SER_UDF_35_DV] AS [SER_UDF_35_DV], 
-    [Inventory].[SER_UDF_36_DV] AS [SER_UDF_36_DV], 
-    [Inventory].[SER_UDF_37_DV] AS [SER_UDF_37_DV], 
-    [Inventory].[SER_UDF_38_DV] AS [SER_UDF_38_DV], 
-    [Inventory].[SER_UDF_39_DV] AS [SER_UDF_39_DV], 
-    [Inventory].[SER_UDF_4_DV] AS [SER_UDF_4_DV], 
-    [Inventory].[SER_UDF_40_DV] AS [SER_UDF_40_DV], 
-    [Inventory].[SER_UDF_41_DV] AS [SER_UDF_41_DV], 
-    [Inventory].[SER_UDF_42_DV] AS [SER_UDF_42_DV], 
-    [Inventory].[SER_UDF_43_DV] AS [SER_UDF_43_DV], 
-    [Inventory].[SER_UDF_44_DV] AS [SER_UDF_44_DV], 
-    [Inventory].[SER_UDF_45_DV] AS [SER_UDF_45_DV], 
-    [Inventory].[SER_UDF_46_DV] AS [SER_UDF_46_DV], 
-    [Inventory].[SER_UDF_47_DV] AS [SER_UDF_47_DV], 
-    [Inventory].[SER_UDF_48_DV] AS [SER_UDF_48_DV], 
-    [Inventory].[SER_UDF_49_DV] AS [SER_UDF_49_DV], 
-    [Inventory].[SER_UDF_5_DV] AS [SER_UDF_5_DV], 
-    [Inventory].[SER_UDF_50_DV] AS [SER_UDF_50_DV], 
-    [Inventory].[SER_UDF_51_DV] AS [SER_UDF_51_DV], 
-    [Inventory].[SER_UDF_52_DV] AS [SER_UDF_52_DV], 
-    [Inventory].[SER_UDF_53_DV] AS [SER_UDF_53_DV], 
-    [Inventory].[SER_UDF_54_DV] AS [SER_UDF_54_DV], 
-    [Inventory].[SER_UDF_55_DV] AS [SER_UDF_55_DV], 
-    [Inventory].[SER_UDF_56_DV] AS [SER_UDF_56_DV], 
-    [Inventory].[SER_UDF_57_DV] AS [SER_UDF_57_DV], 
-    [Inventory].[SER_UDF_58_DV] AS [SER_UDF_58_DV], 
-    [Inventory].[SER_UDF_59_DV] AS [SER_UDF_59_DV], 
-    [Inventory].[SER_UDF_6_DV] AS [SER_UDF_6_DV], 
-    [Inventory].[SER_UDF_60_DV] AS [SER_UDF_60_DV], 
-    [Inventory].[SER_UDF_7_DV] AS [SER_UDF_7_DV], 
-    [Inventory].[SER_UDF_8_DV] AS [SER_UDF_8_DV], 
-    [Inventory].[SER_UDF_9_DV] AS [SER_UDF_9_DV], 
-    [Inventory].[SERSEQ] AS [SERSEQ], 
-    [Inventory].[STANDARD_STYLE] AS [STANDARD_STYLE], 
-    [Inventory].[STANDARDIZED] AS [STANDARDIZED], 
-    [Inventory].[STOCK_NO2] AS [STOCK_NO2], 
-    [Inventory].[STORE_NAME] AS [STORE_NAME], 
-    [Inventory].[STORE_NO] AS [STORE_NO], 
-    [Inventory].[STYLE_ID] AS [STYLE_ID], 
-    [Inventory].[SYS_DATE_ALPHA_CAT] AS [SYS_DATE_ALPHA_CAT], 
-    [Inventory].[TI_PAYOFF_AMT] AS [TI_PAYOFF_AMT], 
-    [Inventory].[TI_STK_NO] AS [TI_STK_NO], 
-    [Inventory].[TURBO_DV] AS [TURBO_DV], 
-    [Inventory].[USED_GRP] AS [USED_GRP], 
-    [Inventory].[USED_VEH_PUR_PFX_DR] AS [USED_VEH_PUR_PFX_DR], 
-    [Inventory].[UVP_JNL_PFX] AS [UVP_JNL_PFX], 
-    [Inventory].[VDC_VIN_REC] AS [VDC_VIN_REC], 
-    [Inventory].[VEH_TYPE_DR] AS [VEH_TYPE_DR], 
-    [Inventory].[VINPATTERN] AS [VINPATTERN], 
-    [Inventory].[YR_Y4] AS [YR_Y4], 
-    [Inventory].[UDF_DIFFERENCE] AS [UDF_DIFFERENCE], 
-    [Inventory].[UDF_IRC_FLAG] AS [UDF_IRC_FLAG], 
-    [Inventory].[IMPORT_DATE] AS [IMPORT_DATE], 
-    [Inventory].[Id_Primary] AS [Id_Primary]
-    FROM [dbo].[Inventory] AS [Inventory]</DefiningQuery>
+    [InventoryHistory].[STORE BRANCH] AS [STORE BRANCH], 
+    [InventoryHistory].[SERIAL#] AS [SERIAL#], 
+    [InventoryHistory].[STOCK#] AS [STOCK#], 
+    [InventoryHistory].[ORDER#] AS [ORDER#], 
+    [InventoryHistory].[NEW USED] AS [NEW USED], 
+    [InventoryHistory].[YEAR] AS [YEAR], 
+    [InventoryHistory].[MAKE] AS [MAKE], 
+    [InventoryHistory].[MAKE_PREFIX] AS [MAKE_PREFIX], 
+    [InventoryHistory].[ACCOUNTING_MAKE] AS [ACCOUNTING_MAKE], 
+    [InventoryHistory].[MODEL] AS [MODEL], 
+    [InventoryHistory].[CARLINE] AS [CARLINE], 
+    [InventoryHistory].[CARLINE_CODE] AS [CARLINE_CODE], 
+    [InventoryHistory].[DESC] AS [DESC], 
+    [InventoryHistory].[RECEIVED_DATE] AS [RECEIVED_DATE], 
+    [InventoryHistory].[DAYS_IN_STOCK] AS [DAYS_IN_STOCK], 
+    [InventoryHistory].[MSRP] AS [MSRP], 
+    [InventoryHistory].[BASE-MSRP] AS [BASE-MSRP], 
+    [InventoryHistory].[INVOICE] AS [INVOICE], 
+    [InventoryHistory].[INVEN-AMT] AS [INVEN-AMT], 
+    [InventoryHistory].[INTERNET-PRICE] AS [INTERNET-PRICE], 
+    [InventoryHistory].[CODED-COST] AS [CODED-COST], 
+    [InventoryHistory].[FREIGHT] AS [FREIGHT], 
+    [InventoryHistory].[STAT-CODE] AS [STAT-CODE], 
+    [InventoryHistory].[STATUS-LOG-DATE-DR] AS [STATUS-LOG-DATE-DR], 
+    [InventoryHistory].[STATUS-LOG-DR] AS [STATUS-LOG-DR], 
+    [InventoryHistory].[LOCATION] AS [LOCATION], 
+    [InventoryHistory].[ODOM-READING] AS [ODOM-READING], 
+    [InventoryHistory].[EXT-COLOR] AS [EXT-COLOR], 
+    [InventoryHistory].[EXT-CLR-DESC] AS [EXT-CLR-DESC], 
+    [InventoryHistory].[INT-COLOR] AS [INT-COLOR], 
+    [InventoryHistory].[INT-CLR-DESC] AS [INT-CLR-DESC], 
+    [InventoryHistory].[MEMO1-CAT] AS [MEMO1-CAT], 
+    [InventoryHistory].[MEMO2-CAT] AS [MEMO2-CAT], 
+    [InventoryHistory].[MPG-LOW] AS [MPG-LOW], 
+    [InventoryHistory].[MPG-HIGH] AS [MPG-HIGH], 
+    [InventoryHistory].[FUEL] AS [FUEL], 
+    [InventoryHistory].[FUEL-DESC] AS [FUEL-DESC], 
+    [InventoryHistory].[BODYSIZE] AS [BODYSIZE], 
+    [InventoryHistory].[BODYSIZE-DESC] AS [BODYSIZE-DESC], 
+    [InventoryHistory].[ORD-DATE] AS [ORD-DATE], 
+    [InventoryHistory].[ORD-TYPE] AS [ORD-TYPE], 
+    [InventoryHistory].[KEY-NO-1] AS [KEY-NO-1], 
+    [InventoryHistory].[KEY-NO-2] AS [KEY-NO-2], 
+    [InventoryHistory].[ACCENT-CLR] AS [ACCENT-CLR], 
+    [InventoryHistory].[BEST-PRICE] AS [BEST-PRICE], 
+    [InventoryHistory].[BODY-CD] AS [BODY-CD], 
+    [InventoryHistory].[BUILD-DATE] AS [BUILD-DATE], 
+    [InventoryHistory].[BUILD-NAME-DV] AS [BUILD-NAME-DV], 
+    [InventoryHistory].[CARLINE-CODE-DV] AS [CARLINE-CODE-DV], 
+    [InventoryHistory].[CHASSIS-NO] AS [CHASSIS-NO], 
+    [InventoryHistory].[CHASSIS-NO-DR] AS [CHASSIS-NO-DR], 
+    [InventoryHistory].[CLR-CODE] AS [CLR-CODE], 
+    [InventoryHistory].[CLR-CODE-1] AS [CLR-CODE-1], 
+    [InventoryHistory].[CLR-DESC] AS [CLR-DESC], 
+    [InventoryHistory].[CLR-DESC-41] AS [CLR-DESC-41], 
+    [InventoryHistory].[CLR-GENERIC] AS [CLR-GENERIC], 
+    [InventoryHistory].[COST-PACK-LB] AS [COST-PACK-LB], 
+    [InventoryHistory].[CREATE-DATE-DV] AS [CREATE-DATE-DV], 
+    [InventoryHistory].[CREATED-BY-DV] AS [CREATED-BY-DV], 
+    [InventoryHistory].[DATE-ADDED-DR] AS [DATE-ADDED-DR], 
+    [InventoryHistory].[DATE-SOLD-DV] AS [DATE-SOLD-DV], 
+    [InventoryHistory].[DAYS-IN-STK] AS [DAYS-IN-STK], 
+    [InventoryHistory].[DEMO-DATE-DV] AS [DEMO-DATE-DV], 
+    [InventoryHistory].[DEMO-MIL-DV] AS [DEMO-MIL-DV], 
+    [InventoryHistory].[DLR-FLAG] AS [DLR-FLAG], 
+    [InventoryHistory].[DLR-NO-DESC] AS [DLR-NO-DESC], 
+    [InventoryHistory].[DLR-NO-DV] AS [DLR-NO-DV], 
+    [InventoryHistory].[DRIVE-TYPE] AS [DRIVE-TYPE], 
+    [InventoryHistory].[ENG-NO] AS [ENG-NO], 
+    [InventoryHistory].[EST-ARRIVAL-DATE] AS [EST-ARRIVAL-DATE], 
+    [InventoryHistory].[EXT-CLR-CD] AS [EXT-CLR-CD], 
+    [InventoryHistory].[HBK-AMT] AS [HBK-AMT], 
+    [InventoryHistory].[IN-STOCK] AS [IN-STOCK], 
+    [InventoryHistory].[INT-CLR-CD] AS [INT-CLR-CD], 
+    [InventoryHistory].[INV-AMT] AS [INV-AMT], 
+    [InventoryHistory].[INV-AMT-2] AS [INV-AMT-2], 
+    [InventoryHistory].[INV-AMT-3] AS [INV-AMT-3], 
+    [InventoryHistory].[JRNL-PURCH-DATE-DR] AS [JRNL-PURCH-DATE-DR], 
+    [InventoryHistory].[KEYCHIP-NO-DV] AS [KEYCHIP-NO-DV], 
+    [InventoryHistory].[KEYLESS-NO-DV] AS [KEYLESS-NO-DV], 
+    [InventoryHistory].[LABEL-DATE] AS [LABEL-DATE], 
+    [InventoryHistory].[LOC] AS [LOC], 
+    [InventoryHistory].[MAINT-CODE-DV] AS [MAINT-CODE-DV], 
+    [InventoryHistory].[MDL-NO] AS [MDL-NO], 
+    [InventoryHistory].[MDL-NO-10] AS [MDL-NO-10], 
+    [InventoryHistory].[MDL-YR-CD] AS [MDL-YR-CD], 
+    [InventoryHistory].[MFR-SCHED-DATE] AS [MFR-SCHED-DATE], 
+    [InventoryHistory].[MFR-STAT] AS [MFR-STAT], 
+    [InventoryHistory].[MFR-STAT-DATE] AS [MFR-STAT-DATE], 
+    [InventoryHistory].[MIL-PER-GAL] AS [MIL-PER-GAL], 
+    [InventoryHistory].[MODIFIED-DATE] AS [MODIFIED-DATE], 
+    [InventoryHistory].[MODIFIED-STATION] AS [MODIFIED-STATION], 
+    [InventoryHistory].[MODIFIED-TIME] AS [MODIFIED-TIME], 
+    [InventoryHistory].[MODIFIED-USER-ID] AS [MODIFIED-USER-ID], 
+    [InventoryHistory].[NO-OF-CYL] AS [NO-OF-CYL], 
+    [InventoryHistory].[ON-ORDER] AS [ON-ORDER], 
+    [InventoryHistory].[ORDR-PROC-DATE] AS [ORDR-PROC-DATE], 
+    [InventoryHistory].[ORDR-PRTY] AS [ORDR-PRTY], 
+    [InventoryHistory].[PKG-CODE-1] AS [PKG-CODE-1], 
+    [InventoryHistory].[PKG-CODE1-CAT] AS [PKG-CODE1-CAT], 
+    [InventoryHistory].[PURCH-DATE] AS [PURCH-DATE], 
+    [InventoryHistory].[PURCH-FROM-NAME-DR] AS [PURCH-FROM-NAME-DR], 
+    [InventoryHistory].[PURCH-REF-NO-DV] AS [PURCH-REF-NO-DV], 
+    [InventoryHistory].[PWRSTR] AS [PWRSTR], 
+    [InventoryHistory].[RECALL-DATE-DV] AS [RECALL-DATE-DV], 
+    [InventoryHistory].[RECALL-DATE4-DV] AS [RECALL-DATE4-DV], 
+    [InventoryHistory].[RECID] AS [RECID], 
+    [InventoryHistory].[ROOF-CLR] AS [ROOF-CLR], 
+    [InventoryHistory].[RPG-NO-OF-CYL] AS [RPG-NO-OF-CYL], 
+    [InventoryHistory].[SELLER-TYPE] AS [SELLER-TYPE], 
+    [InventoryHistory].[SLS-CODE] AS [SLS-CODE], 
+    [InventoryHistory].[SLS-COST] AS [SLS-COST], 
+    [InventoryHistory].[SLS-PRICE] AS [SLS-PRICE], 
+    [InventoryHistory].[STK-NO] AS [STK-NO], 
+    [InventoryHistory].[STK-TYPE] AS [STK-TYPE], 
+    [InventoryHistory].[STKNO] AS [STKNO], 
+    [InventoryHistory].[STYLE] AS [STYLE], 
+    [InventoryHistory].[STYLE-LONG] AS [STYLE-LONG], 
+    [InventoryHistory].[SVC-DAYS-DV] AS [SVC-DAYS-DV], 
+    [InventoryHistory].[SYS-DATE-CAT] AS [SYS-DATE-CAT], 
+    [InventoryHistory].[TOT-DLR-ACC-COST-LB] AS [TOT-DLR-ACC-COST-LB], 
+    [InventoryHistory].[TOTAL-OPTION-INV] AS [TOTAL-OPTION-INV], 
+    [InventoryHistory].[TRAN-FLAG] AS [TRAN-FLAG], 
+    [InventoryHistory].[TRANSM] AS [TRANSM], 
+    [InventoryHistory].[TRIM] AS [TRIM], 
+    [InventoryHistory].[TURBO] AS [TURBO], 
+    [InventoryHistory].[TYPE] AS [TYPE], 
+    [InventoryHistory].[VEH-TRANSM-DR] AS [VEH-TRANSM-DR], 
+    [InventoryHistory].[VEH-TYPE] AS [VEH-TYPE], 
+    [InventoryHistory].[VEND-NAME] AS [VEND-NAME], 
+    [InventoryHistory].[VEND-NO] AS [VEND-NO], 
+    [InventoryHistory].[WEIGHT] AS [WEIGHT], 
+    [InventoryHistory].[WHEEL-BASE] AS [WHEEL-BASE], 
+    [InventoryHistory].[FLAG_NEW_USED_DV] AS [FLAG_NEW_USED_DV], 
+    [InventoryHistory].[YR] AS [YR], 
+    [InventoryHistory].[MAKE_PFX] AS [MAKE_PFX], 
+    [InventoryHistory].[DESC1] AS [DESC1], 
+    [InventoryHistory].[RCPT_DATE] AS [RCPT_DATE], 
+    [InventoryHistory].[DAYS] AS [DAYS], 
+    [InventoryHistory].[LIST_PRICE] AS [LIST_PRICE], 
+    [InventoryHistory].[CODED_COST2] AS [CODED_COST2], 
+    [InventoryHistory].[LIC_FEE] AS [LIC_FEE], 
+    [InventoryHistory].[MIL] AS [MIL], 
+    [InventoryHistory].[CLR_EXT_CODE] AS [CLR_EXT_CODE], 
+    [InventoryHistory].[CLR_EXT_DESC] AS [CLR_EXT_DESC], 
+    [InventoryHistory].[CLR_INT_CODE] AS [CLR_INT_CODE], 
+    [InventoryHistory].[CLR_INT_DESC] AS [CLR_INT_DESC], 
+    [InventoryHistory].[BODYSIZE_DESC_DR] AS [BODYSIZE_DESC_DR], 
+    [InventoryHistory].[ACC_CODE] AS [ACC_CODE], 
+    [InventoryHistory].[ACC_DESC] AS [ACC_DESC], 
+    [InventoryHistory].[ACCT_PFX] AS [ACCT_PFX], 
+    [InventoryHistory].[ACTVY_DATE] AS [ACTVY_DATE], 
+    [InventoryHistory].[ALARM_NO_DV] AS [ALARM_NO_DV], 
+    [InventoryHistory].[BOOK_VALUE] AS [BOOK_VALUE], 
+    [InventoryHistory].[CAMP_NO_DV] AS [CAMP_NO_DV], 
+    [InventoryHistory].[CATEG_CODE] AS [CATEG_CODE], 
+    [InventoryHistory].[CERT_NO] AS [CERT_NO], 
+    [InventoryHistory].[CERTIFED] AS [CERTIFED], 
+    [InventoryHistory].[CHASSIS_NO_DV] AS [CHASSIS_NO_DV], 
+    [InventoryHistory].[CLASS] AS [CLASS], 
+    [InventoryHistory].[CLR_CD] AS [CLR_CD], 
+    [InventoryHistory].[CLR_DV] AS [CLR_DV], 
+    [InventoryHistory].[KEY_NUM_1] AS [KEY_NUM_1], 
+    [InventoryHistory].[COLOR_DESC] AS [COLOR_DESC], 
+    [InventoryHistory].[COMMENTS_6] AS [COMMENTS_6], 
+    [InventoryHistory].[COST_PACK_AMT] AS [COST_PACK_AMT], 
+    [InventoryHistory].[DEALER_CODE_DV] AS [DEALER_CODE_DV], 
+    [InventoryHistory].[DLR_ACC_AMT] AS [DLR_ACC_AMT], 
+    [InventoryHistory].[DLR_ACC_CODE] AS [DLR_ACC_CODE], 
+    [InventoryHistory].[DLR_ACC_CODE_1] AS [DLR_ACC_CODE_1], 
+    [InventoryHistory].[DLR_ACC_REF_NO] AS [DLR_ACC_REF_NO], 
+    [InventoryHistory].[DLR_ACC_RTL] AS [DLR_ACC_RTL], 
+    [InventoryHistory].[DMV_AMT] AS [DMV_AMT], 
+    [InventoryHistory].[ENTRY_INFO] AS [ENTRY_INFO], 
+    [InventoryHistory].[FACT_ACC_AMT] AS [FACT_ACC_AMT], 
+    [InventoryHistory].[FACT_ACC_CODE] AS [FACT_ACC_CODE], 
+    [InventoryHistory].[FACT_ACC_DESC] AS [FACT_ACC_DESC], 
+    [InventoryHistory].[FACT_ACC_RTL] AS [FACT_ACC_RTL], 
+    [InventoryHistory].[FROM_TO_DR] AS [FROM_TO_DR], 
+    [InventoryHistory].[IN_SERV_DATE_DV] AS [IN_SERV_DATE_DV], 
+    [InventoryHistory].[INIT_RO_DATE_DV] AS [INIT_RO_DATE_DV], 
+    [InventoryHistory].[JRNL_PFX_UVP_DR] AS [JRNL_PFX_UVP_DR], 
+    [InventoryHistory].[KBB_TYPE] AS [KBB_TYPE], 
+    [InventoryHistory].[KEY_N] AS [KEY_N], 
+    [InventoryHistory].[KEY_N_1] AS [KEY_N_1], 
+    [InventoryHistory].[KEY_N_2] AS [KEY_N_2], 
+    [InventoryHistory].[SECOND_BOOK_CODE1_DR] AS [SECOND_BOOK_CODE1_DR], 
+    [InventoryHistory].[SECOND_BOOK_CODE2_DR] AS [SECOND_BOOK_CODE2_DR], 
+    [InventoryHistory].[SECOND_BOOK_CODE3_DR] AS [SECOND_BOOK_CODE3_DR], 
+    [InventoryHistory].[SECOND_BOOK_VALUE1_DR] AS [SECOND_BOOK_VALUE1_DR], 
+    [InventoryHistory].[SECOND_BOOK_VALUE2_DR] AS [SECOND_BOOK_VALUE2_DR], 
+    [InventoryHistory].[SECOND_BOOK_VALUE3_DR] AS [SECOND_BOOK_VALUE3_DR], 
+    [InventoryHistory].[SER_UDF_1_DV] AS [SER_UDF_1_DV], 
+    [InventoryHistory].[SER_UDF_10_DV] AS [SER_UDF_10_DV], 
+    [InventoryHistory].[SER_UDF_11_DV] AS [SER_UDF_11_DV], 
+    [InventoryHistory].[SER_UDF_12_DV] AS [SER_UDF_12_DV], 
+    [InventoryHistory].[SER_UDF_13_DV] AS [SER_UDF_13_DV], 
+    [InventoryHistory].[SER_UDF_14_DV] AS [SER_UDF_14_DV], 
+    [InventoryHistory].[SER_UDF_15_DV] AS [SER_UDF_15_DV], 
+    [InventoryHistory].[SER_UDF_16_DV] AS [SER_UDF_16_DV], 
+    [InventoryHistory].[SER_UDF_17_DV] AS [SER_UDF_17_DV], 
+    [InventoryHistory].[SER_UDF_18_DV] AS [SER_UDF_18_DV], 
+    [InventoryHistory].[SER_UDF_19_DV] AS [SER_UDF_19_DV], 
+    [InventoryHistory].[SER_UDF_2_DV] AS [SER_UDF_2_DV], 
+    [InventoryHistory].[SER_UDF_20_DV] AS [SER_UDF_20_DV], 
+    [InventoryHistory].[SER_UDF_21_DV] AS [SER_UDF_21_DV], 
+    [InventoryHistory].[SER_UDF_22_DV] AS [SER_UDF_22_DV], 
+    [InventoryHistory].[SER_UDF_23_DV] AS [SER_UDF_23_DV], 
+    [InventoryHistory].[SER_UDF_24_DV] AS [SER_UDF_24_DV], 
+    [InventoryHistory].[SER_UDF_25_DV] AS [SER_UDF_25_DV], 
+    [InventoryHistory].[SER_UDF_26_DV] AS [SER_UDF_26_DV], 
+    [InventoryHistory].[SER_UDF_27_DV] AS [SER_UDF_27_DV], 
+    [InventoryHistory].[SER_UDF_28_DV] AS [SER_UDF_28_DV], 
+    [InventoryHistory].[SER_UDF_29_DV] AS [SER_UDF_29_DV], 
+    [InventoryHistory].[SER_UDF_3_DV] AS [SER_UDF_3_DV], 
+    [InventoryHistory].[SER_UDF_30_DV] AS [SER_UDF_30_DV], 
+    [InventoryHistory].[SER_UDF_31_DV] AS [SER_UDF_31_DV], 
+    [InventoryHistory].[SER_UDF_32_DV] AS [SER_UDF_32_DV], 
+    [InventoryHistory].[SER_UDF_33_DV] AS [SER_UDF_33_DV], 
+    [InventoryHistory].[SER_UDF_34_DV] AS [SER_UDF_34_DV], 
+    [InventoryHistory].[SER_UDF_35_DV] AS [SER_UDF_35_DV], 
+    [InventoryHistory].[SER_UDF_36_DV] AS [SER_UDF_36_DV], 
+    [InventoryHistory].[SER_UDF_37_DV] AS [SER_UDF_37_DV], 
+    [InventoryHistory].[SER_UDF_38_DV] AS [SER_UDF_38_DV], 
+    [InventoryHistory].[SER_UDF_39_DV] AS [SER_UDF_39_DV], 
+    [InventoryHistory].[SER_UDF_4_DV] AS [SER_UDF_4_DV], 
+    [InventoryHistory].[SER_UDF_40_DV] AS [SER_UDF_40_DV], 
+    [InventoryHistory].[SER_UDF_41_DV] AS [SER_UDF_41_DV], 
+    [InventoryHistory].[SER_UDF_42_DV] AS [SER_UDF_42_DV], 
+    [InventoryHistory].[SER_UDF_43_DV] AS [SER_UDF_43_DV], 
+    [InventoryHistory].[SER_UDF_44_DV] AS [SER_UDF_44_DV], 
+    [InventoryHistory].[SER_UDF_45_DV] AS [SER_UDF_45_DV], 
+    [InventoryHistory].[SER_UDF_46_DV] AS [SER_UDF_46_DV], 
+    [InventoryHistory].[SER_UDF_47_DV] AS [SER_UDF_47_DV], 
+    [InventoryHistory].[SER_UDF_48_DV] AS [SER_UDF_48_DV], 
+    [InventoryHistory].[SER_UDF_49_DV] AS [SER_UDF_49_DV], 
+    [InventoryHistory].[SER_UDF_5_DV] AS [SER_UDF_5_DV], 
+    [InventoryHistory].[SER_UDF_50_DV] AS [SER_UDF_50_DV], 
+    [InventoryHistory].[SER_UDF_51_DV] AS [SER_UDF_51_DV], 
+    [InventoryHistory].[SER_UDF_52_DV] AS [SER_UDF_52_DV], 
+    [InventoryHistory].[SER_UDF_53_DV] AS [SER_UDF_53_DV], 
+    [InventoryHistory].[SER_UDF_54_DV] AS [SER_UDF_54_DV], 
+    [InventoryHistory].[SER_UDF_55_DV] AS [SER_UDF_55_DV], 
+    [InventoryHistory].[SER_UDF_56_DV] AS [SER_UDF_56_DV], 
+    [InventoryHistory].[SER_UDF_57_DV] AS [SER_UDF_57_DV], 
+    [InventoryHistory].[SER_UDF_58_DV] AS [SER_UDF_58_DV], 
+    [InventoryHistory].[SER_UDF_59_DV] AS [SER_UDF_59_DV], 
+    [InventoryHistory].[SER_UDF_6_DV] AS [SER_UDF_6_DV], 
+    [InventoryHistory].[SER_UDF_60_DV] AS [SER_UDF_60_DV], 
+    [InventoryHistory].[SER_UDF_7_DV] AS [SER_UDF_7_DV], 
+    [InventoryHistory].[SER_UDF_8_DV] AS [SER_UDF_8_DV], 
+    [InventoryHistory].[SER_UDF_9_DV] AS [SER_UDF_9_DV], 
+    [InventoryHistory].[SERSEQ] AS [SERSEQ], 
+    [InventoryHistory].[STANDARD_STYLE] AS [STANDARD_STYLE], 
+    [InventoryHistory].[STANDARDIZED] AS [STANDARDIZED], 
+    [InventoryHistory].[STOCK_NO2] AS [STOCK_NO2], 
+    [InventoryHistory].[STORE_NAME] AS [STORE_NAME], 
+    [InventoryHistory].[STORE_NO] AS [STORE_NO], 
+    [InventoryHistory].[STYLE_ID] AS [STYLE_ID], 
+    [InventoryHistory].[SYS_DATE_ALPHA_CAT] AS [SYS_DATE_ALPHA_CAT], 
+    [InventoryHistory].[TI_PAYOFF_AMT] AS [TI_PAYOFF_AMT], 
+    [InventoryHistory].[TI_STK_NO] AS [TI_STK_NO], 
+    [InventoryHistory].[TURBO_DV] AS [TURBO_DV], 
+    [InventoryHistory].[USED_GRP] AS [USED_GRP], 
+    [InventoryHistory].[USED_VEH_PUR_PFX_DR] AS [USED_VEH_PUR_PFX_DR], 
+    [InventoryHistory].[UVP_JNL_PFX] AS [UVP_JNL_PFX], 
+    [InventoryHistory].[VDC_VIN_REC] AS [VDC_VIN_REC], 
+    [InventoryHistory].[VEH_TYPE_DR] AS [VEH_TYPE_DR], 
+    [InventoryHistory].[VINPATTERN] AS [VINPATTERN], 
+    [InventoryHistory].[YR_Y4] AS [YR_Y4], 
+    [InventoryHistory].[UDF_DIFFERENCE] AS [UDF_DIFFERENCE], 
+    [InventoryHistory].[UDF_IRC_FLAG] AS [UDF_IRC_FLAG], 
+    [InventoryHistory].[IMPORT_DATE] AS [IMPORT_DATE], 
+    [InventoryHistory].[Id_Primary] AS [Id_Primary]
+    FROM [dbo].[InventoryHistory] AS [InventoryHistory]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="InvSubSet" EntityType="Self.InvSubSet" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1437,24 +1716,7 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
           <Property Name="YR_Y4" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="UDF_DIFFERENCE" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="UDF_IRC_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IMPORT_DATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="ReportInventory">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="NEWUSED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="CarStat1" Type="Int32" />
-          <Property Name="CarStat2" Type="Int32" />
-          <Property Name="CarStat4" Type="Int32" />
-          <Property Name="CarStat9" Type="Int32" />
-          <Property Name="CarStat12" Type="Int32" />
-          <Property Name="CarStat14" Type="Int32" />
-          <Property Name="TotalAllCarStat" Type="Int32" />
+          <Property Name="IMPORT_DATE" Type="DateTime" Precision="0" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="InvSubSet">
@@ -1739,14 +2001,15 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
         </EntityType>
         <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Inventories" EntityType="Self.Inventory" />
-          <EntitySet Name="ReportInventories" EntityType="Self.ReportInventory" />
           <EntitySet Name="InvSubSets" EntityType="Self.InvSubSet" />
           <FunctionImport Name="CARbySTOCK" ReturnType="Collection(InventoryModel.CARbySTOCK_Result)">
-            <Parameter Name="STOCK" Mode="In" Type="String" />
+          <Parameter Name="STOCK" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Inventory_ReBuild" />
           <FunctionImport Name="PROC_InventoryReport" ReturnType="Collection(InventoryModel.PROC_InventoryReport_Result)" />
           <FunctionImport Name="procDAB" ReturnType="Collection(InventoryModel.procDAB_Result)" />
+          <EntitySet Name="InventoryHistories" EntityType="InventoryModel.InventoryHistory" />
+          <EntitySet Name="ReportInventories" EntityType="InventoryModel.ReportInventory" />
         </EntityContainer>
         <ComplexType Name="CARbySTOCK_Result">
           <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -1957,6 +2220,302 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
           <Property Type="String" Name="MAKE_PREFIX" Nullable="true" MaxLength="3" />
           <Property Type="String" Name="ACCOUNTING_MAKE" Nullable="true" MaxLength="2" />
         </ComplexType>
+        <EntityType Name="InventoryHistory">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="YEAR" Type="Int32" />
+          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNTING_MAKE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="MODEL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DAYS_IN_STOCK" Type="Int32" />
+          <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="STAT_CODE" Type="Int32" />
+          <Property Name="STATUS_LOG_DATE_DR" Type="DateTime" Precision="0" />
+          <Property Name="STATUS_LOG_DR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ODOM_READING" Type="Int32" />
+          <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO1_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MEMO2_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MPG_LOW" Type="Double" />
+          <Property Name="MPG_HIGH" Type="Double" />
+          <Property Name="FUEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FUEL_DESC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="BODYSIZE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BODYSIZE_DESC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ORD_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ORD_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_NO_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_NO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ACCENT_CLR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BEST_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BODY_CD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="BUILD_DATE" Type="DateTime" Precision="0" />
+          <Property Name="BUILD_NAME_DV" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CHASSIS_NO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="CHASSIS_NO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_CODE_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_DESC_41" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_GENERIC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="COST_PACK_LB" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
+          <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
+          <Property Name="DATE_SOLD_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DAYS_IN_STK" Type="Int32" />
+          <Property Name="DEMO_DATE_DV" Type="DateTime" Precision="0" />
+          <Property Name="DEMO_MIL_DV" Type="Int32" />
+          <Property Name="DLR_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_NO_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DRIVE_TYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ENG_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EST_ARRIVAL_DATE" Type="DateTime" Precision="0" />
+          <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="HBK_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IN_STOCK" Type="Int32" />
+          <Property Name="INT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INV_AMT_2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INV_AMT_3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="JRNL_PURCH_DATE_DR" Type="DateTime" Precision="0" />
+          <Property Name="KEYCHIP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEYLESS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LABEL_DATE" Type="DateTime" Precision="0" />
+          <Property Name="LOC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="MAINT_CODE_DV" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MDL_NO_10" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MDL_YR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MFR_SCHED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MFR_STAT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MFR_STAT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MIL_PER_GAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="MODIFIED_STATION" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_TIME" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_USER_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="NO_OF_CYL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ON_ORDER" Type="Int32" />
+          <Property Name="ORDR_PROC_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ORDR_PRTY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PKG_CODE_1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PKG_CODE1_CAT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PURCH_DATE" Type="DateTime" Precision="0" />
+          <Property Name="PURCH_FROM_NAME_DR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="PURCH_REF_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PWRSTR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RECALL_DATE_DV" Type="DateTime" Precision="0" />
+          <Property Name="RECALL_DATE4_DV" Type="DateTime" Precision="0" />
+          <Property Name="RECID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ROOF_CLR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RPG_NO_OF_CYL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SELLER_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SLS_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="SLS_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SLS_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="STK_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="STK_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="STKNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STYLE_LONG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SVC_DAYS_DV" Type="Int32" />
+          <Property Name="SYS_DATE_CAT" Type="DateTime" Precision="0" />
+          <Property Name="TOT_DLR_ACC_COST_LB" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TOTAL_OPTION_INV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TRAN_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TRANSM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TURBO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VEH_TRANSM_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VEH_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VEND_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VEND_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="WEIGHT" Type="Int32" />
+          <Property Name="WHEEL_BASE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FLAG_NEW_USED_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="YR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DESC1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="RCPT_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DAYS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LIST_PRICE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CODED_COST2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LIC_FEE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MIL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_EXT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_EXT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_INT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_INT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BODYSIZE_DESC_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ACCT_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ACTVY_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ALARM_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="BOOK_VALUE" Type="Double" />
+          <Property Name="CAMP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CATEG_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CERT_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CERTIFED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CHASSIS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_NUM_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="COMMENTS_6" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="COST_PACK_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DEALER_CODE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_ACC_CODE_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_ACC_REF_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DLR_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DMV_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ENTRY_INFO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FACT_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FACT_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FACT_ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FACT_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FROM_TO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="IN_SERV_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="INIT_RO_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="JRNL_PFX_UVP_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KBB_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_N" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_N_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_N_2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_CODE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_CODE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_CODE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_VALUE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_VALUE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SECOND_BOOK_VALUE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_1_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_10_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_11_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_12_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_13_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_14_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_15_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_16_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_17_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_18_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_19_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_2_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_20_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_21_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_22_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_23_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_24_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_25_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_26_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_27_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_28_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_29_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_3_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_30_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_31_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_32_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_33_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_34_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_35_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_36_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_37_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_38_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_39_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_4_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_40_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_41_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_42_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_43_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_44_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_45_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_46_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_47_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_48_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_49_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_5_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_50_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_51_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_52_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_53_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_54_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_55_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_56_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_57_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_58_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_59_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_6_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_60_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_7_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_8_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SER_UDF_9_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="SERSEQ" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="STANDARD_STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STANDARDIZED" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK_NO2" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="STORE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="STORE_NO" Type="Int32" />
+          <Property Name="STYLE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="SYS_DATE_ALPHA_CAT" Type="DateTime" Precision="0" />
+          <Property Name="TI_PAYOFF_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TI_STK_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TURBO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="USED_GRP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="USED_VEH_PUR_PFX_DR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="UVP_JNL_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VDC_VIN_REC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VEH_TYPE_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="VINPATTERN" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="YR_Y4" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="UDF_DIFFERENCE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UDF_IRC_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IMPORT_DATE" Type="DateTime" Precision="0" />
+          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ReportInventory">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="NEWUSED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CarStat1" Type="Int32" />
+          <Property Name="CarStat2" Type="Int32" />
+          <Property Name="CarStat4" Type="Int32" />
+          <Property Name="CarStat9" Type="Int32" />
+          <Property Name="CarStat12" Type="Int32" />
+          <Property Name="CarStat14" Type="Int32" />
+          <Property Name="TotalAllCarStat" Type="Int32" />
+          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2239,24 +2798,6 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
                 <ScalarProperty Name="UDF_DIFFERENCE" ColumnName="UDF_DIFFERENCE" />
                 <ScalarProperty Name="UDF_IRC_FLAG" ColumnName="UDF_IRC_FLAG" />
                 <ScalarProperty Name="IMPORT_DATE" ColumnName="IMPORT_DATE" />
-                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReportInventories">
-            <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
-              <MappingFragment StoreEntitySet="ReportInventory">
-                <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
-                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
-                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
-                <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
-                <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
-                <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
-                <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
-                <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
-                <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2763,6 +3304,304 @@ warning 6002: The table/view 'Inventory.dbo.InvSubSet' does not have a primary k
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="InventoryHistories">
+            <EntityTypeMapping TypeName="InventoryModel.InventoryHistory">
+              <MappingFragment StoreEntitySet="InventoryHistory">
+                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="IMPORT_DATE" ColumnName="IMPORT_DATE" />
+                <ScalarProperty Name="UDF_IRC_FLAG" ColumnName="UDF_IRC_FLAG" />
+                <ScalarProperty Name="UDF_DIFFERENCE" ColumnName="UDF_DIFFERENCE" />
+                <ScalarProperty Name="YR_Y4" ColumnName="YR_Y4" />
+                <ScalarProperty Name="VINPATTERN" ColumnName="VINPATTERN" />
+                <ScalarProperty Name="VEH_TYPE_DR" ColumnName="VEH_TYPE_DR" />
+                <ScalarProperty Name="VDC_VIN_REC" ColumnName="VDC_VIN_REC" />
+                <ScalarProperty Name="UVP_JNL_PFX" ColumnName="UVP_JNL_PFX" />
+                <ScalarProperty Name="USED_VEH_PUR_PFX_DR" ColumnName="USED_VEH_PUR_PFX_DR" />
+                <ScalarProperty Name="USED_GRP" ColumnName="USED_GRP" />
+                <ScalarProperty Name="TURBO_DV" ColumnName="TURBO_DV" />
+                <ScalarProperty Name="TI_STK_NO" ColumnName="TI_STK_NO" />
+                <ScalarProperty Name="TI_PAYOFF_AMT" ColumnName="TI_PAYOFF_AMT" />
+                <ScalarProperty Name="SYS_DATE_ALPHA_CAT" ColumnName="SYS_DATE_ALPHA_CAT" />
+                <ScalarProperty Name="STYLE_ID" ColumnName="STYLE_ID" />
+                <ScalarProperty Name="STORE_NO" ColumnName="STORE_NO" />
+                <ScalarProperty Name="STORE_NAME" ColumnName="STORE_NAME" />
+                <ScalarProperty Name="STOCK_NO2" ColumnName="STOCK_NO2" />
+                <ScalarProperty Name="STANDARDIZED" ColumnName="STANDARDIZED" />
+                <ScalarProperty Name="STANDARD_STYLE" ColumnName="STANDARD_STYLE" />
+                <ScalarProperty Name="SERSEQ" ColumnName="SERSEQ" />
+                <ScalarProperty Name="SER_UDF_9_DV" ColumnName="SER_UDF_9_DV" />
+                <ScalarProperty Name="SER_UDF_8_DV" ColumnName="SER_UDF_8_DV" />
+                <ScalarProperty Name="SER_UDF_7_DV" ColumnName="SER_UDF_7_DV" />
+                <ScalarProperty Name="SER_UDF_60_DV" ColumnName="SER_UDF_60_DV" />
+                <ScalarProperty Name="SER_UDF_6_DV" ColumnName="SER_UDF_6_DV" />
+                <ScalarProperty Name="SER_UDF_59_DV" ColumnName="SER_UDF_59_DV" />
+                <ScalarProperty Name="SER_UDF_58_DV" ColumnName="SER_UDF_58_DV" />
+                <ScalarProperty Name="SER_UDF_57_DV" ColumnName="SER_UDF_57_DV" />
+                <ScalarProperty Name="SER_UDF_56_DV" ColumnName="SER_UDF_56_DV" />
+                <ScalarProperty Name="SER_UDF_55_DV" ColumnName="SER_UDF_55_DV" />
+                <ScalarProperty Name="SER_UDF_54_DV" ColumnName="SER_UDF_54_DV" />
+                <ScalarProperty Name="SER_UDF_53_DV" ColumnName="SER_UDF_53_DV" />
+                <ScalarProperty Name="SER_UDF_52_DV" ColumnName="SER_UDF_52_DV" />
+                <ScalarProperty Name="SER_UDF_51_DV" ColumnName="SER_UDF_51_DV" />
+                <ScalarProperty Name="SER_UDF_50_DV" ColumnName="SER_UDF_50_DV" />
+                <ScalarProperty Name="SER_UDF_5_DV" ColumnName="SER_UDF_5_DV" />
+                <ScalarProperty Name="SER_UDF_49_DV" ColumnName="SER_UDF_49_DV" />
+                <ScalarProperty Name="SER_UDF_48_DV" ColumnName="SER_UDF_48_DV" />
+                <ScalarProperty Name="SER_UDF_47_DV" ColumnName="SER_UDF_47_DV" />
+                <ScalarProperty Name="SER_UDF_46_DV" ColumnName="SER_UDF_46_DV" />
+                <ScalarProperty Name="SER_UDF_45_DV" ColumnName="SER_UDF_45_DV" />
+                <ScalarProperty Name="SER_UDF_44_DV" ColumnName="SER_UDF_44_DV" />
+                <ScalarProperty Name="SER_UDF_43_DV" ColumnName="SER_UDF_43_DV" />
+                <ScalarProperty Name="SER_UDF_42_DV" ColumnName="SER_UDF_42_DV" />
+                <ScalarProperty Name="SER_UDF_41_DV" ColumnName="SER_UDF_41_DV" />
+                <ScalarProperty Name="SER_UDF_40_DV" ColumnName="SER_UDF_40_DV" />
+                <ScalarProperty Name="SER_UDF_4_DV" ColumnName="SER_UDF_4_DV" />
+                <ScalarProperty Name="SER_UDF_39_DV" ColumnName="SER_UDF_39_DV" />
+                <ScalarProperty Name="SER_UDF_38_DV" ColumnName="SER_UDF_38_DV" />
+                <ScalarProperty Name="SER_UDF_37_DV" ColumnName="SER_UDF_37_DV" />
+                <ScalarProperty Name="SER_UDF_36_DV" ColumnName="SER_UDF_36_DV" />
+                <ScalarProperty Name="SER_UDF_35_DV" ColumnName="SER_UDF_35_DV" />
+                <ScalarProperty Name="SER_UDF_34_DV" ColumnName="SER_UDF_34_DV" />
+                <ScalarProperty Name="SER_UDF_33_DV" ColumnName="SER_UDF_33_DV" />
+                <ScalarProperty Name="SER_UDF_32_DV" ColumnName="SER_UDF_32_DV" />
+                <ScalarProperty Name="SER_UDF_31_DV" ColumnName="SER_UDF_31_DV" />
+                <ScalarProperty Name="SER_UDF_30_DV" ColumnName="SER_UDF_30_DV" />
+                <ScalarProperty Name="SER_UDF_3_DV" ColumnName="SER_UDF_3_DV" />
+                <ScalarProperty Name="SER_UDF_29_DV" ColumnName="SER_UDF_29_DV" />
+                <ScalarProperty Name="SER_UDF_28_DV" ColumnName="SER_UDF_28_DV" />
+                <ScalarProperty Name="SER_UDF_27_DV" ColumnName="SER_UDF_27_DV" />
+                <ScalarProperty Name="SER_UDF_26_DV" ColumnName="SER_UDF_26_DV" />
+                <ScalarProperty Name="SER_UDF_25_DV" ColumnName="SER_UDF_25_DV" />
+                <ScalarProperty Name="SER_UDF_24_DV" ColumnName="SER_UDF_24_DV" />
+                <ScalarProperty Name="SER_UDF_23_DV" ColumnName="SER_UDF_23_DV" />
+                <ScalarProperty Name="SER_UDF_22_DV" ColumnName="SER_UDF_22_DV" />
+                <ScalarProperty Name="SER_UDF_21_DV" ColumnName="SER_UDF_21_DV" />
+                <ScalarProperty Name="SER_UDF_20_DV" ColumnName="SER_UDF_20_DV" />
+                <ScalarProperty Name="SER_UDF_2_DV" ColumnName="SER_UDF_2_DV" />
+                <ScalarProperty Name="SER_UDF_19_DV" ColumnName="SER_UDF_19_DV" />
+                <ScalarProperty Name="SER_UDF_18_DV" ColumnName="SER_UDF_18_DV" />
+                <ScalarProperty Name="SER_UDF_17_DV" ColumnName="SER_UDF_17_DV" />
+                <ScalarProperty Name="SER_UDF_16_DV" ColumnName="SER_UDF_16_DV" />
+                <ScalarProperty Name="SER_UDF_15_DV" ColumnName="SER_UDF_15_DV" />
+                <ScalarProperty Name="SER_UDF_14_DV" ColumnName="SER_UDF_14_DV" />
+                <ScalarProperty Name="SER_UDF_13_DV" ColumnName="SER_UDF_13_DV" />
+                <ScalarProperty Name="SER_UDF_12_DV" ColumnName="SER_UDF_12_DV" />
+                <ScalarProperty Name="SER_UDF_11_DV" ColumnName="SER_UDF_11_DV" />
+                <ScalarProperty Name="SER_UDF_10_DV" ColumnName="SER_UDF_10_DV" />
+                <ScalarProperty Name="SER_UDF_1_DV" ColumnName="SER_UDF_1_DV" />
+                <ScalarProperty Name="SECOND_BOOK_VALUE3_DR" ColumnName="SECOND_BOOK_VALUE3_DR" />
+                <ScalarProperty Name="SECOND_BOOK_VALUE2_DR" ColumnName="SECOND_BOOK_VALUE2_DR" />
+                <ScalarProperty Name="SECOND_BOOK_VALUE1_DR" ColumnName="SECOND_BOOK_VALUE1_DR" />
+                <ScalarProperty Name="SECOND_BOOK_CODE3_DR" ColumnName="SECOND_BOOK_CODE3_DR" />
+                <ScalarProperty Name="SECOND_BOOK_CODE2_DR" ColumnName="SECOND_BOOK_CODE2_DR" />
+                <ScalarProperty Name="SECOND_BOOK_CODE1_DR" ColumnName="SECOND_BOOK_CODE1_DR" />
+                <ScalarProperty Name="KEY_N_2" ColumnName="KEY_N_2" />
+                <ScalarProperty Name="KEY_N_1" ColumnName="KEY_N_1" />
+                <ScalarProperty Name="KEY_N" ColumnName="KEY_N" />
+                <ScalarProperty Name="KBB_TYPE" ColumnName="KBB_TYPE" />
+                <ScalarProperty Name="JRNL_PFX_UVP_DR" ColumnName="JRNL_PFX_UVP_DR" />
+                <ScalarProperty Name="INIT_RO_DATE_DV" ColumnName="INIT_RO_DATE_DV" />
+                <ScalarProperty Name="IN_SERV_DATE_DV" ColumnName="IN_SERV_DATE_DV" />
+                <ScalarProperty Name="FROM_TO_DR" ColumnName="FROM_TO_DR" />
+                <ScalarProperty Name="FACT_ACC_RTL" ColumnName="FACT_ACC_RTL" />
+                <ScalarProperty Name="FACT_ACC_DESC" ColumnName="FACT_ACC_DESC" />
+                <ScalarProperty Name="FACT_ACC_CODE" ColumnName="FACT_ACC_CODE" />
+                <ScalarProperty Name="FACT_ACC_AMT" ColumnName="FACT_ACC_AMT" />
+                <ScalarProperty Name="ENTRY_INFO" ColumnName="ENTRY_INFO" />
+                <ScalarProperty Name="DMV_AMT" ColumnName="DMV_AMT" />
+                <ScalarProperty Name="DLR_ACC_RTL" ColumnName="DLR_ACC_RTL" />
+                <ScalarProperty Name="DLR_ACC_REF_NO" ColumnName="DLR_ACC_REF_NO" />
+                <ScalarProperty Name="DLR_ACC_CODE_1" ColumnName="DLR_ACC_CODE_1" />
+                <ScalarProperty Name="DLR_ACC_CODE" ColumnName="DLR_ACC_CODE" />
+                <ScalarProperty Name="DLR_ACC_AMT" ColumnName="DLR_ACC_AMT" />
+                <ScalarProperty Name="DEALER_CODE_DV" ColumnName="DEALER_CODE_DV" />
+                <ScalarProperty Name="COST_PACK_AMT" ColumnName="COST_PACK_AMT" />
+                <ScalarProperty Name="COMMENTS_6" ColumnName="COMMENTS_6" />
+                <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
+                <ScalarProperty Name="KEY_NUM_1" ColumnName="KEY_NUM_1" />
+                <ScalarProperty Name="CLR_DV" ColumnName="CLR_DV" />
+                <ScalarProperty Name="CLR_CD" ColumnName="CLR_CD" />
+                <ScalarProperty Name="CLASS" ColumnName="CLASS" />
+                <ScalarProperty Name="CHASSIS_NO_DV" ColumnName="CHASSIS_NO_DV" />
+                <ScalarProperty Name="CERTIFED" ColumnName="CERTIFED" />
+                <ScalarProperty Name="CERT_NO" ColumnName="CERT_NO" />
+                <ScalarProperty Name="CATEG_CODE" ColumnName="CATEG_CODE" />
+                <ScalarProperty Name="CAMP_NO_DV" ColumnName="CAMP_NO_DV" />
+                <ScalarProperty Name="BOOK_VALUE" ColumnName="BOOK_VALUE" />
+                <ScalarProperty Name="ALARM_NO_DV" ColumnName="ALARM_NO_DV" />
+                <ScalarProperty Name="ACTVY_DATE" ColumnName="ACTVY_DATE" />
+                <ScalarProperty Name="ACCT_PFX" ColumnName="ACCT_PFX" />
+                <ScalarProperty Name="ACC_DESC" ColumnName="ACC_DESC" />
+                <ScalarProperty Name="ACC_CODE" ColumnName="ACC_CODE" />
+                <ScalarProperty Name="BODYSIZE_DESC_DR" ColumnName="BODYSIZE_DESC_DR" />
+                <ScalarProperty Name="CLR_INT_DESC" ColumnName="CLR_INT_DESC" />
+                <ScalarProperty Name="CLR_INT_CODE" ColumnName="CLR_INT_CODE" />
+                <ScalarProperty Name="CLR_EXT_DESC" ColumnName="CLR_EXT_DESC" />
+                <ScalarProperty Name="CLR_EXT_CODE" ColumnName="CLR_EXT_CODE" />
+                <ScalarProperty Name="MIL" ColumnName="MIL" />
+                <ScalarProperty Name="LIC_FEE" ColumnName="LIC_FEE" />
+                <ScalarProperty Name="CODED_COST2" ColumnName="CODED_COST2" />
+                <ScalarProperty Name="LIST_PRICE" ColumnName="LIST_PRICE" />
+                <ScalarProperty Name="DAYS" ColumnName="DAYS" />
+                <ScalarProperty Name="RCPT_DATE" ColumnName="RCPT_DATE" />
+                <ScalarProperty Name="DESC1" ColumnName="DESC1" />
+                <ScalarProperty Name="MAKE_PFX" ColumnName="MAKE_PFX" />
+                <ScalarProperty Name="YR" ColumnName="YR" />
+                <ScalarProperty Name="FLAG_NEW_USED_DV" ColumnName="FLAG_NEW_USED_DV" />
+                <ScalarProperty Name="WHEEL_BASE" ColumnName="WHEEL-BASE" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+                <ScalarProperty Name="VEND_NO" ColumnName="VEND-NO" />
+                <ScalarProperty Name="VEND_NAME" ColumnName="VEND-NAME" />
+                <ScalarProperty Name="VEH_TYPE" ColumnName="VEH-TYPE" />
+                <ScalarProperty Name="VEH_TRANSM_DR" ColumnName="VEH-TRANSM-DR" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="TURBO" ColumnName="TURBO" />
+                <ScalarProperty Name="TRIM" ColumnName="TRIM" />
+                <ScalarProperty Name="TRANSM" ColumnName="TRANSM" />
+                <ScalarProperty Name="TRAN_FLAG" ColumnName="TRAN-FLAG" />
+                <ScalarProperty Name="TOTAL_OPTION_INV" ColumnName="TOTAL-OPTION-INV" />
+                <ScalarProperty Name="TOT_DLR_ACC_COST_LB" ColumnName="TOT-DLR-ACC-COST-LB" />
+                <ScalarProperty Name="SYS_DATE_CAT" ColumnName="SYS-DATE-CAT" />
+                <ScalarProperty Name="SVC_DAYS_DV" ColumnName="SVC-DAYS-DV" />
+                <ScalarProperty Name="STYLE_LONG" ColumnName="STYLE-LONG" />
+                <ScalarProperty Name="STYLE" ColumnName="STYLE" />
+                <ScalarProperty Name="STKNO" ColumnName="STKNO" />
+                <ScalarProperty Name="STK_TYPE" ColumnName="STK-TYPE" />
+                <ScalarProperty Name="STK_NO" ColumnName="STK-NO" />
+                <ScalarProperty Name="SLS_PRICE" ColumnName="SLS-PRICE" />
+                <ScalarProperty Name="SLS_COST" ColumnName="SLS-COST" />
+                <ScalarProperty Name="SLS_CODE" ColumnName="SLS-CODE" />
+                <ScalarProperty Name="SELLER_TYPE" ColumnName="SELLER-TYPE" />
+                <ScalarProperty Name="RPG_NO_OF_CYL" ColumnName="RPG-NO-OF-CYL" />
+                <ScalarProperty Name="ROOF_CLR" ColumnName="ROOF-CLR" />
+                <ScalarProperty Name="RECID" ColumnName="RECID" />
+                <ScalarProperty Name="RECALL_DATE4_DV" ColumnName="RECALL-DATE4-DV" />
+                <ScalarProperty Name="RECALL_DATE_DV" ColumnName="RECALL-DATE-DV" />
+                <ScalarProperty Name="PWRSTR" ColumnName="PWRSTR" />
+                <ScalarProperty Name="PURCH_REF_NO_DV" ColumnName="PURCH-REF-NO-DV" />
+                <ScalarProperty Name="PURCH_FROM_NAME_DR" ColumnName="PURCH-FROM-NAME-DR" />
+                <ScalarProperty Name="PURCH_DATE" ColumnName="PURCH-DATE" />
+                <ScalarProperty Name="PKG_CODE1_CAT" ColumnName="PKG-CODE1-CAT" />
+                <ScalarProperty Name="PKG_CODE_1" ColumnName="PKG-CODE-1" />
+                <ScalarProperty Name="ORDR_PRTY" ColumnName="ORDR-PRTY" />
+                <ScalarProperty Name="ORDR_PROC_DATE" ColumnName="ORDR-PROC-DATE" />
+                <ScalarProperty Name="ON_ORDER" ColumnName="ON-ORDER" />
+                <ScalarProperty Name="NO_OF_CYL" ColumnName="NO-OF-CYL" />
+                <ScalarProperty Name="MODIFIED_USER_ID" ColumnName="MODIFIED-USER-ID" />
+                <ScalarProperty Name="MODIFIED_TIME" ColumnName="MODIFIED-TIME" />
+                <ScalarProperty Name="MODIFIED_STATION" ColumnName="MODIFIED-STATION" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED-DATE" />
+                <ScalarProperty Name="MIL_PER_GAL" ColumnName="MIL-PER-GAL" />
+                <ScalarProperty Name="MFR_STAT_DATE" ColumnName="MFR-STAT-DATE" />
+                <ScalarProperty Name="MFR_STAT" ColumnName="MFR-STAT" />
+                <ScalarProperty Name="MFR_SCHED_DATE" ColumnName="MFR-SCHED-DATE" />
+                <ScalarProperty Name="MDL_YR_CD" ColumnName="MDL-YR-CD" />
+                <ScalarProperty Name="MDL_NO_10" ColumnName="MDL-NO-10" />
+                <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
+                <ScalarProperty Name="MAINT_CODE_DV" ColumnName="MAINT-CODE-DV" />
+                <ScalarProperty Name="LOC" ColumnName="LOC" />
+                <ScalarProperty Name="LABEL_DATE" ColumnName="LABEL-DATE" />
+                <ScalarProperty Name="KEYLESS_NO_DV" ColumnName="KEYLESS-NO-DV" />
+                <ScalarProperty Name="KEYCHIP_NO_DV" ColumnName="KEYCHIP-NO-DV" />
+                <ScalarProperty Name="JRNL_PURCH_DATE_DR" ColumnName="JRNL-PURCH-DATE-DR" />
+                <ScalarProperty Name="INV_AMT_3" ColumnName="INV-AMT-3" />
+                <ScalarProperty Name="INV_AMT_2" ColumnName="INV-AMT-2" />
+                <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
+                <ScalarProperty Name="INT_CLR_CD" ColumnName="INT-CLR-CD" />
+                <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
+                <ScalarProperty Name="HBK_AMT" ColumnName="HBK-AMT" />
+                <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
+                <ScalarProperty Name="EST_ARRIVAL_DATE" ColumnName="EST-ARRIVAL-DATE" />
+                <ScalarProperty Name="ENG_NO" ColumnName="ENG-NO" />
+                <ScalarProperty Name="DRIVE_TYPE" ColumnName="DRIVE-TYPE" />
+                <ScalarProperty Name="DLR_NO_DV" ColumnName="DLR-NO-DV" />
+                <ScalarProperty Name="DLR_NO_DESC" ColumnName="DLR-NO-DESC" />
+                <ScalarProperty Name="DLR_FLAG" ColumnName="DLR-FLAG" />
+                <ScalarProperty Name="DEMO_MIL_DV" ColumnName="DEMO-MIL-DV" />
+                <ScalarProperty Name="DEMO_DATE_DV" ColumnName="DEMO-DATE-DV" />
+                <ScalarProperty Name="DAYS_IN_STK" ColumnName="DAYS-IN-STK" />
+                <ScalarProperty Name="DATE_SOLD_DV" ColumnName="DATE-SOLD-DV" />
+                <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
+                <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
+                <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
+                <ScalarProperty Name="COST_PACK_LB" ColumnName="COST-PACK-LB" />
+                <ScalarProperty Name="CLR_GENERIC" ColumnName="CLR-GENERIC" />
+                <ScalarProperty Name="CLR_DESC_41" ColumnName="CLR-DESC-41" />
+                <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
+                <ScalarProperty Name="CLR_CODE_1" ColumnName="CLR-CODE-1" />
+                <ScalarProperty Name="CLR_CODE" ColumnName="CLR-CODE" />
+                <ScalarProperty Name="CHASSIS_NO_DR" ColumnName="CHASSIS-NO-DR" />
+                <ScalarProperty Name="CHASSIS_NO" ColumnName="CHASSIS-NO" />
+                <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
+                <ScalarProperty Name="BUILD_NAME_DV" ColumnName="BUILD-NAME-DV" />
+                <ScalarProperty Name="BUILD_DATE" ColumnName="BUILD-DATE" />
+                <ScalarProperty Name="BODY_CD" ColumnName="BODY-CD" />
+                <ScalarProperty Name="BEST_PRICE" ColumnName="BEST-PRICE" />
+                <ScalarProperty Name="ACCENT_CLR" ColumnName="ACCENT-CLR" />
+                <ScalarProperty Name="KEY_NO_2" ColumnName="KEY-NO-2" />
+                <ScalarProperty Name="KEY_NO_1" ColumnName="KEY-NO-1" />
+                <ScalarProperty Name="ORD_TYPE" ColumnName="ORD-TYPE" />
+                <ScalarProperty Name="ORD_DATE" ColumnName="ORD-DATE" />
+                <ScalarProperty Name="BODYSIZE_DESC" ColumnName="BODYSIZE-DESC" />
+                <ScalarProperty Name="BODYSIZE" ColumnName="BODYSIZE" />
+                <ScalarProperty Name="FUEL_DESC" ColumnName="FUEL-DESC" />
+                <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+                <ScalarProperty Name="MPG_HIGH" ColumnName="MPG-HIGH" />
+                <ScalarProperty Name="MPG_LOW" ColumnName="MPG-LOW" />
+                <ScalarProperty Name="MEMO2_CAT" ColumnName="MEMO2-CAT" />
+                <ScalarProperty Name="MEMO1_CAT" ColumnName="MEMO1-CAT" />
+                <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
+                <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
+                <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
+                <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
+                <ScalarProperty Name="ODOM_READING" ColumnName="ODOM-READING" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="STATUS_LOG_DR" ColumnName="STATUS-LOG-DR" />
+                <ScalarProperty Name="STATUS_LOG_DATE_DR" ColumnName="STATUS-LOG-DATE-DR" />
+                <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
+                <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
+                <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
+                <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
+                <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
+                <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
+                <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
+                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+                <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
+                <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
+                <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="ACCOUNTING_MAKE" ColumnName="ACCOUNTING_MAKE" />
+                <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
+                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
+                <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
+                <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
+                <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
+                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportInventories">
+            <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
+              <MappingFragment StoreEntitySet="ReportInventory">
+                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
+                <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
+                <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
+                <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
+                <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
+                <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
+                <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
+                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
+                <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
