@@ -1,0 +1,1313 @@
+﻿@model IEnumerable<WebApplication6.Models.Inventory>
+
+@{
+    ViewBag.Title = "Index";
+    long LimitRecordsShowCounter = 0;
+ 
+}
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_BRANCH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERIAL_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STOCK_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NEW_USED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YEAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE_PREFIX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCOUNTING_MAKE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARLINE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARLINE_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECEIVED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAYS_IN_STOCK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BASE_MSRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVOICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INVEN_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERNET_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODED_COST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FREIGHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STAT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS_LOG_DATE_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STATUS_LOG_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOCATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ODOM_READING)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXT_COLOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXT_CLR_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INT_COLOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INT_CLR_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MEMO1_CAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MEMO2_CAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG_LOW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MPG_HIGH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUEL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FUEL_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BODYSIZE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BODYSIZE_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORD_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORD_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_NO_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_NO_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCENT_CLR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BEST_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BODY_CD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUILD_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BUILD_NAME_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CARLINE_CODE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_CODE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_DESC_41)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_GENERIC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COST_PACK_LB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATE_DATE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_BY_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_ADDED_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_SOLD_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAYS_IN_STK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEMO_DATE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEMO_MIL_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_FLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_NO_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DRIVE_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENG_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EST_ARRIVAL_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EXT_CLR_CD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HBK_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IN_STOCK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INT_CLR_CD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INV_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INV_AMT_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INV_AMT_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JRNL_PURCH_DATE_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEYCHIP_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEYLESS_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LABEL_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAINT_CODE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDL_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDL_NO_10)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDL_YR_CD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MFR_SCHED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MFR_STAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MFR_STAT_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIL_PER_GAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_STATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_USER_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NO_OF_CYL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ON_ORDER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDR_PROC_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDR_PRTY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PKG_CODE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PKG_CODE1_CAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PURCH_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PURCH_FROM_NAME_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PURCH_REF_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PWRSTR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECALL_DATE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECALL_DATE4_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RECID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ROOF_CLR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RPG_NO_OF_CYL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SELLER_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLS_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLS_COST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLS_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STK_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STK_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STKNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STYLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STYLE_LONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SVC_DAYS_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SYS_DATE_CAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOT_DLR_ACC_COST_LB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TOTAL_OPTION_INV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRAN_FLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRANSM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TRIM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TURBO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEH_TRANSM_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEH_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEND_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEND_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WEIGHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WHEEL_BASE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FLAG_NEW_USED_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKE_PFX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESC1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RCPT_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DAYS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIST_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CODED_COST2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIC_FEE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_EXT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_EXT_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_INT_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_INT_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BODYSIZE_DESC_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACC_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACC_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACCT_PFX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTVY_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ALARM_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_VALUE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CAMP_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEG_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CERT_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CERTIFED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLASS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_CD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLR_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_NUM_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COLOR_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COMMENTS_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COST_PACK_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEALER_CODE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_ACC_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_ACC_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_ACC_CODE_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_ACC_REF_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DLR_ACC_RTL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DMV_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENTRY_INFO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACT_ACC_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACT_ACC_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACT_ACC_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FACT_ACC_RTL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FROM_TO_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IN_SERV_DATE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INIT_RO_DATE_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JRNL_PFX_UVP_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KBB_TYPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_N)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_N_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KEY_N_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE1_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE2_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE3_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE1_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE2_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE3_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SERSEQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STANDARD_STYLE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STANDARDIZED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STOCK_NO2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STORE_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STYLE_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SYS_DATE_ALPHA_CAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TI_PAYOFF_AMT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TI_STK_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TURBO_DV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USED_GRP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USED_VEH_PUR_PFX_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UVP_JNL_PFX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VDC_VIN_REC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VEH_TYPE_DR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VINPATTERN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YR_Y4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UDF_DIFFERENCE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UDF_IRC_FLAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IMPORT_DATE)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        LimitRecordsShowCounter++;
+        { if (LimitRecordsShowCounter > 255 )
+            {
+                break;  }
+        }
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_BRANCH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERIAL_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOCK_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NEW_USED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE_PREFIX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCOUNTING_MAKE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARLINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARLINE_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECEIVED_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BASE_MSRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVOICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INVEN_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERNET_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODED_COST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FREIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS_LOG_DATE_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STATUS_LOG_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ODOM_READING)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXT_COLOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXT_CLR_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INT_COLOR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INT_CLR_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEMO1_CAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MEMO2_CAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPG_LOW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MPG_HIGH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUEL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FUEL_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BODYSIZE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BODYSIZE_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORD_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORD_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_NO_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_NO_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCENT_CLR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BEST_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BODY_CD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUILD_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BUILD_NAME_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARLINE_CODE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHASSIS_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHASSIS_NO_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_CODE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_DESC_41)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_GENERIC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COST_PACK_LB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATE_DATE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_BY_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_ADDED_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_SOLD_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAYS_IN_STK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEMO_DATE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEMO_MIL_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_FLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_NO_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DRIVE_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENG_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EST_ARRIVAL_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EXT_CLR_CD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HBK_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IN_STOCK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INT_CLR_CD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INV_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INV_AMT_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INV_AMT_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JRNL_PURCH_DATE_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEYCHIP_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEYLESS_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LABEL_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAINT_CODE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MDL_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MDL_NO_10)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MDL_YR_CD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MFR_SCHED_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MFR_STAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MFR_STAT_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIL_PER_GAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_STATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_USER_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NO_OF_CYL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ON_ORDER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDR_PROC_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDR_PRTY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PKG_CODE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PKG_CODE1_CAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PURCH_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PURCH_FROM_NAME_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PURCH_REF_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PWRSTR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECALL_DATE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECALL_DATE4_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ROOF_CLR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RPG_NO_OF_CYL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SELLER_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLS_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLS_COST)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLS_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STK_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STK_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STKNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STYLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STYLE_LONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SVC_DAYS_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SYS_DATE_CAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOT_DLR_ACC_COST_LB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TOTAL_OPTION_INV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRAN_FLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRANSM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TRIM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TURBO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEH_TRANSM_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEH_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEND_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEND_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WEIGHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WHEEL_BASE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FLAG_NEW_USED_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE_PFX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESC1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RCPT_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAYS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIST_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CODED_COST2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LIC_FEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_EXT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_EXT_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_INT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_INT_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BODYSIZE_DESC_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACC_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACC_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACCT_PFX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTVY_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ALARM_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_VALUE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CAMP_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEG_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CERT_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CERTIFED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHASSIS_NO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLASS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_CD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_NUM_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COLOR_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COMMENTS_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.COST_PACK_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEALER_CODE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_ACC_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_ACC_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_ACC_CODE_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_ACC_REF_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DLR_ACC_RTL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DMV_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ENTRY_INFO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACT_ACC_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACT_ACC_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACT_ACC_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FACT_ACC_RTL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FROM_TO_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IN_SERV_DATE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INIT_RO_DATE_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JRNL_PFX_UVP_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KBB_TYPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_N)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_N_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KEY_N_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_CODE1_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_CODE2_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_CODE3_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_VALUE1_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_VALUE2_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SECOND_BOOK_VALUE3_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERSEQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STANDARD_STYLE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STANDARDIZED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOCK_NO2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STORE_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STYLE_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SYS_DATE_ALPHA_CAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TI_PAYOFF_AMT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TI_STK_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TURBO_DV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USED_GRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USED_VEH_PUR_PFX_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UVP_JNL_PFX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VDC_VIN_REC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VEH_TYPE_DR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VINPATTERN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YR_Y4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UDF_DIFFERENCE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UDF_IRC_FLAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IMPORT_DATE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id_Primary }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id_Primary }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id_Primary })
+        </td>
+    </tr>
+    }
+
+</table>

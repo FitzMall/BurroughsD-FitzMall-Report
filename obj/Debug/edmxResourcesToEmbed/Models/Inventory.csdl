@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InventoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Inventory">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="YEAR" Type="Int32" />
+    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNTING_MAKE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MODEL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="DAYS_IN_STOCK" Type="Int32" />
+    <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STAT_CODE" Type="Int32" />
+    <Property Name="STATUS_LOG_DATE_DR" Type="DateTime" Precision="0" />
+    <Property Name="STATUS_LOG_DR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ODOM_READING" Type="Int32" />
+    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO1_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO2_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MPG_LOW" Type="Double" />
+    <Property Name="MPG_HIGH" Type="Double" />
+    <Property Name="FUEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FUEL_DESC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE_DESC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="ORD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="ORD_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NO_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ACCENT_CLR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BEST_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BODY_CD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BUILD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="BUILD_NAME_DV" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CODE_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DESC_41" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_GENERIC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="COST_PACK_LB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
+    <Property Name="DATE_SOLD_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DAYS_IN_STK" Type="Int32" />
+    <Property Name="DEMO_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="DEMO_MIL_DV" Type="Int32" />
+    <Property Name="DLR_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_NO_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DRIVE_TYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ENG_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ARRIVAL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="HBK_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IN_STOCK" Type="Int32" />
+    <Property Name="INT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INV_AMT_2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INV_AMT_3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JRNL_PURCH_DATE_DR" Type="DateTime" Precision="0" />
+    <Property Name="KEYCHIP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEYLESS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="LOC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MAINT_CODE_DV" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_NO_10" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_YR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MFR_SCHED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MFR_STAT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MFR_STAT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MIL_PER_GAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MODIFIED_STATION" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_TIME" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_USER_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NO_OF_CYL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ON_ORDER" Type="Int32" />
+    <Property Name="ORDR_PROC_DATE" Type="DateTime" Precision="0" />
+    <Property Name="ORDR_PRTY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PKG_CODE_1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PKG_CODE1_CAT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PURCH_DATE" Type="DateTime" Precision="0" />
+    <Property Name="PURCH_FROM_NAME_DR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="PURCH_REF_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PWRSTR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RECALL_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="RECALL_DATE4_DV" Type="DateTime" Precision="0" />
+    <Property Name="RECID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ROOF_CLR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RPG_NO_OF_CYL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SELLER_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SLS_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SLS_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SLS_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STK_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="STK_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STKNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STYLE_LONG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SVC_DAYS_DV" Type="Int32" />
+    <Property Name="SYS_DATE_CAT" Type="DateTime" Precision="0" />
+    <Property Name="TOT_DLR_ACC_COST_LB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TOTAL_OPTION_INV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRAN_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRANSM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TURBO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TRANSM_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEND_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="VEND_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="WEIGHT" Type="Int32" />
+    <Property Name="WHEEL_BASE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FLAG_NEW_USED_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="YR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DESC1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RCPT_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DAYS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LIST_PRICE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CODED_COST2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LIC_FEE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MIL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_EXT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_EXT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_INT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_INT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE_DESC_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACCT_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACTVY_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ALARM_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BOOK_VALUE" Type="Double" />
+    <Property Name="CAMP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CATEG_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CERT_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CERTIFED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NUM_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COMMENTS_6" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COST_PACK_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEALER_CODE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_CODE_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_REF_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DMV_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ENTRY_INFO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FROM_TO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IN_SERV_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INIT_RO_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JRNL_PFX_UVP_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KBB_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N_2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_1_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_10_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_11_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_12_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_13_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_14_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_15_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_16_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_17_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_18_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_19_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_2_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_20_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_21_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_22_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_23_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_24_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_25_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_26_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_27_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_28_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_29_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_3_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_30_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_31_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_32_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_33_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_34_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_35_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_36_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_37_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_38_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_39_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_4_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_40_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_41_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_42_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_43_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_44_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_45_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_46_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_47_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_48_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_49_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_5_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_50_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_51_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_52_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_53_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_54_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_55_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_56_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_57_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_58_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_59_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_6_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_60_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_7_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_8_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_9_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SERSEQ" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="STANDARD_STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STANDARDIZED" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK_NO2" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STORE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STORE_NO" Type="Int32" />
+    <Property Name="STYLE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_DATE_ALPHA_CAT" Type="DateTime" Precision="0" />
+    <Property Name="TI_PAYOFF_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TI_STK_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TURBO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="USED_GRP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="USED_VEH_PUR_PFX_DR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UVP_JNL_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VDC_VIN_REC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TYPE_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VINPATTERN" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="YR_Y4" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UDF_DIFFERENCE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UDF_IRC_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMPORT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="ReportInventory">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="NEWUSED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CarStat1" Type="Int32" />
+    <Property Name="CarStat2" Type="Int32" />
+    <Property Name="CarStat4" Type="Int32" />
+    <Property Name="CarStat9" Type="Int32" />
+    <Property Name="CarStat12" Type="Int32" />
+    <Property Name="CarStat14" Type="Int32" />
+    <Property Name="TotalAllCarStat" Type="Int32" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="InvSubSet">
+    <Key>
+      <PropertyRef Name="IMPORT_DATE" />
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="YEAR" Type="Int32" />
+    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNTING_MAKE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="MODEL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="DAYS_IN_STOCK" Type="Int32" />
+    <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STAT_CODE" Type="Int32" />
+    <Property Name="STATUS_LOG_DATE_DR" Type="DateTime" Precision="0" />
+    <Property Name="STATUS_LOG_DR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ODOM_READING" Type="Int32" />
+    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO1_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MEMO2_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MPG_LOW" Type="Double" />
+    <Property Name="MPG_HIGH" Type="Double" />
+    <Property Name="FUEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FUEL_DESC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE_DESC" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="ORD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="ORD_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NO_1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NO_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ACCENT_CLR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BEST_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BODY_CD" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BUILD_DATE" Type="DateTime" Precision="0" />
+    <Property Name="BUILD_NAME_DV" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CODE_1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DESC_41" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_GENERIC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="COST_PACK_LB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
+    <Property Name="DATE_SOLD_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DAYS_IN_STK" Type="Int32" />
+    <Property Name="DEMO_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="DEMO_MIL_DV" Type="Int32" />
+    <Property Name="DLR_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_NO_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DRIVE_TYPE" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ENG_NO" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EST_ARRIVAL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="HBK_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IN_STOCK" Type="Int32" />
+    <Property Name="INT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INV_AMT_2" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INV_AMT_3" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JRNL_PURCH_DATE_DR" Type="DateTime" Precision="0" />
+    <Property Name="KEYCHIP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEYLESS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LABEL_DATE" Type="DateTime" Precision="0" />
+    <Property Name="LOC" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MAINT_CODE_DV" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_NO_10" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MDL_YR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MFR_SCHED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MFR_STAT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MFR_STAT_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MIL_PER_GAL" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="MODIFIED_STATION" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_TIME" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFIED_USER_ID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NO_OF_CYL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="ON_ORDER" Type="Int32" />
+    <Property Name="ORDR_PROC_DATE" Type="DateTime" Precision="0" />
+    <Property Name="ORDR_PRTY" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="PKG_CODE_1" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PKG_CODE1_CAT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="PURCH_DATE" Type="DateTime" Precision="0" />
+    <Property Name="PURCH_FROM_NAME_DR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="PURCH_REF_NO_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PWRSTR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RECALL_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="RECALL_DATE4_DV" Type="DateTime" Precision="0" />
+    <Property Name="RECID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ROOF_CLR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RPG_NO_OF_CYL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SELLER_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SLS_CODE" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SLS_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SLS_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STK_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="STK_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="STKNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STYLE_LONG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SVC_DAYS_DV" Type="Int32" />
+    <Property Name="SYS_DATE_CAT" Type="DateTime" Precision="0" />
+    <Property Name="TOT_DLR_ACC_COST_LB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TOTAL_OPTION_INV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRAN_FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRANSM" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TRIM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TURBO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TRANSM_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VEND_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="VEND_NO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="WEIGHT" Type="Int32" />
+    <Property Name="WHEEL_BASE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FLAG_NEW_USED_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="YR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DESC1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="RCPT_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DAYS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LIST_PRICE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CODED_COST2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="LIC_FEE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MIL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_EXT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_EXT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_INT_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_INT_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BODYSIZE_DESC_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACCT_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ACTVY_DATE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ALARM_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BOOK_VALUE" Type="Double" />
+    <Property Name="CAMP_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CATEG_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CERT_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CERTIFED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CHASSIS_NO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLASS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_CD" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_NUM_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COMMENTS_6" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="COST_PACK_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DEALER_CODE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_CODE_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_REF_NO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DLR_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DMV_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ENTRY_INFO" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_AMT" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FACT_ACC_RTL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="FROM_TO_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="IN_SERV_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="INIT_RO_DATE_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="JRNL_PFX_UVP_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KBB_TYPE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N_1" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_N_2" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_CODE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE1_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE2_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SECOND_BOOK_VALUE3_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_1_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_10_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_11_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_12_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_13_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_14_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_15_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_16_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_17_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_18_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_19_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_2_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_20_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_21_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_22_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_23_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_24_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_25_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_26_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_27_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_28_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_29_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_3_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_30_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_31_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_32_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_33_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_34_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_35_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_36_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_37_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_38_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_39_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_4_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_40_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_41_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_42_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_43_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_44_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_45_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_46_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_47_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_48_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_49_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_5_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_50_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_51_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_52_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_53_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_54_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_55_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_56_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_57_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_58_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_59_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_6_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_60_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_7_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_8_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SER_UDF_9_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SERSEQ" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="STANDARD_STYLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STANDARDIZED" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK_NO2" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="STORE_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="STORE_NO" Type="Int32" />
+    <Property Name="STYLE_ID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="SYS_DATE_ALPHA_CAT" Type="DateTime" Precision="0" />
+    <Property Name="TI_PAYOFF_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TI_STK_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TURBO_DV" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="USED_GRP" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="USED_VEH_PUR_PFX_DR" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UVP_JNL_PFX" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VDC_VIN_REC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VEH_TYPE_DR" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="VINPATTERN" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="YR_Y4" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UDF_DIFFERENCE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="UDF_IRC_FLAG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMPORT_DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="InventoryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Inventories" EntityType="Self.Inventory" />
+    <EntitySet Name="ReportInventories" EntityType="Self.ReportInventory" />
+    <EntitySet Name="InvSubSets" EntityType="Self.InvSubSet" />
+    <FunctionImport Name="CARbySTOCK" ReturnType="Collection(InventoryModel.CARbySTOCK_Result)">
+      <Parameter Name="STOCK" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Inventory_ReBuild" />
+    <FunctionImport Name="PROC_InventoryReport" ReturnType="Collection(InventoryModel.PROC_InventoryReport_Result)" />
+    <FunctionImport Name="procDAB" ReturnType="Collection(InventoryModel.procDAB_Result)" />
+  </EntityContainer>
+  <ComplexType Name="CARbySTOCK_Result">
+    <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="SERIAL_" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="STOCK_" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="ORDER_" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NEW_USED" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="YEAR" Nullable="true" />
+    <Property Type="String" Name="MAKE" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="MAKE_PREFIX" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="ACCOUNTING_MAKE" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="MODEL" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CARLINE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CARLINE_CODE" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="40" />
+    <Property Type="DateTime" Name="RECEIVED_DATE" Nullable="true" />
+    <Property Type="Int32" Name="DAYS_IN_STOCK" Nullable="true" />
+    <Property Type="Decimal" Name="MSRP" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="BASE_MSRP" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="INVOICE" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="INVEN_AMT" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="INTERNET_PRICE" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="CODED_COST" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="FREIGHT" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="STAT_CODE" Nullable="true" />
+    <Property Type="DateTime" Name="STATUS_LOG_DATE_DR" Nullable="true" />
+    <Property Type="String" Name="STATUS_LOG_DR" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="LOCATION" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="ODOM_READING" Nullable="true" />
+    <Property Type="String" Name="EXT_COLOR" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="EXT_CLR_DESC" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="INT_COLOR" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="INT_CLR_DESC" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="MEMO1_CAT" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MEMO2_CAT" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="MPG_LOW" Nullable="true" />
+    <Property Type="Double" Name="MPG_HIGH" Nullable="true" />
+    <Property Type="String" Name="FUEL" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="FUEL_DESC" Nullable="true" MaxLength="8" />
+    <Property Type="String" Name="BODYSIZE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="BODYSIZE_DESC" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="ORD_DATE" Nullable="true" />
+    <Property Type="String" Name="ORD_TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="KEY_NO_1" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="KEY_NO_2" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="ACCENT_CLR" Nullable="true" MaxLength="2" />
+    <Property Type="Decimal" Name="BEST_PRICE" Nullable="true" Precision="19" />
+    <Property Type="String" Name="BODY_CD" Nullable="true" MaxLength="3" />
+    <Property Type="DateTime" Name="BUILD_DATE" Nullable="true" />
+    <Property Type="String" Name="BUILD_NAME_DV" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="CARLINE_CODE_DV" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="CHASSIS_NO" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="CHASSIS_NO_DR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_CODE" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="CLR_CODE_1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CLR_DESC" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="CLR_DESC_41" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="CLR_GENERIC" Nullable="true" MaxLength="3" />
+    <Property Type="Decimal" Name="COST_PACK_LB" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="CREATE_DATE_DV" Nullable="true" />
+    <Property Type="String" Name="CREATED_BY_DV" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="DATE_ADDED_DR" Nullable="true" />
+    <Property Type="String" Name="DATE_SOLD_DV" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="DAYS_IN_STK" Nullable="true" />
+    <Property Type="DateTime" Name="DEMO_DATE_DV" Nullable="true" />
+    <Property Type="Int32" Name="DEMO_MIL_DV" Nullable="true" />
+    <Property Type="String" Name="DLR_FLAG" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DLR_NO_DESC" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="DLR_NO_DV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DRIVE_TYPE" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="ENG_NO" Nullable="true" MaxLength="15" />
+    <Property Type="DateTime" Name="EST_ARRIVAL_DATE" Nullable="true" />
+    <Property Type="String" Name="EXT_CLR_CD" Nullable="true" MaxLength="4" />
+    <Property Type="Decimal" Name="HBK_AMT" Nullable="true" Precision="19" />
+    <Property Type="Int32" Name="IN_STOCK" Nullable="true" />
+    <Property Type="String" Name="INT_CLR_CD" Nullable="true" MaxLength="4" />
+    <Property Type="Decimal" Name="INV_AMT" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="INV_AMT_2" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="INV_AMT_3" Nullable="true" Precision="19" />
+    <Property Type="DateTime" Name="JRNL_PURCH_DATE_DR" Nullable="true" />
+    <Property Type="String" Name="KEYCHIP_NO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="KEYLESS_NO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="LABEL_DATE" Nullable="true" />
+    <Property Type="String" Name="LOC" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="MAINT_CODE_DV" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="MDL_NO" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="MDL_NO_10" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="MDL_YR_CD" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="MFR_SCHED_DATE" Nullable="true" />
+    <Property Type="String" Name="MFR_STAT" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="MFR_STAT_DATE" Nullable="true" />
+    <Property Type="String" Name="MIL_PER_GAL" Nullable="true" MaxLength="4" />
+    <Property Type="DateTime" Name="MODIFIED_DATE" Nullable="true" />
+    <Property Type="String" Name="MODIFIED_STATION" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="MODIFIED_TIME" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="MODIFIED_USER_ID" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="NO_OF_CYL" Nullable="true" MaxLength="2" />
+    <Property Type="Int32" Name="ON_ORDER" Nullable="true" />
+    <Property Type="DateTime" Name="ORDR_PROC_DATE" Nullable="true" />
+    <Property Type="String" Name="ORDR_PRTY" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="PKG_CODE_1" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="PKG_CODE1_CAT" Nullable="true" MaxLength="2" />
+    <Property Type="DateTime" Name="PURCH_DATE" Nullable="true" />
+    <Property Type="String" Name="PURCH_FROM_NAME_DR" Nullable="true" MaxLength="35" />
+    <Property Type="String" Name="PURCH_REF_NO_DV" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PWRSTR" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="RECALL_DATE_DV" Nullable="true" />
+    <Property Type="DateTime" Name="RECALL_DATE4_DV" Nullable="true" />
+    <Property Type="String" Name="RECID" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ROOF_CLR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RPG_NO_OF_CYL" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="SELLER_TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="SLS_CODE" Nullable="true" MaxLength="4" />
+    <Property Type="Decimal" Name="SLS_COST" Nullable="true" Precision="19" />
+    <Property Type="Decimal" Name="SLS_PRICE" Nullable="true" Precision="19" />
+    <Property Type="String" Name="STK_NO" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="STK_TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="STKNO" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="STYLE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="STYLE_LONG" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SVC_DAYS_DV" Nullable="true" />
+    <Property Type="DateTime" Name="SYS_DATE_CAT" Nullable="true" />
+    <Property Type="Decimal" Name="TOT_DLR_ACC_COST_LB" Nullable="true" Precision="19" />
+    <Property Type="String" Name="TOTAL_OPTION_INV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TRAN_FLAG" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TRANSM" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TRIM" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TURBO" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="VEH_TRANSM_DR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="VEH_TYPE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="VEND_NAME" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="VEND_NO" Nullable="true" MaxLength="6" />
+    <Property Type="Int32" Name="WEIGHT" Nullable="true" />
+    <Property Type="String" Name="WHEEL_BASE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="FLAG_NEW_USED_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="YR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="MAKE_PFX" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DESC1" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="RCPT_DATE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="DAYS" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="LIST_PRICE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CODED_COST2" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="LIC_FEE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="MIL" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_EXT_CODE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_EXT_DESC" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_INT_CODE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_INT_DESC" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="BODYSIZE_DESC_DR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ACC_CODE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ACC_DESC" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ACCT_PFX" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ACTVY_DATE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="ALARM_NO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="Double" Name="BOOK_VALUE" Nullable="true" />
+    <Property Type="String" Name="CAMP_NO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CATEG_CODE" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CERT_NO" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CERTIFED" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CHASSIS_NO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLASS" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_CD" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="CLR_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="KEY_NUM_1" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="COLOR_DESC" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="STORE_NAME" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="STORE_NO" Nullable="true" />
+    <Property Type="String" Name="STYLE_ID" Nullable="true" MaxLength="8" />
+    <Property Type="DateTime" Name="SYS_DATE_ALPHA_CAT" Nullable="true" />
+    <Property Type="Decimal" Name="TI_PAYOFF_AMT" Nullable="true" Precision="19" />
+    <Property Type="String" Name="TI_STK_NO" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="TURBO_DV" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="USED_GRP" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="USED_VEH_PUR_PFX_DR" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="UVP_JNL_PFX" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="VDC_VIN_REC" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="VEH_TYPE_DR" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="VINPATTERN" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="YR_Y4" Nullable="true" MaxLength="4" />
+    <Property Type="Decimal" Name="UDF_DIFFERENCE" Nullable="true" Precision="19" />
+    <Property Type="String" Name="UDF_IRC_FLAG" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="IMPORT_DATE" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Id_Primary" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="PROC_InventoryReport_Result">
+    <Property Type="String" Name="NEWUSED" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="STOREBRANCH" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="LOCATION" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="MAKE" Nullable="true" MaxLength="25" />
+    <Property Type="Int64" Name="CarStat1" Nullable="true" />
+    <Property Type="Int64" Name="CarStat2" Nullable="true" />
+    <Property Type="Int64" Name="CarStat4" Nullable="true" />
+    <Property Type="Int64" Name="CarStat9" Nullable="true" />
+    <Property Type="Int64" Name="CarStat12" Nullable="true" />
+    <Property Type="Int64" Name="CarStat14" Nullable="true" />
+    <Property Type="Int64" Name="TotalAllCarStat" Nullable="true" />
+    <Property Type="Int64" Name="RowNum" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="procDAB_Result">
+    <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="SERIAL_" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="STOCK_" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="ORDER_" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="NEW_USED" Nullable="true" MaxLength="1" />
+    <Property Type="Int32" Name="YEAR" Nullable="true" />
+    <Property Type="String" Name="MAKE" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="MAKE_PREFIX" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="ACCOUNTING_MAKE" Nullable="true" MaxLength="2" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,2208 @@
+﻿@model WebApplication6.Models.Inventory
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_BRANCH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_BRANCH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERIAL_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERIAL_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STOCK_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NEW_USED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NEW_USED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YEAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YEAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKE_PREFIX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKE_PREFIX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACCOUNTING_MAKE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACCOUNTING_MAKE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARLINE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARLINE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARLINE_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARLINE_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECEIVED_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECEIVED_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAYS_IN_STOCK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAYS_IN_STOCK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MSRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MSRP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BASE_MSRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BASE_MSRP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INVOICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INVOICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INVEN_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INVEN_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INTERNET_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INTERNET_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODED_COST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODED_COST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FREIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FREIGHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STAT_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STAT_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_LOG_DATE_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_LOG_DATE_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_LOG_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_LOG_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOCATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOCATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ODOM_READING)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ODOM_READING)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXT_COLOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXT_COLOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXT_CLR_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXT_CLR_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INT_COLOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INT_COLOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INT_CLR_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INT_CLR_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEMO1_CAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEMO1_CAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEMO2_CAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEMO2_CAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MPG_LOW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MPG_LOW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MPG_HIGH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MPG_HIGH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUEL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUEL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FUEL_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FUEL_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BODYSIZE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BODYSIZE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BODYSIZE_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BODYSIZE_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORD_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORD_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORD_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORD_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_NO_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_NO_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_NO_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_NO_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACCENT_CLR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACCENT_CLR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BEST_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BEST_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BODY_CD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BODY_CD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUILD_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUILD_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BUILD_NAME_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BUILD_NAME_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CARLINE_CODE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CARLINE_CODE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHASSIS_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHASSIS_NO_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_CODE_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_CODE_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_DESC_41)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_DESC_41)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_GENERIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_GENERIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COST_PACK_LB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COST_PACK_LB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATE_DATE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATE_DATE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_BY_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_BY_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_ADDED_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_ADDED_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_SOLD_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_SOLD_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAYS_IN_STK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAYS_IN_STK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEMO_DATE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEMO_DATE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEMO_MIL_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEMO_MIL_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_FLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_FLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_NO_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_NO_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DRIVE_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DRIVE_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENG_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENG_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_ARRIVAL_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_ARRIVAL_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EXT_CLR_CD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EXT_CLR_CD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HBK_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HBK_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IN_STOCK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IN_STOCK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INT_CLR_CD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INT_CLR_CD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INV_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INV_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INV_AMT_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INV_AMT_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INV_AMT_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INV_AMT_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JRNL_PURCH_DATE_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JRNL_PURCH_DATE_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEYCHIP_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEYCHIP_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEYLESS_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEYLESS_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LABEL_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LABEL_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAINT_CODE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAINT_CODE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDL_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDL_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDL_NO_10)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDL_NO_10)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MDL_YR_CD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MDL_YR_CD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MFR_SCHED_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MFR_SCHED_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MFR_STAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MFR_STAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MFR_STAT_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MFR_STAT_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MIL_PER_GAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIL_PER_GAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_STATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_STATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_TIME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_TIME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_USER_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_USER_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NO_OF_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NO_OF_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ON_ORDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ON_ORDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDR_PROC_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDR_PROC_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDR_PRTY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDR_PRTY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PKG_CODE_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PKG_CODE_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PKG_CODE1_CAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PKG_CODE1_CAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PURCH_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PURCH_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PURCH_FROM_NAME_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PURCH_FROM_NAME_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PURCH_REF_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PURCH_REF_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PWRSTR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PWRSTR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECALL_DATE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECALL_DATE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECALL_DATE4_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECALL_DATE4_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ROOF_CLR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ROOF_CLR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RPG_NO_OF_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RPG_NO_OF_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SELLER_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SELLER_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLS_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLS_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLS_COST)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLS_COST)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SLS_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLS_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STK_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STK_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STK_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STK_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STKNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STKNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STYLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STYLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STYLE_LONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STYLE_LONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SVC_DAYS_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SVC_DAYS_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SYS_DATE_CAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SYS_DATE_CAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOT_DLR_ACC_COST_LB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOT_DLR_ACC_COST_LB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TOTAL_OPTION_INV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TOTAL_OPTION_INV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRAN_FLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRAN_FLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRANSM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRANSM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TRIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TRIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TURBO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TURBO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_TRANSM_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEH_TRANSM_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEH_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEND_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEND_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEND_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEND_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WEIGHT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WEIGHT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WHEEL_BASE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WHEEL_BASE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FLAG_NEW_USED_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FLAG_NEW_USED_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKE_PFX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKE_PFX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DESC1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DESC1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RCPT_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RCPT_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DAYS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAYS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIST_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIST_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODED_COST2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODED_COST2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LIC_FEE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LIC_FEE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_EXT_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_EXT_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_EXT_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_EXT_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_INT_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_INT_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_INT_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_INT_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BODYSIZE_DESC_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BODYSIZE_DESC_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACC_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACC_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACC_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACC_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACCT_PFX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACCT_PFX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ACTVY_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ACTVY_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ALARM_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ALARM_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BOOK_VALUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BOOK_VALUE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CAMP_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CAMP_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CATEG_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CATEG_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CERT_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CERT_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CERTIFED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CERTIFED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHASSIS_NO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHASSIS_NO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLASS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLASS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_CD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_CD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CLR_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CLR_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_NUM_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_NUM_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COLOR_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COLOR_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMMENTS_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMMENTS_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COST_PACK_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COST_PACK_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEALER_CODE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEALER_CODE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_ACC_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_ACC_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_ACC_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_ACC_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_ACC_CODE_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_ACC_CODE_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_ACC_REF_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_ACC_REF_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DLR_ACC_RTL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DLR_ACC_RTL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DMV_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DMV_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ENTRY_INFO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ENTRY_INFO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACT_ACC_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACT_ACC_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACT_ACC_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACT_ACC_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACT_ACC_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACT_ACC_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FACT_ACC_RTL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FACT_ACC_RTL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FROM_TO_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FROM_TO_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IN_SERV_DATE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IN_SERV_DATE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INIT_RO_DATE_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INIT_RO_DATE_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JRNL_PFX_UVP_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JRNL_PFX_UVP_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KBB_TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KBB_TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_N)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_N)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_N_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_N_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KEY_N_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KEY_N_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE1_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_CODE1_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE2_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_CODE2_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_CODE3_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_CODE3_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE1_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_VALUE1_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE2_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_VALUE2_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SECOND_BOOK_VALUE3_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SECOND_BOOK_VALUE3_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_1_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_1_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_10_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_10_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_11_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_11_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_12_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_12_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_13_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_13_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_14_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_14_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_15_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_15_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_16_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_16_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_17_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_17_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_18_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_18_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_19_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_19_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_2_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_2_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_20_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_20_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_21_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_21_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_22_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_22_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_23_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_23_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_24_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_24_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_25_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_25_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_26_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_26_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_27_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_27_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_28_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_28_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_29_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_29_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_3_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_3_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_30_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_30_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_31_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_31_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_32_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_32_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_33_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_33_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_34_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_34_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_35_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_35_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_36_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_36_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_37_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_37_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_38_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_38_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_39_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_39_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_4_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_4_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_40_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_40_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_41_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_41_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_42_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_42_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_43_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_43_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_44_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_44_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_45_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_45_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_46_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_46_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_47_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_47_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_48_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_48_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_49_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_49_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_5_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_5_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_50_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_50_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_51_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_51_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_52_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_52_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_53_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_53_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_54_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_54_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_55_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_55_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_56_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_56_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_57_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_57_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_58_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_58_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_59_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_59_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_6_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_6_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_60_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_60_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_7_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_7_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_8_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_8_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SER_UDF_9_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SER_UDF_9_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERSEQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERSEQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STANDARD_STYLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STANDARD_STYLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STANDARDIZED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STANDARDIZED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STOCK_NO2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK_NO2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STORE_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STORE_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STYLE_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STYLE_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SYS_DATE_ALPHA_CAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SYS_DATE_ALPHA_CAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TI_PAYOFF_AMT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TI_PAYOFF_AMT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TI_STK_NO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TI_STK_NO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TURBO_DV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TURBO_DV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USED_GRP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USED_GRP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.USED_VEH_PUR_PFX_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USED_VEH_PUR_PFX_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UVP_JNL_PFX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UVP_JNL_PFX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VDC_VIN_REC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VDC_VIN_REC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VEH_TYPE_DR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VEH_TYPE_DR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VINPATTERN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VINPATTERN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YR_Y4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YR_Y4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDF_DIFFERENCE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDF_DIFFERENCE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UDF_IRC_FLAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UDF_IRC_FLAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IMPORT_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IMPORT_DATE)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
