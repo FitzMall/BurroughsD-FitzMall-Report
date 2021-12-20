@@ -11,7 +11,7 @@ namespace WebApplication6.Models
 {
     public class InventoriesController : Controller
     {
-        private InventoryEntities db = new InventoryEntities();
+        private InventoryEntities1 db = new InventoryEntities1();
 
         // GET: Inventories
         public ActionResult Index()
@@ -40,16 +40,180 @@ namespace WebApplication6.Models
             return View();
         }
 
-        // GET: ReportInventories/DrillDown/5
-        public ActionResult DrillDown(string StoreBranch, string Location, string Make, int? StatusCode)
+
+        public ActionResult DrillDown_AllLocationsNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
         {
+
+            System.Diagnostics.Debug.WriteLine("Inventories Controller- Getting View DrillDown_AllLocations: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
+
+            // handle nulls
+            Make = ("" + Make);
+            StoreBranch = ("" + StoreBranch);
+            NewOrUsed = ("" + NewOrUsed);
+            if (NewOrUsed == "")
+            {
+                NewOrUsed = "N";  // default to new 
+            }
+
             if (StatusCode > 0)
             {
-                return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == "N"));
+                if ((Make + "") == "")
+                {
+                    return View(db.Inventories.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                }
+                else
+                {
+                    return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                }
             }
             else
             {
-                return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == "N"));
+                if (StoreBranch == "")
+                {
+
+                    return View(db.Inventories.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                }
+                else
+                {
+                    return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                }
+            }
+        }
+
+        public ActionResult DrillDown_AllLocationsUsed(int? StatusCode, string NewOrUsed)
+        {
+
+            System.Diagnostics.Debug.WriteLine("Inventories Controller- Getting View DrillDown_AllLocations: Status: " + StatusCode + " " + NewOrUsed);
+
+            // handle nulls
+            NewOrUsed = ("" + NewOrUsed);
+            if (NewOrUsed == "")
+            {
+                NewOrUsed = "U";  // default to used 
+            }
+
+            if (StatusCode > 0)
+            {
+                    return View(db.Inventories.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+            }
+            else
+            {
+                    return View(db.Inventories.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+            }
+        }
+        public ActionResult DrillDown_AllStatusNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
+        {
+
+
+            System.Diagnostics.Debug.WriteLine("Inventories Controller- Getting DrillDown_AllStatusNew View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
+
+
+            // handle nulls
+            Make = ("" + Make);
+            StoreBranch = ("" + StoreBranch);
+            NewOrUsed = ("" + NewOrUsed);
+            if (NewOrUsed == "")
+            {
+                NewOrUsed = "N";  // default to new 
+            }
+
+            if (StatusCode > 0)
+            {
+                if ((Make + "") == "")
+                {
+                    return View(db.Inventories.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                }
+                else
+                {
+                    return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                }
+            }
+            else
+            {
+                if (StoreBranch == "")
+                {
+
+                    return View(db.Inventories.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                }
+                else
+                {
+                    return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                }
+            }
+        }
+
+
+
+        // GET: ReportInventories/DrillDown/5
+        public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
+        {
+            // actually called by NotOnFitzMalls controller
+            // status code = 0 means all status
+            //
+
+            System.Diagnostics.Debug.WriteLine("Inventories Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
+
+
+            // handle nulls
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
+            StoreBranch = ("" + StoreBranch);
+            NewOrUsed = ("" + NewOrUsed);
+            if (NewOrUsed == "")
+            {
+                NewOrUsed = "N";  // default to new 
+            }
+
+            if (StatusCode > 0)
+            {
+                if (Make == "ALL")
+                {
+                    return View(db.Inventories.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch));
+                }
+                else
+                {
+                    return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                }
+            }
+            else
+            {
+                if (StoreBranch == "")
+                {
+                    if (NewOrUsed == "N")
+                    {
+                        return View(db.Inventories.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                    } else
+                    {
+                        return View(db.Inventories.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                    }
+                }
+                else
+                {
+                    if (Make == "ALL")
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            return View(db.Inventories.ToList().Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                        } else
+                        {
+                            return View(db.Inventories.ToList().Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                        }
+
+                    }
+                    else
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                        } else
+                        {
+                            return View(db.Inventories.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                        }
+                    }
+                }
             }
         }
 

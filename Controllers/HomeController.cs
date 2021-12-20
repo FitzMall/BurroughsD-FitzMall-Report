@@ -10,6 +10,7 @@ namespace WebApplication6.Controllers
     {
         public ActionResult Index()
         {
+            
             return View();
         }
 

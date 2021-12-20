@@ -16,13 +16,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Fitzgerald Auto", "Inventory_Report", "ReportInventories", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Fitzgerald Auto", "InventoryNotOnFitzMallReport", "InventoryNotOnFitzMall_Report", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Report", "Inventory_Report", "ReportInventories")</li>
-                    <li>@Html.ActionLink("Raw File", "Index", "Inventories")</li>
-                    <li>@Html.ActionLink("Report Raw File", "Index", "ReportInventories")</li>
+                    <li>@Html.ActionLink("NEW Cars That Should Be On Fitzmall", "InventoryNotOnFitzMallReport", "InventoryNotOnFitzMall_Report")</li>
+                    <li>@Html.ActionLink("USED Cars That Should Be On Fitzmall", "InventoryNotOnFitzMall_USEDReport", "InventoryNotOnFitzMall_USED_Report")</li>
                 </ul>
             </div>
         </div>

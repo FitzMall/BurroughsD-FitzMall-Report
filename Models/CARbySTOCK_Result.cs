@@ -193,7 +193,7 @@ namespace WebApplication6.Models
         public string YR_Y4 { get; set; }
         public Nullable<decimal> UDF_DIFFERENCE { get; set; }
         public string UDF_IRC_FLAG { get; set; }
-        public System.DateTime IMPORT_DATE { get; set; }
+        public Nullable<System.DateTime> IMPORT_DATE { get; set; }
         public int Id_Primary { get; set; }
     }
 }

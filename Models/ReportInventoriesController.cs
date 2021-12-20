@@ -13,7 +13,7 @@ namespace WebApplication6.Models
 
     public class ReportInventoriesController : Controller
     {
-        private InventoryEntities db = new InventoryEntities();
+        private InventoryEntities1 db = new InventoryEntities1();
 
         // GET: ReportInventories
         public ActionResult Index()
@@ -43,7 +43,7 @@ namespace WebApplication6.Models
         }
 
         // GET: ReportInventories/DrillDown/5
-        public ActionResult DrillDown(string StoreBranch, string Location, string Make, string StatusCode)
+        public ActionResult DrillDown(string StoreBranch, string Location, string Make, string StatusCode, bool OnFitzMall)
         {
             //            return View(db.ReportInventories.ToList().Where(d => d.MAKE == Make && d.STOREBRANCH == StoreBranch));
             int parStatusCode;
@@ -56,7 +56,7 @@ namespace WebApplication6.Models
                     };
 
 
-            return RedirectToAction("DrillDown", "Inventories", new { Make = Make, StoreBranch = StoreBranch, StatusCode = parStatusCode });
+            return RedirectToAction("DrillDown", "NotOnFitzMalls", new { Make = Make, StoreBranch = StoreBranch, StatusCode = parStatusCode,  OnFitzMall = true });
 
         }
 

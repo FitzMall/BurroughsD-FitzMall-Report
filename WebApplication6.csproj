@@ -157,19 +157,24 @@
     <Compile Include="Models\InventoryHistory.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\InvSubSet.cs">
+    <Compile Include="Models\InventoryNotOnFitzMall_Report.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InventoryNotOnFitzMall_ReportController.cs" />
+    <Compile Include="Models\NotOnFitzMall.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\procDAB_Result.cs">
-      <DependentUpon>Inventory.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PROC_InventoryReport_Result.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ReportInventoriesController.cs" />
     <Compile Include="Models\ReportInventory.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ReportInventory_OnWeb.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotOnFitzMallsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -183,8 +188,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\Inventory.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Inventory.Context.cs</LastGenOutput>
       <DependentUpon>Inventory.edmx</DependentUpon>
+      <LastGenOutput>Inventory.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Inventory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -193,6 +198,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Views\ReportInventories\Inventory_Report.cshtml" />
     <EntityDeploy Include="Models\Inventory.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Inventory.Designer.cs</LastGenOutput>
@@ -200,7 +206,6 @@
     <Content Include="Models\Inventory.edmx.diagram">
       <DependentUpon>Inventory.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\ReportInventories\Inventory_Report.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -223,21 +228,19 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Inventories\Create.cshtml" />
-    <Content Include="Views\Inventories\Delete.cshtml" />
     <Content Include="Views\Inventories\Details.cshtml" />
-    <Content Include="Views\Inventories\Edit.cshtml" />
     <Content Include="Views\Inventories\Index.cshtml" />
-    <Content Include="Views\ReportInventories\Create.cshtml" />
-    <Content Include="Views\ReportInventories\Delete.cshtml" />
     <Content Include="Views\ReportInventories\Details.cshtml" />
-    <Content Include="Views\ReportInventories\Edit.cshtml" />
     <Content Include="Views\ReportInventories\Index.cshtml" />
     <Content Include="Views\ReportInventories\DrillDown.cshtml" />
     <Content Include="Views\Inventories\DrillDown.cshtml" />
+    <Content Include="Views\InventoryNotOnFitzMall_Report\Details.cshtml" />
+    <Content Include="Views\InventoryNotOnFitzMall_Report\Index.cshtml" />
+    <Content Include="Views\NotOnFitzMalls\Details.cshtml" />
+    <Content Include="Views\NotOnFitzMalls\Index.cshtml" />
+    <Content Include="Views\NotOnFitzMalls\DrillDown.cshtml" />
+    <Content Include="Views\InventoryNotOnFitzMall_Report\InventoryNotOnFitzMallReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

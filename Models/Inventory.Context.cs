@@ -15,10 +15,10 @@ namespace WebApplication6.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class InventoryEntities : DbContext
+    public partial class InventoryEntities1 : DbContext
     {
-        public InventoryEntities()
-            : base("name=InventoryEntities")
+        public InventoryEntities1()
+            : base("name=InventoryEntities1")
         {
         }
     
@@ -28,9 +28,14 @@ namespace WebApplication6.Models
         }
     
         public virtual DbSet<Inventory> Inventories { get; set; }
-        public virtual DbSet<InvSubSet> InvSubSets { get; set; }
-        public virtual DbSet<InventoryHistory> InventoryHistories { get; set; }
         public virtual DbSet<ReportInventory> ReportInventories { get; set; }
+        public virtual DbSet<InventoryHistory> InventoryHistories { get; set; }
+        public virtual DbSet<InventoryNotOnFitzMall_Report> InventoryNotOnFitzMall_Report { get; set; }
+        public virtual DbSet<InventoryNotOnFitzMall_USED_Report> InventoryNotOnFitzMall_USED_Report { get; set; }
+        public virtual DbSet<DefaultLocationsByStoreBranch_NewVehicles> DefaultLocationsByStoreBranch_NewVehicles { get; set; }
+        public virtual DbSet<NotOnFitzMall> NotOnFitzMalls { get; set; }
+        public virtual DbSet<NotOnFitzMall_USED> NotOnFitzMall_USED { get; set; }
+        public virtual DbSet<InventoryReportDrillDown> InventoryReportDrillDowns { get; set; }
     
         public virtual ObjectResult<CARbySTOCK_Result> CARbySTOCK(string sTOCK)
         {
@@ -46,9 +51,14 @@ namespace WebApplication6.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Inventory_ReBuild");
         }
     
-        public virtual ObjectResult<PROC_InventoryReport_Result> PROC_InventoryReport()
+        public virtual int PROC_InventoryNotOnFitzMallReport()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<PROC_InventoryReport_Result>("PROC_InventoryReport");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_InventoryNotOnFitzMallReport");
+        }
+    
+        public virtual int PROC_USEDInventoryNotOnFitzMallReport()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PROC_USEDInventoryNotOnFitzMallReport");
         }
     
         public virtual ObjectResult<procDAB_Result> procDAB()

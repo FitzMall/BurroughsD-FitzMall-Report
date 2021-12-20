@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\Models\Inventory.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\burroughsd\Documents\GitHub\Report-Not-On-Fitzmall\CarsNotOnFitzMall\Models\Inventory.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

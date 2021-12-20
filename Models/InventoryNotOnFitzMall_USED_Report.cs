@@ -10,20 +10,18 @@
 namespace WebApplication6.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class PROC_InventoryReport_Result
+    public partial class InventoryNotOnFitzMall_USED_Report
     {
-        public string NEWUSED { get; set; }
         public string STOREBRANCH { get; set; }
         public string LOCATION { get; set; }
-        public string MAKE { get; set; }
-        public Nullable<long> CarStat1 { get; set; }
-        public Nullable<long> CarStat2 { get; set; }
-        public Nullable<long> CarStat4 { get; set; }
-        public Nullable<long> CarStat9 { get; set; }
-        public Nullable<long> CarStat12 { get; set; }
-        public Nullable<long> CarStat14 { get; set; }
-        public Nullable<long> TotalAllCarStat { get; set; }
-        public Nullable<long> RowNum { get; set; }
+        public Nullable<int> ShouldBeOnWebSite_1 { get; set; }
+        public Nullable<int> ShouldBeOnWebSite_2 { get; set; }
+        public Nullable<int> FM_TotalAllCarStat { get; set; }
+        public Nullable<int> ActuallyOnWebSite_1 { get; set; }
+        public Nullable<int> ActuallyOnWebSite_2 { get; set; }
+        public Nullable<int> ActuallyOnWebSite_TotalAllCarStat { get; set; }
+        public int Id_Primary { get; set; }
     }
 }
