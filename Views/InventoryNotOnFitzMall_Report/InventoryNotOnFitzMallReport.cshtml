@@ -25,6 +25,7 @@
 
 }
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css">
+<link href="\Content\Site.css" rel="stylesheet" type="text/css">
 
 <h2>NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
@@ -111,13 +112,13 @@
                 <td>
 
                     @{if (prevLocation != item.LOCATION)
-                        { 
+                        {
                             @Html.DisplayFor(modelItem => item.LOCATION)
                         }
 
-                                prevLocation = item.LOCATION;
-                            }
-                        </td>
+                        prevLocation = item.LOCATION;
+                    }
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MAKE)
                 </td>
@@ -140,19 +141,19 @@
 
                 </td>
                 <td>
-                @{ if (item.ActuallyOnWebSite_2.Value == 0)
-                    {
-                        @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_2.Value)
+                    @{ if (item.ActuallyOnWebSite_2.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_2.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2", OnFitzMall = "1" })
+                        }
                     }
-                    else
-                    {
-                        @Html.ActionLink("" + item.ActuallyOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2", OnFitzMall = "1" })
-                    }
-                }
 
-                @{
-                    total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
-                }
+                    @{
+                        total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
+                    }
                 </td>
                 <td>
                     @{ if (item.ActuallyOnWebSite_4.Value == 0)

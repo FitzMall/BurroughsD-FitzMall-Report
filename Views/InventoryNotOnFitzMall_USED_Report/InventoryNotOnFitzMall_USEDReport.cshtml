@@ -17,6 +17,7 @@
 
 }
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css">
+<link href="\Content\Site.css" rel="stylesheet" type="text/css">
 
 <h2>USED FitzMall.com SBOF Report @DateTime.Now.ToShortDateString()</h2>
 
@@ -42,11 +43,11 @@
             <th>
                 2
             </th>
- 
+
             <th>
                 Totals
             </th>
-        
+
             <th>
                 1
             </th>
@@ -75,9 +76,9 @@
                         {
                             @Html.DisplayFor(modelItem => item.LOCATION)
                         }
-                            prevLocation = item.LOCATION;
-                        }
-                    </td>
+                        prevLocation = item.LOCATION;
+                    }
+                </td>
                 <td>
 
                     @{ if ((item.ActuallyOnWebSite_1.Value == 0) ^ (bPrintFormat == false))
@@ -127,7 +128,7 @@
                     @{
                         total_ActuallyOnWebSite += item.ActuallyOnWebSite_TotalAllCarStat.Value;
                     }
-                                       
+
                 </td>
                 <td>
                     @{ if (item.ShouldBeOnWebSite_1.Value == 0)
@@ -161,7 +162,7 @@
                         total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
                     }
                 </td>
-             
+
                 <td>
                     @{ if (item.FM_TotalAllCarStat.Value == 0)
                         {
@@ -169,7 +170,7 @@
                         }
                         else
                         {
-                            @Html.ActionLink("" + item.FM_TotalAllCarStat.Value, "DrillDown_AllStatus", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION})
+                            @Html.ActionLink("" + item.FM_TotalAllCarStat.Value, "DrillDown_AllStatus", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION })
                         }
                     }
 
@@ -196,7 +197,7 @@
                 @Html.ActionLink("" + total_ActuallyOnWebSite_2, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "1" })
 
             </td>
-                <td>
+            <td>
                 @Html.ActionLink("" + total_ActuallyOnWebSite, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "1" })
             </td>
             <td>
@@ -206,7 +207,7 @@
             <td>
                 @Html.ActionLink("" + (total_ShouldBeOnWebSite_2), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "" })
             </td>
-               <td>
+            <td>
                 @Html.ActionLink("" + (total_ShouldBeOnWebSite), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "" })
             </td>
 

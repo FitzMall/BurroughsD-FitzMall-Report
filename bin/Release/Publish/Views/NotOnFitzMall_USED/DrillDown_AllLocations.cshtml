@@ -1,0 +1,96 @@
+﻿@model IEnumerable<WebApplication6.Models.NotOnFitzMall_USED>
+
+@{
+    int counter = 0;
+}
+<link href="\Content\tableStyle.css" rel="stylesheet" type="text/css" sizes="">
+
+<h2>@ViewBag.Title</h2>
+<input type="button" value="Back To List" onclick="history.back()">
+
+<table class="table" width=30 % height=30 align=left>
+
+    <tr>
+        <th>
+            Location
+        </th>
+        <th>
+            Status#
+        </th>
+        <th>
+            VIN
+        </th>
+        <th>
+            Stock#
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Color
+        </th>
+        <th>
+            Chrome
+        </th>
+        <th>
+            FitzWay Low Price
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        counter++;
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LOCATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STAT_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SERIAL_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STOCK_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CARLINE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLR_DESC)
+        </td>
+        <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver;" </text> }>
+            @if (item.ChromeStyleID.Value > 0)
+            {
+                @Html.DisplayFor(modelItem => item.ChromeStyleID)
+            }
+            else
+            {
+                @("------");
+            }
+        </td>
+        <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
+            @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+    </tr>
+
+    }
+
+    @counter
+
+
+</table>
+

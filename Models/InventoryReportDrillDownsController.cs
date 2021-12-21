@@ -208,6 +208,7 @@ namespace WebApplication6.Views
 
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
 
+                ViewBag.PriceTitle = "MSRP";
 
             // handle nulls
             Make = ("" + Make);
@@ -227,6 +228,7 @@ namespace WebApplication6.Views
             if (NewOrUsed == "U")
             {
                 NewOrUsedTitle = "USED";
+                ViewBag.PriceTitle = "FitzWay Low Price";
             }
 
             ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
