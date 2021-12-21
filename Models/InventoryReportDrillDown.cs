@@ -16,6 +16,7 @@ namespace WebApplication6.Models
     {
         public string STORE_BRANCH { get; set; }
         public string SERIAL_ { get; set; }
+        public string FitzWayVIN { get; set; }
         public string STOCK_ { get; set; }
         public string ORDER_ { get; set; }
         public string NEW_USED { get; set; }

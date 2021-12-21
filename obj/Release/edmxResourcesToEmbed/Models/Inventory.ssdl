@@ -619,14 +619,13 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="int" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="InventoryReportDrillDown">
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
     <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
     <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+    <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
     <Property Name="STOCK#" Type="varchar" MaxLength="15" />
     <Property Name="ORDER#" Type="varchar" MaxLength="10" />
     <Property Name="NEW USED" Type="varchar" MaxLength="1" />
@@ -670,6 +669,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
     </Key>
     <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
     <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+    <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
     <Property Name="STOCK#" Type="varchar" MaxLength="15" />
     <Property Name="ORDER#" Type="varchar" MaxLength="10" />
     <Property Name="NEW USED" Type="varchar" MaxLength="1" />
@@ -713,6 +713,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
     </Key>
     <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
     <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+    <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
     <Property Name="STOCK#" Type="varchar" MaxLength="15" />
     <Property Name="ORDER#" Type="varchar" MaxLength="10" />
     <Property Name="NEW USED" Type="varchar" MaxLength="1" />
@@ -749,23 +750,12 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
-  <EntityType Name="ReportInventory">
-    <Key>
-      <PropertyRef Name="Id_Primary" />
-    </Key>
-    <Property Name="NEWUSED" Type="varchar" MaxLength="1" Nullable="false" />
-    <Property Name="STOREBRANCH" Type="varchar" MaxLength="5" />
-    <Property Name="LOCATION" Type="nchar" MaxLength="10" />
-    <Property Name="MAKE" Type="varchar" MaxLength="25" />
-    <Property Name="CarStat1" Type="int" />
-    <Property Name="CarStat2" Type="int" />
-    <Property Name="CarStat4" Type="int" />
-    <Property Name="CarStat9" Type="int" />
-    <Property Name="CarStat12" Type="int" />
-    <Property Name="CarStat14" Type="int" />
-    <Property Name="TotalAllCarStat" Type="int" />
-    <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Inventory.dbo.VINsNotOnFitzMall' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VINsNotOnFitzMall">
+          <Property Name="Vin" Type="varchar" MaxLength="20" />
+          <Property Name="VehicleStatus" Type="int" />
+        </EntityType>-->
   <Function Name="CARbySTOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="STOCK" Type="char" Mode="In" />
   </Function>
@@ -783,9 +773,9 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
     <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="Self.InventoryNotOnFitzMall_Report" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="Self.InventoryNotOnFitzMall_USED_Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ReportInventory" EntityType="Self.ReportInventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
@@ -1070,48 +1060,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
     [InventoryHistory].[IMPORT_DATE] AS [IMPORT_DATE], 
     [InventoryHistory].[Id_Primary] AS [Id_Primary]
     FROM [dbo].[InventoryHistory] AS [InventoryHistory]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [InventoryReportDrillDown].[STORE BRANCH] AS [STORE BRANCH], 
-    [InventoryReportDrillDown].[SERIAL#] AS [SERIAL#], 
-    [InventoryReportDrillDown].[STOCK#] AS [STOCK#], 
-    [InventoryReportDrillDown].[ORDER#] AS [ORDER#], 
-    [InventoryReportDrillDown].[NEW USED] AS [NEW USED], 
-    [InventoryReportDrillDown].[ChromeStyleID] AS [ChromeStyleID], 
-    [InventoryReportDrillDown].[YEAR] AS [YEAR], 
-    [InventoryReportDrillDown].[MAKE] AS [MAKE], 
-    [InventoryReportDrillDown].[MAKE_PREFIX] AS [MAKE_PREFIX], 
-    [InventoryReportDrillDown].[CARLINE] AS [CARLINE], 
-    [InventoryReportDrillDown].[CARLINE_CODE] AS [CARLINE_CODE], 
-    [InventoryReportDrillDown].[DESC] AS [DESC], 
-    [InventoryReportDrillDown].[RECEIVED_DATE] AS [RECEIVED_DATE], 
-    [InventoryReportDrillDown].[DAYS_IN_STOCK] AS [DAYS_IN_STOCK], 
-    [InventoryReportDrillDown].[MSRP] AS [MSRP], 
-    [InventoryReportDrillDown].[BASE-MSRP] AS [BASE-MSRP], 
-    [InventoryReportDrillDown].[INVOICE] AS [INVOICE], 
-    [InventoryReportDrillDown].[INVEN-AMT] AS [INVEN-AMT], 
-    [InventoryReportDrillDown].[INTERNET-PRICE] AS [INTERNET-PRICE], 
-    [InventoryReportDrillDown].[CODED-COST] AS [CODED-COST], 
-    [InventoryReportDrillDown].[FREIGHT] AS [FREIGHT], 
-    [InventoryReportDrillDown].[STAT-CODE] AS [STAT-CODE], 
-    [InventoryReportDrillDown].[LOCATION] AS [LOCATION], 
-    [InventoryReportDrillDown].[EXT-COLOR] AS [EXT-COLOR], 
-    [InventoryReportDrillDown].[EXT-CLR-DESC] AS [EXT-CLR-DESC], 
-    [InventoryReportDrillDown].[INT-COLOR] AS [INT-COLOR], 
-    [InventoryReportDrillDown].[INT-CLR-DESC] AS [INT-CLR-DESC], 
-    [InventoryReportDrillDown].[CARLINE-CODE-DV] AS [CARLINE-CODE-DV], 
-    [InventoryReportDrillDown].[CREATE-DATE-DV] AS [CREATE-DATE-DV], 
-    [InventoryReportDrillDown].[CREATED-BY-DV] AS [CREATED-BY-DV], 
-    [InventoryReportDrillDown].[DATE-ADDED-DR] AS [DATE-ADDED-DR], 
-    [InventoryReportDrillDown].[EXT-CLR-CD] AS [EXT-CLR-CD], 
-    [InventoryReportDrillDown].[IN-STOCK] AS [IN-STOCK], 
-    [InventoryReportDrillDown].[INV-AMT] AS [INV-AMT], 
-    [InventoryReportDrillDown].[MDL-NO] AS [MDL-NO], 
-    [InventoryReportDrillDown].[CLR-DESC] AS [CLR-DESC], 
-    [InventoryReportDrillDown].[COLOR_DESC] AS [COLOR_DESC], 
-    [InventoryReportDrillDown].[Id_Primary] AS [Id_Primary]
-    FROM [dbo].[InventoryReportDrillDown] AS [InventoryReportDrillDown]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

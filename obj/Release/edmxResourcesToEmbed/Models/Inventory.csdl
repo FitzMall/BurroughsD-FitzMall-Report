@@ -568,13 +568,13 @@
     <FunctionImport Name="PROC_InventoryNotOnFitzMallReport" />
     <FunctionImport Name="PROC_USEDInventoryNotOnFitzMallReport" />
     <FunctionImport Name="procDAB" ReturnType="Collection(InventoryModel.procDAB_Result)" />
-    <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_Report" />
     <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
+    <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
     <EntitySet Name="ReportInventories" EntityType="InventoryModel.ReportInventory" />
     <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
     <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
-    <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
+    <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_Report" />
   </EntityContainer>
   <ComplexType Name="CARbySTOCK_Result">
     <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -771,29 +771,6 @@
     <Property Type="String" Name="MAKE_PREFIX" Nullable="true" MaxLength="3" />
     <Property Type="String" Name="ACCOUNTING_MAKE" Nullable="true" MaxLength="2" />
   </ComplexType>
-  <EntityType Name="InventoryNotOnFitzMall_Report">
-    <Key>
-      <PropertyRef Name="Id_Primary" />
-    </Key>
-    <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_4" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_9" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_12" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_14" Type="Int32" />
-    <Property Name="FM_TotalAllCarStat" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_1" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_2" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_4" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_9" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_12" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_14" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
-    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
   <EntityType Name="InventoryNotOnFitzMall_USED_Report">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -808,12 +785,57 @@
     <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
+  <EntityType Name="NotOnFitzMall">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ChromeStyleID" Type="Int32" />
+    <Property Name="YEAR" Type="Int32" />
+    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
+    <Property Name="DAYS_IN_STOCK" Type="Int32" />
+    <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="STAT_CODE" Type="Int32" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
+    <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
+    <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="IN_STOCK" Type="Int32" />
+    <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
   <EntityType Name="NotOnFitzMall_USED">
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
     <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
     <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
@@ -881,6 +903,7 @@
     </Key>
     <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
     <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
@@ -918,47 +941,27 @@
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
-  <EntityType Name="NotOnFitzMall">
+  <EntityType Name="InventoryNotOnFitzMall_Report">
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="ChromeStyleID" Type="Int32" />
-    <Property Name="YEAR" Type="Int32" />
-    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-    <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
-    <Property Name="DAYS_IN_STOCK" Type="Int32" />
-    <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="STAT_CODE" Type="Int32" />
+    <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
-    <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
-    <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-    <Property Name="IN_STOCK" Type="Int32" />
-    <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_4" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_9" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_12" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_14" Type="Int32" />
+    <Property Name="FM_TotalAllCarStat" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_1" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_2" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_4" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_9" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_12" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_14" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>
