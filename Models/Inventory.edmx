@@ -1402,23 +1402,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
           <Property Name="IMPORT_DATE" Type="DateTime" Precision="0" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="ReportInventory">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="NEWUSED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="CarStat1" Type="Int32" />
-          <Property Name="CarStat2" Type="Int32" />
-          <Property Name="CarStat4" Type="Int32" />
-          <Property Name="CarStat9" Type="Int32" />
-          <Property Name="CarStat12" Type="Int32" />
-          <Property Name="CarStat14" Type="Int32" />
-          <Property Name="TotalAllCarStat" Type="Int32" />
-          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
         <EntityType Name="InventoryHistory">
           <Key>
             <PropertyRef Name="Id_Primary" />
@@ -1700,7 +1683,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
         </EntityType>
         <EntityContainer Name="InventoryEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Inventories" EntityType="Self.Inventory" />
-          <EntitySet Name="ReportInventories" EntityType="Self.ReportInventory" />
           <EntitySet Name="InventoryHistories" EntityType="Self.InventoryHistory" />
           <FunctionImport Name="CARbySTOCK" ReturnType="Collection(InventoryModel.CARbySTOCK_Result)">
           <Parameter Name="STOCK" Mode="In" Type="String" />
@@ -1711,11 +1693,12 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
           <FunctionImport Name="procDAB" ReturnType="Collection(InventoryModel.procDAB_Result)" />
           <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_Report" />
           <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
-          <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
-          <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
           <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
+          <EntitySet Name="ReportInventories" EntityType="InventoryModel.ReportInventory" />
+          <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
           <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
-        </EntityContainer>
+          <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
+          </EntityContainer>
         <ComplexType Name="CARbySTOCK_Result">
           <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
           <Property Type="String" Name="SERIAL_" Nullable="true" MaxLength="20" />
@@ -1948,57 +1931,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
           <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="DEFAULT_LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="NotOnFitzMall">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="ChromeStyleID" Type="Int32" />
-          <Property Name="YEAR" Type="Int32" />
-          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
-          <Property Name="DAYS_IN_STOCK" Type="Int32" />
-          <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="STAT_CODE" Type="Int32" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
-          <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
-          <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="IN_STOCK" Type="Int32" />
-          <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
         <EntityType Name="NotOnFitzMall_USED">
           <Key>
             <PropertyRef Name="Id_Primary" />
@@ -2040,6 +1972,31 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
           <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ReportInventory">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="NEWUSED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CarStat1" Type="Int32" />
+          <Property Name="CarStat2" Type="Int32" />
+          <Property Name="CarStat4" Type="Int32" />
+          <Property Name="CarStat9" Type="Int32" />
+          <Property Name="CarStat12" Type="Int32" />
+          <Property Name="CarStat14" Type="Int32" />
+          <Property Name="TotalAllCarStat" Type="Int32" />
+          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="DEFAULT_LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="InventoryReportDrillDown">
           <Key>
@@ -2084,7 +2041,50 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
           <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-      </Schema>
+        <EntityType Name="NotOnFitzMall">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ChromeStyleID" Type="Int32" />
+          <Property Name="YEAR" Type="Int32" />
+          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DAYS_IN_STOCK" Type="Int32" />
+          <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="STAT_CODE" Type="Int32" />
+          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
+          <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
+          <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="IN_STOCK" Type="Int32" />
+          <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2366,24 +2366,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
                 <ScalarProperty Name="UDF_DIFFERENCE" ColumnName="UDF_DIFFERENCE" />
                 <ScalarProperty Name="UDF_IRC_FLAG" ColumnName="UDF_IRC_FLAG" />
                 <ScalarProperty Name="IMPORT_DATE" ColumnName="IMPORT_DATE" />
-                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReportInventories">
-            <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
-              <MappingFragment StoreEntitySet="ReportInventory">
-                <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
-                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
-                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
-                <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
-                <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
-                <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
-                <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
-                <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
-                <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2913,59 +2895,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DefaultLocationsByStoreBranch_NewVehicles">
-            <EntityTypeMapping TypeName="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles">
-              <MappingFragment StoreEntitySet="DefaultLocationsByStoreBranch_NewVehicles">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DEFAULT_LOCATION" ColumnName="DEFAULT_LOCATION" />
-                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NotOnFitzMalls">
-            <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall">
-              <MappingFragment StoreEntitySet="NotOnFitzMall">
-                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-                <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
-                <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
-                <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
-                <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
-                <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
-                <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
-                <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
-                <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
-                <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
-                <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
-                <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
-                <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
-                <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
-                <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
-                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-                <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
-                <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
-                <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
-                <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
-                <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
-                <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
-                <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
-                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
-                <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
-                <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
-                <ScalarProperty Name="DESC" ColumnName="DESC" />
-                <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
-                <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
-                <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
-                <ScalarProperty Name="ChromeStyleID" ColumnName="ChromeStyleID" />
-                <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
-                <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
-                <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
-                <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
-                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="NotOnFitzMall_USED">
             <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall_USED">
               <MappingFragment StoreEntitySet="NotOnFitzMall_USED">
@@ -3006,6 +2935,33 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
                 <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
                 <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
                 <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportInventories">
+            <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
+              <MappingFragment StoreEntitySet="ReportInventory">
+                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
+                <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
+                <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
+                <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
+                <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
+                <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
+                <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
+                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
+                <ScalarProperty Name="NEWUSED" ColumnName="NEWUSED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultLocationsByStoreBranch_NewVehicles">
+            <EntityTypeMapping TypeName="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles">
+              <MappingFragment StoreEntitySet="DefaultLocationsByStoreBranch_NewVehicles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DEFAULT_LOCATION" ColumnName="DEFAULT_LOCATION" />
+                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3053,7 +3009,51 @@ warning 6002: The table/view 'Inventory.dbo.InventoryReportDrillDown' does not h
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="NotOnFitzMalls">
+            <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall">
+              <MappingFragment StoreEntitySet="NotOnFitzMall">
+                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
+                <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
+                <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
+                <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
+                <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
+                <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
+                <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
+                <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
+                <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
+                <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
+                <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
+                <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
+                <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
+                <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
+                <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
+                <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
+                <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
+                <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
+                <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
+                <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
+                <ScalarProperty Name="MSRP" ColumnName="MSRP" />
+                <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
+                <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
+                <ScalarProperty Name="DESC" ColumnName="DESC" />
+                <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
+                <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
+                <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
+                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="ChromeStyleID" ColumnName="ChromeStyleID" />
+                <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
+                <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
+                <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
+                <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
+                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

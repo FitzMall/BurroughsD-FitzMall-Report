@@ -115,33 +115,7 @@ namespace WebApplication6
                     parStatusCode = Convert.ToInt16(StatusCode);
                 }
             };
-            string ViewBagString = "";
-            string NewOrUsedTitle = "NEW";
-            if (NewOrUsed == "U")
-            {
-                NewOrUsedTitle = "USED";
-            }
-
-            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
-            if (StatusCode.ToString() != "0")
-            {
-                ViewBagString += " " + StatusCode.ToString();
-
-            }
-
-            if (StoreBranch != "")
-            {
-                ViewBagString += " " + StoreBranch;
-
-            }
-
-            if (Make != "")
-            {
-                ViewBagString += " " + Make;
-
-            }
-
-            ViewBag.Title = ViewBagString;
+           
             System.Diagnostics.Debug.WriteLine("NotOnFitzMallsController- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + parStatusCode + " " + NewOrUsed);
 
             // is this a on-fitzmall drilldown or what should be on fitzmall?
@@ -221,20 +195,7 @@ namespace WebApplication6
                     parStatusCode = Convert.ToInt16(StatusCode);
                 }
             };
-            string ViewBagString = "NEW Cars NOT On FitzMall";
-            if (StatusCode.ToString() != "0")
-            {
-                ViewBagString += " " + StatusCode.ToString();
 
-            }
-
-            if (Make != "")
-            {
-                ViewBagString += " " + Make;
-
-            }
-
-            ViewBag.Title = ViewBagString;
             System.Diagnostics.Debug.WriteLine("NotOnFitzMallsController- Getting View:DrillDown_AllLocations Make:" + Make + " Status: " + parStatusCode + " NEW" );
 
                         if (parStatusCode == 0)
@@ -276,23 +237,6 @@ namespace WebApplication6
             {
                 Make = "ALL"; //no make code? - default to ALL
             }
-
-            string ViewBagString = "NEW";
-
-            ViewBagString = "New Cars NOT On FitzMall";
-         
-            if (StoreBranch != "")
-            {
-                ViewBagString += " " + StoreBranch;
-
-            }
-
-            if (Make != "")
-            {
-                ViewBagString += " " + Make;
-                            }
-
-            ViewBag.Title = ViewBagString;
             System.Diagnostics.Debug.WriteLine("NotOnFitzMallsController- Getting View:DrillDown_AllStatus Make:" + Make + " NEW");
 
             System.Diagnostics.Debug.WriteLine("d => d.MAKE == Make ");

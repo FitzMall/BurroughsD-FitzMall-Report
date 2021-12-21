@@ -6,15 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="926509d896ae4658afd65211342c6399" Name="Diagram1" ZoomLevel="11">
         <EntityTypeShape EntityType="InventoryModel.Inventory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InventoryModel.ReportInventory" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InventoryModel.InventoryHistory" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="InventoryModel.InventoryNotOnFitzMall_Report" Width="1.5" PointX="13.375" PointY="5.75" />
-        <EntityTypeShape EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" Width="1.5" PointX="11.375" PointY="0.75" />
-        <EntityTypeShape EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" Width="1.5" PointX="11.375" PointY="11.75" />
-        <EntityTypeShape EntityType="InventoryModel.NotOnFitzMall" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="InventoryModel.NotOnFitzMall_USED" Width="1.5" PointX="5.375" PointY="5.75" />
-        <EntityTypeShape EntityType="InventoryModel.InventoryReportDrillDown" Width="1.5" PointX="13.375" PointY="11.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="InventoryModel.InventoryNotOnFitzMall_Report" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.NotOnFitzMall_USED" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.ReportInventory" Width="1.5" PointX="11.375" PointY="9.75" />
+        <EntityTypeShape EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="InventoryModel.InventoryReportDrillDown" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="InventoryModel.NotOnFitzMall" Width="1.5" PointX="5.375" PointY="4.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
