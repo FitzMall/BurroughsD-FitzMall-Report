@@ -190,10 +190,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/01/2018 11:20:56</publishTime>
     </File>
     <File Include="bin/WebApplication6.dll">
-      <publishTime>12/21/2021 11:10:44</publishTime>
+      <publishTime>12/21/2021 16:13:57</publishTime>
     </File>
     <File Include="bin/WebApplication6.pdb">
-      <publishTime>12/21/2021 11:10:44</publishTime>
+      <publishTime>12/21/2021 16:13:57</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 12:57:34</publishTime>
@@ -247,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Models/Inventory.edmx.diagram">
-      <publishTime>12/21/2021 09:03:50</publishTime>
+      <publishTime>12/21/2021 14:03:19</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -304,7 +304,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 10:22:44</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>12/21/2021 10:36:34</publishTime>
+      <publishTime>12/21/2021 14:31:55</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>12/21/2021 10:37:09</publishTime>
@@ -358,7 +358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/21/2021 10:04:03</publishTime>
+      <publishTime>12/21/2021 16:08:18</publishTime>
     </File>
   </ItemGroup>
 </Project>
