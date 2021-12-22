@@ -9,6 +9,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <_PublishTargetUrl>C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Release\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="bin/0.dll">
+      <publishTime>12/22/2021 13:34:01</publishTime>
+    </File>
+    <File Include="bin/0.pdb">
+      <publishTime>12/22/2021 13:34:01</publishTime>
+    </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
@@ -289,7 +295,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/21/2021 08:32:43</publishTime>
+      <publishTime>12/22/2021 13:28:50</publishTime>
     </File>
     <File Include="Views/Inventories/DrillDown.cshtml">
       <publishTime>12/21/2021 10:28:17</publishTime>
@@ -349,7 +355,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/21/2021 08:32:43</publishTime>
+      <publishTime>12/22/2021 12:45:13</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -358,7 +364,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/21/2021 16:08:18</publishTime>
+      <publishTime>12/22/2021 13:05:20</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -11,8 +11,8 @@ namespace WebApplication6.Controllers
         public ActionResult Index()
         {
 
-            return View();
-        }
+            return RedirectToAction("InventoryNotOnFitzMallReport", "InventoryNotOnFitzMall_Report");
+                }
         public ActionResult JJFServer()
         {
 

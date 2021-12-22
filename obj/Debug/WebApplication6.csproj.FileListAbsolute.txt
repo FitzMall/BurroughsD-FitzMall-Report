@@ -78,9 +78,9 @@ C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebAp
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.dll
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.pdb
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.csprojAssemblyReference.cache
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\WebApplication6.dll.config
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\WebApplication6.dll
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\WebApplication6.pdb
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll.config
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.pdb
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\csc.exe
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\csc.exe.config
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\csc.rsp
@@ -155,6 +155,5 @@ C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Antlr3.Runti
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CoreCompileInputs.cache
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CopyComplete
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.dll
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.pdb
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csprojAssemblyReference.cache
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.pdb
