@@ -10,8 +10,13 @@ namespace WebApplication6.Controllers
     {
         public ActionResult Index()
         {
-            
+
             return View();
+        }
+        public ActionResult JJFServer()
+        {
+
+            return Redirect("http://jjfserver/default.asp");
         }
 
         public ActionResult About()

@@ -36,6 +36,10 @@ namespace WebApplication6.Views
             {
                 NewOrUsedTitle = "USED";
             }
+            else
+            {
+                NewOrUsed = "N";  // NO blank new or used
+            }
 
             ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
             if (StatusCode.ToString() != "0")
@@ -68,11 +72,11 @@ namespace WebApplication6.Views
             {
                 if ((Make + "") == "")
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
                 }
                 else
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.INV_AMT > 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
                 }
             }
             else
@@ -80,11 +84,11 @@ namespace WebApplication6.Views
                 if (StoreBranch == "")
                 {
 
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && (((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))));
                 }
                 else
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.INV_AMT > 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                 }
             }
         }
@@ -119,11 +123,11 @@ namespace WebApplication6.Views
 
             if (StatusCode > 0)
             {
-                return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
             }
             else
             {
-                return View(db.InventoryReportDrillDowns.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
             }
         }
         public ActionResult DrillDown_AllStatusNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
@@ -176,11 +180,11 @@ namespace WebApplication6.Views
             {
                 if ((Make + "") == "")
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
                 }
                 else
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
                 }
             }
             else
@@ -188,11 +192,11 @@ namespace WebApplication6.Views
                 if (StoreBranch == "")
                 {
 
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                 }
                 else
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                    return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                 }
             }
         }
@@ -252,17 +256,31 @@ namespace WebApplication6.Views
 
             ViewBag.Title = ViewBagString;
 
-
-
             if (StatusCode > 0)
             {
                 if (Make == "ALL")
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch));
+                    if (NewOrUsed == "N")
+                    {
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch));
+                    }
+                    else
+                    {
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch));
+                    }
                 }
                 else
                 {
-                    return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                    if (NewOrUsed == "N")
+                    {
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+
+                    }
+                    else
+                    {
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+
+                    }
                 }
             }
             else
@@ -271,11 +289,11 @@ namespace WebApplication6.Views
                 {
                     if (NewOrUsed == "N")
                     {
-                        return View(db.InventoryReportDrillDowns.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                     }
                     else
                     {
-                        return View(db.InventoryReportDrillDowns.ToList().Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                        return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
                     }
                 }
                 else
@@ -284,11 +302,11 @@ namespace WebApplication6.Views
                     {
                         if (NewOrUsed == "N")
                         {
-                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                            return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                         }
                         else
                         {
-                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
                         }
 
                     }
@@ -296,11 +314,11 @@ namespace WebApplication6.Views
                     {
                         if (NewOrUsed == "N")
                         {
-                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
+                            return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                         }
                         else
                         {
-                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
+                            return View(db.InventoryReportDrillDowns.ToList().Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2))));
                         }
                     }
                 }
