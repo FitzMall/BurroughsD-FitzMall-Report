@@ -2,7 +2,9 @@
 
 @{
     int counter = 0;
-    
+    bool IsNew = false;
+    IsNew = (ViewBag.PriceTitle == "MSRP");
+
 }
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css" sizes="">
 
@@ -39,6 +41,9 @@
         <th>
             @ViewBag.PriceTitle
         </th>
+        <th>
+            Days In Stock
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -47,6 +52,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.SERIAL_)
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.STOCK_)
@@ -78,6 +84,9 @@
         </td>
         <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
             @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
         </td>
 
     </tr>

@@ -20,6 +20,11 @@ namespace WebApplication6.Views
             return View(db.InventoryNotOnFitzMall_USED_Report.ToList());
         }
 
+        public ActionResult PrintableReport()
+        {
+            return View(db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH).ToList());
+        }
+
         public ActionResult InventoryNotOnFitzMall_USEDReport()
         {
             return View(db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH).ToList());

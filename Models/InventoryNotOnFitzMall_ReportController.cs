@@ -19,7 +19,8 @@ namespace WebApplication6.Models
             return View(db.InventoryNotOnFitzMall_Report.ToList());
         }
 
-        // GET: InventoryNotOnFitzMall_Report/Details/5
+            // GET: InventoryNotOnFitzMall_Report/Details/5
+
         public ActionResult Details(int? id)
         {
             if (id == null)

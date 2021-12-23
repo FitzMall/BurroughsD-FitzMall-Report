@@ -20,6 +20,12 @@ namespace WebApplication6
             return View(db.NotOnFitzMall_USED.ToList());
         }
 
+        public ActionResult GoToFitzMall(string keywordSearch)
+        {
+
+            return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?KeyWordSearch=" + keywordSearch + "&Sort=&inventoryGrid_length=10&UseCriteria=true");
+        }
+
         public ActionResult DrillDown_AllStatus(string StoreBranch, string Location, string Make)
         {
             Location = ("" + Location);   // handle nulls

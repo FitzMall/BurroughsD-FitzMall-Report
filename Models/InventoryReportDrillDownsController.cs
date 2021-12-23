@@ -20,6 +20,11 @@ namespace WebApplication6.Views
             return View(db.InventoryReportDrillDowns.ToList());
         }
 
+        public ActionResult GoToFitzMall(string keywordSearch)
+        {
+
+            return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?KeyWordSearch=" + keywordSearch + "&Sort=&inventoryGrid_length=10&UseCriteria=true");
+        }
 
         public ActionResult DrillDown_AllLocationsNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
         {
