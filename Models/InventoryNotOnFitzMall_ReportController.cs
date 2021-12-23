@@ -67,11 +67,11 @@ namespace WebApplication6.Models
 
             if (OnFitzMall == "1")
             {
-                return RedirectToAction("DrillDown", "InventoryReportDrillDowns", new { Make = Make, StoreBranch = StoreBranch, StatusCode = parStatusCode, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown", "InventoryReportDrillDowns", new { Make = Make.ToUpper(), StoreBranch = StoreBranch, StatusCode = parStatusCode, NewOrUsed = "N" });
             }
             else
             {
-                return RedirectToAction("DrillDown", "NotOnFitzMalls", new { Make = Make, StoreBranch = StoreBranch, StatusCode = parStatusCode, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown", "NotOnFitzMalls", new { Make = Make.ToUpper(), StoreBranch = StoreBranch, StatusCode = parStatusCode, NewOrUsed = "N" });
             }
 
         }
@@ -95,11 +95,11 @@ namespace WebApplication6.Models
 
             if (OnFitzMall == "1")
             {
-                return RedirectToAction("DrillDown_AllLocationsNew", "InventoryReportDrillDowns", new { Make = Make, StatusCode = parStatusCode, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown_AllLocationsNew", "InventoryReportDrillDowns", new { Make = Make.ToUpper(), StatusCode = parStatusCode, NewOrUsed = "N" });
             }
             else
             {
-                return RedirectToAction("DrillDown_AllLocations", "NotOnFitzMalls", new { Make = Make, StatusCode = parStatusCode, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown_AllLocations", "NotOnFitzMalls", new { Make = Make.ToUpper(), StatusCode = parStatusCode, NewOrUsed = "N" });
             }
 
         }
@@ -138,11 +138,11 @@ namespace WebApplication6.Models
 
             if (OnFitzMall == "1")
             {
-                return RedirectToAction("DrillDown_AllStatusNew", "InventoryReportDrillDowns", new { Make = Make, StoreBranch = StoreBranch, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown_AllStatusNew", "InventoryReportDrillDowns", new { Make = Make.ToUpper(), StoreBranch = StoreBranch, NewOrUsed = "N" });
             }
             else
             {
-                return RedirectToAction("DrillDown_AllStatus", "NotOnFitzMalls", new { Make = Make, StoreBranch = StoreBranch, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown_AllStatus", "NotOnFitzMalls", new { Make = Make.ToUpper(), StoreBranch = StoreBranch, NewOrUsed = "N" });
             }
 
         }
