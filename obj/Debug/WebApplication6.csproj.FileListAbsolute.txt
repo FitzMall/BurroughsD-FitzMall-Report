@@ -157,4 +157,3 @@ C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApp
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CopyComplete
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.pdb
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csprojAssemblyReference.cache

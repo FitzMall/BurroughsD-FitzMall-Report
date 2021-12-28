@@ -12,18 +12,11 @@ namespace WebApplication6.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ReportInventory
+    public partial class StoreBranchByALLLocation
     {
-        public string STOREBRANCH { get; set; }
-        public string MAKE { get; set; }
-        public string v_loc { get; set; }
-        public Nullable<int> CarStat1 { get; set; }
-        public Nullable<int> CarStat2 { get; set; }
-        public Nullable<int> CarStat4 { get; set; }
-        public Nullable<int> CarStat9 { get; set; }
-        public Nullable<int> CarStat12 { get; set; }
-        public Nullable<int> CarStat14 { get; set; }
-        public Nullable<int> TotalAllCarStat { get; set; }
+        public string STORE_BRANCH { get; set; }
+        public string LOCATION { get; set; }
+        public string LOCATION2 { get; set; }
         public int Id_Primary { get; set; }
     }
 }

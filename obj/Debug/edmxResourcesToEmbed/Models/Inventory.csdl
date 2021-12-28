@@ -17,6 +17,7 @@
     <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
     <EntitySet Name="ReportInventories" EntityType="InventoryModel.ReportInventory" />
     <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
+    <EntitySet Name="StoreBranchByALLLocations" EntityType="InventoryModel.StoreBranchByALLLocation" />
   </EntityContainer>
   <ComplexType Name="CARbySTOCK_Result">
     <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -775,9 +776,9 @@
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="MAKE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
     <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
     <Property Name="ShouldBeOnWebSite_4" Type="Int32" />
@@ -835,7 +836,7 @@
     <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="STAT_CODE" Type="Int32" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
@@ -879,7 +880,7 @@
     <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="STAT_CODE" Type="Int32" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
@@ -943,10 +944,9 @@
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="NEWUSED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="MAKE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="v_loc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
     <Property Name="CarStat1" Type="Int32" />
     <Property Name="CarStat2" Type="Int32" />
     <Property Name="CarStat4" Type="Int32" />
@@ -964,5 +964,14 @@
     <Property Name="DEFAULT_LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="DEFAULT_LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="StoreBranchByALLLocation">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>
