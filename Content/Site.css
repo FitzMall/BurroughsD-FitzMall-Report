@@ -128,3 +128,13 @@ thead tr:nth-child(2) th {
     top: 43px;
 }
 
+thead tr:nth-child(3) th {
+    position: sticky;
+    top: 143px;
+}
+
+thead tr:nth-child(4) th {
+    position: sticky;
+    top: 243px;
+}
+
