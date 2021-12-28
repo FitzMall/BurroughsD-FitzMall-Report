@@ -16,8 +16,8 @@ namespace WebApplication6.Models
     {
         public string NEWUSED { get; set; }
         public string STOREBRANCH { get; set; }
-        public string LOCATION { get; set; }
         public string MAKE { get; set; }
+        public string LOCATION { get; set; }
         public Nullable<int> CarStat1 { get; set; }
         public Nullable<int> CarStat2 { get; set; }
         public Nullable<int> CarStat4 { get; set; }

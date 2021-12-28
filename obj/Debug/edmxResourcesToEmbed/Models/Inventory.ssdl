@@ -8,6 +8,7 @@ warning 6002: The table/view 'Inventory.dbo.DefaultLocationsByStoreBranch_NewVeh
     </Key>
     <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
     <Property Name="DEFAULT_LOCATION" Type="nchar" MaxLength="10" />
+    <Property Name="DEFAULT_LOCATION2" Type="nchar" MaxLength="10" />
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -663,6 +664,17 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Inventory.dbo.MallCodes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MallCodes">
+          <Property Name="mallcode" Type="nvarchar" MaxLength="3" />
+          <Property Name="make" Type="nvarchar" MaxLength="50" />
+          <Property Name="mall_id" Type="int" />
+          <Property Name="makecode" Type="nvarchar" MaxLength="5" />
+          <Property Name="on_off" Type="char" MaxLength="1" />
+          <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
+          <Property Name="DEFAULT_LOCATION2" Type="nchar" MaxLength="10" />
+        </EntityType>-->
   <EntityType Name="NotOnFitzMall">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -755,9 +767,9 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
       <PropertyRef Name="Id_Primary" />
     </Key>
     <Property Name="NEWUSED" Type="varchar" MaxLength="1" Nullable="false" />
-    <Property Name="STOREBRANCH" Type="varchar" MaxLength="5" />
+    <Property Name="STOREBRANCH" Type="nchar" MaxLength="10" />
+    <Property Name="MAKE" Type="varchar" MaxLength="30" />
     <Property Name="LOCATION" Type="nchar" MaxLength="10" />
-    <Property Name="MAKE" Type="varchar" MaxLength="25" />
     <Property Name="CarStat1" Type="int" />
     <Property Name="CarStat2" Type="int" />
     <Property Name="CarStat4" Type="int" />
@@ -767,12 +779,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="TotalAllCarStat" Type="int" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'Inventory.dbo.VINsNotOnFitzMall' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="VINsNotOnFitzMall">
-          <Property Name="Vin" Type="varchar" MaxLength="20" />
-          <Property Name="VehicleStatus" Type="int" />
-        </EntityType>-->
   <Function Name="CARbySTOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="STOCK" Type="char" Mode="In" />
   </Function>
@@ -798,6 +804,7 @@ warning 6013: The table/view 'Inventory.dbo.VINsNotOnFitzMall' does not have a p
       <DefiningQuery>SELECT 
     [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
     [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION] AS [DEFAULT_LOCATION], 
+    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION2] AS [DEFAULT_LOCATION2], 
     [DefaultLocationsByStoreBranch_NewVehicles].[ID] AS [ID]
     FROM [dbo].[DefaultLocationsByStoreBranch_NewVehicles] AS [DefaultLocationsByStoreBranch_NewVehicles]</DefiningQuery>
     </EntitySet>

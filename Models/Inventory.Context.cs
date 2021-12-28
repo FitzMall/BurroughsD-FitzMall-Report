@@ -28,6 +28,7 @@ namespace WebApplication6.Models
         }
     
         public virtual DbSet<Inventory> Inventories { get; set; }
+        public virtual DbSet<InventoryHistory> InventoryHistories { get; set; }
         public virtual DbSet<InventoryNotOnFitzMall_Report> InventoryNotOnFitzMall_Report { get; set; }
         public virtual DbSet<InventoryNotOnFitzMall_USED_Report> InventoryNotOnFitzMall_USED_Report { get; set; }
         public virtual DbSet<InventoryReportDrillDown> InventoryReportDrillDowns { get; set; }
@@ -35,7 +36,6 @@ namespace WebApplication6.Models
         public virtual DbSet<NotOnFitzMall_USED> NotOnFitzMall_USED { get; set; }
         public virtual DbSet<ReportInventory> ReportInventories { get; set; }
         public virtual DbSet<DefaultLocationsByStoreBranch_NewVehicles> DefaultLocationsByStoreBranch_NewVehicles { get; set; }
-        public virtual DbSet<InventoryHistory> InventoryHistories { get; set; }
     
         public virtual ObjectResult<CARbySTOCK_Result> CARbySTOCK(string sTOCK)
         {

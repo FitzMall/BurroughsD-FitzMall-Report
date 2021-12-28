@@ -33,7 +33,9 @@ namespace WebApplication6.Views
             // handle nulls
             Make = ("" + Make);
             StoreBranch = ("" + StoreBranch);
-            NewOrUsed = ("" + NewOrUsed);
+            StoreBranch = StoreBranch.Trim();
+
+            NewOrUsed = ("" + NewOrUsed.Trim());
 
             string ViewBagString = "";
             string NewOrUsedTitle = "NEW";
@@ -104,7 +106,7 @@ namespace WebApplication6.Views
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View DrillDown_AllLocations: Status: " + StatusCode + " " + NewOrUsed);
 
             // handle nulls
-            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());
             if (NewOrUsed == "")
             {
                 NewOrUsed = "U";  // default to used 
@@ -144,8 +146,8 @@ namespace WebApplication6.Views
 
             // handle nulls
             Make = ("" + Make);
-            StoreBranch = ("" + StoreBranch);
-            NewOrUsed = ("" + NewOrUsed);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed.Trim());
             if (NewOrUsed == "")
             {
                 NewOrUsed = "N";  // default to new 
@@ -225,8 +227,8 @@ namespace WebApplication6.Views
             {
                 Make = "ALL";
             }
-            StoreBranch = ("" + StoreBranch);
-            NewOrUsed = ("" + NewOrUsed);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed.Trim());
             if (NewOrUsed == "")
             {
                 NewOrUsed = "N";  // default to new 
@@ -279,7 +281,6 @@ namespace WebApplication6.Views
                     if (NewOrUsed == "N")
                     {
                         return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
-
                     }
                     else
                     {

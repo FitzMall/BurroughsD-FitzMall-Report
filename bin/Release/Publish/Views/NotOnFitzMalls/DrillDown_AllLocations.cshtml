@@ -47,6 +47,9 @@
         <th>
             MSRP
         </th>
+        <th>
+            Days In Stock
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -78,7 +81,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.CLR_DESC)
         </td>
-        <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver;" </text> }>
+        <td>
             @if (item.ChromeStyleID.Value > 0)
             {
                 @Html.DisplayFor(modelItem => item.ChromeStyleID)
@@ -94,6 +97,9 @@
 
         <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
             @Html.DisplayFor(modelItem => item.MSRP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
         </td>
     </tr>
 

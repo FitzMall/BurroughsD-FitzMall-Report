@@ -16,6 +16,7 @@ namespace WebApplication6.Models
     {
         public string STORE_BRANCH { get; set; }
         public string DEFAULT_LOCATION { get; set; }
+        public string DEFAULT_LOCATION2 { get; set; }
         public int ID { get; set; }
     }
 }

@@ -54,6 +54,7 @@ namespace WebApplication6.Models
             StatusCode = ("" + StatusCode);
             OnFitzMall = ("" + OnFitzMall);
 
+            StoreBranch = StoreBranch.Trim();
 
 
             if (StatusCode == "ALL")
@@ -111,6 +112,7 @@ namespace WebApplication6.Models
             Location = ("" + Location);
             Make = ("" + Make);
             StatusCode = ("" + StatusCode);
+            StoreBranch = StoreBranch.Trim();
 
             if (StatusCode.Trim() == "")
             {
