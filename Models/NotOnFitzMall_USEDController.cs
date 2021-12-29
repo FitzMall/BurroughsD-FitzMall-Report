@@ -95,7 +95,10 @@ namespace WebApplication6
             //
             Location = ("" + Location);   // handle nulls
             Make = ("" + Make);
+            Make = Make.Trim();
             StoreBranch = ("" + StoreBranch);
+            StoreBranch = StoreBranch.Trim();
+
             StatusCode = ("" + StatusCode);
             NewOrUsed = ("" + NewOrUsed);
 
