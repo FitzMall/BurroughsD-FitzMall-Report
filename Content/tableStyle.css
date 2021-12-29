@@ -64,3 +64,9 @@ caption {
 }
 
 
+#reportheaders table {
+    position: sticky;
+    top: 0;
+}
+
+
