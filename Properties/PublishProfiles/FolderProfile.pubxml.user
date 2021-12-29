@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>12/28/2021 10:44:06</publishTime>
+      <publishTime>12/29/2021 08:30:43</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>12/28/2021 10:44:06</publishTime>
+      <publishTime>12/29/2021 08:30:43</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -226,10 +226,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>12/23/2021 15:54:31</publishTime>
+      <publishTime>12/29/2021 08:03:51</publishTime>
     </File>
     <File Include="Content/tableStyle.css">
-      <publishTime>12/23/2021 15:57:57</publishTime>
+      <publishTime>12/29/2021 08:19:30</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -253,7 +253,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Models/Inventory.edmx.diagram">
-      <publishTime>12/27/2021 09:18:48</publishTime>
+      <publishTime>12/28/2021 14:53:57</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -310,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 10:22:44</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>12/27/2021 10:16:22</publishTime>
+      <publishTime>12/29/2021 08:26:16</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>12/22/2021 16:43:44</publishTime>

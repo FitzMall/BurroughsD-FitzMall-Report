@@ -63,13 +63,10 @@ caption {
     padding: 10px;
 }
 
-thead tr:nth-child(1) th {
+
+#reportheaders table {
     position: sticky;
     top: 0;
 }
 
-thead tr:nth-child(2) th {
-    position: sticky;
-    top: 43px;
-}
 
