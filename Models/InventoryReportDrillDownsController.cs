@@ -206,6 +206,10 @@ namespace WebApplication6.Views
                     return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14))));
                 }
             }
+
+
+
+
         }
 
 
