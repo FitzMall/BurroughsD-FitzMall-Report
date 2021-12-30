@@ -112,6 +112,8 @@ namespace WebApplication6.Models
             Location = ("" + Location);
             Make = ("" + Make);
             StatusCode = ("" + StatusCode);
+            StoreBranch = ("" + StoreBranch);
+
             StoreBranch = StoreBranch.Trim();
 
             if (StatusCode.Trim() == "")

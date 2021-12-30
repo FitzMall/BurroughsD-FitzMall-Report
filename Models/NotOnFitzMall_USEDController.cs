@@ -30,7 +30,11 @@ namespace WebApplication6
         {
             Location = ("" + Location);   // handle nulls
             Make = ("" + Make);
+            Location = Location.Trim();
+            Make = Make.Trim();
+
             StoreBranch = ("" + StoreBranch);
+            StoreBranch = StoreBranch.Trim();
 
             string ViewBagString = "Used Cars NOT On FitzMall ";
          

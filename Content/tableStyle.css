@@ -1,6 +1,7 @@
 ﻿
 
 table {
+    width: 100%;
     border-collapse: collapse;
     border: 2px solid rgb(200,200,200);
 }
@@ -68,5 +69,11 @@ caption {
     position: sticky;
     top: 0;
 }
+
+#newcarreport td:nth-child(7) {
+    text-align: right;
+    border: double;
+}
+
 
 

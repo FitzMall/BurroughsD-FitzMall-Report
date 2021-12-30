@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>12/29/2021 08:30:43</publishTime>
+      <publishTime>12/29/2021 16:56:09</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>12/29/2021 08:30:43</publishTime>
+      <publishTime>12/29/2021 16:56:09</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -310,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 10:22:44</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>12/29/2021 08:26:16</publishTime>
+      <publishTime>12/29/2021 13:02:49</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>12/22/2021 16:43:44</publishTime>
@@ -331,10 +331,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/23/2021 09:36:41</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown.cshtml">
-      <publishTime>12/23/2021 09:30:56</publishTime>
+      <publishTime>12/29/2021 13:34:50</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllLocations.cshtml">
-      <publishTime>12/23/2021 09:31:17</publishTime>
+      <publishTime>12/29/2021 13:33:36</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllStatus.cshtml">
       <publishTime>12/23/2021 09:31:33</publishTime>

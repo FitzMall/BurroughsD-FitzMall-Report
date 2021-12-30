@@ -8,11 +8,10 @@
 
 <h2>@ViewBag.Title</h2>
 
+
 <input type="button" value="Back To List" onclick="history.back()">
 
-
 <table class="table" width=30 % height=30 align=left>
-
     <tr>
         <th>
             Store/Branch
@@ -52,56 +51,57 @@
         </th>
     </tr>
 
+
     @foreach (var item in Model)
     {
         counter++;
 
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.STORE_BRANCH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STAT_CODE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SERIAL_)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STOCK_)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YEAR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAKE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CARLINE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLR_DESC)
-        </td>
-        <td>
-            @if (item.ChromeStyleID.Value > 0)
-            {
-                @Html.DisplayFor(modelItem => item.ChromeStyleID)
-            }
-            else
-            {
-                @("------");
-            }
-        </td>
-        <td @if (item.INV_AMT.Value == 0) { <text> style="background-color:silver;" </text> }>
-            @Html.DisplayFor(modelItem => item.INV_AMT)
-        </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.STORE_BRANCH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STAT_CODE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SERIAL_)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STOCK_)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAKE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CARLINE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CLR_DESC)
+            </td>
+            <td>
+                @if (item.ChromeStyleID.Value > 0)
+                {
+                    @Html.DisplayFor(modelItem => item.ChromeStyleID)
+                }
+                else
+                {
+                    @("------");
+                }
+            </td>
+            <td @if (item.INV_AMT.Value == 0) { <text> style="background-color:silver;" </text> }>
+                @Html.DisplayFor(modelItem => item.INV_AMT)
+            </td>
 
-        <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
-            @Html.DisplayFor(modelItem => item.MSRP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
-        </td>
-    </tr>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
+                @Html.DisplayFor(modelItem => item.MSRP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
+            </td>
+        </tr>
 
     }
 
