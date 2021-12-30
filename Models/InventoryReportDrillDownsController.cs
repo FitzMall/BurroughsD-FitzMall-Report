@@ -211,7 +211,7 @@ namespace WebApplication6.Views
 
 
         // GET: ReportInventories/DrillDown/5
-        public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed)
+        public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
         {
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
@@ -222,6 +222,7 @@ namespace WebApplication6.Views
                 ViewBag.PriceTitle = "MSRP";
 
             // handle nulls
+            sortOrder = ("" + sortOrder);
             Make = ("" + Make);
             if (Make == "")
             {
@@ -263,6 +264,12 @@ namespace WebApplication6.Views
 
             ViewBag.Title = ViewBagString;
 
+            ViewBag.StoreBranch = StoreBranch;
+            ViewBag.parStatusCode = StatusCode;
+            ViewBag.NewOrUsed = NewOrUsed;
+            ViewBag.Make = Make;
+            ViewBag.SortOrder = sortOrder;
+
             if (StatusCode > 0)
             {
                 if (Make == "ALL")
@@ -280,7 +287,39 @@ namespace WebApplication6.Views
                 {
                     if (NewOrUsed == "N")
                     {
-                        return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                        var SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                       select sDD;
+
+                        switch (sortOrder)
+                        {
+                            case "DaysInStock":
+
+                                SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
+                                return View(SORTED_InventoryReportDrillDowns);
+                                break;
+
+                            case "DaysInStock_Descending":
+
+                                SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.DAYS_IN_STOCK);
+                                return View(SORTED_InventoryReportDrillDowns);
+                                break;
+                            case "MSRP":
+
+                                SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MSRP);
+                                return View(SORTED_InventoryReportDrillDowns);
+                                break;
+
+                            case "MSRP_Descending":
+
+                                SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
+                                return View(SORTED_InventoryReportDrillDowns);
+                                break;
+
+                            default:
+                                return View(db.InventoryReportDrillDowns.ToList().Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed));
+                                break;
+                        }
+
                     }
                     else
                     {

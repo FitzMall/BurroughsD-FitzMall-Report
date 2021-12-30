@@ -4,6 +4,10 @@
     int counter = 0;
     bool IsNew = false;
     IsNew = (ViewBag.PriceTitle == "MSRP");
+    string thisPriceTitle = ViewBag.PriceTitle;
+
+    // for sorting
+    string thisviewSortOrder = ViewBag.SortOrder;
 
 }
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css" sizes="">
@@ -39,10 +43,27 @@
             Chrome
         </th>
         <th>
-            @ViewBag.PriceTitle
+            @{ if (thisviewSortOrder != "MSRP_Descending")
+                {
+                    @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = "N", sortOrder = "MSRP_Descending" })
+                }
+                else
+                {
+                    @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = "N", sortOrder = "MSRP" })
+                }
+            }
         </th>
         <th>
-            Days In Stock
+            @{ if (thisviewSortOrder != "DaysInStock_Descending")
+                {
+                    @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = "N", sortOrder = "DaysInStock_Descending" })
+                }
+                else
+                {
+                    @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = "N", sortOrder = "DaysInStock" })
+                }
+            }
+
         </th>
     </tr>
 

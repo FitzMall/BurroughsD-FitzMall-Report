@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>12/29/2021 16:56:09</publishTime>
+      <publishTime>12/30/2021 10:33:30</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>12/29/2021 16:56:09</publishTime>
+      <publishTime>12/30/2021 10:33:30</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -229,7 +229,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/29/2021 08:03:51</publishTime>
     </File>
     <File Include="Content/tableStyle.css">
-      <publishTime>12/29/2021 08:19:30</publishTime>
+      <publishTime>12/30/2021 08:32:54</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -310,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 10:22:44</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>12/29/2021 13:02:49</publishTime>
+      <publishTime>12/30/2021 10:00:55</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>12/22/2021 16:43:44</publishTime>
