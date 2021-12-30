@@ -29,37 +29,35 @@
 
 <h2>NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
-<table class="table" style="position: sticky;top: 80px" id="reportheaders">
+<table class="table" style="position: sticky; top: 80px" id="reportheaders">
     <thead class="thead">
 
 
         <tr>
-            <th colspan="2" scope="colgroup"></th>
-            <th colspan="8" scope="colgroup">New Vehicles On FitzMall</th>
-            <th colspan="1" scope="colgroup"></th>
-            <th colspan="7" scope="colgroup">New Vehicles That Should Be On FitzMall</th>
+            <th colspan="10" scope="colgroup" style="border-right-width: 4px">New Vehicles On FitzMall</th>
+            <th colspan="8" scope="colgroup">New Vehicles That Should Be On FitzMall</th>
         </tr>
 
         <tr>
             <th colspan="3" scope="colgroup"></th>
-            <th colspan="3" scope="colgroup">On The Ground</th>
+            <th colspan="3" scope="colgroup" style="border-right-width: 4px">On The Ground</th>
             <th colspan="3" scope="colgroup">On Order</th>
-            <th colspan="1" scope="colgroup"></th>
-            <th colspan="3" scope="colgroup">On The Ground</th>
+            <th colspan="1" scope="colgroup" style="border-right-width: 4px"></th>
+            <th colspan="3" scope="colgroup" style="border-right-width: 4px">On The Ground</th>
             <th colspan="3" scope="colgroup">On Order</th>
             <th colspan="1" scope="colgroup"></th>
         </tr>
-        <tr>
-            <th style="width: 155px">
+        <tr style="font-size: 90%">
+            <th style="width: 75px; font-size: 95%">
                 Store/Branch
             </th>
-            <th style="width: 105px">
+            <th style="width: 75px; font-size: 95%">
                 Location
             </th>
-            <th style="width: 162px">
+            <th style="width: 102px; font-size: 95%">
                 Make
             </th>
-            <th style="width: 50px">
+            <th style="width: 58px">
                 1
             </th>
             <th style="width: 50px">
@@ -78,8 +76,8 @@
                 14
             </th>
 
-            <th style="width: 50px; border-right-width: 4px">
-                Totals
+            <th style="width: 50px; border-right-width: 4px; font-size:90%">
+                Total
             </th>
 
             <th style="width: 50px">
@@ -100,19 +98,19 @@
             <th style="width: 50px">
                 14
             </th>
-            <th style="width: 50px">
-                Totals
+            <th style="width: 50px; font-size: 90%">
+                Total
             </th>
         </tr>
     </thead>
 </table>
 
-<table class="table">
+<table class="table" style="font-size: 90%">
     <tbody>
         @foreach (var item in Model)
         {
         <tr>
-            <td style="width: 150px">
+            <td style="width: 90px">
                 @{if (prevStoreBranch != item.STOREBRANCH)
                     {
                         @Html.DisplayFor(modelItem => item.STOREBRANCH)
@@ -120,7 +118,7 @@
                     prevStoreBranch = item.STOREBRANCH;
                 }
             </td>
-            <td style="width: 100px">
+            <td style="width: 75px">
 
                 @{if (prevLocation != item.LOCATION)
                     {
@@ -130,7 +128,7 @@
                     prevLocation = item.LOCATION;
                 }
             </td>
-            <td style="width: 150px">
+            <td style="width: 100px">
                 @Html.DisplayFor(modelItem => item.MAKE)
             </td>
             <td style="width: 50px">
@@ -273,7 +271,8 @@
                     total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
                 }
             </td>
-            <td style="width: 50px">
+            <td style="width: 50px; border-right-width: 4px">
+                
                 @{ if (item.ShouldBeOnWebSite_4.Value == 0)
                     {
                         @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_4.Value);
