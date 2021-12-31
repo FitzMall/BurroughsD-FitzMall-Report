@@ -14,100 +14,105 @@
 
 <h2>@ViewBag.Title</h2>
 
+@counter
 
-<table class="table" width=30 % height=30 align=left>
+<table class="table" style="position: sticky; top: 80px; margin-bottom: 0px" id="reportheaders">
+    <thead class="thead">
 
-    <tr>
-        <th>
-            VIN
-        </th>
-        <th>
-            
-            @{ if (thisviewSortOrder != "StockNum_Descending")
-                {
-                    @Html.ActionLink("Stock#", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Stock#", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum" })
-                }
-            }
-        </th>
-        <th>
-            Status
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "Year_Descending")
-                {
-                    @Html.ActionLink("Year", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Year", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year" })
-                }
-            }
-        </th>
-        <th>
-            Make
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "Model_Descending")
-                {
-                    @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model" })
-                }
-            }
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "Color_Descending")
-                {
-                    @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color" })
-                }
-            }
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "Chrome_Descending")
-                {
-                    @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
-                }
-            }
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "MSRP_Descending")
-                {
-                    @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP" })
-                }
-            }
-        </th>
-        <th>
-            @{ if (thisviewSortOrder != "DaysInStock_Descending")
-                {
-                    @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock_Descending" })
-                }
-                else
-                {
-                    @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock" })
-                }
-            }
+        <tr>
+            <th>
+                VIN
+            </th>
+            <th>
 
-        </th>
-    </tr>
+                @{ if (thisviewSortOrder != "StockNum_Descending")
+                    {
+                        @Html.ActionLink("Stock#", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Stock#", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum" })
+                    }
+                }
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "Year_Descending")
+                    {
+                        @Html.ActionLink("Year", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Year", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year" })
+                    }
+                }
+            </th>
+            <th>
+                Make
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "Model_Descending")
+                    {
+                        @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model" })
+                    }
+                }
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "Color_Descending")
+                    {
+                        @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color" })
+                    }
+                }
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "Chrome_Descending")
+                    {
+                        @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
+                    }
+                }
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "MSRP_Descending")
+                    {
+                        @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP" })
+                    }
+                }
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "DaysInStock_Descending")
+                    {
+                        @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Days In Stock", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock" })
+                    }
+                }
 
+            </th>
+        </tr>
+    </thead>
+</table>
+
+<table class="table" style="font-size: 90%">
     @foreach (var item in Model)
     {
         counter++;
@@ -154,8 +159,5 @@
         </tr>
 
     }
-
-    @counter
-
 
 </table>
