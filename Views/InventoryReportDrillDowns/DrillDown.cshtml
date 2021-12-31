@@ -16,14 +16,14 @@
 
 @counter
 
-<table class="table" style="position: sticky; top: 80px; margin-bottom: 0px" id="reportheaders">
+<table class="table" style="position: sticky; top: 40px; margin-bottom: 0px" id="reportheaders">
     <thead class="thead">
 
         <tr>
-            <th>
+            <th style="width: 200px">
                 VIN
             </th>
-            <th>
+            <th style="width: 85px">
 
                 @{ if (thisviewSortOrder != "StockNum_Descending")
                     {
@@ -35,10 +35,10 @@
                     }
                 }
             </th>
-            <th>
+            <th style="width: 75px">
                 Status
             </th>
-            <th>
+            <th style="width: 75px">
                 @{ if (thisviewSortOrder != "Year_Descending")
                     {
                         @Html.ActionLink("Year", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
@@ -49,10 +49,10 @@
                     }
                 }
             </th>
-            <th>
+            <th style="width: 100px">
                 Make
             </th>
-            <th>
+            <th style="width: 150px">
                 @{ if (thisviewSortOrder != "Model_Descending")
                     {
                         @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
@@ -63,7 +63,7 @@
                     }
                 }
             </th>
-            <th>
+            <th style="width: 150px">
                 @{ if (thisviewSortOrder != "Color_Descending")
                     {
                         @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
@@ -74,7 +74,7 @@
                     }
                 }
             </th>
-            <th>
+            <th style="width: 130px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
                         @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
@@ -85,7 +85,7 @@
                     }
                 }
             </th>
-            <th>
+            <th style="width: 130px">
                 @{ if (thisviewSortOrder != "MSRP_Descending")
                     {
                         @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
@@ -117,39 +117,39 @@
     {
         counter++;
         <tr>
-            <td>
+            <td style="width: 200px">
                 @Html.DisplayFor(modelItem => item.SERIAL_)
 
             </td>
-            <td>
+            <td style="width: 85px">
                 @Html.DisplayFor(modelItem => item.STOCK_)
             </td>
-            <td>
+            <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.STAT_CODE)
             </td>
-            <td>
+            <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.YEAR)
             </td>
-            <td>
+            <td style="width: 100px">
                 @Html.DisplayFor(modelItem => item.MAKE)
             </td>
-            <td>
+            <td style="width: 150px">
                 @Html.DisplayFor(modelItem => item.CARLINE)
             </td>
-            <td>
+            <td style="width: 150px">
                 @Html.DisplayFor(modelItem => item.COLOR_DESC)
             </td>
-            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver;" </text> }>
-                @if (item.ChromeStyleID.Value > 0)
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 80px" </text> } else { <text> style= "width: 80px" </text> }>
+            @if (item.ChromeStyleID.Value > 0)
                 {
-                    @Html.DisplayFor(modelItem => item.ChromeStyleID)
+                @Html.DisplayFor(modelItem => item.ChromeStyleID)
                 }
                 else
                 {
                     @("------");
                 }
             </td>
-            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 130px" </text> } else { <text> style= "width: 130px" </text> }>
                 @Html.DisplayFor(modelItem => item.MSRP)
             </td>
             <td>
