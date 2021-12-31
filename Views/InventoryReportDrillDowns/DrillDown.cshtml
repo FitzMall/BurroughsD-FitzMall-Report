@@ -74,7 +74,7 @@
                     }
                 }
             </th>
-            <th style="width: 130px">
+            <th style="width: 100px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
                         @Html.ActionLink("Chrome", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
@@ -85,7 +85,7 @@
                     }
                 }
             </th>
-            <th style="width: 130px">
+            <th style="width: 100px">
                 @{ if (thisviewSortOrder != "MSRP_Descending")
                     {
                         @Html.ActionLink(thisPriceTitle, "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
@@ -139,7 +139,7 @@
             <td style="width: 150px">
                 @Html.DisplayFor(modelItem => item.COLOR_DESC)
             </td>
-            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 80px" </text> } else { <text> style= "width: 80px" </text> }>
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
             @if (item.ChromeStyleID.Value > 0)
                 {
                 @Html.DisplayFor(modelItem => item.ChromeStyleID)
@@ -149,7 +149,7 @@
                     @("------");
                 }
             </td>
-            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 130px" </text> } else { <text> style= "width: 130px" </text> }>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
                 @Html.DisplayFor(modelItem => item.MSRP)
             </td>
             <td>
