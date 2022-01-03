@@ -21,7 +21,15 @@
 
         <tr>
             <th style="width: 200px">
-                VIN
+                @{ if (thisviewSortOrder != "VIN_Descending")
+                    {
+                        @Html.ActionLink("VIN", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "VIN_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("VIN", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "VIN" })
+                    }
+                }
             </th>
             <th style="width: 120px">
 
@@ -36,7 +44,16 @@
                 }
             </th>
             <th style="width: 75px">
-                Status
+                @{ if (thisviewSortOrder != "Status_Descending")
+                    {
+                        @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status" })
+                    }
+                }
+
             </th>
             <th style="width: 75px">
                 @{ if (thisviewSortOrder != "Year_Descending")
@@ -50,7 +67,15 @@
                 }
             </th>
             <th style="width: 200px">
-                Make
+                @{ if (thisviewSortOrder != "Make_Descending")
+                    {
+                        @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make" })
+                    }
+                }
             </th>
             <th style="width: 250px">
                 @{ if (thisviewSortOrder != "Model_Descending")
@@ -63,7 +88,7 @@
                     }
                 }
             </th>
-            <th style="width: 250px">
+            <th style="width: 350px">
                 @{ if (thisviewSortOrder != "Color_Descending")
                     {
                         @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
@@ -130,14 +155,14 @@
             <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.YEAR)
             </td>
-            <td style="width: 200px">
+            <td style="width: 200px; text-align: center">
                 @Html.DisplayFor(modelItem => item.MAKE)
             </td>
-            <td style="width: 250px">
+            <td style="width: 250px; text-align: center">
                 @Html.DisplayFor(modelItem => item.CARLINE)
             </td>
-            <td style="width: 250px">
-                @Html.DisplayFor(modelItem => item.COLOR_DESC)
+            <td style="width: 350px">
+                @Html.DisplayFor(modelItem => item.CLR_DESC)
             </td>
             <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
             @if (item.ChromeStyleID.Value > 0)

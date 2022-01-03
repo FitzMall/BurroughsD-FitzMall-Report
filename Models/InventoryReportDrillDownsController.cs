@@ -66,90 +66,100 @@ namespace WebApplication6.Views
                                                    select sDD;
 
 
-                switch (sortOrder)
-                {
-                    case "DaysInStock":
+            switch (sortOrder)
+            {
+                case "DaysInStock":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
+                    break;
 
-                    case "DaysInStock_Descending":
+                case "DaysInStock_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.DAYS_IN_STOCK);
-                        break;
-                    case "MSRP":
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.DAYS_IN_STOCK);
+                    break;
+                case "MSRP":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MSRP);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MSRP);
+                    break;
 
-                    case "MSRP_Descending":
+                case "MSRP_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
+                    break;
 
-                    case "Model":
+                case "Model":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CARLINE);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CARLINE);
+                    break;
 
-                    case "Model_Descending":
+                case "Model_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CARLINE);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CARLINE);
+                    break;
 
-                    case "StockNum":
+                case "StockNum":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STOCK_);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STOCK_);
+                    break;
 
-                    case "StockNum_Descending":
+                case "StockNum_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STOCK_);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STOCK_);
+                    break;
 
-                    case "Year":
+                case "Year":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.YEAR);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.YEAR);
+                    break;
 
-                    case "Year_Descending":
+                case "Year_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.YEAR);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.YEAR);
+                    break;
 
-                    case "Color":
+                case "Color":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
+                    break;
 
-                    case "Color_Descending":
+                case "Color_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
+                    break;
 
-                    case "Chrome":
+                case "Chrome":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeStyleID);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeStyleID);
+                    break;
 
-                    case "Chrome_Descending":
+                case "Chrome_Descending":
 
-                        SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
+                    break;
 
-                    default:
+                case "Status":
 
-                        return View(SORTED_InventoryReportDrillDowns);
-                        break;
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
+                    break;
 
-                }
-                return View(SORTED_InventoryReportDrillDowns);
+                case "Status_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
+                default:
+
+                    return View(SORTED_InventoryReportDrillDowns);
+                    break;
 
             }
+            return View(SORTED_InventoryReportDrillDowns);
+
+        }
 
 
 
-            public ActionResult DrillDown_AllStatusNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
+        public ActionResult DrillDown_AllStatusNew(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
         {
 
 
@@ -198,7 +208,7 @@ namespace WebApplication6.Views
             ViewBag.StoreBranch = StoreBranch;
             ViewBag.parStatusCode = StatusCode;
             ViewBag.NewOrUsed = NewOrUsed;
-            ViewBag.Make = Make;
+            ViewBag.Make = Make.ToUpper();
             ViewBag.SortOrder = sortOrder;
 
             if (StatusCode > 0)
@@ -355,6 +365,16 @@ namespace WebApplication6.Views
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
                     break;
 
+                case "Status":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
+                    break;
+
+                case "Status_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
@@ -429,7 +449,7 @@ namespace WebApplication6.Views
             ViewBag.StoreBranch = StoreBranch;
             ViewBag.parStatusCode = StatusCode;
             ViewBag.NewOrUsed = NewOrUsed;
-            ViewBag.Make = Make;
+            ViewBag.Make = Make.ToUpper();
             ViewBag.SortOrder = sortOrder;
 
             if (StatusCode > 0)
@@ -517,6 +537,15 @@ namespace WebApplication6.Views
 
             switch (sortOrder)
             {
+                case "VIN":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
+                    break;
+
+                case "VIN_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
+                    break;
                 case "DaysInStock":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
@@ -534,6 +563,25 @@ namespace WebApplication6.Views
                 case "MSRP_Descending":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
+                    break;
+
+                case "Status":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
+                    break;
+
+                case "Status_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
+                case "Make":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MAKE + d.CARLINE);
+                    break;
+
+                case "Make_Descending":
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MAKE + d.CARLINE);
                     break;
 
                 case "Model":
@@ -568,12 +616,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
                     break;
 
                 case "Chrome":
@@ -706,6 +754,16 @@ namespace WebApplication6.Views
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
                     break;
+
+                case "Make":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MAKE + d.CARLINE);
+                    break;
+
+                case "Make_Descending":
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MAKE + d.CARLINE);
+                    break;
+
 
                 default:
 
