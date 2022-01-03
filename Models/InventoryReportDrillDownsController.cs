@@ -119,12 +119,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
                     break;
 
                 case "Chrome":
@@ -347,12 +347,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
                     break;
 
                 case "Chrome":
@@ -737,12 +737,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.COLOR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
                     break;
 
                 case "Chrome":

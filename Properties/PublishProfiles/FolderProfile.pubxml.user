@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>12/31/2021 16:48:04</publishTime>
+      <publishTime>01/03/2022 14:20:56</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>12/31/2021 16:48:04</publishTime>
+      <publishTime>01/03/2022 14:20:56</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -214,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>12/21/2021 08:32:43</publishTime>
+      <publishTime>01/03/2022 10:59:30</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -226,7 +226,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>12/29/2021 08:03:51</publishTime>
+      <publishTime>01/03/2022 10:51:43</publishTime>
     </File>
     <File Include="Content/tableStyle.css">
       <publishTime>12/30/2021 08:32:54</publishTime>
@@ -310,7 +310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 10:22:44</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>12/31/2021 16:47:15</publishTime>
+      <publishTime>01/03/2022 14:19:07</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>12/22/2021 16:43:44</publishTime>
@@ -319,10 +319,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/22/2021 16:42:14</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown.cshtml">
-      <publishTime>12/31/2021 16:09:17</publishTime>
+      <publishTime>01/03/2022 14:15:35</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsNew.cshtml">
-      <publishTime>12/31/2021 16:29:54</publishTime>
+      <publishTime>01/03/2022 14:12:10</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsUsed.cshtml">
       <publishTime>12/23/2021 09:33:55</publishTime>
@@ -358,7 +358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>12/22/2021 16:30:01</publishTime>
+      <publishTime>01/03/2022 11:07:14</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>12/21/2021 08:32:43</publishTime>
