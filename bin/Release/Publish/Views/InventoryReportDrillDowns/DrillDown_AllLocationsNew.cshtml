@@ -16,94 +16,94 @@
 
 @counter
 
-<table class="table" style="position: sticky; top: 80px" id="reportheaders">
+<table class="table" style="position: sticky; top: 40px; margin-bottom: 0px; width: auto" id="reportheaders">
     <thead class="thead">
 
         <tr>
-            <th>
+            <th style="width: 200px">
                 VIN
             </th>
-            <th>
+            <th style="width: 200px">
 
                 @{ if (thisviewSortOrder != "StockNum_Descending")
                     {
-                        @Html.ActionLink("Stock#","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum_Descending" })
+                        @Html.ActionLink("Stock#", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Stock#","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum" })
+                        @Html.ActionLink("Stock#", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum" })
                     }
                 }
             </th>
-            <th>
+            <th style="width: 75px">
                 Status
             </th>
-            <th>
+            <th style="width: 75px">
                 @{ if (thisviewSortOrder != "Year_Descending")
                     {
-                        @Html.ActionLink("Year","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
+                        @Html.ActionLink("Year", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Year","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year" })
+                        @Html.ActionLink("Year", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year" })
                     }
                 }
             </th>
-            <th>
+            <th style="width: 100px">
                 Make
             </th>
-            <th>
+            <th style="width: 150px">
                 @{ if (thisviewSortOrder != "Model_Descending")
                     {
-                        @Html.ActionLink("Model","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
+                        @Html.ActionLink("Model", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Model","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model" })
+                        @Html.ActionLink("Model", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model" })
                     }
                 }
             </th>
-            <th>
+            <th style="width: 150px">
                 @{ if (thisviewSortOrder != "Color_Descending")
                     {
-                        @Html.ActionLink("Color","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
+                        @Html.ActionLink("Color", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Color","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color" })
+                        @Html.ActionLink("Color", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color" })
                     }
                 }
             </th>
-            <th>
+            <th style="width: 100px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
-                        @Html.ActionLink("Chrome","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
+                        @Html.ActionLink("Chrome", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Chrome","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
+                        @Html.ActionLink("Chrome", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
                     }
                 }
             </th>
-            <th>
+            <th style="width: 100px">
                 @{ if (thisviewSortOrder != "MSRP_Descending")
                     {
-                        @Html.ActionLink(thisPriceTitle,"DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
+                        @Html.ActionLink(thisPriceTitle, "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink(thisPriceTitle,"DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP" })
+                        @Html.ActionLink(thisPriceTitle, "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP" })
                     }
                 }
             </th>
             <th>
                 @{ if (thisviewSortOrder != "DaysInStock_Descending")
                     {
-                        @Html.ActionLink("Days In Stock","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock_Descending" })
+                        @Html.ActionLink("Days In Stock", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Days In Stock","DrillDown_AllLocationsNew", new { StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock" })
+                        @Html.ActionLink("Days In Stock", "DrillDown_AllLocationsNew", new {  StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock" })
                     }
                 }
 
@@ -112,34 +112,34 @@
     </thead>
 </table>
 
-<table class="table" style="font-size: 90%">
+<table class="table" ">
     @foreach (var item in Model)
     {
         counter++;
         <tr>
-            <td>
+            <td style="width: 200px">
                 @Html.DisplayFor(modelItem => item.SERIAL_)
 
             </td>
-            <td>
+            <td style="width: 200px">
                 @Html.DisplayFor(modelItem => item.STOCK_)
             </td>
-            <td>
+            <td style="width: 100px">
                 @Html.DisplayFor(modelItem => item.STAT_CODE)
             </td>
-            <td>
+            <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.YEAR)
             </td>
-            <td>
+            <td style="width: 100px">
                 @Html.DisplayFor(modelItem => item.MAKE)
             </td>
-            <td>
+            <td style="width: 150px">
                 @Html.DisplayFor(modelItem => item.CARLINE)
             </td>
-            <td>
+            <td style="width: 150px">
                 @Html.DisplayFor(modelItem => item.COLOR_DESC)
             </td>
-            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver;" </text> }>
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
                 @if (item.ChromeStyleID.Value > 0)
                 {
                     @Html.DisplayFor(modelItem => item.ChromeStyleID)
@@ -149,7 +149,7 @@
                     @("------");
                 }
             </td>
-            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
                 @Html.DisplayFor(modelItem => item.MSRP)
             </td>
             <td>

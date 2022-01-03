@@ -387,8 +387,11 @@ namespace WebApplication6.Views
             {
                 Make = "ALL";
             }
+            StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed);
             NewOrUsed = ("" + NewOrUsed.Trim());
+
             if (NewOrUsed == "")
             {
                 NewOrUsed = "N";  // default to new 
@@ -607,6 +610,7 @@ namespace WebApplication6.Views
 
             // handle nulls
             sortOrder = ("" + sortOrder);
+            NewOrUsed = ("" + NewOrUsed);
             NewOrUsed = ("" + NewOrUsed.Trim());
             if (NewOrUsed == "")
             {
