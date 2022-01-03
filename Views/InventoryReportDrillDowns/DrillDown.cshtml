@@ -23,7 +23,7 @@
             <th style="width: 200px">
                 VIN
             </th>
-            <th style="width: 100px">
+            <th style="width: 120px">
 
                 @{ if (thisviewSortOrder != "StockNum_Descending")
                     {
@@ -49,10 +49,10 @@
                     }
                 }
             </th>
-            <th style="width: 100px">
+            <th style="width: 200px">
                 Make
             </th>
-            <th style="width: 150px">
+            <th style="width: 250px">
                 @{ if (thisviewSortOrder != "Model_Descending")
                     {
                         @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
@@ -63,7 +63,7 @@
                     }
                 }
             </th>
-            <th style="width: 150px">
+            <th style="width: 250px">
                 @{ if (thisviewSortOrder != "Color_Descending")
                     {
                         @Html.ActionLink("Color", "DrillDown", new { Make = ViewBag.Make.ToUpper(), StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
@@ -121,7 +121,7 @@
                 @Html.DisplayFor(modelItem => item.SERIAL_)
 
             </td>
-            <td style="width: 100px">
+            <td style="width: 120px">
                 @Html.DisplayFor(modelItem => item.STOCK_)
             </td>
             <td style="width: 75px">
@@ -130,13 +130,13 @@
             <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.YEAR)
             </td>
-            <td style="width: 100px">
+            <td style="width: 200px">
                 @Html.DisplayFor(modelItem => item.MAKE)
             </td>
-            <td style="width: 150px">
+            <td style="width: 250px">
                 @Html.DisplayFor(modelItem => item.CARLINE)
             </td>
-            <td style="width: 150px">
+            <td style="width: 250px">
                 @Html.DisplayFor(modelItem => item.COLOR_DESC)
             </td>
             <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
