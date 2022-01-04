@@ -14,9 +14,8 @@
 
 <h2>@ViewBag.Title</h2>
 
-@counter
 
-<table class="table" style="position: sticky; top: 40px; margin-bottom: 0px" id="reportheaders">
+<table class="table" style="position: sticky; top: 40px; margin-bottom:0;" id="reportheaders">
     <thead class="thead">
 
         <tr>
@@ -137,7 +136,7 @@
     </thead>
 </table>
 
-<table class="table" style="font-size: 90%">
+<table class="table" style="font-size: 90%;">
     @foreach (var item in Model)
     {
         counter++;
@@ -164,17 +163,17 @@
             <td style="width: 350px">
                 @Html.DisplayFor(modelItem => item.CLR_DESC)
             </td>
-            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
-            @if (item.ChromeStyleID.Value > 0)
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+                @if (item.ChromeStyleID.Value > 0)
                 {
-                @Html.DisplayFor(modelItem => item.ChromeStyleID)
+                    @Html.DisplayFor(modelItem => item.ChromeStyleID)
                 }
                 else
                 {
                     @("------");
                 }
             </td>
-            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text> } else { <text> style= "width: 100px" </text> }>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
                 @Html.DisplayFor(modelItem => item.MSRP)
             </td>
             <td>
@@ -186,3 +185,4 @@
     }
 
 </table>
+@counter

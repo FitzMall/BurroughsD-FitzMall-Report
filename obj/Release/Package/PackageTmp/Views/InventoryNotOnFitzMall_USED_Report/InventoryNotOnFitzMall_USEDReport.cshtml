@@ -9,7 +9,6 @@
 
     long total_ActuallyOnWebSite_1 = 0;
     long total_ActuallyOnWebSite_2 = 0;
-    long total_ActuallyOnWebSite_AllStatus = 0;
 
     long total_ShouldBeOnWebSite = 0;
     long total_ActuallyOnWebSite = 0;
@@ -19,10 +18,10 @@
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css">
 <link href="\Content\Site.css" rel="stylesheet" type="text/css">
 
-<h2>USED FitzMall.com SBOF Report @DateTime.Now.ToShortDateString()</h2>
+<h2 style="margin-left:250px">USED FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 <li>@Html.ActionLink("Printable", "PrintableReport", "InventoryNotOnFitzMall_USED_Report")</li>
 
-<table class="table">
+<table class="table" style="margin-left: 250px; width: 1100px;  position: sticky; top: 40px; margin-bottom: 0px; font-size: 90%" id="reportheaders">
     <thead>
         <tr>
             <th colspan="2" scope="colgroup"></th>
