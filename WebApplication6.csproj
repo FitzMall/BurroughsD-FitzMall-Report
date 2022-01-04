@@ -263,7 +263,6 @@
     <Content Include="Views\NotOnFitzMall_USED\DrillDown_AllStatus.cshtml" />
     <Content Include="Views\NotOnFitzMalls\DrillDown_AllLocations.cshtml" />
     <Content Include="Views\NotOnFitzMalls\DrillDown_AllStatus.cshtml" />
-    <Content Include="Views\InventoryNotOnFitzMall_USED_Report\PrintableReport.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

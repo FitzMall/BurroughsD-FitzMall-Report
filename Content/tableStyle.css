@@ -15,7 +15,7 @@
 
     a,
     a:visited {
-        text-decoration: underline;
+        text-decoration:none ;
     }
 
         a[href]:after {
@@ -80,7 +80,6 @@
         border-collapse: collapse !important;
         margin-left: 0 !important;
         width: auto !important;
-        
     }
 
         .table td,
@@ -93,6 +92,7 @@
     .table-bordered td {
         border: 1px solid #ddd !important;
         margin-left: 0 !important;
+        width: 80% !important;
     }
 }
 
