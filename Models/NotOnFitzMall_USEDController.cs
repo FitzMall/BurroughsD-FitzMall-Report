@@ -49,10 +49,9 @@ namespace WebApplication6
             string NewOrUsed = ("U");
 
             string ViewBagString = "";
-            string NewOrUsedTitle = "USED";
             ViewBag.PriceTitle = "FitzWay Low Price";
 
-            ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
+            ViewBagString = "USED Cars NOT On FitzMall " + Make + " " + StoreBranch + " " + Location;
             System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
 
             if (StoreBranch != "")
@@ -223,11 +222,15 @@ namespace WebApplication6
             sortOrder = ("" + sortOrder);
         
             string ViewBagString = "";
+            string StatusShow = "";
+            
+            StatusShow = Status.ToString();
 
             string NewOrUsed = "U";
-            ViewBag.PriceTitle = "FitzWay Low Price";
-            
-            ViewBagString = "USED Cars On FitzMall";
+            ViewBag.PriceTitle = "FitzWay Low Price" + StatusShow ;
+
+
+            ViewBagString = "USED Cars NOT On FitzMall";
             if (Status.ToString() != "0")
             {
                 ViewBagString += " " + Status.ToString();
@@ -383,7 +386,7 @@ namespace WebApplication6
             string NewOrUsedTitle = "USED";
             ViewBag.PriceTitle = "FitzWay Low Price";
 
-            ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
+            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
             if (StatusCode.ToString() != "0")
             {
                 ViewBagString += " " + StatusCode.ToString();

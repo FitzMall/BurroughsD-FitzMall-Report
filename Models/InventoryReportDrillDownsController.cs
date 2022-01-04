@@ -680,9 +680,17 @@ namespace WebApplication6.Views
             ViewBag.NewOrUsed = NewOrUsed;
             ViewBag.SortOrder = sortOrder;
 
-            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                               select sDD;
+            if (StatusCode > 0)
+            {
+                SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.STAT_CODE == StatusCode && d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed)
+                                                   select sDD;
 
+            }
+            else
+            {
+                SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                   select sDD;
+            }
 
             switch (sortOrder)
             {

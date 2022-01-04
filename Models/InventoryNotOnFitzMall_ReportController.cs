@@ -100,7 +100,7 @@ namespace WebApplication6.Models
             }
             else
             {
-                return RedirectToAction("DrillDown_AllLocations", "NotOnFitzMalls", new { Make = Make.ToUpper(), StatusCode = parStatusCode, NewOrUsed = "N" });
+                return RedirectToAction("DrillDown_AllLocations", "NotOnFitzMalls", new { Make = Make.ToUpper(), Status = parStatusCode, NewOrUsed = "N" });
             }
 
         }

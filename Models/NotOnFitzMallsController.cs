@@ -114,9 +114,9 @@ namespace WebApplication6
 
             string ViewBagString = "";
             string NewOrUsedTitle = "NEW";
-            ViewBag.PriceTitle = "FitzWay Low Price";
+            ViewBag.PriceTitle = "MSRP";
 
-            ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
+            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
             System.Diagnostics.Debug.WriteLine("NotONFitzMall DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
 
             if (StoreBranch != "")
@@ -289,7 +289,6 @@ namespace WebApplication6
             string ViewBagString = "";
 
             string NewOrUsed = "N";
-            ViewBag.PriceTitle = "FitzWay Low Price";
 
             ViewBagString = "NEW Cars Not On FitzMall";
             if (Status.ToString() != "0")
@@ -459,10 +458,9 @@ namespace WebApplication6
             if (NewOrUsed == "N")
             {
                 NewOrUsedTitle = "NEW";
-                ViewBag.PriceTitle = "FitzWay Low Price";
             }
 
-            ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
+            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
             if (StatusCode.ToString() != "0")
             {
                 ViewBagString += " " + StatusCode.ToString();
