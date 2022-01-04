@@ -31,7 +31,7 @@ namespace WebApplication6
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.FitzWayVIN != "")
                                                    select sDD_init;
 
 
@@ -77,7 +77,7 @@ namespace WebApplication6
             if (StoreBranch == "")
                 {
 
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                        select sDD;
                 }
                 else
@@ -85,14 +85,14 @@ namespace WebApplication6
                     if (Make == "ALL")
                     {
 
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                            select sDD;
 
                     }
                     else
                     {
 
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                            select sDD;
 
                     }
@@ -212,7 +212,7 @@ namespace WebApplication6
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.FitzWayVIN != "")
                                                    select sDD_init;
 
             System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown_ALLLocations Controller- Getting View:  " + Status);
@@ -243,12 +243,12 @@ namespace WebApplication6
 
             if (Status > 0)
             {
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == Status && d.NEW_USED == NewOrUsed)
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == Status && d.NEW_USED == NewOrUsed)
                                                        select sDD;
             }
             else
             {
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                            select sDD;
             }
 
@@ -361,12 +361,12 @@ namespace WebApplication6
         }
 
         // GET: ReportInventories/DrillDown/5
-        public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
+        public ActionResult DrillDown(string StoreBranch, int? StatusCode, string NewOrUsed, string sortOrder)
         {
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d =>  d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.FitzWayVIN != "")
                                                    select sDD_init;
 
 
@@ -374,29 +374,14 @@ namespace WebApplication6
 
             // handle nulls
             sortOrder = ("" + sortOrder);
-            Make = ("" + Make);
-            if (Make == "")
-            {
-                Make = "ALL";
-            }
             StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
-            NewOrUsed = ("" + NewOrUsed);
-            NewOrUsed = ("" + NewOrUsed.Trim());
-            System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
-
-            if (NewOrUsed == "")
-            {
-                NewOrUsed = "N";  // default to new 
-            }
+            NewOrUsed = ("U");
+            System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting View: Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
 
             string ViewBagString = "";
-            string NewOrUsedTitle = "NEW";
-            if (NewOrUsed == "U")
-            {
-                NewOrUsedTitle = "USED";
-                ViewBag.PriceTitle = "FitzWay Low Price";
-            }
+            string NewOrUsedTitle = "USED";
+            ViewBag.PriceTitle = "FitzWay Low Price";
 
             ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
             if (StatusCode.ToString() != "0")
@@ -411,60 +396,33 @@ namespace WebApplication6
 
             }
 
-            if (Make != "")
-            {
-                ViewBagString += " " + Make;
-
-            }
-
             ViewBag.Title = ViewBagString;
 
             ViewBag.StoreBranch = StoreBranch;
             ViewBag.parStatusCode = StatusCode;
             ViewBag.NewOrUsed = NewOrUsed;
-            ViewBag.Make = Make.ToUpper();
+            ViewBag.Make = "";
             ViewBag.SortOrder = sortOrder;
 
             if (StatusCode > 0)
             {
-                if (Make == "ALL")
-                {
                     
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
                                                            select sDD;
-                    
-                }
-                else
-                {
-                    
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                           select sDD;
-                                    }
             }
             else
             {
                 if (StoreBranch == "")
                 {
                     
-                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                        SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                            select sDD;
                 }
                 else
                 {
-                    if (Make == "ALL")
-                    {
                         
-                            SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                            SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                                select sDD;
-                        
-                    }
-                    else
-                    {
-                        
-                            SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                               select sDD;
-                        
-                    }
                 }
             }
 
