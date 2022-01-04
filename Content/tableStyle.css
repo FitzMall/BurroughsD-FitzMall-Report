@@ -1,4 +1,102 @@
 ﻿
+@media print {
+    *,
+    *:before,
+    *:after {
+        color: #000 !important;
+        text-shadow: none !important;
+        background: transparent !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        font-size: 90% !important;
+        font-style: normal !important;
+        
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+        a[href]:after {
+            content: " ";
+        }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+        margin-left: 0 !important;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .btn > .caret,
+    .dropup > .btn > .caret {
+        border-top-color: #000 !important;
+    }
+
+    .label {
+        border: 1px solid #000;
+    }
+
+    .table {
+        border-collapse: collapse !important;
+        margin-left: 0 !important;
+        width: auto !important;
+        
+    }
+
+        .table td,
+        .table th {
+            background-color: #fff !important;
+            margin-left: 0 !important;
+        }
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #ddd !important;
+        margin-left: 0 !important;
+    }
+}
+
+
 
 table {
     width: 100%;
@@ -11,6 +109,7 @@ td, th {
     font-size: 125%;
     padding: 10px 20px;
     text-align: center;
+    margin-left: 0 !important;
 }
 
 th {
@@ -74,6 +173,7 @@ caption {
     text-align: right;
     border: double;
 }
+
 
 
 
