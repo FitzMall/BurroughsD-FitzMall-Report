@@ -2,109 +2,187 @@
 
 @{
     int counter = 0;
+    bool IsNew = false;
+    IsNew = (ViewBag.PriceTitle == "MSRP");
+    string thisPriceTitle = ViewBag.PriceTitle;
+
+    // for sorting
+    string thisviewSortOrder = ViewBag.SortOrder;
+
 }
 <link href="\Content\tableStyle.css" rel="stylesheet" type="text/css" sizes="">
 
-
 <h2>@ViewBag.Title</h2>
-<input type="button" value="Back To List" onclick="history.back()">
 
-<table class="table" width=30 % height=30 align=left>
+<table class="table" style="position: sticky; top: 40px; margin-bottom: 0px" id="reportheaders">
+    <thead class="thead">
 
-    <tr>
-        <th>
-            Store/Branch
-        </th>
-        <th>
-            Status#
-        </th>
-        <th>
-            VIN
-        </th>
-        <th>
-            Stock#
-        </th>
-        <th>
-            Year
-        </th>
-        <th>
-            Make
-        </th>
-        <th>
-            Model
-        </th>
-        <th>
-            Color
-        </th>
-        <th>
-            Chrome
-        </th>
-        <th>
-            Invoice
-        </th>
-        <th>
-            MSRP
-        </th>
-        <th>
-            Days In Stock
-        </th>
-    </tr>
+        <tr>
+            <th style="width: 200px">
+                @{ if (thisviewSortOrder != "VIN_Descending")
+                    {
+                        @Html.ActionLink("VIN", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "VIN_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("VIN", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "VIN" })
+                    }
+                }
+            </th>
+            <th style="width: 120px">
 
+                @{ if (thisviewSortOrder != "StockNum_Descending")
+                    {
+                        @Html.ActionLink("Stock#", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Stock#", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "StockNum" })
+                    }
+                }
+            </th>
+            <th style="width: 75px">
+                @{ if (thisviewSortOrder != "Status_Descending")
+                    {
+                        @Html.ActionLink("Status", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Status", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status" })
+                    }
+                }
+
+            </th>
+            <th style="width: 75px">
+                @{ if (thisviewSortOrder != "Year_Descending")
+                    {
+                        @Html.ActionLink("Year", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Year", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Year" })
+                    }
+                }
+            </th>
+            <th style="width: 200px">
+                @{ if (thisviewSortOrder != "Make_Descending")
+                    {
+                        @Html.ActionLink("Make", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Make", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make" })
+                    }
+                }
+            </th>
+            <th style="width: 250px">
+                @{ if (thisviewSortOrder != "Model_Descending")
+                    {
+                        @Html.ActionLink("Model", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Model", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model" })
+                    }
+                }
+            </th>
+            <th style="width: 350px">
+                @{ if (thisviewSortOrder != "Color_Descending")
+                    {
+                        @Html.ActionLink("Color", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Color", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Color" })
+                    }
+                }
+            </th>
+            <th style="width: 100px">
+                @{ if (thisviewSortOrder != "Chrome_Descending")
+                    {
+                        @Html.ActionLink("Chrome", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Chrome", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
+                    }
+                }
+            </th>
+            <th style="width: 100px">
+                @{ if (thisviewSortOrder != "MSRP_Descending")
+                    {
+                        @Html.ActionLink(thisPriceTitle, "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(thisPriceTitle, "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "MSRP" })
+                    }
+                }
+            </th>
+            <th>
+                @{ if (thisviewSortOrder != "DaysInStock_Descending")
+                    {
+                        @Html.ActionLink("Days In Stock", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Days In Stock", "DrillDown_AllLocations", new { StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "DaysInStock" })
+                    }
+                }
+
+            </th>
+        </tr>
+    </thead>
+</table>
+
+<table class="table" style="font-size: 90%">
     @foreach (var item in Model)
     {
         counter++;
+        <tr>
+            <td style="width: 200px">
+                @Html.DisplayFor(modelItem => item.SERIAL_)
 
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.STORE_BRANCH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STAT_CODE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SERIAL_)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STOCK_)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YEAR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAKE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CARLINE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLR_DESC)
-        </td>
-        <td>
-            @if (item.ChromeStyleID.Value > 0)
-            {
-                @Html.DisplayFor(modelItem => item.ChromeStyleID)
-            }
-            else
-            {
-                @("------");
-            }
-        </td>
-        <td @if (item.INV_AMT.Value == 0) { <text> style="background-color:silver;" </text> }>
-            @Html.DisplayFor(modelItem => item.INV_AMT)
-        </td>
+            </td>
+            <td style="width: 120px">
+                @Html.DisplayFor(modelItem => item.STOCK_)
+            </td>
+            <td style="width: 75px">
+                @Html.DisplayFor(modelItem => item.STAT_CODE)
+            </td>
+            <td style="width: 75px">
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+            <td style="width: 200px; text-align: center">
+                @Html.DisplayFor(modelItem => item.MAKE)
+            </td>
+            <td style="width: 250px; text-align: center">
+                @Html.DisplayFor(modelItem => item.CARLINE)
+            </td>
+            <td style="width: 350px; text-align: center">
+                @Html.DisplayFor(modelItem => item.CLR_DESC)
+            </td>
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+                @if (item.ChromeStyleID.Value > 0)
+                {
+                    @Html.DisplayFor(modelItem => item.ChromeStyleID)
+                }
+                else
+                {
+                    @("------");
+                }
+            </td>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+                @Html.DisplayFor(modelItem => item.MSRP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
+            </td>
 
-        <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver;" </text> }>
-            @Html.DisplayFor(modelItem => item.MSRP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
-        </td>
-    </tr>
+        </tr>
 
     }
-    @counter
-
-
 
 </table>
 
+@counter
