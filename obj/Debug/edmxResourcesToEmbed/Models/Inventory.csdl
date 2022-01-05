@@ -11,12 +11,11 @@
     <EntitySet Name="Inventories" EntityType="InventoryModel.Inventory" />
     <EntitySet Name="InventoryHistories" EntityType="InventoryModel.InventoryHistory" />
     <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_Report" />
-    <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
     <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
     <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
     <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
-    <EntitySet Name="StoreBranchByALLLocations" EntityType="InventoryModel.StoreBranchByALLLocation" />
+    <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
   </EntityContainer>
   <ComplexType Name="CARbySTOCK_Result">
     <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -794,20 +793,6 @@
     <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
-  <EntityType Name="InventoryNotOnFitzMall_USED_Report">
-    <Key>
-      <PropertyRef Name="Id_Primary" />
-    </Key>
-    <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="LOCATION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-    <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
-    <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
-    <Property Name="FM_TotalAllCarStat" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_1" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_2" Type="Int32" />
-    <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
-    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
   <EntityType Name="InventoryReportDrillDown">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -850,7 +835,7 @@
     <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Name="Options" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="NotOnFitzMall">
@@ -895,6 +880,7 @@
     <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="NotOnFitzMall_USED">
@@ -949,13 +935,18 @@
     <Property Name="DEFAULT_LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
-  <EntityType Name="StoreBranchByALLLocation">
+  <EntityType Name="InventoryNotOnFitzMall_USED_Report">
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
+    <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
+    <Property Name="FM_TotalAllCarStat" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_1" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_2" Type="Int32" />
+    <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>

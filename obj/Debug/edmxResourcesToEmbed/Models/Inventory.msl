@@ -791,26 +791,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="InventoryNotOnFitzMall_USED_Report">
-      <EntityTypeMapping TypeName="InventoryModel.InventoryNotOnFitzMall_USED_Report">
-        <MappingFragment StoreEntitySet="InventoryNotOnFitzMall_USED_Report">
-          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-          <ScalarProperty Name="ActuallyOnWebSite_TotalAllCarStat" ColumnName="ActuallyOnWebSite_TotalAllCarStat" />
-          <ScalarProperty Name="ActuallyOnWebSite_2" ColumnName="ActuallyOnWebSite_2" />
-          <ScalarProperty Name="ActuallyOnWebSite_1" ColumnName="ActuallyOnWebSite_1" />
-          <ScalarProperty Name="FM_TotalAllCarStat" ColumnName="FM_TotalAllCarStat" />
-          <ScalarProperty Name="ShouldBeOnWebSite_2" ColumnName="ShouldBeOnWebSite_2" />
-          <ScalarProperty Name="ShouldBeOnWebSite_1" ColumnName="ShouldBeOnWebSite_1" />
-          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-          <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="InventoryReportDrillDowns">
       <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
         <MappingFragment StoreEntitySet="InventoryReportDrillDown">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-          <ScalarProperty Name="Options" ColumnName="Options" />
+          <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
           <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -856,6 +841,7 @@
       <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall">
         <MappingFragment StoreEntitySet="NotOnFitzMall">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
           <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -951,13 +937,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="StoreBranchByALLLocations">
-      <EntityTypeMapping TypeName="InventoryModel.StoreBranchByALLLocation">
-        <MappingFragment StoreEntitySet="StoreBranchByALLLocations">
+    <EntitySetMapping Name="InventoryNotOnFitzMall_USED_Report">
+      <EntityTypeMapping TypeName="InventoryModel.InventoryNotOnFitzMall_USED_Report">
+        <MappingFragment StoreEntitySet="InventoryNotOnFitzMall_USED_Report">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-          <ScalarProperty Name="LOCATION2" ColumnName="LOCATION2" />
+          <ScalarProperty Name="ActuallyOnWebSite_TotalAllCarStat" ColumnName="ActuallyOnWebSite_TotalAllCarStat" />
+          <ScalarProperty Name="ActuallyOnWebSite_2" ColumnName="ActuallyOnWebSite_2" />
+          <ScalarProperty Name="ActuallyOnWebSite_1" ColumnName="ActuallyOnWebSite_1" />
+          <ScalarProperty Name="FM_TotalAllCarStat" ColumnName="FM_TotalAllCarStat" />
+          <ScalarProperty Name="ShouldBeOnWebSite_2" ColumnName="ShouldBeOnWebSite_2" />
+          <ScalarProperty Name="ShouldBeOnWebSite_1" ColumnName="ShouldBeOnWebSite_1" />
           <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-          <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
+          <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

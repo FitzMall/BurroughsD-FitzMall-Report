@@ -184,9 +184,6 @@
     <Compile Include="Models\procDAB_Result.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StoreBranchByALLLocation.cs">
-      <DependentUpon>Inventory.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,7 +207,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Views\ReportInventories\Inventory_Report.cshtml" />
     <EntityDeploy Include="Models\Inventory.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Inventory.Designer.cs</LastGenOutput>
@@ -242,13 +238,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ReportInventories\DrillDown.cshtml" />
-    <Content Include="Views\Inventories\DrillDown.cshtml" />
     <Content Include="Views\NotOnFitzMalls\DrillDown.cshtml" />
     <Content Include="Views\InventoryNotOnFitzMall_Report\InventoryNotOnFitzMallReport.cshtml" />
-    <Content Include="Views\Inventories\DrillDown_AllLocationsNew.cshtml" />
-    <Content Include="Views\Inventories\DrillDown_AllLocationsUsed.cshtml" />
-    <Content Include="Views\Inventories\DrillDown_AllStatusNew.cshtml" />
     <Content Include="Views\InventoryNotOnFitzMall_USED_Report\InventoryNotOnFitzMall_USEDReport.cshtml" />
     <Content Include="Views\InventoryReportDrillDowns\DrillDown.cshtml" />
     <Content Include="Views\InventoryReportDrillDowns\DrillDown_AllLocationsNew.cshtml" />
@@ -262,6 +253,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Inventories\" />
+    <Folder Include="Views\ReportInventories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
