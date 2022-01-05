@@ -615,8 +615,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Key>
             <PropertyRef Name="Id_Primary" />
           </Key>
-          <Property Name="STOREBRANCH" Type="varchar" MaxLength="5" />
-          <Property Name="LOCATION" Type="nchar" MaxLength="10" />
+          <Property Name="STOREBRANCH" Type="nchar" MaxLength="10" />
+          <Property Name="LOCATION" Type="varchar" MaxLength="6" />
           <Property Name="ShouldBeOnWebSite_1" Type="int" />
           <Property Name="ShouldBeOnWebSite_2" Type="int" />
           <Property Name="FM_TotalAllCarStat" Type="int" />
@@ -629,17 +629,17 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Key>
             <PropertyRef Name="Id_Primary" />
           </Key>
-          <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
-          <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+          <Property Name="STORE BRANCH" Type="nchar" MaxLength="10" />
+          <Property Name="SERIAL#" Type="varchar" MaxLength="17" />
           <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
-          <Property Name="STOCK#" Type="varchar" MaxLength="15" />
+          <Property Name="STOCK#" Type="varchar" MaxLength="10" />
           <Property Name="ORDER#" Type="varchar" MaxLength="10" />
-          <Property Name="NEW USED" Type="varchar" MaxLength="1" />
+          <Property Name="NEW USED" Type="varchar" MaxLength="4" />
           <Property Name="ChromeStyleID" Type="int" />
           <Property Name="YEAR" Type="int" />
-          <Property Name="MAKE" Type="varchar" MaxLength="25" />
+          <Property Name="MAKE" Type="varchar" MaxLength="30" />
           <Property Name="MAKE_PREFIX" Type="varchar" MaxLength="3" />
-          <Property Name="CARLINE" Type="varchar" MaxLength="20" />
+          <Property Name="CARLINE" Type="char" MaxLength="50" />
           <Property Name="CARLINE_CODE" Type="varchar" MaxLength="20" />
           <Property Name="DESC" Type="varchar" MaxLength="40" />
           <Property Name="RECEIVED_DATE" Type="date" />
@@ -652,10 +652,10 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="CODED-COST" Type="money" />
           <Property Name="FREIGHT" Type="money" />
           <Property Name="STAT-CODE" Type="int" />
-          <Property Name="LOCATION" Type="varchar" MaxLength="10" />
-          <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
+          <Property Name="LOCATION" Type="varchar" MaxLength="4" />
+          <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
           <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
-          <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
+          <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
           <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
           <Property Name="CARLINE-CODE-DV" Type="varchar" MaxLength="2" />
           <Property Name="CREATE-DATE-DV" Type="date" />
@@ -667,6 +667,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
           <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
           <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="Options" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -767,22 +768,6 @@ warning 6013: The table/view 'Inventory.dbo.MallCodes' does not have a primary k
           <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
-        <EntityType Name="ReportInventory">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="STOREBRANCH" Type="nchar" MaxLength="10" />
-          <Property Name="MAKE" Type="varchar" MaxLength="30" />
-          <Property Name="v_loc" Type="varchar" MaxLength="4" />
-          <Property Name="CarStat1" Type="int" />
-          <Property Name="CarStat2" Type="int" />
-          <Property Name="CarStat4" Type="int" />
-          <Property Name="CarStat9" Type="int" />
-          <Property Name="CarStat12" Type="int" />
-          <Property Name="CarStat14" Type="int" />
-          <Property Name="TotalAllCarStat" Type="int" />
-          <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="StoreBranchByALLLocations">
@@ -814,7 +799,6 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ReportInventory" EntityType="Self.ReportInventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
@@ -1129,7 +1113,6 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
           <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
           <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
-          <EntitySet Name="ReportInventories" EntityType="InventoryModel.ReportInventory" />
           <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
           <EntitySet Name="StoreBranchByALLLocations" EntityType="InventoryModel.StoreBranchByALLLocation" />
           </EntityContainer>
@@ -1913,8 +1896,8 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Key>
             <PropertyRef Name="Id_Primary" />
           </Key>
-          <Property Name="STOREBRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LOCATION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
           <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
           <Property Name="FM_TotalAllCarStat" Type="Int32" />
@@ -1927,17 +1910,17 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Key>
             <PropertyRef Name="Id_Primary" />
           </Key>
-          <Property Name="STORE_BRANCH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SERIAL_" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
           <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
-          <Property Name="STOCK_" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="STOCK_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="NEW_USED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NEW_USED" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="ChromeStyleID" Type="Int32" />
           <Property Name="YEAR" Type="Int32" />
-          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="CARLINE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CARLINE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
           <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
@@ -1950,10 +1933,10 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="STAT_CODE" Type="Int32" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LOCATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="EXT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="INT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
@@ -1965,6 +1948,7 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Options" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="NotOnFitzMall">
@@ -2052,22 +2036,6 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="ReportInventory">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="MAKE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="v_loc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="CarStat1" Type="Int32" />
-          <Property Name="CarStat2" Type="Int32" />
-          <Property Name="CarStat4" Type="Int32" />
-          <Property Name="CarStat9" Type="Int32" />
-          <Property Name="CarStat12" Type="Int32" />
-          <Property Name="CarStat14" Type="Int32" />
-          <Property Name="TotalAllCarStat" Type="Int32" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
@@ -2903,6 +2871,7 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
             <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
               <MappingFragment StoreEntitySet="InventoryReportDrillDown">
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="Options" ColumnName="Options" />
                 <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
                 <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
                 <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -3030,23 +2999,6 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
                 <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
                 <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
                 <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ReportInventories">
-            <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
-              <MappingFragment StoreEntitySet="ReportInventory">
-                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-                <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
-                <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
-                <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
-                <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
-                <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
-                <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
-                <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
-                <ScalarProperty Name="v_loc" ColumnName="v_loc" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

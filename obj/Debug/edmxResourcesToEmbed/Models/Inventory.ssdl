@@ -610,8 +610,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="STOREBRANCH" Type="varchar" MaxLength="5" />
-    <Property Name="LOCATION" Type="nchar" MaxLength="10" />
+    <Property Name="STOREBRANCH" Type="nchar" MaxLength="10" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="6" />
     <Property Name="ShouldBeOnWebSite_1" Type="int" />
     <Property Name="ShouldBeOnWebSite_2" Type="int" />
     <Property Name="FM_TotalAllCarStat" Type="int" />
@@ -624,17 +624,17 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Key>
       <PropertyRef Name="Id_Primary" />
     </Key>
-    <Property Name="STORE BRANCH" Type="varchar" MaxLength="5" />
-    <Property Name="SERIAL#" Type="varchar" MaxLength="20" />
+    <Property Name="STORE BRANCH" Type="nchar" MaxLength="10" />
+    <Property Name="SERIAL#" Type="varchar" MaxLength="17" />
     <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
-    <Property Name="STOCK#" Type="varchar" MaxLength="15" />
+    <Property Name="STOCK#" Type="varchar" MaxLength="10" />
     <Property Name="ORDER#" Type="varchar" MaxLength="10" />
-    <Property Name="NEW USED" Type="varchar" MaxLength="1" />
+    <Property Name="NEW USED" Type="varchar" MaxLength="4" />
     <Property Name="ChromeStyleID" Type="int" />
     <Property Name="YEAR" Type="int" />
-    <Property Name="MAKE" Type="varchar" MaxLength="25" />
+    <Property Name="MAKE" Type="varchar" MaxLength="30" />
     <Property Name="MAKE_PREFIX" Type="varchar" MaxLength="3" />
-    <Property Name="CARLINE" Type="varchar" MaxLength="20" />
+    <Property Name="CARLINE" Type="char" MaxLength="50" />
     <Property Name="CARLINE_CODE" Type="varchar" MaxLength="20" />
     <Property Name="DESC" Type="varchar" MaxLength="40" />
     <Property Name="RECEIVED_DATE" Type="date" />
@@ -647,10 +647,10 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="CODED-COST" Type="money" />
     <Property Name="FREIGHT" Type="money" />
     <Property Name="STAT-CODE" Type="int" />
-    <Property Name="LOCATION" Type="varchar" MaxLength="10" />
-    <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="4" />
+    <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
     <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
-    <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
+    <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
     <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
     <Property Name="CARLINE-CODE-DV" Type="varchar" MaxLength="2" />
     <Property Name="CREATE-DATE-DV" Type="date" />
@@ -662,6 +662,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+    <Property Name="Options" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
@@ -762,22 +763,6 @@ warning 6013: The table/view 'Inventory.dbo.MallCodes' does not have a primary k
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
-  <EntityType Name="ReportInventory">
-    <Key>
-      <PropertyRef Name="Id_Primary" />
-    </Key>
-    <Property Name="STOREBRANCH" Type="nchar" MaxLength="10" />
-    <Property Name="MAKE" Type="varchar" MaxLength="30" />
-    <Property Name="v_loc" Type="varchar" MaxLength="4" />
-    <Property Name="CarStat1" Type="int" />
-    <Property Name="CarStat2" Type="int" />
-    <Property Name="CarStat4" Type="int" />
-    <Property Name="CarStat9" Type="int" />
-    <Property Name="CarStat12" Type="int" />
-    <Property Name="CarStat14" Type="int" />
-    <Property Name="TotalAllCarStat" Type="int" />
-    <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="StoreBranchByALLLocations">
@@ -809,7 +794,6 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
     <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ReportInventory" EntityType="Self.ReportInventory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 

@@ -810,6 +810,7 @@
       <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
         <MappingFragment StoreEntitySet="InventoryReportDrillDown">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="Options" ColumnName="Options" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
           <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -937,23 +938,6 @@
           <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
           <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
           <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ReportInventories">
-      <EntityTypeMapping TypeName="InventoryModel.ReportInventory">
-        <MappingFragment StoreEntitySet="ReportInventory">
-          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-          <ScalarProperty Name="TotalAllCarStat" ColumnName="TotalAllCarStat" />
-          <ScalarProperty Name="CarStat14" ColumnName="CarStat14" />
-          <ScalarProperty Name="CarStat12" ColumnName="CarStat12" />
-          <ScalarProperty Name="CarStat9" ColumnName="CarStat9" />
-          <ScalarProperty Name="CarStat4" ColumnName="CarStat4" />
-          <ScalarProperty Name="CarStat2" ColumnName="CarStat2" />
-          <ScalarProperty Name="CarStat1" ColumnName="CarStat1" />
-          <ScalarProperty Name="v_loc" ColumnName="v_loc" />
-          <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-          <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
