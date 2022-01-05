@@ -1,16 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Inventory.dbo.DefaultLocationsByStoreBranch_NewVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
-    <Property Name="DEFAULT_LOCATION" Type="nchar" MaxLength="10" />
-    <Property Name="DEFAULT_LOCATION2" Type="nchar" MaxLength="10" />
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
   <EntityType Name="Inventory">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -725,7 +714,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="CODED-COST" Type="money" />
     <Property Name="FREIGHT" Type="money" />
     <Property Name="STAT-CODE" Type="int" />
-    <Property Name="LOCATION" Type="nchar" MaxLength="10" />
+    <Property Name="LOCATION" Type="varchar" MaxLength="10" />
     <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
     <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
     <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
@@ -736,9 +725,11 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="DATE-ADDED-DR" Type="date" />
     <Property Name="EXT-CLR-CD" Type="varchar" MaxLength="4" />
     <Property Name="IN-STOCK" Type="int" />
-    <Property Name="INV-AMT" Type="money" />
+    <Property Name="INV-AMT" Type="numeric" Precision="19" Scale="4" />
     <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
+    <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+    <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <Function Name="CARbySTOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -761,14 +752,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION] AS [DEFAULT_LOCATION], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION2] AS [DEFAULT_LOCATION2], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[ID] AS [ID]
-    FROM [dbo].[DefaultLocationsByStoreBranch_NewVehicles] AS [DefaultLocationsByStoreBranch_NewVehicles]</DefiningQuery>
-    </EntitySet>
     <EntitySet Name="InventoryHistory" EntityType="Self.InventoryHistory" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [InventoryHistory].[STORE BRANCH] AS [STORE BRANCH], 

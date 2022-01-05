@@ -51,6 +51,8 @@ namespace WebApplication6.Models
         public Nullable<decimal> INV_AMT { get; set; }
         public string MDL_NO { get; set; }
         public string CLR_DESC { get; set; }
+        public string COLOR_DESC { get; set; }
+        public string ChromeOptions { get; set; }
         public int Id_Primary { get; set; }
     }
 }

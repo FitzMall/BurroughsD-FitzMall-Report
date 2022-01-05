@@ -27,13 +27,14 @@ namespace WebApplication6.Views
         }
 
 
-        public ActionResult DrillDown_AllLocationsUsed(int? StatusCode, string NewOrUsed, string sortOrder)
+        public ActionResult DrillDown_AllLocationsUsed(int? StatusCode,  string sortOrder)
             {
                 // actually called by NotOnFitzMalls controller
                 // status code = 0 means all status
                 //
                 var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
                                                        select sDD_init;
+                string NewOrUsed = "U";  // default to used 
 
                 System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View DrillDown_AllLocationsUsed: Status: " + StatusCode + " " + NewOrUsed);
 
@@ -41,12 +42,7 @@ namespace WebApplication6.Views
 
                 // handle nulls
                 sortOrder = ("" + sortOrder);
-                NewOrUsed = ("" + NewOrUsed.Trim());
-                if (NewOrUsed == "")
-                {
-                    NewOrUsed = "U";  // default to used 
-                }
-
+                
                 string ViewBagString = "";
 
                 ViewBagString = "USED Cars On FitzMall";
@@ -62,8 +58,16 @@ namespace WebApplication6.Views
                 ViewBag.NewOrUsed = NewOrUsed;
                 ViewBag.SortOrder = sortOrder;
 
-                SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+            if (StatusCode > 0)
+            {
+                SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && d.STAT_CODE == StatusCode)
                                                    select sDD;
+            }
+            else
+            {
+                SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                   select sDD;
+            }
 
 
             switch (sortOrder)
@@ -145,6 +149,16 @@ namespace WebApplication6.Views
                 case "Status_Descending":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
+                case "ChromeOptions":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
+                    break;
+
+                case "ChromeOptions_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
 
                 default:
@@ -373,6 +387,16 @@ namespace WebApplication6.Views
                 case "Status_Descending":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
+                case "ChromeOptions":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
+                    break;
+
+                case "ChromeOptions_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
 
                 default:
@@ -634,6 +658,16 @@ namespace WebApplication6.Views
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
                     break;
 
+                case "ChromeOptions":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
+                    break;
+
+                case "ChromeOptions_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
+                    break;
+
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
@@ -770,6 +804,16 @@ namespace WebApplication6.Views
 
                 case "Make_Descending":
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MAKE + d.CARLINE);
+                    break;
+
+                case "Options":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
+                    break;
+
+                case "Options_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
 
 

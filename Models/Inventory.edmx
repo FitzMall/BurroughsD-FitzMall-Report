@@ -5,17 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Inventory.dbo.DefaultLocationsByStoreBranch_NewVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
-          <Property Name="DEFAULT_LOCATION" Type="nchar" MaxLength="10" />
-          <Property Name="DEFAULT_LOCATION2" Type="nchar" MaxLength="10" />
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-        </EntityType>
         <EntityType Name="Inventory">
           <Key>
             <PropertyRef Name="Id_Primary" />
@@ -730,7 +719,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="CODED-COST" Type="money" />
           <Property Name="FREIGHT" Type="money" />
           <Property Name="STAT-CODE" Type="int" />
-          <Property Name="LOCATION" Type="nchar" MaxLength="10" />
+          <Property Name="LOCATION" Type="varchar" MaxLength="10" />
           <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
           <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
           <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
@@ -741,9 +730,11 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="DATE-ADDED-DR" Type="date" />
           <Property Name="EXT-CLR-CD" Type="varchar" MaxLength="4" />
           <Property Name="IN-STOCK" Type="int" />
-          <Property Name="INV-AMT" Type="money" />
+          <Property Name="INV-AMT" Type="numeric" Precision="19" Scale="4" />
           <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
           <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
+          <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+          <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Function Name="CARbySTOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -766,14 +757,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION] AS [DEFAULT_LOCATION], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION2] AS [DEFAULT_LOCATION2], 
-    [DefaultLocationsByStoreBranch_NewVehicles].[ID] AS [ID]
-    FROM [dbo].[DefaultLocationsByStoreBranch_NewVehicles] AS [DefaultLocationsByStoreBranch_NewVehicles]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="InventoryHistory" EntityType="Self.InventoryHistory" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [InventoryHistory].[STORE BRANCH] AS [STORE BRANCH], 
@@ -1068,11 +1051,10 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <EntitySet Name="Inventories" EntityType="InventoryModel.Inventory" />
           <EntitySet Name="InventoryHistories" EntityType="InventoryModel.InventoryHistory" />
           <EntitySet Name="InventoryNotOnFitzMall_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_Report" />
+          <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
           <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
           <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
           <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
-          <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
-          <EntitySet Name="InventoryNotOnFitzMall_USED_Report" EntityType="InventoryModel.InventoryNotOnFitzMall_USED_Report" />
           </EntityContainer>
         <ComplexType Name="CARbySTOCK_Result">
           <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -1850,6 +1832,20 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
+        <EntityType Name="InventoryNotOnFitzMall_USED_Report">
+          <Key>
+            <PropertyRef Name="Id_Primary" />
+          </Key>
+          <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LOCATION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
+          <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
+          <Property Name="FM_TotalAllCarStat" Type="Int32" />
+          <Property Name="ActuallyOnWebSite_1" Type="Int32" />
+          <Property Name="ActuallyOnWebSite_2" Type="Int32" />
+          <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
+          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="InventoryReportDrillDown">
           <Key>
             <PropertyRef Name="Id_Primary" />
@@ -1967,7 +1963,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="STAT_CODE" Type="Int32" />
-          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
@@ -1981,29 +1977,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="DEFAULT_LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="DEFAULT_LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="InventoryNotOnFitzMall_USED_Report">
-          <Key>
-            <PropertyRef Name="Id_Primary" />
-          </Key>
-          <Property Name="STOREBRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="LOCATION" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="ShouldBeOnWebSite_1" Type="Int32" />
-          <Property Name="ShouldBeOnWebSite_2" Type="Int32" />
-          <Property Name="FM_TotalAllCarStat" Type="Int32" />
-          <Property Name="ActuallyOnWebSite_1" Type="Int32" />
-          <Property Name="ActuallyOnWebSite_2" Type="Int32" />
-          <Property Name="ActuallyOnWebSite_TotalAllCarStat" Type="Int32" />
+          <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         </Schema>
@@ -2802,6 +2777,21 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="InventoryNotOnFitzMall_USED_Report">
+            <EntityTypeMapping TypeName="InventoryModel.InventoryNotOnFitzMall_USED_Report">
+              <MappingFragment StoreEntitySet="InventoryNotOnFitzMall_USED_Report">
+                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="ActuallyOnWebSite_TotalAllCarStat" ColumnName="ActuallyOnWebSite_TotalAllCarStat" />
+                <ScalarProperty Name="ActuallyOnWebSite_2" ColumnName="ActuallyOnWebSite_2" />
+                <ScalarProperty Name="ActuallyOnWebSite_1" ColumnName="ActuallyOnWebSite_1" />
+                <ScalarProperty Name="FM_TotalAllCarStat" ColumnName="FM_TotalAllCarStat" />
+                <ScalarProperty Name="ShouldBeOnWebSite_2" ColumnName="ShouldBeOnWebSite_2" />
+                <ScalarProperty Name="ShouldBeOnWebSite_1" ColumnName="ShouldBeOnWebSite_1" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="InventoryReportDrillDowns">
             <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
               <MappingFragment StoreEntitySet="InventoryReportDrillDown">
@@ -2898,6 +2888,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
             <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall_USED">
               <MappingFragment StoreEntitySet="NotOnFitzMall_USED">
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+                <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
+                <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
                 <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
                 <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
                 <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
@@ -2935,31 +2927,6 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
                 <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
                 <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
                 <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DefaultLocationsByStoreBranch_NewVehicles">
-            <EntityTypeMapping TypeName="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles">
-              <MappingFragment StoreEntitySet="DefaultLocationsByStoreBranch_NewVehicles">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DEFAULT_LOCATION2" ColumnName="DEFAULT_LOCATION2" />
-                <ScalarProperty Name="DEFAULT_LOCATION" ColumnName="DEFAULT_LOCATION" />
-                <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="InventoryNotOnFitzMall_USED_Report">
-            <EntityTypeMapping TypeName="InventoryModel.InventoryNotOnFitzMall_USED_Report">
-              <MappingFragment StoreEntitySet="InventoryNotOnFitzMall_USED_Report">
-                <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-                <ScalarProperty Name="ActuallyOnWebSite_TotalAllCarStat" ColumnName="ActuallyOnWebSite_TotalAllCarStat" />
-                <ScalarProperty Name="ActuallyOnWebSite_2" ColumnName="ActuallyOnWebSite_2" />
-                <ScalarProperty Name="ActuallyOnWebSite_1" ColumnName="ActuallyOnWebSite_1" />
-                <ScalarProperty Name="FM_TotalAllCarStat" ColumnName="FM_TotalAllCarStat" />
-                <ScalarProperty Name="ShouldBeOnWebSite_2" ColumnName="ShouldBeOnWebSite_2" />
-                <ScalarProperty Name="ShouldBeOnWebSite_1" ColumnName="ShouldBeOnWebSite_1" />
-                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
-                <ScalarProperty Name="STOREBRANCH" ColumnName="STOREBRANCH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
