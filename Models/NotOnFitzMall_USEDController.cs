@@ -51,7 +51,7 @@ namespace WebApplication6
             string ViewBagString = "";
             ViewBag.PriceTitle = "FitzWay Low Price";
 
-            ViewBagString = "USED Cars NOT On FitzMall " + Make + " " + StoreBranch + " " + Location;
+            ViewBagString = "USED Cars NOT On FitzMall ";
             System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
 
             if (StoreBranch != "")
