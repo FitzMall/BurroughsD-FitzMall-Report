@@ -182,34 +182,80 @@
 
                 </td>
             </tr>
-        }
+                        }
 
 
         <tr>
             <td></td>
             <td></td>
             <td>
-                @Html.ActionLink("" + (total_ActuallyOnWebSite_1), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "1", OnFitzMall = "1" })
+                @{ if (total_ActuallyOnWebSite_1 == 0)
+                    {
+                        @total_ActuallyOnWebSite_1;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + (total_ActuallyOnWebSite_1), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "1", OnFitzMall = "1" })
+                    }
+                }
 
             </td>
             <td>
-                @Html.ActionLink("" + total_ActuallyOnWebSite_2, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "1" })
+                @{ if (total_ActuallyOnWebSite_2 == 0)
+                    {
+                        @total_ActuallyOnWebSite_2;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + total_ActuallyOnWebSite_2, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "1" })
+                    }
+                }
 
             </td>
             <td>
-                @Html.ActionLink("" + total_ActuallyOnWebSite, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "1" })
+                @{ if (total_ActuallyOnWebSite == 0)
+                    {
+                        @total_ActuallyOnWebSite;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + total_ActuallyOnWebSite, "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "1" })
+                    }
+                }
             </td>
             <td>
-                @Html.ActionLink("" + (total_ShouldBeOnWebSite_1), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "1", OnFitzMall = "" })
+                @{ if (total_ShouldBeOnWebSite_1 == 0)
+                    {
+                        @total_ShouldBeOnWebSite_1;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + (total_ShouldBeOnWebSite_1), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "1", OnFitzMall = "" })
+                    }
+                }
 
             </td>
             <td>
-                @Html.ActionLink("" + (total_ShouldBeOnWebSite_2), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "" })
+                @{ if (total_ShouldBeOnWebSite_2 == 0)
+                    {
+                        @total_ShouldBeOnWebSite_2;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + (total_ShouldBeOnWebSite_2), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "2", OnFitzMall = "" })
+                    }
+                }
             </td>
             <td>
-                @Html.ActionLink("" + (total_ShouldBeOnWebSite), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "" })
-            </td>
-
+                @{ if (total_ShouldBeOnWebSite == 0)
+                    {
+                        @total_ShouldBeOnWebSite;
+                    }
+                    else
+                    {
+                        @Html.ActionLink("" + (total_ShouldBeOnWebSite), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "" })
+                        }
+                    }
         </tr>
 
 </table>
