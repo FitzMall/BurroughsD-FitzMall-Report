@@ -7,19 +7,29 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+using ClosedXML.Excel;
+
+//using ExportExcelDemo.Models;
+using System.IO;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
 namespace WebApplication6.Models
 {
     public class InventoryNotOnFitzMall_ReportController : Controller
     {
+        string ExcelOutput;
+
         private InventoryEntities1 db = new InventoryEntities1();
 
         // GET: InventoryNotOnFitzMall_Report
         public ActionResult Index()
         {
             return View(db.InventoryNotOnFitzMall_Report.ToList());
+
         }
 
-            // GET: InventoryNotOnFitzMall_Report/Details/5
+        // GET: InventoryNotOnFitzMall_Report/Details/5
 
         public ActionResult Details(int? id)
         {
@@ -43,6 +53,8 @@ namespace WebApplication6.Models
         // GET: InventoryNotOnFitzMall_Report
         public ActionResult InventoryNotOnFitzMallReport()
         {
+            
+
             return View(db.InventoryNotOnFitzMall_Report.OrderBy(a => a.STOREBRANCH).ToList());
         }
 
@@ -235,5 +247,54 @@ namespace WebApplication6.Models
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ExportToExcel(string sExcel)
+        {
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = "InventoryNotOnFitzMall.csv",
+                Inline = false
+            };
+
+            var SORTED_InventoryNotOnFitzMallReport = from sDD_init in db.InventoryNotOnFitzMall_Report.OrderBy(a => a.STOREBRANCH)
+                                                      select sDD_init;
+
+            //            IQueryable queryableReport =  SORTED_InventoryNotOnFitzMallReport.AsQueryable();
+
+            // load the results for possible Excel export 
+
+            foreach (var result in SORTED_InventoryNotOnFitzMallReport)
+
+            {
+                ExcelOutput += (result.STOREBRANCH + ",");
+                ExcelOutput += (result.LOCATION + ",");
+                ExcelOutput += (result.MAKE + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_1 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_2 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_4 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_9 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_12 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_14 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_14 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_1 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_2 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_4 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_9 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_12 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_14 + ",");
+                ExcelOutput += "\r\n";
+                //                RESULTstr = result.ElementAt<WebApplication6.Models.InventoryNotOnFitzMall_Report>;
+                // Do something with each result
+                System.Diagnostics.Debug.WriteLine("" + result.STOREBRANCH + " " + result.LOCATION + " " + result.MAKE);
+
+            }
+
+
+            Response.AddHeader("Content-Disposition", cd.ToString());
+
+            return Content(ExcelOutput);
+        }
+
+
     }
 }

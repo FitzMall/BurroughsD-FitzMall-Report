@@ -78,6 +78,8 @@ C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebAp
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.dll
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.pdb
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.csprojAssemblyReference.cache
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csprojAssemblyReference.cache
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CoreCompileInputs.cache
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll.config
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.pdb
@@ -128,11 +130,16 @@ C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\vbc.r
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\VBCSCompiler.exe
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Antlr3.Runtime.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\ClosedXML.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\DocumentFormat.OpenXml.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\EntityFramework.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\EntityFramework.SqlServer.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\ExcelNumberFormat.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Newtonsoft.Json.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.IO.Packaging.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Helpers.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Mvc.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Optimization.dll
@@ -141,8 +148,12 @@ C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.W
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.WebPages.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.WebPages.Razor.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\WebGrease.dll
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\ClosedXML.pdb
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\ClosedXML.xml
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\DocumentFormat.OpenXml.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\EntityFramework.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\EntityFramework.SqlServer.xml
+C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\ExcelNumberFormat.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Helpers.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Mvc.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.Optimization.xml
@@ -153,8 +164,6 @@ C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\System.Web.W
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Newtonsoft.Json.xml
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Antlr3.Runtime.pdb
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CoreCompileInputs.cache
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CopyComplete
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.dll
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\0.pdb
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csprojAssemblyReference.cache
