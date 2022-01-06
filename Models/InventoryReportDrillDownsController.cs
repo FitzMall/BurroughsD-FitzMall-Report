@@ -817,6 +817,15 @@ namespace WebApplication6.Views
                     break;
 
 
+                case "Status":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
+                    break;
+
+                case "Status_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
