@@ -123,12 +123,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
                     break;
 
                 case "Chrome":
@@ -361,12 +361,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
                     break;
 
                 case "Chrome":
@@ -640,12 +640,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
                     break;
 
                 case "Chrome":
@@ -779,12 +779,12 @@ namespace WebApplication6.Views
 
                 case "Color":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
                     break;
 
                 case "Color_Descending":
 
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CLR_DESC);
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
                     break;
 
                 case "Chrome":
