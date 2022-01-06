@@ -18,7 +18,6 @@ namespace WebApplication6.Models
 {
     public class InventoryNotOnFitzMall_ReportController : Controller
     {
-        string ExcelOutput;
 
         private InventoryEntities1 db = new InventoryEntities1();
 
@@ -248,8 +247,11 @@ namespace WebApplication6.Models
             base.Dispose(disposing);
         }
 
-        public ActionResult ExportToExcel(string sExcel)
+        public ActionResult ExportToExcel()
         {
+
+            string ExcelOutput ="";
+
             var cd = new System.Net.Mime.ContentDisposition
             {
                 FileName = "InventoryNotOnFitzMall.csv",
@@ -263,10 +265,28 @@ namespace WebApplication6.Models
 
             // load the results for possible Excel export 
 
+            ExcelOutput += ("STOREBRANCH" + ",");
+            ExcelOutput += ("LOCATION" + ",");
+            ExcelOutput += ("MAKE" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_1" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_2" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_4" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_9" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_12" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_14" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_14" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_1" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_2" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_4" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_9" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_12" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_14" + ",");
+            ExcelOutput += "\r\n";
+
             foreach (var result in SORTED_InventoryNotOnFitzMallReport)
 
             {
-                ExcelOutput += (result.STOREBRANCH + ",");
+                ExcelOutput += (result.STOREBRANCH.Replace("/","_") + ",");
                 ExcelOutput += (result.LOCATION + ",");
                 ExcelOutput += (result.MAKE + ",");
                 ExcelOutput += (result.ActuallyOnWebSite_1 + ",");
