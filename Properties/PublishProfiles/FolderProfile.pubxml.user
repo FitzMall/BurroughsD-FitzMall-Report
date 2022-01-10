@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>01/06/2022 09:04:07</publishTime>
+      <publishTime>01/07/2022 12:21:38</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>01/06/2022 09:04:07</publishTime>
+      <publishTime>01/07/2022 12:21:38</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -21,11 +21,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Antlr3.Runtime.pdb">
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>12/16/2020 09:59:08</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.pdb">
+      <publishTime>12/16/2020 09:59:08</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>06/06/2017 22:59:22</publishTime>
+    </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/07/2018 11:03:48</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>06/07/2018 11:03:48</publishTime>
+    </File>
+    <File Include="bin/ExcelNumberFormat.dll">
+      <publishTime>03/13/2020 09:36:50</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/24/2018 13:38:22</publishTime>
@@ -174,6 +186,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>05/24/2018 13:38:24</publishTime>
     </File>
+    <File Include="bin/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/11/2016 23:13:46</publishTime>
+    </File>
+    <File Include="bin/System.IO.Packaging.dll">
+      <publishTime>06/11/2016 23:13:48</publishTime>
+    </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>02/01/2018 11:20:56</publishTime>
     </File>
@@ -229,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/03/2022 10:51:43</publishTime>
     </File>
     <File Include="Content/tableStyle.css">
-      <publishTime>01/04/2022 12:39:18</publishTime>
+      <publishTime>01/07/2022 11:33:22</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -310,7 +328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2022 09:45:02</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>01/06/2022 08:56:08</publishTime>
+      <publishTime>01/07/2022 11:38:47</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>01/06/2022 08:56:08</publishTime>
@@ -319,34 +337,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/22/2021 16:42:14</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown.cshtml">
-      <publishTime>01/06/2022 08:50:35</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsNew.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsUsed.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllStatusNew.cshtml">
       <publishTime>01/05/2022 09:45:02</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllLocations.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllStatus.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown_AllLocations.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown_AllStatus.cshtml">
-      <publishTime>01/06/2022 08:55:04</publishTime>
+      <publishTime>01/07/2022 09:12:04</publishTime>
     </File>
     <File Include="Views/ReportInventories/DrillDown.cshtml">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -367,7 +385,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/22/2021 13:05:20</publishTime>
+      <publishTime>01/07/2022 12:21:39</publishTime>
     </File>
   </ItemGroup>
 </Project>

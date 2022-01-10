@@ -182,7 +182,7 @@
 
                 </td>
             </tr>
-                        }
+        }
 
 
         <tr>
@@ -254,8 +254,10 @@
                     else
                     {
                         @Html.ActionLink("" + (total_ShouldBeOnWebSite), "DrillDown_AllLocations", new { StoreBranch = "", Location = "", StatusCode = "", OnFitzMall = "" })
-                        }
                     }
+                }
         </tr>
 
 </table>
+
+@Html.ActionLink("Excel", "ExportToExcel")

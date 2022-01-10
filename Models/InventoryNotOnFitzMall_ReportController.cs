@@ -274,7 +274,6 @@ namespace WebApplication6.Models
             ExcelOutput += ("ActuallyOnWebSite_9" + ",");
             ExcelOutput += ("ActuallyOnWebSite_12" + ",");
             ExcelOutput += ("ActuallyOnWebSite_14" + ",");
-            ExcelOutput += ("ActuallyOnWebSite_14" + ",");
             ExcelOutput += ("ShouldBeOnWebSite_1" + ",");
             ExcelOutput += ("ShouldBeOnWebSite_2" + ",");
             ExcelOutput += ("ShouldBeOnWebSite_4" + ",");
@@ -295,7 +294,6 @@ namespace WebApplication6.Models
                 ExcelOutput += (result.ActuallyOnWebSite_9 + ",");
                 ExcelOutput += (result.ActuallyOnWebSite_12 + ",");
                 ExcelOutput += (result.ActuallyOnWebSite_14 + ",");
-                ExcelOutput += (result.ActuallyOnWebSite_14 + ",");
                 ExcelOutput += (result.ShouldBeOnWebSite_1 + ",");
                 ExcelOutput += (result.ShouldBeOnWebSite_2 + ",");
                 ExcelOutput += (result.ShouldBeOnWebSite_4 + ",");
@@ -303,10 +301,9 @@ namespace WebApplication6.Models
                 ExcelOutput += (result.ShouldBeOnWebSite_12 + ",");
                 ExcelOutput += (result.ShouldBeOnWebSite_14 + ",");
                 ExcelOutput += "\r\n";
-                //                RESULTstr = result.ElementAt<WebApplication6.Models.InventoryNotOnFitzMall_Report>;
-                // Do something with each result
-                System.Diagnostics.Debug.WriteLine("" + result.STOREBRANCH + " " + result.LOCATION + " " + result.MAKE);
 
+                System.Diagnostics.Debug.WriteLine("" + result.STOREBRANCH + " " + result.LOCATION + " " + result.MAKE);
+                
             }
 
 

@@ -25,6 +25,52 @@ namespace WebApplication6.Views
             return View(db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH).ToList());
         }
 
+        public ActionResult ExportToExcel()
+        {
+
+            string ExcelOutput = "";
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = "InventoryNotOnFitzMallUSED.csv",
+                Inline = false
+            };
+
+            var SORTED_InventoryNotOnFitzMallReport = from sDD_init in db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH)
+                                                      select sDD_init;
+
+            //            IQueryable queryableReport =  SORTED_InventoryNotOnFitzMallReport.AsQueryable();
+
+            // load the results for possible Excel export 
+
+            ExcelOutput += ("STOREBRANCH" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_1" + ",");
+            ExcelOutput += ("ActuallyOnWebSite_2" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_1" + ",");
+            ExcelOutput += ("ShouldBeOnWebSite_2" + ",");
+            ExcelOutput += "\r\n";
+
+            foreach (var result in SORTED_InventoryNotOnFitzMallReport)
+
+            {
+                ExcelOutput += (result.STOREBRANCH.Replace("/", "_") + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_1 + ",");
+                ExcelOutput += (result.ActuallyOnWebSite_2 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_1 + ",");
+                ExcelOutput += (result.ShouldBeOnWebSite_2 + ",");
+                ExcelOutput += "\r\n";
+
+
+            }
+
+
+            Response.AddHeader("Content-Disposition", cd.ToString());
+
+            return Content(ExcelOutput);
+        }
+
+
+
         public ActionResult InventoryNotOnFitzMall_USEDReport()
         {
             return View(db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH).ToList());

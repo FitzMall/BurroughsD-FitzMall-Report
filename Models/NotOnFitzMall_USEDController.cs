@@ -671,5 +671,86 @@ namespace WebApplication6
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ExportToExcel(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
+        {
+            string ExcelOutput = "";
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = "InventoryReportDrillDown.csv",
+                Inline = false
+            };
+
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.OrderBy(d => d.MSRP)
+                                                   select sDD_init;
+
+            // handle nulls
+            sortOrder = ("" + sortOrder);
+            StoreBranch = ("" + StoreBranch);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("U");
+            System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting Excel export: Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
+
+            if (StatusCode > 0)
+            {
+
+                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                   select sDD;
+            }
+            else
+            {
+                if (StoreBranch == "")
+                {
+
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                       select sDD;
+                }
+                else
+                {
+
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                       select sDD;
+                }
+            }
+
+
+            // load the results for possible Excel export 
+
+            ExcelOutput += ("SERIAL_,");
+            ExcelOutput += ("STOCK_,");
+            ExcelOutput += ("STAT_CODE,");
+            ExcelOutput += ("YEAR,");
+            ExcelOutput += ("MAKE,");
+            ExcelOutput += ("CARLINE,");
+            ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("MSRP,");
+            ExcelOutput += ("ChromeOptions,");
+            ExcelOutput += ("DAYS_IN_STOCK,");
+            ExcelOutput += "\r\n";
+
+            foreach (var result in SORTED_InventoryReportDrillDowns)
+
+            {
+                ExcelOutput += (result.SERIAL_ + ",");
+                ExcelOutput += (result.STOCK_ + ",");
+                ExcelOutput += (result.STAT_CODE + ",");
+                ExcelOutput += (result.YEAR + ",");
+                ExcelOutput += (result.MAKE + ",");
+                ExcelOutput += (result.CARLINE + ",");
+                ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.MSRP + ",");
+                ExcelOutput += (result.ChromeOptions + ",");
+                ExcelOutput += (result.DAYS_IN_STOCK + ",");
+                ExcelOutput += "\r\n";
+
+            }
+
+
+            Response.AddHeader("Content-Disposition", cd.ToString());
+
+            return Content(ExcelOutput);
+        }
+
     }
 }
