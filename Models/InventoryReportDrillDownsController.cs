@@ -952,7 +952,16 @@ namespace WebApplication6.Views
                 FileName = "InventoryReportDrillDown.csv",
                 Inline = false
             };
-            
+
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
+            StoreBranch = ("" + StoreBranch);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());
 
 
             var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.OrderBy(d => d.MSRP)
@@ -964,13 +973,29 @@ namespace WebApplication6.Views
                 {
                     if (NewOrUsed == "N")
                     {
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                           select sDD;
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "" && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
                     }
                     else
                     {
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                           select sDD;
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
                     }
                 }
                 else
