@@ -24,8 +24,8 @@ namespace WebApplication6.Views
         {
 
             return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?KeyWordSearch=" + keywordSearch + "&Sort=&inventoryGrid_length=10&UseCriteria=true");
+                        
         }
-
 
         public ActionResult DrillDown_AllLocationsUsed(int? StatusCode,  string sortOrder)
             {
