@@ -303,7 +303,7 @@ namespace WebApplication6
             ViewBagString = "NEW Cars Not On FitzMall";
             if (Status.ToString() != "0")
             {
-                ViewBagString += " " + Status.ToString();
+                ViewBagString += " Status: " + Status.ToString();
 
             }
 
@@ -483,7 +483,7 @@ namespace WebApplication6
             ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
             if (StatusCode.ToString() != "0")
             {
-                ViewBagString += " " + StatusCode.ToString();
+                ViewBagString += " Status: " + StatusCode.ToString();
 
             }
 

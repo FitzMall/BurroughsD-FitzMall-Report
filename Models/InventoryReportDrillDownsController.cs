@@ -455,7 +455,7 @@ namespace WebApplication6.Views
             ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
             if (StatusCode.ToString() != "0")
             {
-                ViewBagString += " " + StatusCode.ToString();
+                ViewBagString += " Status: " + StatusCode.ToString();
 
             }
 
@@ -707,7 +707,7 @@ namespace WebApplication6.Views
             ViewBagString = "NEW Cars On FitzMall";
             if (StatusCode.ToString() != "0")
             {
-                ViewBagString += " " + StatusCode.ToString();
+                ViewBagString += " Status:" + StatusCode.ToString();
 
             }
 

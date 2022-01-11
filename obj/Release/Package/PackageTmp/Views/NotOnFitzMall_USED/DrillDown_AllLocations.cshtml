@@ -152,54 +152,55 @@
     @foreach (var item in Model)
     {
         counter++;
-    <tr>
-        <td style="width: 200px">
-            @Html.DisplayFor(modelItem => item.SERIAL_)
+        <tr>
+            <td style="width: 200px">
+                @Html.DisplayFor(modelItem => item.SERIAL_)
 
-        </td>
-        <td style="width: 120px">
-            @Html.DisplayFor(modelItem => item.STOCK_)
-        </td>
-        <td style="width: 75px">
-            @Html.DisplayFor(modelItem => item.STAT_CODE)
-        </td>
-        <td style="width: 75px">
-            @Html.DisplayFor(modelItem => item.YEAR)
-        </td>
-        <td style="width: 200px; text-align: center">
-            @Html.DisplayFor(modelItem => item.MAKE)
-        </td>
-        <td style="width: 250px; text-align: center">
-            @Html.DisplayFor(modelItem => item.CARLINE)
-        </td>
-        <td style="width: 350px; text-align: center">
-            @Html.DisplayFor(modelItem => item.EXT_COLOR)
-        </td>
-        <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
-            @if (item.ChromeStyleID.Value > 0)
-            {
-                @Html.DisplayFor(modelItem => item.ChromeStyleID)
-            }
-            else
-            {
-                @("------");
-            }
-        </td>
-        <td @if (item.ChromeOptions != "Y") { <text> style="background-color:silver; width: 90px; text-align: center" </text>  } else { <text> style="width: 90px; text-align: center" </text> }>
-            @Html.DisplayFor(modelItem => item.ChromeOptions)
-        </td>
+            </td>
+            <td style="width: 120px">
+                @Html.DisplayFor(modelItem => item.STOCK_)
+            </td>
+            <td style="width: 75px">
+                @Html.DisplayFor(modelItem => item.STAT_CODE)
+            </td>
+            <td style="width: 75px">
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+            <td style="width: 200px; text-align: center">
+                @Html.DisplayFor(modelItem => item.MAKE)
+            </td>
+            <td style="width: 250px; text-align: center">
+                @Html.DisplayFor(modelItem => item.CARLINE)
+            </td>
+            <td style="width: 350px; text-align: center">
+                @Html.DisplayFor(modelItem => item.EXT_COLOR)
+            </td>
+            <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+                @if (item.ChromeStyleID.Value > 0)
+                {
+                    @Html.DisplayFor(modelItem => item.ChromeStyleID)
+                }
+                else
+                {
+                    @("------");
+                }
+            </td>
+            <td @if (item.ChromeOptions != "Y") { <text> style="background-color:silver; width: 90px; text-align: center" </text>  } else { <text> style="width: 90px; text-align: center" </text> }>
+                @Html.DisplayFor(modelItem => item.ChromeOptions)
+            </td>
 
-        <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
-            @Html.DisplayFor(modelItem => item.MSRP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
-        </td>
+            <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+                @Html.DisplayFor(modelItem => item.MSRP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DAYS_IN_STOCK)
+            </td>
 
-    </tr>
+        </tr>
 
     }
 
 </table>
 
 @counter records.
+@Html.ActionLink("Excel", "ExportToExcel", new { Make = ViewBag.Make, StoreBranch = "", StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed })

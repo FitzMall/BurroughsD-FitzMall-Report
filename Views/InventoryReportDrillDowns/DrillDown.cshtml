@@ -154,12 +154,11 @@
     {
         counter++;
         <tr>
-            <td style="width: 200px">
-                @Html.DisplayFor(modelItem => item.SERIAL_)
-
+            <td style="width: 200px">    
+                @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.SERIAL_ })
             </td>
             <td style="width: 120px">
-                @Html.DisplayFor(modelItem => item.STOCK_)
+                @Html.ActionLink("" + item.STOCK_, "GoToFitzMall", new { keywordSearch = item.STOCK_ })
             </td>
             <td style="width: 75px">
                 @Html.DisplayFor(modelItem => item.STAT_CODE)
