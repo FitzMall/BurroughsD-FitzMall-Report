@@ -54,7 +54,7 @@ namespace WebApplication6.Models
         {
             
 
-            return View(db.InventoryNotOnFitzMall_Report.OrderBy(a => a.STOREBRANCH).ToList());
+            return View(db.InventoryNotOnFitzMall_Report.OrderBy(a => a.STOREBRANCH + a.MAKE).ToList());
         }
 
        public ActionResult DrillDown(string StoreBranch, string Make, string StatusCode, string OnFitzMall)

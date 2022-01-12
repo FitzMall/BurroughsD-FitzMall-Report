@@ -27,19 +27,19 @@
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
 <link href="~/Content/tableStyle.css" rel="stylesheet" type="text/css">
 
-<h2 style="margin-left:15%">NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
+<h2 style="margin-left:25%">NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
-<table class="table" style="margin-left: 15%; width: 60%;  position: sticky; top: 50px; margin-bottom: 0px; font-size: 90%" id="reportheaders">
+<table class="table" style="margin-left: 25%; width: 45%;  position: sticky; top: 50px; margin-bottom: 0px; font-size: 90%" id="reportheaders">
     <thead class="thead">
 
 
         <tr>
-            <th colspan="10" scope="colgroup" style="border-right-width: 4px">New Vehicles On FitzMall</th>
+            <th colspan="9" scope="colgroup" style="border-right-width: 4px">New Vehicles On FitzMall</th>
             <th colspan="8" scope="colgroup">New Vehicles That Should Be On FitzMall</th>
         </tr>
 
         <tr>
-            <th colspan="3" scope="colgroup"></th>
+            <th colspan="2" scope="colgroup"></th>
             <th colspan="3" scope="colgroup" style="border-right-width: 4px">On The Ground</th>
             <th colspan="3" scope="colgroup">On Order</th>
             <th colspan="1" scope="colgroup" style="border-right-width: 4px"></th>
@@ -48,9 +48,6 @@
             <th colspan="1" scope="colgroup"></th>
         </tr>
         <tr>
-            <th style="width: 14%">
-                Store/Branch
-            </th>
             <th style="width: 9%">
                 Location
             </th>
@@ -105,19 +102,11 @@
     </thead>
 </table>
 
-<table id="InvData" class="table" style="margin-left: 15%; width:60%; font-size: 90%">
+<table id="InvData" class="table" style="margin-left: 25%; width:45%; font-size: 90%">
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td style="width: 14%">
-                    @{if (prevStoreBranch != item.STOREBRANCH)
-                        {
-                            @Html.DisplayFor(modelItem => item.STOREBRANCH)
-                        }
-                        prevStoreBranch = item.STOREBRANCH;
-                    }
-                </td>
                 <td style="width: 9%">
 
                     @{if (prevLocation != item.LOCATION)
@@ -145,7 +134,10 @@
 
 
                     @{
-                        total_ActuallyOnWebSite_1 += item.ActuallyOnWebSite_1.Value;
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_1 += item.ActuallyOnWebSite_1.Value;
+                        }
                     }
 
                 </td>
@@ -161,8 +153,12 @@
                     }
 
                     @{
-                        total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
+                        }
                     }
+
                 </td>
                 <td style="width: 4.5%; border-right-width: 4px">
                     @{ if (item.ActuallyOnWebSite_4.Value == 0)
@@ -176,7 +172,10 @@
                     }
 
                     @{
-                        total_ActuallyOnWebSite_4 += item.ActuallyOnWebSite_4.Value;
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_4 += item.ActuallyOnWebSite_4.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -190,8 +189,10 @@
                         }
                     }
 
-                    @{
-                        total_ActuallyOnWebSite_9 += item.ActuallyOnWebSite_9.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_9 += item.ActuallyOnWebSite_9.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -205,8 +206,10 @@
                         }
                     }
 
-                    @{
-                        total_ActuallyOnWebSite_12 += item.ActuallyOnWebSite_12.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_12 += item.ActuallyOnWebSite_12.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -220,8 +223,10 @@
                         }
                     }
 
-                    @{
-                        total_ActuallyOnWebSite_14 += item.ActuallyOnWebSite_14.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_14 += item.ActuallyOnWebSite_14.Value;
+                        }
                     }
                 </td>
                 <td style="width: 6.75%; border-right-width: 4px">
@@ -251,8 +256,10 @@
                     }
 
 
-                    @{
-                        total_ShouldBeOnWebSite_1 += item.ShouldBeOnWebSite_1.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_1 += item.ShouldBeOnWebSite_1.Value;
+                        }
                     }
 
                 </td>
@@ -267,8 +274,10 @@
                         }
                     }
 
-                    @{
-                        total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%; border-right-width: 4px">
@@ -283,8 +292,10 @@
                         }
                     }
 
-                    @{
-                        total_ShouldBeOnWebSite_4 += item.ShouldBeOnWebSite_4.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_4 += item.ShouldBeOnWebSite_4.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -297,8 +308,10 @@
                             @Html.ActionLink("" + item.ShouldBeOnWebSite_9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9" })
                         }
                     }
-                    @{
-                        total_ShouldBeOnWebSite_9 += item.ShouldBeOnWebSite_9.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_9 += item.ShouldBeOnWebSite_9.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -311,8 +324,10 @@
                             @Html.ActionLink("" + item.ShouldBeOnWebSite_12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12" })
                         }
                     }
-                    @{
-                        total_ShouldBeOnWebSite_12 += item.ShouldBeOnWebSite_12.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_12 += item.ShouldBeOnWebSite_12.Value;
+                        }
                     }
                 </td>
                 <td style="width: 4.5%">
@@ -325,8 +340,10 @@
                             @Html.ActionLink("" + item.ShouldBeOnWebSite_14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14" })
                         }
                     }
-                    @{
-                        total_ShouldBeOnWebSite_14 += item.ShouldBeOnWebSite_14.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_14 += item.ShouldBeOnWebSite_14.Value;
+                        }
                     }
                 </td>
                 <td>
@@ -341,23 +358,26 @@
                     }
 
 
-                    @{
-                        total_ShouldBeOnWebSite += item.FM_TotalAllCarStat.Value;
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite += item.FM_TotalAllCarStat.Value;
+                        }
                     }
 
 
 
                 </td>
-                @{
-                    total_ActuallyOnWebSite += Convert.ToInt32(item.ActuallyOnWebSite_TotalAllCarStat);
+                @{ if (item.MAKE.Trim() != "")
+                    {
+                        total_ActuallyOnWebSite += Convert.ToInt32(item.ActuallyOnWebSite_TotalAllCarStat);
+                    }
                 }
             </tr>
 
-        }
+                    }
 
 
         <tr>
-            <td></td>
             <td></td>
             <td></td>
             <td style="width: 4.5%">
