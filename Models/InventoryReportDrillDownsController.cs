@@ -258,6 +258,10 @@ namespace WebApplication6.Views
             ViewBag.NewOrUsed = NewOrUsed;
             ViewBag.Make = Make.ToUpper();
             ViewBag.SortOrder = sortOrder;
+            if (Make.Trim() == "")
+            {
+                Make = "ALL";
+            }
 
             if (StatusCode > 0)
             {
@@ -481,10 +485,7 @@ namespace WebApplication6.Views
             // handle nulls
             sortOrder = ("" + sortOrder);
             Make = ("" + Make);
-            if (Make == "")
-            {
-                Make = "ALL";
-            }
+     
             StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
             NewOrUsed = ("" + NewOrUsed);
@@ -516,7 +517,7 @@ namespace WebApplication6.Views
 
             }
 
-            if (Make != "")
+            if (Make != "" && Make != "ALL")
             {
                 ViewBagString += " " + Make;
 
@@ -529,7 +530,10 @@ namespace WebApplication6.Views
             ViewBag.NewOrUsed = NewOrUsed;
             ViewBag.Make = Make.ToUpper();
             ViewBag.SortOrder = sortOrder;
-
+            if (Make.Trim() == "")
+            {
+                Make = "ALL";
+            }
             if (StatusCode > 0)
             {
                 if (Make == "ALL")
