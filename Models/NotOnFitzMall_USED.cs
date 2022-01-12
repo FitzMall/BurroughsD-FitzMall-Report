@@ -53,6 +53,7 @@ namespace WebApplication6.Models
         public string CLR_DESC { get; set; }
         public string COLOR_DESC { get; set; }
         public string ChromeOptions { get; set; }
+        public Nullable<int> CustomPhotos { get; set; }
         public int Id_Primary { get; set; }
     }
 }

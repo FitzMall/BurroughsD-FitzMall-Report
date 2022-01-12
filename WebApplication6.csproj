@@ -152,6 +152,9 @@
     <Compile Include="Models\CARbySTOCK_Result.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DefaultLocationsByStoreBranch_NewVehicles.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\InventoriesController.cs" />
     <Compile Include="Models\Inventory.Context.cs">
       <AutoGen>True</AutoGen>
@@ -195,6 +198,9 @@
     </Compile>
     <Compile Include="Models\NotOnFitzMall_USEDController.cs" />
     <Compile Include="Models\procDAB_Result.cs">
+      <DependentUpon>Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StoreBranchByALLLocation.cs">
       <DependentUpon>Inventory.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -183,6 +183,7 @@ namespace WebApplication6.Views
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
+
                 case "Location":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
@@ -192,6 +193,17 @@ namespace WebApplication6.Views
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
                     break;
+
+                case "Photos":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CustomPhotos);
+                    break;
+
+                case "Photos_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CustomPhotos);
+                    break;
+
 
 
                 default:
@@ -457,6 +469,17 @@ namespace WebApplication6.Views
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
                     break;
+
+                case "Photos":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CustomPhotos);
+                    break;
+
+                case "Photos_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CustomPhotos);
+                    break;
+
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
@@ -744,6 +767,17 @@ namespace WebApplication6.Views
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
                     break;
+
+                case "Photos":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CustomPhotos);
+                    break;
+
+                case "Photos_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CustomPhotos);
+                    break;
+
 
                 default:
 

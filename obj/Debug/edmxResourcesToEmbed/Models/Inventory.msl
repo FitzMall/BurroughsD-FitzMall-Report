@@ -811,6 +811,7 @@
         <MappingFragment StoreEntitySet="InventoryReportDrillDown">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
           <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
+          <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
           <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -857,6 +858,7 @@
         <MappingFragment StoreEntitySet="NotOnFitzMall">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
           <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
+          <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
           <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
@@ -902,6 +904,7 @@
       <EntityTypeMapping TypeName="InventoryModel.NotOnFitzMall_USED">
         <MappingFragment StoreEntitySet="NotOnFitzMall_USED">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
           <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
           <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
@@ -941,6 +944,26 @@
           <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
           <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />
           <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE BRANCH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefaultLocationsByStoreBranch_NewVehicles">
+      <EntityTypeMapping TypeName="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles">
+        <MappingFragment StoreEntitySet="DefaultLocationsByStoreBranch_NewVehicles">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DEFAULT_LOCATION2" ColumnName="DEFAULT_LOCATION2" />
+          <ScalarProperty Name="DEFAULT_LOCATION" ColumnName="DEFAULT_LOCATION" />
+          <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreBranchByALLLocations">
+      <EntityTypeMapping TypeName="InventoryModel.StoreBranchByALLLocation">
+        <MappingFragment StoreEntitySet="StoreBranchByALLLocations">
+          <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
+          <ScalarProperty Name="LOCATION2" ColumnName="LOCATION2" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+          <ScalarProperty Name="STORE_BRANCH" ColumnName="STORE_BRANCH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

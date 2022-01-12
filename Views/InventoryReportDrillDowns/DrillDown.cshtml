@@ -76,7 +76,7 @@
                     }
                 }
             </th>
-            <th style="width: 200px">
+            <th style="width: 150px">
                 @{ if (thisviewSortOrder != "Make_Descending")
                     {
                         @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make_Descending" })
@@ -87,7 +87,7 @@
                     }
                 }
             </th>
-            <th style="width: 300px">
+            <th style="width: 250px">
                 @{ if (thisviewSortOrder != "Model_Descending")
                     {
                         @Html.ActionLink("Model", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Model_Descending" })
@@ -109,6 +109,16 @@
                     }
                 }
             </th>
+            <th style="width: 120px; text-align: center">
+                @{ if (thisviewSortOrder != "Photos_Descending")
+                    {
+                        @Html.ActionLink("Photo Count", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Photos_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Photo Count", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Photos" })
+                    }
+                }
             <th style="width: 120px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
@@ -155,6 +165,8 @@
                 }
 
             </th>
+
+            </th>
             <th>
                 @{ if (thisviewSortOrder != "DaysInStock_Descending")
                     {
@@ -193,14 +205,17 @@
         <td style="width: 75px">
             @Html.DisplayFor(modelItem => item.YEAR)
         </td>
-        <td style="width: 200px; text-align: center">
+        <td style="width: 150px; text-align: center">
             @Html.DisplayFor(modelItem => item.MAKE)
         </td>
-        <td style="width: 300px; text-align: center">
+        <td style="width: 250px; text-align: center">
             @Html.DisplayFor(modelItem => item.CARLINE)
         </td>
         <td style="width: 400px">
             @Html.DisplayFor(modelItem => item.EXT_COLOR)
+        </td>
+        <td @if (item.CustomPhotos == 0) { <text> style="background-color:yellow; width: 120px; text-align: center" </text>  } else { <text> style="width: 120px; text-align: center" </text> }>
+            @Html.DisplayFor(modelItem => item.CustomPhotos)
         </td>
         <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:yellow; width: 120px" </text>  } else { <text> style="width: 120px" </text> }>
             @if (item.ChromeStyleID.Value > 0)
