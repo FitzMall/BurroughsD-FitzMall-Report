@@ -1,5 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="InventoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Inventory.dbo.DefaultLocationsByStoreBranch_NewVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
+    <Property Name="DEFAULT_LOCATION" Type="nchar" MaxLength="10" />
+    <Property Name="DEFAULT_LOCATION2" Type="nchar" MaxLength="10" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Inventory.dbo.ImportErrors' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ImportErrors">
+          <Property Name="ErrorComment" Type="nvarchar" MaxLength="150" />
+          <Property Name="ErrorNumber" Type="int" />
+          <Property Name="ErrorState" Type="int" />
+          <Property Name="ErrorSeverity" Type="int" />
+          <Property Name="ErrorProcedure" Type="nvarchar" MaxLength="150" />
+          <Property Name="ErrorLine" Type="int" />
+          <Property Name="ErrorMessage" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>-->
   <EntityType Name="Inventory">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -639,9 +662,21 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+    <Property Name="CustomPhotos" Type="int" />
     <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'Inventory.dbo.MallCodes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="MallCodes">
+          <Property Name="mallcode" Type="nvarchar" MaxLength="3" />
+          <Property Name="Default_Location2" Type="nvarchar" MaxLength="3" />
+          <Property Name="make" Type="nvarchar" MaxLength="50" />
+          <Property Name="mall_id" Type="int" />
+          <Property Name="makecode" Type="nvarchar" MaxLength="5" />
+          <Property Name="on_off" Type="char" MaxLength="1" />
+          <Property Name="store_branch" Type="nchar" MaxLength="10" />
+        </EntityType>-->
   <EntityType Name="NotOnFitzMall">
     <Key>
       <PropertyRef Name="Id_Primary" />
@@ -670,7 +705,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="FREIGHT" Type="money" />
     <Property Name="STAT-CODE" Type="int" />
     <Property Name="LOCATION" Type="varchar" MaxLength="10" />
-    <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
+    <Property Name="EXT-COLOR" Type="varchar" MaxLength="20" />
     <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
     <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
     <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
@@ -684,6 +719,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
+    <Property Name="CustomPhotos" Type="int" />
     <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
@@ -715,7 +751,7 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="FREIGHT" Type="money" />
     <Property Name="STAT-CODE" Type="int" />
     <Property Name="LOCATION" Type="varchar" MaxLength="10" />
-    <Property Name="EXT-COLOR" Type="varchar" MaxLength="12" />
+    <Property Name="EXT-COLOR" Type="varchar" MaxLength="20" />
     <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
     <Property Name="INT-COLOR" Type="varchar" MaxLength="12" />
     <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
@@ -730,6 +766,18 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
     <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
     <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CustomPhotos" Type="int" />
+    <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StoreBranchByALLLocations">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="nchar" MaxLength="10" />
+    <Property Name="LOCATION" Type="nchar" MaxLength="10" />
+    <Property Name="LOCATION2" Type="nchar" MaxLength="10" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <Function Name="CARbySTOCK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -752,6 +800,14 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <EntitySet Name="InventoryReportDrillDown" EntityType="Self.InventoryReportDrillDown" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall" EntityType="Self.NotOnFitzMall" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="Self.NotOnFitzMall_USED" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="Self.DefaultLocationsByStoreBranch_NewVehicles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DefaultLocationsByStoreBranch_NewVehicles].[STORE_BRANCH] AS [STORE_BRANCH], 
+    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION] AS [DEFAULT_LOCATION], 
+    [DefaultLocationsByStoreBranch_NewVehicles].[DEFAULT_LOCATION2] AS [DEFAULT_LOCATION2], 
+    [DefaultLocationsByStoreBranch_NewVehicles].[ID] AS [ID]
+    FROM [dbo].[DefaultLocationsByStoreBranch_NewVehicles] AS [DefaultLocationsByStoreBranch_NewVehicles]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="InventoryHistory" EntityType="Self.InventoryHistory" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [InventoryHistory].[STORE BRANCH] AS [STORE BRANCH], 
@@ -1029,6 +1085,14 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     [InventoryHistory].[IMPORT_DATE] AS [IMPORT_DATE], 
     [InventoryHistory].[Id_Primary] AS [Id_Primary]
     FROM [dbo].[InventoryHistory] AS [InventoryHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="StoreBranchByALLLocations" EntityType="Self.StoreBranchByALLLocations" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [StoreBranchByALLLocations].[STORE_BRANCH] AS [STORE_BRANCH], 
+    [StoreBranchByALLLocations].[LOCATION] AS [LOCATION], 
+    [StoreBranchByALLLocations].[LOCATION2] AS [LOCATION2], 
+    [StoreBranchByALLLocations].[Id_Primary] AS [Id_Primary]
+    FROM [dbo].[StoreBranchByALLLocations] AS [StoreBranchByALLLocations]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

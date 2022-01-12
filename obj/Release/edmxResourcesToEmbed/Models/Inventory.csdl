@@ -15,6 +15,8 @@
     <EntitySet Name="InventoryReportDrillDowns" EntityType="InventoryModel.InventoryReportDrillDown" />
     <EntitySet Name="NotOnFitzMalls" EntityType="InventoryModel.NotOnFitzMall" />
     <EntitySet Name="NotOnFitzMall_USED" EntityType="InventoryModel.NotOnFitzMall_USED" />
+    <EntitySet Name="DefaultLocationsByStoreBranch_NewVehicles" EntityType="InventoryModel.DefaultLocationsByStoreBranch_NewVehicles" />
+    <EntitySet Name="StoreBranchByALLLocations" EntityType="InventoryModel.StoreBranchByALLLocation" />
   </EntityContainer>
   <ComplexType Name="CARbySTOCK_Result">
     <Property Type="String" Name="STORE_BRANCH" Nullable="true" MaxLength="5" />
@@ -848,6 +850,7 @@
     <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CustomPhotos" Type="Int32" />
     <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
@@ -879,7 +882,7 @@
     <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="STAT_CODE" Type="Int32" />
     <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EXT_COLOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -893,6 +896,7 @@
     <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CustomPhotos" Type="Int32" />
     <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
@@ -924,7 +928,7 @@
     <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="STAT_CODE" Type="Int32" />
     <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="EXT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EXT_COLOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
@@ -939,6 +943,25 @@
     <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CustomPhotos" Type="Int32" />
+    <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="DefaultLocationsByStoreBranch_NewVehicles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DEFAULT_LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DEFAULT_LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="StoreBranchByALLLocation">
+    <Key>
+      <PropertyRef Name="Id_Primary" />
+    </Key>
+    <Property Name="STORE_BRANCH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LOCATION2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>

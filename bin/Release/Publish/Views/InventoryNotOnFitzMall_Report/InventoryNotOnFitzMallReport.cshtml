@@ -2,7 +2,6 @@
 
 @{
     ViewBag.Title = "NEW FitzMall.com SBOF Report";
-    String prevStoreBranch = "";
     String prevLocation = "";
     long total_ShouldBeOnWebSite_1 = 0;
     long total_ShouldBeOnWebSite_2 = 0;
@@ -27,9 +26,9 @@
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
 <link href="~/Content/tableStyle.css" rel="stylesheet" type="text/css">
 
-<h2 style="margin-left:15%">NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
+<h2 style="margin-left:11%">NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
-<table class="table" style="margin-left: 15%; width: 75%;  position: sticky; top: 50px; margin-bottom: 0px" id="reportheaders">
+<table class="table" style="margin-left: 11%; width: 75%;  position: sticky; top: 50px; margin-bottom: 0px" id="reportheaders">
     <thead class="thead">
 
 
@@ -102,7 +101,7 @@
     </thead>
 </table>
 
-<table id="InvData" class="table" style="margin-left: 15%; width:75%">
+<table id="InvData" class="table" style="margin-left: 11%; width:75%">
     <tbody>
         @foreach (var item in Model)
         {

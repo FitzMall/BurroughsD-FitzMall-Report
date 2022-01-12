@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>01/12/2022 15:22:10</publishTime>
+      <publishTime>01/12/2022 16:11:45</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>01/12/2022 15:22:10</publishTime>
+      <publishTime>01/12/2022 16:11:45</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -271,7 +271,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Models/Inventory.edmx.diagram">
-      <publishTime>01/05/2022 13:55:54</publishTime>
+      <publishTime>01/12/2022 15:43:11</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -328,7 +328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2022 09:45:02</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>01/12/2022 14:46:17</publishTime>
+      <publishTime>01/12/2022 16:10:22</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>01/10/2022 11:57:19</publishTime>
@@ -337,34 +337,34 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/22/2021 16:42:14</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown.cshtml">
-      <publishTime>01/12/2022 14:49:52</publishTime>
+      <publishTime>01/12/2022 15:54:56</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsNew.cshtml">
-      <publishTime>01/12/2022 13:59:00</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllLocationsUsed.cshtml">
-      <publishTime>01/12/2022 14:00:00</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/InventoryReportDrillDowns/DrillDown_AllStatusNew.cshtml">
       <publishTime>01/05/2022 09:45:02</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown.cshtml">
-      <publishTime>01/12/2022 14:03:31</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllLocations.cshtml">
-      <publishTime>01/12/2022 14:04:01</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/NotOnFitzMalls/DrillDown_AllStatus.cshtml">
-      <publishTime>01/12/2022 14:04:36</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown.cshtml">
-      <publishTime>01/12/2022 14:00:58</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown_AllLocations.cshtml">
-      <publishTime>01/12/2022 14:01:53</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/NotOnFitzMall_USED/DrillDown_AllStatus.cshtml">
-      <publishTime>01/12/2022 14:02:34</publishTime>
+      <publishTime>01/12/2022 16:02:23</publishTime>
     </File>
     <File Include="Views/ReportInventories/DrillDown.cshtml">
       <publishTime>12/21/2021 08:32:43</publishTime>

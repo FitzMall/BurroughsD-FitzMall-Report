@@ -108,6 +108,16 @@
                     }
                 }
             </th>
+            <th style="width: 120px; text-align: center">
+                @{ if (thisviewSortOrder != "Photos_Descending")
+                    {
+                        @Html.ActionLink("Photo Count", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Photos_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Photo Count", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Photos" })
+                    }
+                }
             <th style="width: 100px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
@@ -199,6 +209,9 @@
         </td>
         <td style="width: 350px; text-align: center">
             @Html.DisplayFor(modelItem => item.EXT_COLOR)
+        </td>
+        <td @if (item.CustomPhotos == 0) { <text> style="background-color:yellow; width: 120px; text-align: center" </text>  } else { <text> style="width: 120px; text-align: center" </text> }>
+            @Html.DisplayFor(modelItem => item.CustomPhotos)
         </td>
         <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:yellow; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
             @if (item.ChromeStyleID.Value > 0)
