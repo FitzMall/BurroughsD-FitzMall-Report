@@ -271,6 +271,24 @@ namespace WebApplication6
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
+                case "INVOICE":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.INVOICE);
+                    break;
+
+                case "INVOICE_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.INVOICE);
+                    break;
+                case "Location":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
+                    break;
+
+                case "Location_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
+                    break;
 
                 default:
 
@@ -433,7 +451,25 @@ namespace WebApplication6
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
+                case "INVOICE":
 
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.INVOICE);
+                    break;
+
+                case "INVOICE_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.INVOICE);
+                    break;
+
+                case "Location":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
+                    break;
+
+                case "Location_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
+                    break;
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
@@ -658,6 +694,24 @@ namespace WebApplication6
                 case "ChromeOptions_Descending":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
+                    break;
+                case "INVOICE":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.INVOICE);
+                    break;
+
+                case "INVOICE_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.INVOICE);
+                    break;
+                case "Location":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
+                    break;
+
+                case "Location_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
                     break;
 
                 default:

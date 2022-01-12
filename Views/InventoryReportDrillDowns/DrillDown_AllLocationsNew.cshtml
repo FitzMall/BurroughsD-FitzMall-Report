@@ -18,6 +18,18 @@
     <thead class="thead">
 
         <tr>
+            <th style="width: 100px">
+                @{ if (thisviewSortOrder != "Location_Descending")
+                    {
+                        @Html.ActionLink("Location", "DrillDown_AllLocationsNew", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Location", "DrillDown_AllLocationsNew", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location" })
+                    }
+                }
+            </th>
+
             <th style="width: 200px">
                 @{ if (thisviewSortOrder != "VIN_Descending")
                     {
@@ -165,6 +177,9 @@
     {
         counter++;
     <tr>
+        <td style="width: 100px">
+            @Html.DisplayFor(modelItem => item.LOCATION)
+        </td>
         <td style="width: 200px">
             @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.SERIAL_ }, new { target = "_blank" })
         </td>
