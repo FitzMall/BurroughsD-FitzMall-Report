@@ -74,6 +74,16 @@ namespace WebApplication6.Views
 
             switch (sortOrder)
             {
+                case "VIN":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
+                    break;
+
+                case "VIN_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
+                    break;
+
                 case "DaysInStock":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
@@ -402,6 +412,15 @@ namespace WebApplication6.Views
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
                     break;
 
+                case "VIN":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
+                    break;
+
+                case "VIN_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
+                    break;
                 default:
 
                     return View(SORTED_InventoryReportDrillDowns);
@@ -828,6 +847,16 @@ namespace WebApplication6.Views
                 case "Status_Descending":
 
                     SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
+                    break;
+
+                case "VIN":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
+                    break;
+
+                case "VIN_Descending":
+
+                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
                     break;
                 default:
 

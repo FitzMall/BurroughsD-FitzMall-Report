@@ -78,7 +78,6 @@ C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebAp
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.dll
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.pdb
 C:\Users\burroughsd\source\repos\WebApplication6\WebApplication6\obj\Debug\WebApplication6.csprojAssemblyReference.cache
-C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csprojAssemblyReference.cache
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\obj\Debug\WebApplication6.csproj.CoreCompileInputs.cache
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll.config
 C:\Users\burroughsd\Documents\GitHub\BurroughsD-FitzMall-Report\bin\0.dll

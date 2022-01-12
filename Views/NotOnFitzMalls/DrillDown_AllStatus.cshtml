@@ -100,11 +100,11 @@
             <th style="width: 100px">
                 @{ if (thisviewSortOrder != "Chrome_Descending")
                     {
-                        @Html.ActionLink("Chrome", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
+                        @Html.ActionLink("Chrome ID", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome_Descending" })
                     }
                     else
                     {
-                        @Html.ActionLink("Chrome", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
+                        @Html.ActionLink("Chrome ID", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Chrome" })
                     }
                 }
             </th>
@@ -119,6 +119,17 @@
                     }
                 }
 
+            </th>
+            <th style="width: 100px">
+                @{ if (thisviewSortOrder != "INVOICE_Descending")
+                    {
+                        @Html.ActionLink("Invoice", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "INVOICE_Descending" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink("Invoice", "DrillDown_AllStatus", new { StoreBranch = ViewBag.StoreBranch, Make = ViewBag.Make, Status = ViewBag.parStatusCode, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "INVOICE" })
+                    }
+                }
             </th>
             <th style="width: 100px">
                 @{ if (thisviewSortOrder != "MSRP_Descending")
@@ -174,7 +185,7 @@
         <td style="width: 350px; text-align: center">
             @Html.DisplayFor(modelItem => item.EXT_COLOR)
         </td>
-        <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+        <td @if (item.ChromeStyleID.Value == 0) { <text> style="background-color:yellow; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
             @if (item.ChromeStyleID.Value > 0)
             {
                 @Html.DisplayFor(modelItem => item.ChromeStyleID)
@@ -184,10 +195,13 @@
                 @("------");
             }
         </td>
-        <td @if (item.ChromeOptions != "Y") { <text> style="background-color:silver; width: 90px; text-align: center; " </text>  } else { <text> style="width: 90px; text-align: center" </text> }>
+        <td @if (item.ChromeOptions != "Y") { <text> style="background-color:yellow; width: 90px; text-align: center; " </text>  } else { <text> style="width: 90px; text-align: center" </text> }>
             @Html.DisplayFor(modelItem => item.ChromeOptions)
         </td>
-        <td @if (item.MSRP.Value == 0) { <text> style="background-color:silver; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+        <td @if (item.INVOICE == 0) { <text> style="background-color:yellow; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
+            @Html.DisplayFor(modelItem => item.INVOICE)
+        </td>
+        <td @if (item.MSRP.Value == 0) { <text> style="background-color:yellow; width: 100px" </text>  } else { <text> style="width: 100px" </text> }>
             @Html.DisplayFor(modelItem => item.MSRP)
         </td>
         <td>
