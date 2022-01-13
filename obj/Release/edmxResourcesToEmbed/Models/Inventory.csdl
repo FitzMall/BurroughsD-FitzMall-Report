@@ -816,40 +816,20 @@
     <Property Name="SERIAL_" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
     <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
     <Property Name="STOCK_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="NEW_USED" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
     <Property Name="ChromeStyleID" Type="Int32" />
     <Property Name="YEAR" Type="Int32" />
     <Property Name="MAKE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
     <Property Name="CARLINE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-    <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
     <Property Name="DAYS_IN_STOCK" Type="Int32" />
     <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="STAT_CODE" Type="Int32" />
     <Property Name="LOCATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
     <Property Name="EXT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-    <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
-    <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
-    <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-    <Property Name="IN_STOCK" Type="Int32" />
-    <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="CustomPhotos" Type="Int32" />
     <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />

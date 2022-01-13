@@ -633,40 +633,20 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="SERIAL#" Type="varchar" MaxLength="17" />
           <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
           <Property Name="STOCK#" Type="varchar" MaxLength="10" />
-          <Property Name="ORDER#" Type="varchar" MaxLength="10" />
           <Property Name="NEW USED" Type="varchar" MaxLength="4" />
           <Property Name="ChromeStyleID" Type="int" />
           <Property Name="YEAR" Type="int" />
           <Property Name="MAKE" Type="varchar" MaxLength="30" />
-          <Property Name="MAKE_PREFIX" Type="varchar" MaxLength="3" />
           <Property Name="CARLINE" Type="char" MaxLength="50" />
-          <Property Name="CARLINE_CODE" Type="varchar" MaxLength="20" />
-          <Property Name="DESC" Type="varchar" MaxLength="40" />
-          <Property Name="RECEIVED_DATE" Type="date" />
           <Property Name="DAYS_IN_STOCK" Type="int" />
           <Property Name="MSRP" Type="money" />
           <Property Name="BASE-MSRP" Type="money" />
           <Property Name="INVOICE" Type="money" />
           <Property Name="INVEN-AMT" Type="money" />
-          <Property Name="INTERNET-PRICE" Type="money" />
-          <Property Name="CODED-COST" Type="money" />
-          <Property Name="FREIGHT" Type="money" />
           <Property Name="STAT-CODE" Type="int" />
           <Property Name="LOCATION" Type="varchar" MaxLength="4" />
           <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
-          <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
           <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
-          <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
-          <Property Name="CARLINE-CODE-DV" Type="varchar" MaxLength="2" />
-          <Property Name="CREATE-DATE-DV" Type="date" />
-          <Property Name="CREATED-BY-DV" Type="varchar" MaxLength="10" />
-          <Property Name="DATE-ADDED-DR" Type="date" />
-          <Property Name="EXT-CLR-CD" Type="varchar" MaxLength="4" />
-          <Property Name="IN-STOCK" Type="int" />
-          <Property Name="INV-AMT" Type="numeric" Precision="19" Scale="4" />
-          <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
-          <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
-          <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
           <Property Name="CustomPhotos" Type="int" />
           <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
@@ -1920,40 +1900,20 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Property Name="SERIAL_" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
           <Property Name="FitzWayVIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
           <Property Name="STOCK_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ORDER_" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="NEW_USED" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="ChromeStyleID" Type="Int32" />
           <Property Name="YEAR" Type="Int32" />
           <Property Name="MAKE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="MAKE_PREFIX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="CARLINE" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
-          <Property Name="CARLINE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="RECEIVED_DATE" Type="DateTime" Precision="0" />
           <Property Name="DAYS_IN_STOCK" Type="Int32" />
           <Property Name="MSRP" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="BASE_MSRP" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="INVOICE" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="INVEN_AMT" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="INTERNET_PRICE" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="CODED_COST" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="FREIGHT" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="STAT_CODE" Type="Int32" />
           <Property Name="LOCATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="EXT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="EXT_CLR_DESC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="INT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="INT_CLR_DESC" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="CARLINE_CODE_DV" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="CREATE_DATE_DV" Type="DateTime" Precision="0" />
-          <Property Name="CREATED_BY_DV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DATE_ADDED_DR" Type="DateTime" Precision="0" />
-          <Property Name="EXT_CLR_CD" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
-          <Property Name="IN_STOCK" Type="Int32" />
-          <Property Name="INV_AMT" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="MDL_NO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="CLR_DESC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COLOR_DESC" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="CustomPhotos" Type="Int32" />
           <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
@@ -2885,40 +2845,20 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
                 <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
                 <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
-                <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
-                <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
-                <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
-                <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
-                <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
-                <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
-                <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
-                <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
-                <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
-                <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
-                <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
                 <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
-                <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
                 <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
                 <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
                 <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
-                <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
-                <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
-                <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
                 <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
                 <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
                 <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
                 <ScalarProperty Name="MSRP" ColumnName="MSRP" />
                 <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
-                <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
-                <ScalarProperty Name="DESC" ColumnName="DESC" />
-                <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
                 <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
-                <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
                 <ScalarProperty Name="MAKE" ColumnName="MAKE" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="ChromeStyleID" ColumnName="ChromeStyleID" />
                 <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
-                <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
                 <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
                 <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
                 <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />

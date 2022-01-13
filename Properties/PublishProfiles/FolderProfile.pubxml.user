@@ -10,10 +10,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/0.dll">
-      <publishTime>01/13/2022 08:33:01</publishTime>
+      <publishTime>01/13/2022 12:57:31</publishTime>
     </File>
     <File Include="bin/0.pdb">
-      <publishTime>01/13/2022 08:33:01</publishTime>
+      <publishTime>01/13/2022 12:57:31</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>09/10/2013 16:29:20</publishTime>
@@ -247,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/03/2022 10:51:43</publishTime>
     </File>
     <File Include="Content/tableStyle.css">
-      <publishTime>01/07/2022 11:33:22</publishTime>
+      <publishTime>01/13/2022 09:26:23</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -271,7 +271,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/21/2021 08:32:43</publishTime>
     </File>
     <File Include="Models/Inventory.edmx.diagram">
-      <publishTime>01/12/2022 15:43:11</publishTime>
+      <publishTime>01/13/2022 12:55:41</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>12/21/2021 08:32:43</publishTime>
@@ -328,7 +328,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/05/2022 09:45:02</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_Report/InventoryNotOnFitzMallReport.cshtml">
-      <publishTime>01/12/2022 16:10:22</publishTime>
+      <publishTime>01/13/2022 09:25:52</publishTime>
     </File>
     <File Include="Views/InventoryNotOnFitzMall_USED_Report/InventoryNotOnFitzMall_USEDReport.cshtml">
       <publishTime>01/10/2022 11:57:19</publishTime>

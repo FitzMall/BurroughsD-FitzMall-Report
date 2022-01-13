@@ -812,40 +812,20 @@
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
           <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
-          <ScalarProperty Name="COLOR_DESC" ColumnName="COLOR_DESC" />
-          <ScalarProperty Name="CLR_DESC" ColumnName="CLR-DESC" />
-          <ScalarProperty Name="MDL_NO" ColumnName="MDL-NO" />
-          <ScalarProperty Name="INV_AMT" ColumnName="INV-AMT" />
-          <ScalarProperty Name="IN_STOCK" ColumnName="IN-STOCK" />
-          <ScalarProperty Name="EXT_CLR_CD" ColumnName="EXT-CLR-CD" />
-          <ScalarProperty Name="DATE_ADDED_DR" ColumnName="DATE-ADDED-DR" />
-          <ScalarProperty Name="CREATED_BY_DV" ColumnName="CREATED-BY-DV" />
-          <ScalarProperty Name="CREATE_DATE_DV" ColumnName="CREATE-DATE-DV" />
-          <ScalarProperty Name="CARLINE_CODE_DV" ColumnName="CARLINE-CODE-DV" />
-          <ScalarProperty Name="INT_CLR_DESC" ColumnName="INT-CLR-DESC" />
           <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
-          <ScalarProperty Name="EXT_CLR_DESC" ColumnName="EXT-CLR-DESC" />
           <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
           <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
           <ScalarProperty Name="STAT_CODE" ColumnName="STAT-CODE" />
-          <ScalarProperty Name="FREIGHT" ColumnName="FREIGHT" />
-          <ScalarProperty Name="CODED_COST" ColumnName="CODED-COST" />
-          <ScalarProperty Name="INTERNET_PRICE" ColumnName="INTERNET-PRICE" />
           <ScalarProperty Name="INVEN_AMT" ColumnName="INVEN-AMT" />
           <ScalarProperty Name="INVOICE" ColumnName="INVOICE" />
           <ScalarProperty Name="BASE_MSRP" ColumnName="BASE-MSRP" />
           <ScalarProperty Name="MSRP" ColumnName="MSRP" />
           <ScalarProperty Name="DAYS_IN_STOCK" ColumnName="DAYS_IN_STOCK" />
-          <ScalarProperty Name="RECEIVED_DATE" ColumnName="RECEIVED_DATE" />
-          <ScalarProperty Name="DESC" ColumnName="DESC" />
-          <ScalarProperty Name="CARLINE_CODE" ColumnName="CARLINE_CODE" />
           <ScalarProperty Name="CARLINE" ColumnName="CARLINE" />
-          <ScalarProperty Name="MAKE_PREFIX" ColumnName="MAKE_PREFIX" />
           <ScalarProperty Name="MAKE" ColumnName="MAKE" />
           <ScalarProperty Name="YEAR" ColumnName="YEAR" />
           <ScalarProperty Name="ChromeStyleID" ColumnName="ChromeStyleID" />
           <ScalarProperty Name="NEW_USED" ColumnName="NEW USED" />
-          <ScalarProperty Name="ORDER_" ColumnName="ORDER#" />
           <ScalarProperty Name="STOCK_" ColumnName="STOCK#" />
           <ScalarProperty Name="FitzWayVIN" ColumnName="FitzWayVIN" />
           <ScalarProperty Name="SERIAL_" ColumnName="SERIAL#" />

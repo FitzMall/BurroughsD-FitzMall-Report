@@ -628,40 +628,20 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="SERIAL#" Type="varchar" MaxLength="17" />
     <Property Name="FitzWayVIN" Type="varchar" MaxLength="17" />
     <Property Name="STOCK#" Type="varchar" MaxLength="10" />
-    <Property Name="ORDER#" Type="varchar" MaxLength="10" />
     <Property Name="NEW USED" Type="varchar" MaxLength="4" />
     <Property Name="ChromeStyleID" Type="int" />
     <Property Name="YEAR" Type="int" />
     <Property Name="MAKE" Type="varchar" MaxLength="30" />
-    <Property Name="MAKE_PREFIX" Type="varchar" MaxLength="3" />
     <Property Name="CARLINE" Type="char" MaxLength="50" />
-    <Property Name="CARLINE_CODE" Type="varchar" MaxLength="20" />
-    <Property Name="DESC" Type="varchar" MaxLength="40" />
-    <Property Name="RECEIVED_DATE" Type="date" />
     <Property Name="DAYS_IN_STOCK" Type="int" />
     <Property Name="MSRP" Type="money" />
     <Property Name="BASE-MSRP" Type="money" />
     <Property Name="INVOICE" Type="money" />
     <Property Name="INVEN-AMT" Type="money" />
-    <Property Name="INTERNET-PRICE" Type="money" />
-    <Property Name="CODED-COST" Type="money" />
-    <Property Name="FREIGHT" Type="money" />
     <Property Name="STAT-CODE" Type="int" />
     <Property Name="LOCATION" Type="varchar" MaxLength="4" />
     <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
-    <Property Name="EXT-CLR-DESC" Type="varchar" MaxLength="20" />
     <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
-    <Property Name="INT-CLR-DESC" Type="varchar" MaxLength="25" />
-    <Property Name="CARLINE-CODE-DV" Type="varchar" MaxLength="2" />
-    <Property Name="CREATE-DATE-DV" Type="date" />
-    <Property Name="CREATED-BY-DV" Type="varchar" MaxLength="10" />
-    <Property Name="DATE-ADDED-DR" Type="date" />
-    <Property Name="EXT-CLR-CD" Type="varchar" MaxLength="4" />
-    <Property Name="IN-STOCK" Type="int" />
-    <Property Name="INV-AMT" Type="numeric" Precision="19" Scale="4" />
-    <Property Name="MDL-NO" Type="varchar" MaxLength="12" />
-    <Property Name="CLR-DESC" Type="varchar" MaxLength="40" />
-    <Property Name="COLOR_DESC" Type="varchar" MaxLength="1" />
     <Property Name="CustomPhotos" Type="int" />
     <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />

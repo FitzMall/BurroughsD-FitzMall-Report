@@ -18,40 +18,20 @@ namespace WebApplication6.Models
         public string SERIAL_ { get; set; }
         public string FitzWayVIN { get; set; }
         public string STOCK_ { get; set; }
-        public string ORDER_ { get; set; }
         public string NEW_USED { get; set; }
         public Nullable<int> ChromeStyleID { get; set; }
         public Nullable<int> YEAR { get; set; }
         public string MAKE { get; set; }
-        public string MAKE_PREFIX { get; set; }
         public string CARLINE { get; set; }
-        public string CARLINE_CODE { get; set; }
-        public string DESC { get; set; }
-        public Nullable<System.DateTime> RECEIVED_DATE { get; set; }
         public Nullable<int> DAYS_IN_STOCK { get; set; }
         public Nullable<decimal> MSRP { get; set; }
         public Nullable<decimal> BASE_MSRP { get; set; }
         public Nullable<decimal> INVOICE { get; set; }
         public Nullable<decimal> INVEN_AMT { get; set; }
-        public Nullable<decimal> INTERNET_PRICE { get; set; }
-        public Nullable<decimal> CODED_COST { get; set; }
-        public Nullable<decimal> FREIGHT { get; set; }
         public Nullable<int> STAT_CODE { get; set; }
         public string LOCATION { get; set; }
         public string EXT_COLOR { get; set; }
-        public string EXT_CLR_DESC { get; set; }
         public string INT_COLOR { get; set; }
-        public string INT_CLR_DESC { get; set; }
-        public string CARLINE_CODE_DV { get; set; }
-        public Nullable<System.DateTime> CREATE_DATE_DV { get; set; }
-        public string CREATED_BY_DV { get; set; }
-        public Nullable<System.DateTime> DATE_ADDED_DR { get; set; }
-        public string EXT_CLR_CD { get; set; }
-        public Nullable<int> IN_STOCK { get; set; }
-        public Nullable<decimal> INV_AMT { get; set; }
-        public string MDL_NO { get; set; }
-        public string CLR_DESC { get; set; }
-        public string COLOR_DESC { get; set; }
         public Nullable<int> CustomPhotos { get; set; }
         public string ChromeOptions { get; set; }
         public int Id_Primary { get; set; }

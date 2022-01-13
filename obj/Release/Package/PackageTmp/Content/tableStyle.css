@@ -8,9 +8,10 @@
         background: transparent !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
-        font-size: 95% !important;
+        font-size: 100% !important;
         font-weight: lighter !important;
-        
+        position: static !important;
+        border-left-width: 0px !important;
     }
 
     a,
