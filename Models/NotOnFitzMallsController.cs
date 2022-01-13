@@ -799,5 +799,170 @@ namespace WebApplication6
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult ExportToExcel(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
+        {
+            string ExcelOutput = "";
+
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = "InventoryReportDrillDown.csv",
+                Inline = false
+            };
+
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
+            StoreBranch = ("" + StoreBranch);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());
+
+
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.OrderBy(d => d.MSRP)
+                                                   select sDD_init;
+
+            if (StatusCode > 0)
+            {
+                if (Make == "ALL")
+                {
+                    if (NewOrUsed == "N")
+                    {
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
+                    }
+                    else
+                    {
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
+                    }
+                }
+                else
+                {
+                    if (NewOrUsed == "N")
+                    {
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                           select sDD;
+
+                    }
+                    else
+                    {
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                           select sDD;
+                    }
+                }
+            }
+            else
+            {
+                if (StoreBranch == "")
+                {
+                    if (NewOrUsed == "N")
+                    {
+
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                           select sDD;
+                    }
+                    else
+                    {
+
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                           select sDD;
+                    }
+                }
+                else
+                {
+                    if (Make == "ALL")
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                               select sDD;
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        if (NewOrUsed == "N")
+                        {
+
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                               select sDD;
+                        }
+                    }
+                }
+            }
+
+
+            // load the results for possible Excel export 
+
+            ExcelOutput += ("SERIAL_,");
+            ExcelOutput += ("STOCK_,");
+            ExcelOutput += ("STAT_CODE,");
+            ExcelOutput += ("YEAR,");
+            ExcelOutput += ("MAKE,");
+            ExcelOutput += ("CARLINE,");
+            ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("INVOICE,");
+            ExcelOutput += ("MSRP,");
+            ExcelOutput += ("ChromeOptions,");
+            ExcelOutput += ("CustomPhotos,");
+            ExcelOutput += ("DAYS_IN_STOCK,");
+            ExcelOutput += "\r\n";
+
+            foreach (var result in SORTED_InventoryReportDrillDowns)
+
+            {
+                ExcelOutput += (result.SERIAL_ + ",");
+                ExcelOutput += (result.STOCK_ + ",");
+                ExcelOutput += (result.STAT_CODE + ",");
+                ExcelOutput += (result.YEAR + ",");
+                ExcelOutput += (result.MAKE + ",");
+                ExcelOutput += (result.CARLINE + ",");
+                ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.INVOICE + ",");
+                ExcelOutput += (result.MSRP + ",");
+                ExcelOutput += (result.ChromeOptions + ",");
+                ExcelOutput += (result.CustomPhotos + ",");
+                ExcelOutput += (result.DAYS_IN_STOCK + ",");
+                ExcelOutput += "\r\n";
+
+            }
+
+
+            Response.AddHeader("Content-Disposition", cd.ToString());
+
+            return Content(ExcelOutput);
+        }
+
     }
 }

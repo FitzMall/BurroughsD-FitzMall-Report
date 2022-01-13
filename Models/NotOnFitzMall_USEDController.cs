@@ -776,35 +776,115 @@ namespace WebApplication6
                 Inline = false
             };
 
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.OrderBy(d => d.MSRP)
-                                                   select sDD_init;
-
-            // handle nulls
-            sortOrder = ("" + sortOrder);
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
             StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
-            NewOrUsed = ("U");
-            System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting Excel export: Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());
+
+
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.OrderBy(d => d.MSRP)
+                                                   select sDD_init;
 
             if (StatusCode > 0)
             {
+                if (Make == "ALL")
+                {
+                    if (NewOrUsed == "N")
+                    {
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
+                    }
+                    else
+                    {
+                        if (StoreBranch == "")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
+                                                               select sDD;
+                        }
+                    }
+                }
+                else
+                {
+                    if (NewOrUsed == "N")
+                    {
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                           select sDD;
 
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                   select sDD;
+                    }
+                    else
+                    {
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                           select sDD;
+                    }
+                }
             }
             else
             {
                 if (StoreBranch == "")
                 {
+                    if (NewOrUsed == "N")
+                    {
 
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                       select sDD;
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                           select sDD;
+                    }
+                    else
+                    {
+
+                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                           select sDD;
+                    }
                 }
                 else
                 {
+                    if (Make == "ALL")
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                               select sDD;
+                        }
 
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                       select sDD;
+
+
+                    }
+                    else
+                    {
+                        if (NewOrUsed == "N")
+                        {
+
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
+                                                               select sDD;
+                        }
+                    }
                 }
             }
 
@@ -818,8 +898,10 @@ namespace WebApplication6
             ExcelOutput += ("MAKE,");
             ExcelOutput += ("CARLINE,");
             ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("INVOICE,");
             ExcelOutput += ("MSRP,");
             ExcelOutput += ("ChromeOptions,");
+            ExcelOutput += ("CustomPhotos,");
             ExcelOutput += ("DAYS_IN_STOCK,");
             ExcelOutput += "\r\n";
 
@@ -833,8 +915,10 @@ namespace WebApplication6
                 ExcelOutput += (result.MAKE + ",");
                 ExcelOutput += (result.CARLINE + ",");
                 ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.INVOICE + ",");
                 ExcelOutput += (result.MSRP + ",");
                 ExcelOutput += (result.ChromeOptions + ",");
+                ExcelOutput += (result.CustomPhotos + ",");
                 ExcelOutput += (result.DAYS_IN_STOCK + ",");
                 ExcelOutput += "\r\n";
 
