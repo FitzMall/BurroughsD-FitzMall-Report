@@ -58,6 +58,7 @@ namespace WebApplication6.Views
                 ViewBag.NewOrUsed = NewOrUsed;
                 ViewBag.SortOrder = sortOrder;
 
+
             if (StatusCode > 0)
             {
                 SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && d.STAT_CODE == StatusCode)
@@ -498,8 +499,8 @@ namespace WebApplication6.Views
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
-                                                   select sDD_init;
+            var SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.STORE_BRANCH == StoreBranch)
+                                               select sDD;
 
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
 
@@ -534,9 +535,16 @@ namespace WebApplication6.Views
 
             }
 
+            string sLocation = "";
+
             if (StoreBranch != "")
             {
-                ViewBagString += " " + StoreBranch;
+                foreach (var result in SORTED_InventoryReportDrillDowns)
+                {
+                    sLocation = result.LOCATION;
+                    break;
+                }
+                ViewBagString += " " + sLocation;
 
             }
 
@@ -1217,8 +1225,10 @@ namespace WebApplication6.Views
             ExcelOutput += ("MAKE,");
             ExcelOutput += ("CARLINE,");
             ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("INVOICE,");
             ExcelOutput += ("MSRP,");
             ExcelOutput += ("ChromeOptions,");
+            ExcelOutput += ("CustomPhotos,");
             ExcelOutput += ("DAYS_IN_STOCK,");
             ExcelOutput += "\r\n";
 
@@ -1232,8 +1242,10 @@ namespace WebApplication6.Views
                 ExcelOutput += (result.MAKE + ",");
                 ExcelOutput += (result.CARLINE + ",");
                 ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.INVOICE + ",");
                 ExcelOutput += (result.MSRP + ",");
                 ExcelOutput += (result.ChromeOptions + ",");
+                ExcelOutput += (result.CustomPhotos + ",");
                 ExcelOutput += (result.DAYS_IN_STOCK + ",");
                 ExcelOutput += "\r\n";
 
