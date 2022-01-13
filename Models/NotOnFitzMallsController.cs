@@ -516,6 +516,7 @@ namespace WebApplication6
             // handle nulls
             sortOrder = ("" + sortOrder);
             Make = ("" + Make);
+            Make = Make.ToUpper().Trim();
             if (Make == "")
             {
                 Make = "ALL";
@@ -569,8 +570,9 @@ namespace WebApplication6
             ViewBag.StoreBranch = StoreBranch;
             ViewBag.parStatusCode = StatusCode;
             ViewBag.NewOrUsed = NewOrUsed;
-            ViewBag.Make = Make.ToUpper();
+            ViewBag.Make = Make.ToUpper().Trim();
             ViewBag.SortOrder = sortOrder;
+
 
             if (StatusCode > 0)
             {
@@ -925,6 +927,7 @@ namespace WebApplication6
 
             // load the results for possible Excel export 
 
+            ExcelOutput += ("LOCATION,");
             ExcelOutput += ("SERIAL_,");
             ExcelOutput += ("STOCK_,");
             ExcelOutput += ("STAT_CODE,");
@@ -932,16 +935,18 @@ namespace WebApplication6
             ExcelOutput += ("MAKE,");
             ExcelOutput += ("CARLINE,");
             ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("CustomPhotos,"); 
+            ExcelOutput += ("ChromeStyleID,"); 
             ExcelOutput += ("INVOICE,");
             ExcelOutput += ("MSRP,");
             ExcelOutput += ("ChromeOptions,");
-            ExcelOutput += ("CustomPhotos,");
             ExcelOutput += ("DAYS_IN_STOCK,");
             ExcelOutput += "\r\n";
 
             foreach (var result in SORTED_InventoryReportDrillDowns)
 
             {
+                ExcelOutput += (result.LOCATION + ",");
                 ExcelOutput += (result.SERIAL_ + ",");
                 ExcelOutput += (result.STOCK_ + ",");
                 ExcelOutput += (result.STAT_CODE + ",");
@@ -949,10 +954,11 @@ namespace WebApplication6
                 ExcelOutput += (result.MAKE + ",");
                 ExcelOutput += (result.CARLINE + ",");
                 ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.CustomPhotos + ",");
+                ExcelOutput += (result.ChromeStyleID + ",");
                 ExcelOutput += (result.INVOICE + ",");
                 ExcelOutput += (result.MSRP + ",");
                 ExcelOutput += (result.ChromeOptions + ",");
-                ExcelOutput += (result.CustomPhotos + ",");
                 ExcelOutput += (result.DAYS_IN_STOCK + ",");
                 ExcelOutput += "\r\n";
 

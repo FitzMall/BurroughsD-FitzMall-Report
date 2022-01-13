@@ -1223,8 +1223,10 @@ namespace WebApplication6.Views
             }
 
 
+
             // load the results for possible Excel export 
 
+            ExcelOutput += ("LOCATION,");
             ExcelOutput += ("SERIAL_,");
             ExcelOutput += ("STOCK_,");
             ExcelOutput += ("STAT_CODE,");
@@ -1232,16 +1234,18 @@ namespace WebApplication6.Views
             ExcelOutput += ("MAKE,");
             ExcelOutput += ("CARLINE,");
             ExcelOutput += ("EXT_COLOR,");
+            ExcelOutput += ("CustomPhotos,");
+            ExcelOutput += ("ChromeStyleID,");
             ExcelOutput += ("INVOICE,");
             ExcelOutput += ("MSRP,");
             ExcelOutput += ("ChromeOptions,");
-            ExcelOutput += ("CustomPhotos,");
             ExcelOutput += ("DAYS_IN_STOCK,");
             ExcelOutput += "\r\n";
 
             foreach (var result in SORTED_InventoryReportDrillDowns)
 
             {
+                ExcelOutput += (result.LOCATION + ",");
                 ExcelOutput += (result.SERIAL_ + ",");
                 ExcelOutput += (result.STOCK_ + ",");
                 ExcelOutput += (result.STAT_CODE + ",");
@@ -1249,15 +1253,15 @@ namespace WebApplication6.Views
                 ExcelOutput += (result.MAKE + ",");
                 ExcelOutput += (result.CARLINE + ",");
                 ExcelOutput += (result.EXT_COLOR + ",");
+                ExcelOutput += (result.CustomPhotos + ",");
+                ExcelOutput += (result.ChromeStyleID + ",");
                 ExcelOutput += (result.INVOICE + ",");
                 ExcelOutput += (result.MSRP + ",");
                 ExcelOutput += (result.ChromeOptions + ",");
-                ExcelOutput += (result.CustomPhotos + ",");
                 ExcelOutput += (result.DAYS_IN_STOCK + ",");
                 ExcelOutput += "\r\n";
 
             }
-
 
             Response.AddHeader("Content-Disposition", cd.ToString());
 
