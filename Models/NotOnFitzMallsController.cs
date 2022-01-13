@@ -507,7 +507,7 @@ namespace WebApplication6
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.STORE_BRANCH == StoreBranch)
                                                    select sDD_init;
 
 
@@ -545,9 +545,16 @@ namespace WebApplication6
 
             }
 
+            string sLocation = "";
+
             if (StoreBranch != "")
             {
-                ViewBagString += " " + StoreBranch;
+                foreach (var result in SORTED_InventoryReportDrillDowns)
+                {
+                    sLocation = result.LOCATION;
+                    break;
+                }
+                ViewBagString += " " + sLocation;
 
             }
 

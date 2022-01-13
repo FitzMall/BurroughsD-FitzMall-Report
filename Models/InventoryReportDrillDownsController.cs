@@ -226,7 +226,7 @@ namespace WebApplication6.Views
 
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting DrillDown_AllStatusNew View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
 
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MSRP > 0 && d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.Where(d => d.STORE_BRANCH == StoreBranch)
                                                    select sDD_init;
 
             // handle nulls
@@ -252,9 +252,16 @@ namespace WebApplication6.Views
 
             }
 
+            string sLocation = "";
+
             if (StoreBranch != "")
             {
-                ViewBagString += " " + StoreBranch;
+                foreach (var result in SORTED_InventoryReportDrillDowns)
+                {
+                    sLocation = result.LOCATION;
+                    break;
+                }
+                ViewBagString += " " + sLocation;
 
             }
 

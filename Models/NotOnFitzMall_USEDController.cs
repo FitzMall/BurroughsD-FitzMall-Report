@@ -31,7 +31,7 @@ namespace WebApplication6
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.FitzWayVIN != "")
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch)
                                                    select sDD_init;
 
 
@@ -54,9 +54,16 @@ namespace WebApplication6
             ViewBagString = "USED Cars NOT On FitzMall ";
             System.Diagnostics.Debug.WriteLine("NotONFitzMall_USED DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
 
+            string sLocation = "";
+
             if (StoreBranch != "")
             {
-                ViewBagString += " " + StoreBranch;
+                foreach (var result in SORTED_InventoryReportDrillDowns)
+                {
+                    sLocation = result.LOCATION;
+                    break;
+                }
+                ViewBagString += " " + sLocation;
 
             }
 
