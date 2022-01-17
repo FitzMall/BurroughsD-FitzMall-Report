@@ -90,417 +90,6 @@ namespace WebApplication6
         }
 
 
-        public ActionResult DrillDown_AllStatus(string StoreBranch, string Location, string Make, string sortOrder)
-        {
-            // actually called by NotOnFitzMalls controller
-            // status code = 0 means all status
-            //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.MSRP > 0 && d.FitzWayVIN != "")
-                                                   select sDD_init;
-
-
-            ViewBag.PriceTitle = "MSRP";
-
-            // handle nulls
-            sortOrder = ("" + sortOrder);
-            Make = ("" + Make);
-            if (Make == "")
-            {
-                Make = "ALL";
-            }
-            StoreBranch = ("" + StoreBranch);
-            StoreBranch = ("" + StoreBranch.Trim());
-            string NewOrUsed = ("N");
-
-            string ViewBagString = "";
-            string NewOrUsedTitle = "NEW";
-            ViewBag.PriceTitle = "MSRP";
-
-            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
-            System.Diagnostics.Debug.WriteLine("NotONFitzMall DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
-
-            if (StoreBranch != "")
-            {
-                ViewBagString += " " + StoreBranch;
-
-            }
-
-            if (Make != "")
-            {
-                ViewBagString += " " + Make;
-
-            }
-
-            ViewBag.Title = ViewBagString;
-
-            ViewBag.StoreBranch = StoreBranch;
-            ViewBag.NewOrUsed = NewOrUsed;
-            ViewBag.Make = Make.ToUpper();
-            ViewBag.SortOrder = sortOrder;
-
-            if (StoreBranch == "")
-            {
-
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                   select sDD;
-            }
-            else
-            {
-                if (Make == "ALL")
-                {
-
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                       select sDD;
-
-                }
-                else
-                {
-
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                       select sDD;
-
-                }
-            }
-
-
-            switch (sortOrder)
-            {
-                case "VIN":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
-                    break;
-
-                case "VIN_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
-                    break;
-                case "DaysInStock":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
-                    break;
-
-                case "DaysInStock_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.DAYS_IN_STOCK);
-                    break;
-                case "MSRP":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MSRP);
-                    break;
-
-                case "MSRP_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
-                    break;
-
-                case "Status":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
-                    break;
-
-                case "Status_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
-                    break;
-
-                case "Make":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MAKE + d.CARLINE);
-                    break;
-
-                case "Make_Descending":
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MAKE + d.CARLINE);
-                    break;
-
-                case "Model":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CARLINE);
-                    break;
-
-                case "Model_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CARLINE);
-                    break;
-
-                case "StockNum":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STOCK_);
-                    break;
-
-                case "StockNum_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STOCK_);
-                    break;
-
-                case "Year":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.YEAR);
-                    break;
-
-                case "Year_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.YEAR);
-                    break;
-
-                case "Color":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
-                    break;
-
-                case "Color_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
-                    break;
-
-                case "Chrome":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeStyleID);
-                    break;
-
-                case "Chrome_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
-                    break;
-
-                case "ChromeOptions":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
-                    break;
-
-                case "ChromeOptions_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
-                    break;
-                case "INVOICE":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.INVOICE);
-                    break;
-
-                case "INVOICE_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.INVOICE);
-                    break;
-                case "Location":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
-                    break;
-
-                case "Location_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
-                    break;
-                case "Photos":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CustomPhotos);
-                    break;
-
-                case "Photos_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CustomPhotos);
-                    break;
-
-                default:
-
-                    return View(SORTED_InventoryReportDrillDowns);
-                    break;
-
-            }
-            return View(SORTED_InventoryReportDrillDowns);
-        }
-
-        public ActionResult DrillDown_AllLocations(int? Status, string sortOrder)
-        {
-            // actually called by NotOnFitzMalls controller
-            // status code = 0 means all status
-            //
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.MSRP > 0 && d.FitzWayVIN != "")
-                                                   select sDD_init;
-
-            System.Diagnostics.Debug.WriteLine("NotONFitzMall DrillDown_ALLLocations Controller- Getting View:  " + Status);
-
-            ViewBag.PriceTitle = "MSRP";
-
-            // handle nulls
-            sortOrder = ("" + sortOrder);
-
-            string ViewBagString = "";
-
-            string NewOrUsed = "N";
-
-            ViewBagString = "NEW Cars Not On FitzMall";
-            if (Status.ToString() != "0")
-            {
-                ViewBagString += " Status: " + Status.ToString();
-
-            }
-
-
-            ViewBag.Title = ViewBagString;
-
-            ViewBag.parStatusCode = Status;
-            ViewBag.NewOrUsed = "N";
-            ViewBag.SortOrder = sortOrder;
-
-            if (Status > 0)
-            {
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.STAT_CODE == Status && d.NEW_USED == NewOrUsed)
-                                                   select sDD;
-            }
-            else
-            {
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                   select sDD;
-            }
-
-            switch (sortOrder)
-            {
-                case "VIN":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.SERIAL_);
-                    break;
-
-                case "VIN_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.SERIAL_);
-                    break;
-                case "DaysInStock":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.DAYS_IN_STOCK);
-                    break;
-
-                case "DaysInStock_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.DAYS_IN_STOCK);
-                    break;
-                case "MSRP":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MSRP);
-                    break;
-
-                case "MSRP_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MSRP);
-                    break;
-
-                case "Status":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STAT_CODE);
-                    break;
-
-                case "Status_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STAT_CODE);
-                    break;
-
-                case "Make":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.MAKE + d.CARLINE);
-                    break;
-
-                case "Make_Descending":
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.MAKE + d.CARLINE);
-                    break;
-
-                case "Model":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CARLINE);
-                    break;
-
-                case "Model_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CARLINE);
-                    break;
-
-                case "StockNum":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.STOCK_);
-                    break;
-
-                case "StockNum_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.STOCK_);
-                    break;
-
-                case "Year":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.YEAR);
-                    break;
-
-                case "Year_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.YEAR);
-                    break;
-
-                case "Color":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.EXT_COLOR);
-                    break;
-
-                case "Color_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.EXT_COLOR);
-                    break;
-
-                case "Chrome":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeStyleID);
-                    break;
-
-                case "Chrome_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeStyleID);
-                    break;
-
-                case "ChromeOptions":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.ChromeOptions);
-                    break;
-
-                case "ChromeOptions_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.ChromeOptions);
-                    break;
-                case "INVOICE":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.INVOICE);
-                    break;
-
-                case "INVOICE_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.INVOICE);
-                    break;
-
-                case "Location":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.LOCATION);
-                    break;
-
-                case "Location_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.LOCATION);
-                    break;
-
-                case "Photos":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderBy(d => d.CustomPhotos);
-                    break;
-
-                case "Photos_Descending":
-
-                    SORTED_InventoryReportDrillDowns = SORTED_InventoryReportDrillDowns.OrderByDescending(d => d.CustomPhotos);
-                    break;
-
-
-
-                default:
-
-                    return View(SORTED_InventoryReportDrillDowns);
-                    break;
-
-            }
-            return View(SORTED_InventoryReportDrillDowns);
-        }
-
         // GET: ReportInventories/DrillDown/5
         public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
         {
@@ -832,6 +421,18 @@ namespace WebApplication6
                 Inline = false
             };
 
+
+
+
+            //
+            var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.MSRP > 0 && d.FitzWayVIN != "")
+                                                   select sDD_init;
+
+
+            ViewBag.PriceTitle = "MSRP";
+
+            // handle nulls
+            sortOrder = ("" + sortOrder);
             Make = ("" + Make);
             if (Make == "")
             {
@@ -839,108 +440,54 @@ namespace WebApplication6
             }
             StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
-            NewOrUsed = ("" + NewOrUsed);
-            NewOrUsed = ("" + NewOrUsed.Trim());
 
+            string ViewBagString = "";
+            string NewOrUsedTitle = "NEW";
+            ViewBag.PriceTitle = "MSRP";
 
-            var SORTED_InventoryReportDrillDowns = from sDD_init in db.InventoryReportDrillDowns.OrderBy(d => d.MSRP)
-                                                   select sDD_init;
+            ViewBagString = NewOrUsedTitle + " Cars NOT On FitzMall";
+            System.Diagnostics.Debug.WriteLine("NotONFitzMall DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " " + NewOrUsed);
 
-            if (StatusCode > 0)
+            if (StoreBranch != "")
             {
-                if (Make == "ALL")
-                {
-                    if (NewOrUsed == "N")
-                    {
-                        if (StoreBranch == "")
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                               select sDD;
-                        }
-                        else
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                               select sDD;
-                        }
-                    }
-                    else
-                    {
-                        if (StoreBranch == "")
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                               select sDD;
-                        }
-                        else
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                               select sDD;
-                        }
-                    }
-                }
-                else
-                {
-                    if (NewOrUsed == "N")
-                    {
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                           select sDD;
+                ViewBagString += " " + StoreBranch;
 
-                    }
-                    else
-                    {
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                           select sDD;
-                    }
-                }
+            }
+
+            if (Make != "")
+            {
+                ViewBagString += " " + Make;
+
+            }
+
+            ViewBag.Title = ViewBagString;
+
+            ViewBag.StoreBranch = StoreBranch;
+            ViewBag.NewOrUsed = NewOrUsed;
+            ViewBag.Make = Make.ToUpper();
+            ViewBag.SortOrder = sortOrder;
+
+            if (StoreBranch == "")
+            {
+
+                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                   select sDD;
             }
             else
             {
-                if (StoreBranch == "")
+                if (Make == "ALL")
                 {
-                    if (NewOrUsed == "N")
-                    {
 
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                           select sDD;
-                    }
-                    else
-                    {
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                       select sDD;
 
-                        SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                           select sDD;
-                    }
                 }
                 else
                 {
-                    if (Make == "ALL")
-                    {
-                        if (NewOrUsed == "N")
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                               select sDD;
-                        }
-                        else
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                               select sDD;
-                        }
 
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
+                                                       select sDD;
 
-
-                    }
-                    else
-                    {
-                        if (NewOrUsed == "N")
-                        {
-
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
-                                                               select sDD;
-                        }
-                        else
-                        {
-                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
-                                                               select sDD;
-                        }
-                    }
                 }
             }
 
