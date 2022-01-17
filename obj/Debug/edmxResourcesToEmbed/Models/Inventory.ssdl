@@ -642,8 +642,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
     <Property Name="LOCATION" Type="varchar" MaxLength="4" />
     <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
     <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
-    <Property Name="CustomPhotos" Type="int" />
     <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CustomPhotos" Type="int" />
     <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:

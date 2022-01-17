@@ -32,8 +32,8 @@ namespace WebApplication6.Models
         public string LOCATION { get; set; }
         public string EXT_COLOR { get; set; }
         public string INT_COLOR { get; set; }
-        public Nullable<int> CustomPhotos { get; set; }
         public string ChromeOptions { get; set; }
+        public Nullable<int> CustomPhotos { get; set; }
         public int Id_Primary { get; set; }
     }
 }

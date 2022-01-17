@@ -647,8 +647,8 @@ warning 6002: The table/view 'Inventory.dbo.InventoryHistory' does not have a pr
           <Property Name="LOCATION" Type="varchar" MaxLength="4" />
           <Property Name="EXT-COLOR" Type="varchar" MaxLength="40" />
           <Property Name="INT-COLOR" Type="varchar" MaxLength="40" />
-          <Property Name="CustomPhotos" Type="int" />
           <Property Name="ChromeOptions" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="CustomPhotos" Type="int" />
           <Property Name="Id_Primary" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1914,8 +1914,8 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
           <Property Name="LOCATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="EXT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="INT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="CustomPhotos" Type="Int32" />
           <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CustomPhotos" Type="Int32" />
           <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="NotOnFitzMall">
@@ -2843,8 +2843,8 @@ warning 6002: The table/view 'Inventory.dbo.StoreBranchByALLLocations' does not 
             <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
               <MappingFragment StoreEntitySet="InventoryReportDrillDown">
                 <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-                <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
                 <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
+                <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
                 <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
                 <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
                 <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />

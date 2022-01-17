@@ -64,10 +64,15 @@ namespace WebApplication6.Models
             Make = ("" + Make);
             StatusCode = ("" + StatusCode);
             OnFitzMall = ("" + OnFitzMall);
-
+            StoreBranch = ("" + StoreBranch);
             StoreBranch = StoreBranch.Trim();
+            StatusCode = StatusCode.Trim();
 
-
+            if (StatusCode == "")
+            {
+                StatusCode = "ALL";
+            }
+            
             if (StatusCode == "ALL")
             {
                 parStatusCode = 0;

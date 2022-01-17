@@ -572,8 +572,44 @@ namespace WebApplication6.Views
             {
                 Make = "ALL";
             }
+
+
             if (StatusCode > 0)
             {
+
+                if (StoreBranch == "")
+                {
+                    if (Make == "ALL")
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                    }
+                    else
+                    {
+                        if (NewOrUsed == "N")
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+
+                        }
+                        else
+                        {
+                            SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.ChromeStyleID != 0 && d.MAKE == Make && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
+                                                               select sDD;
+                        }
+                    }
+
+                }
+                else
+                {
                 if (Make == "ALL")
                 {
                     if (NewOrUsed == "N")
@@ -601,6 +637,8 @@ namespace WebApplication6.Views
                                                            select sDD;
                     }
                 }
+            }
+
             }
             else
             {

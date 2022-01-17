@@ -810,8 +810,8 @@
       <EntityTypeMapping TypeName="InventoryModel.InventoryReportDrillDown">
         <MappingFragment StoreEntitySet="InventoryReportDrillDown">
           <ScalarProperty Name="Id_Primary" ColumnName="Id_Primary" />
-          <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="CustomPhotos" ColumnName="CustomPhotos" />
+          <ScalarProperty Name="ChromeOptions" ColumnName="ChromeOptions" />
           <ScalarProperty Name="INT_COLOR" ColumnName="INT-COLOR" />
           <ScalarProperty Name="EXT_COLOR" ColumnName="EXT-COLOR" />
           <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />

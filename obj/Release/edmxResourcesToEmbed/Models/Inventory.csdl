@@ -830,8 +830,8 @@
     <Property Name="LOCATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
     <Property Name="EXT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <Property Name="INT_COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="CustomPhotos" Type="Int32" />
     <Property Name="ChromeOptions" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="CustomPhotos" Type="Int32" />
     <Property Name="Id_Primary" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="NotOnFitzMall">
