@@ -10,7 +10,7 @@ using WebApplication6.Models;
 
 namespace WebApplication6
 {
-    public class NotOnFitzMallsController : Controller 
+    public class NotOnFitzMallsController : Controller
     {
         private InventoryEntities1 db = new InventoryEntities1();
 
@@ -141,7 +141,7 @@ namespace WebApplication6
             if (StoreBranch == "")
             {
 
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)  || (d.STAT_CODE == 4)  || (d.STAT_CODE == 9)  || (d.STAT_CODE == 12)  || (d.STAT_CODE == 14)))
+                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
                                                    select sDD;
             }
             else
@@ -149,14 +149,14 @@ namespace WebApplication6
                 if (Make == "ALL")
                 {
 
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d =>d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)  || (d.STAT_CODE == 4)  || (d.STAT_CODE == 9)  || (d.STAT_CODE == 12)  || (d.STAT_CODE == 14)))
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
                                                        select sDD;
 
                 }
                 else
                 {
 
-                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)  || (d.STAT_CODE == 4)  || (d.STAT_CODE == 9)  || (d.STAT_CODE == 12)  || (d.STAT_CODE == 14)))
+                    SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
                                                        select sDD;
 
                 }
@@ -348,7 +348,7 @@ namespace WebApplication6
             }
             else
             {
-                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)  || (d.STAT_CODE == 4)  || (d.STAT_CODE == 9)  || (d.STAT_CODE == 12)  || (d.STAT_CODE == 14)))
+                SORTED_InventoryReportDrillDowns = from sDD in db.NotOnFitzMalls.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) || (d.STAT_CODE == 4) || (d.STAT_CODE == 9) || (d.STAT_CODE == 12) || (d.STAT_CODE == 14)))
                                                    select sDD;
             }
 
@@ -594,8 +594,6 @@ namespace WebApplication6
                 }
                 else
                 {
-                    if (StoreBranch == "")
-                    {
                         if (Make == "ALL")
                         {
 
@@ -610,7 +608,6 @@ namespace WebApplication6
                                                                select sDD;
                         }
 
-                    }
                 }
             }
             else
@@ -958,8 +955,8 @@ namespace WebApplication6
             ExcelOutput += ("MAKE,");
             ExcelOutput += ("CARLINE,");
             ExcelOutput += ("EXT_COLOR,");
-            ExcelOutput += ("CustomPhotos,"); 
-            ExcelOutput += ("ChromeStyleID,"); 
+            ExcelOutput += ("CustomPhotos,");
+            ExcelOutput += ("ChromeStyleID,");
             ExcelOutput += ("INVOICE,");
             ExcelOutput += ("MSRP,");
             ExcelOutput += ("ChromeOptions,");
