@@ -106,6 +106,7 @@ namespace WebApplication6.Views
         public ActionResult DrillDown(string StoreBranch, string StatusCode, string OnFitzMall)
         {
             int parStatusCode;
+            StoreBranch = ("" + StoreBranch);
             StoreBranch = StoreBranch.Trim();
 
             if (StatusCode == "ALL")
