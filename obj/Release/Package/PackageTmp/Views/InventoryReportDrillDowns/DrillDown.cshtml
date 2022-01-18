@@ -19,17 +19,22 @@
     <thead class="thead">
 
         <tr>
-            <th style="width: 100px">
-                @{ if (thisviewSortOrder != "Location_Descending")
-                    {
-                        @Html.ActionLink("Location", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location_Descending" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Location", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location" })
-                    }
+            @{ if (ViewBag.StoreBranch == "")
+                {
+                    <th style="width: 100px">
+                        @{ if (thisviewSortOrder != "Location_Descending")
+                            {
+                                @Html.ActionLink("Location", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location_Descending" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Location", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Location" })
+                            }
+                        }
+                    </th>
                 }
-            </th>
+            }
+
             <th style="width: 200px">
                 @{ if (thisviewSortOrder != "VIN_Descending")
                     {
@@ -53,18 +58,22 @@
                     }
                 }
             </th>
-            <th style="width: 75px">
-                @{ if (thisviewSortOrder != "Status_Descending")
-                    {
-                        @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status_Descending" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status" })
-                    }
-                }
+            @{ if (ViewBag.parStatusCode == 0)
+                {
+                    <th style="width: 75px">
+                        @{ if (thisviewSortOrder != "Status_Descending")
+                            {
+                                @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status_Descending" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Status", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Status" })
+                            }
+                        }
 
-            </th>
+                    </th>
+                }
+            }
             <th style="width: 75px">
                 @{ if (thisviewSortOrder != "Year_Descending")
                     {
@@ -76,17 +85,21 @@
                     }
                 }
             </th>
-            <th style="width: 100px">
-                @{ if (thisviewSortOrder != "Make_Descending")
-                    {
-                        @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make_Descending" })
-                    }
-                    else
-                    {
-                        @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make" })
-                    }
+            @{ if (ViewBag.Make == "ALL" | ViewBag.Make == "")
+                {
+                    <th style="width: 100px"> 
+                        @{ if (thisviewSortOrder != "Make_Descending")
+                            {
+                                @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make_Descending" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Make", "DrillDown", new { Make = ViewBag.Make, StoreBranch = ViewBag.StoreBranch, StatusCode = ViewBag.parStatusCode, NewOrUsed = ViewBag.NewOrUsed, sortOrder = "Make" })
+                            }
+                        }
+                    </th>
                 }
-            </th>
+            }
             <th style="width: 170px">
                 @{ if (thisviewSortOrder != "Model_Descending")
                     {
@@ -166,7 +179,7 @@
 
             </th>
 
-            
+
             <th style="width: 75px">
                 @{ if (thisviewSortOrder != "DaysInStock_Descending")
                     {
@@ -189,9 +202,13 @@
     {
         counter++;
     <tr>
-        <td style="width: 100px">
-            @Html.DisplayFor(modelItem => item.LOCATION)
-        </td>
+        @{ if (ViewBag.StoreBranch == "")
+            {
+                <td style="width: 100px">
+                    @Html.DisplayFor(modelItem => item.LOCATION)
+                </td>
+            }
+        }
         <td style="width: 200px">
             @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.SERIAL_ }, new { target = "_blank" })
         </td>
@@ -199,15 +216,23 @@
             @Html.ActionLink("" + item.STOCK_, "GoToFitzMall", new { keywordSearch = item.STOCK_ }, new { target = "_blank" })
 
         </td>
-        <td style="width: 75px">
-            @Html.DisplayFor(modelItem => item.STAT_CODE)
-        </td>
+        @{ if (ViewBag.parStatusCode == 0)
+            {
+                <td style="width: 75px">
+                    @Html.DisplayFor(modelItem => item.STAT_CODE)
+                </td>
+            }
+        }
         <td style="width: 75px">
             @Html.DisplayFor(modelItem => item.YEAR)
         </td>
-        <td style="width: 100px; text-align: center">
-            @Html.DisplayFor(modelItem => item.MAKE)
-        </td>
+        @{ if (ViewBag.Make == "ALL" | ViewBag.Make == "")
+            {
+                <td style="width: 100px; text-align: center">
+                    @Html.DisplayFor(modelItem => item.MAKE)
+                </td>
+            }
+        }
         <td style="width: 170px; text-align: center">
             @Html.DisplayFor(modelItem => item.CARLINE)
         </td>

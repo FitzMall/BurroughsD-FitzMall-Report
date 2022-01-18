@@ -62,8 +62,11 @@ namespace WebApplication6.Models
             int parStatusCode;
 
             Make = ("" + Make);
+            Make = (Make.Trim());
             StatusCode = ("" + StatusCode);
+            StatusCode = (StatusCode.Trim());
             OnFitzMall = ("" + OnFitzMall);
+            OnFitzMall = (OnFitzMall.Trim());
             StoreBranch = ("" + StoreBranch);
             StoreBranch = StoreBranch.Trim();
             StatusCode = StatusCode.Trim();
