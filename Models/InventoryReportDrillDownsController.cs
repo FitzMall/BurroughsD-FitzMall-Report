@@ -34,7 +34,7 @@ namespace WebApplication6.Views
             // actually called by NotOnFitzMalls controller
             // status code = 0 means all status
             //
-            var SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns.Where(d => d.STORE_BRANCH == StoreBranch)
+            var SORTED_InventoryReportDrillDowns = from sDD in db.InventoryReportDrillDowns
                                                select sDD;
 
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
