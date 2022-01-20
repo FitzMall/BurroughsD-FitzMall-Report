@@ -76,33 +76,6 @@ namespace WebApplication6.Views
             return View(db.InventoryNotOnFitzMall_USED_Report.OrderBy(a => a.STOREBRANCH).ToList());
         }
 
-        public ActionResult DrillDown_AllStatus(string StoreBranch, string OnFitzMall)
-        {
-
-            if (OnFitzMall == "1")
-            {
-                return RedirectToAction("DrillDown", "InventoryReportDrillDowns", new { StoreBranch = StoreBranch,  NewOrUsed = "U" });
-            }
-            else
-            {
-                return RedirectToAction("DrillDown_AllStatus", "NotOnFitzMall_USED", new { StoreBranch = StoreBranch });
-            }
-
-        }
-
-        public ActionResult DrillDown_AllLocations(string StatusCode, string OnFitzMall)
-        {
-            if (OnFitzMall == "1")
-            {
-                return RedirectToAction("DrillDown_AllLocationsUsed", "InventoryReportDrillDowns", new { StatusCode = StatusCode, NewOrUsed = "U" });
-            }
-            else
-            {
-                return RedirectToAction("DrillDown_AllLocations", "NotOnFitzMall_USED", new { Status = StatusCode, NewOrUsed = "U" });
-            }
-        }
-
-
         public ActionResult DrillDown(string StoreBranch, string StatusCode, string OnFitzMall)
         {
             int parStatusCode;

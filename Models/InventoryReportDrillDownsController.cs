@@ -72,24 +72,13 @@ namespace WebApplication6.Views
 
             string sLocation = "";
 
-            if (StoreBranch != "")
-            {
-                foreach (var result in SORTED_InventoryReportDrillDowns)
-                {
-                    sLocation = result.LOCATION;
-                    break;
-                }
-                ViewBagString += " " + sLocation;
 
-            }
 
             if (Make != "" && Make != "ALL")
             {
                 ViewBagString += " " + Make;
 
             }
-
-            ViewBag.Title = ViewBagString;
 
             ViewBag.StoreBranch = StoreBranch;
             ViewBag.parStatusCode = StatusCode;
@@ -362,10 +351,23 @@ namespace WebApplication6.Views
 
                 default:
 
-                    return View(SORTED_InventoryReportDrillDowns);
                     break;
 
             }
+
+            if (StoreBranch != "")
+            {
+                foreach (var result in SORTED_InventoryReportDrillDowns)
+                {
+                    sLocation = result.LOCATION;
+                    break;
+                }
+
+                ViewBagString += " " + sLocation;
+
+            }
+            ViewBag.Title = ViewBagString;
+
             return View(SORTED_InventoryReportDrillDowns);
 
         }

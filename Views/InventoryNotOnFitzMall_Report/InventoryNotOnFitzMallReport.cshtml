@@ -28,8 +28,8 @@
 
 <h2 style="margin-left:11%">NEW FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
-    <table class="table" style="margin-left: 11%; width: 75%;position: sticky; top: 50px; margin-bottom: 0px" id="reportheaders">
-        <thead class="thead">
+    <table class="table" style="margin-left: 11%; width: 75%; margin-bottom: 0px" >
+        <thead class="thead" id="reportheaders">
 
 
             <tr>
@@ -47,331 +47,328 @@
                 <th colspan="1" scope="colgroup"></th>
             </tr>
             <tr>
-                <th style="width: 9%">
+                <th>
                     Location
                 </th>
-                <th style="width: 11%">
+                <th>
                     Make
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     1
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     2
                 </th>
-                <th style="width: 4.5%; border-right-width: 4px">
+                <th style="border-right-width: 4px">
                     4
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     9
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     12
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     14
                 </th>
 
-                <th style="width: 6.75%; border-right-width: 4px; font-size:90%">
+                <th style="border-right-width: 4px; font-size:90%">
                     Total
                 </th>
 
-                <th style="width: 4.5%">
+                <th>
                     1
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     2
                 </th>
-                <th style="width: 4.5%; border-right-width: 4px">
+                <th style=" border-right-width: 4px">
                     4
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     9
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     12
                 </th>
-                <th style="width: 4.5%">
+                <th>
                     14
                 </th>
-                <th style="width: 4.5%; font-size: 90%">
+                <th>
                     Total
                 </th>
             </tr>
         </thead>
-    </table>
-
-    <table id="InvData" class="table" style="margin-left: 11%; width:75%">
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td style="width: 9%">
+            <tr>
+                <td>
 
-                        @{if (prevLocation != item.LOCATION)
-                            {
-                                @Html.DisplayFor(modelItem => item.LOCATION)
-                            }
-
-                            prevLocation = item.LOCATION;
-                        }
-                    </td>
-                    <td style="width: 11%">
-                        @Html.DisplayFor(modelItem => item.MAKE)
-                    </td>
-                    <td style="width: 4.5%">
-
-                        @{ if ((item.ActuallyOnWebSite_1.Value == 0) ^ (bPrintFormat == false))
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_1.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1", OnFitzMall = "1" })
-                            }
-                        }
-
-
-                        @{
-                            if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_1 += item.ActuallyOnWebSite_1.Value;
-                            }
-                        }
-
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ActuallyOnWebSite_2.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_2.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2", OnFitzMall = "1" })
-                            }
-                        }
-
-                        @{
-                            if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
-                            }
-                        }
-
-                    </td>
-                    <td style="width: 4.5%; border-right-width: 4px">
-                        @{ if (item.ActuallyOnWebSite_4.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_4.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_4.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "4", OnFitzMall = "1" })
-                            }
-                        }
-
-                        @{
-                            if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_4 += item.ActuallyOnWebSite_4.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ActuallyOnWebSite_9.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_9.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9", OnFitzMall = "1" })
-                            }
-                        }
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_9 += item.ActuallyOnWebSite_9.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ActuallyOnWebSite_12.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_12.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12", OnFitzMall = "1" })
-                            }
-                        }
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_12 += item.ActuallyOnWebSite_12.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ActuallyOnWebSite_14.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_14.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14", OnFitzMall = "1" })
-                            }
-                        }
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ActuallyOnWebSite_14 += item.ActuallyOnWebSite_14.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 6.75%; border-right-width: 4px">
-
-                        @{ if (item.ActuallyOnWebSite_TotalAllCarStat.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_TotalAllCarStat.Value)
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ActuallyOnWebSite_TotalAllCarStat.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "0", OnFitzMall = "1" })
-                            }
-                        }
-
-
-
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ShouldBeOnWebSite_1.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_1.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1" })
-                            }
-                        }
-
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_1 += item.ShouldBeOnWebSite_1.Value;
-                            }
-                        }
-
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ShouldBeOnWebSite_2.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_2.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2" })
-                            }
-                        }
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%; border-right-width: 4px">
-
-                        @{ if (item.ShouldBeOnWebSite_4.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_4.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_4.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "4" })
-                            }
-                        }
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_4 += item.ShouldBeOnWebSite_4.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ShouldBeOnWebSite_9.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_9.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9" })
-                            }
-                        }
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_9 += item.ShouldBeOnWebSite_9.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ShouldBeOnWebSite_12.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_12.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12" })
-                            }
-                        }
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_12 += item.ShouldBeOnWebSite_12.Value;
-                            }
-                        }
-                    </td>
-                    <td style="width: 4.5%">
-                        @{ if (item.ShouldBeOnWebSite_14.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_14.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.ShouldBeOnWebSite_14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14" })
-                            }
-                        }
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite_14 += item.ShouldBeOnWebSite_14.Value;
-                            }
-                        }
-                    </td>
-                    <td>
-                        @{ if (item.FM_TotalAllCarStat.Value == 0)
-                            {
-                                @Html.DisplayFor(modelItem => item.FM_TotalAllCarStat.Value);
-                            }
-                            else
-                            {
-                                @Html.ActionLink("" + item.FM_TotalAllCarStat.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, OnFitzMall = "0" })
-                            }
-                        }
-
-
-                        @{ if (item.MAKE.Trim() != "")
-                            {
-                                total_ShouldBeOnWebSite += item.FM_TotalAllCarStat.Value;
-                            }
-                        }
-
-
-
-                    </td>
-                    @{ if (item.MAKE.Trim() != "")
+                    @{if (prevLocation != item.LOCATION)
                         {
-                            total_ActuallyOnWebSite += Convert.ToInt32(item.ActuallyOnWebSite_TotalAllCarStat);
+                            @Html.DisplayFor(modelItem => item.LOCATION)
+                        }
+
+                        prevLocation = item.LOCATION;
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MAKE)
+                </td>
+                <td>
+
+                    @{ if ((item.ActuallyOnWebSite_1.Value == 0) ^ (bPrintFormat == false))
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_1.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1", OnFitzMall = "1" })
                         }
                     }
-                </tr>
+
+
+                    @{
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_1 += item.ActuallyOnWebSite_1.Value;
+                        }
+                    }
+
+                </td>
+                <td>
+                    @{ if (item.ActuallyOnWebSite_2.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_2.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2", OnFitzMall = "1" })
+                        }
+                    }
+
+                    @{
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_2 += item.ActuallyOnWebSite_2.Value;
+                        }
+                    }
+
+                </td>
+                <td style=" border-right-width: 4px">
+                    @{ if (item.ActuallyOnWebSite_4.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_4.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_4.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "4", OnFitzMall = "1" })
+                        }
+                    }
+
+                    @{
+                        if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_4 += item.ActuallyOnWebSite_4.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ActuallyOnWebSite_9.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_9.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9", OnFitzMall = "1" })
+                        }
+                    }
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_9 += item.ActuallyOnWebSite_9.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ActuallyOnWebSite_12.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_12.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12", OnFitzMall = "1" })
+                        }
+                    }
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_12 += item.ActuallyOnWebSite_12.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ActuallyOnWebSite_14.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_14.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14", OnFitzMall = "1" })
+                        }
+                    }
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ActuallyOnWebSite_14 += item.ActuallyOnWebSite_14.Value;
+                        }
+                    }
+                </td>
+                <td style="border-right-width: 4px">
+
+                    @{ if (item.ActuallyOnWebSite_TotalAllCarStat.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ActuallyOnWebSite_TotalAllCarStat.Value)
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ActuallyOnWebSite_TotalAllCarStat.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "0", OnFitzMall = "1" })
+                        }
+                    }
+
+
+
+                </td>
+                <td>
+                    @{ if (item.ShouldBeOnWebSite_1.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_1.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_1.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "1" })
+                        }
+                    }
+
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_1 += item.ShouldBeOnWebSite_1.Value;
+                        }
+                    }
+
+                </td>
+                <td>
+                    @{ if (item.ShouldBeOnWebSite_2.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_2.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_2.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "2" })
+                        }
+                    }
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_2 += item.ShouldBeOnWebSite_2.Value;
+                        }
+                    }
+                </td>
+                <td style="border-right-width: 4px">
+
+                    @{ if (item.ShouldBeOnWebSite_4.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_4.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_4.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "4" })
+                        }
+                    }
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_4 += item.ShouldBeOnWebSite_4.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ShouldBeOnWebSite_9.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_9.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_9.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "9" })
+                        }
+                    }
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_9 += item.ShouldBeOnWebSite_9.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ShouldBeOnWebSite_12.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_12.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_12.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "12" })
+                        }
+                    }
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_12 += item.ShouldBeOnWebSite_12.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.ShouldBeOnWebSite_14.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.ShouldBeOnWebSite_14.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.ShouldBeOnWebSite_14.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, StatusCode = "14" })
+                        }
+                    }
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite_14 += item.ShouldBeOnWebSite_14.Value;
+                        }
+                    }
+                </td>
+                <td>
+                    @{ if (item.FM_TotalAllCarStat.Value == 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.FM_TotalAllCarStat.Value);
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.FM_TotalAllCarStat.Value, "DrillDown", new { StoreBranch = item.STOREBRANCH, Location = item.LOCATION, Make = item.MAKE, OnFitzMall = "0" })
+                        }
+                    }
+
+
+                    @{ if (item.MAKE.Trim() != "")
+                        {
+                            total_ShouldBeOnWebSite += item.FM_TotalAllCarStat.Value;
+                        }
+                    }
+
+
+
+                </td>
+                @{ if (item.MAKE.Trim() != "")
+                    {
+                        total_ActuallyOnWebSite += Convert.ToInt32(item.ActuallyOnWebSite_TotalAllCarStat);
+                    }
+                }
+            </tr>
 
             }
 
@@ -379,7 +376,7 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ActuallyOnWebSite_1 == 0)
                         {
                             @total_ActuallyOnWebSite_1;
@@ -391,7 +388,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ActuallyOnWebSite_2 == 0)
                         {
                             @total_ActuallyOnWebSite_2;
@@ -404,7 +401,7 @@
 
                 </td>
 
-                <td style="width: 4.5%; border-right-width: 4px">
+                <td style=" border-right-width: 4px">
                     @{ if (total_ActuallyOnWebSite_4 == 0)
                         {
                             @total_ActuallyOnWebSite_4;
@@ -417,7 +414,7 @@
 
                 </td>
 
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ActuallyOnWebSite_9 == 0)
                         {
                             @total_ActuallyOnWebSite_9;
@@ -429,7 +426,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ActuallyOnWebSite_12 == 0)
                         {
                             @total_ActuallyOnWebSite_12;
@@ -441,7 +438,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ActuallyOnWebSite_14 == 0)
                         {
                             @total_ActuallyOnWebSite_14;
@@ -453,7 +450,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%; border-right-width: 4px">
+                <td sstyle=" border-right-width: 4px">
                     @{ if (total_ActuallyOnWebSite == 0)
                         {
                             @total_ActuallyOnWebSite;
@@ -465,7 +462,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite_1 == 0)
                         {
                             @total_ShouldBeOnWebSite_1;
@@ -477,7 +474,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite_2 == 0)
                         {
                             @total_ShouldBeOnWebSite_2;
@@ -490,7 +487,7 @@
 
                 </td>
 
-                <td style="width: 4.5%;  border-right-width: 4px">
+                <td sstyle="border-right-width: 4px">
                     @{ if (total_ShouldBeOnWebSite_4 == 0)
                         {
                             @total_ShouldBeOnWebSite_4;
@@ -503,7 +500,7 @@
 
                 </td>
 
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite_9 == 0)
                         {
                             @total_ShouldBeOnWebSite_9;
@@ -516,7 +513,7 @@
 
                 </td>
 
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite_12 == 0)
                         {
                             @total_ShouldBeOnWebSite_12;
@@ -528,7 +525,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite_14 == 0)
                         {
                             @total_ShouldBeOnWebSite_14;
@@ -540,7 +537,7 @@
                     }
 
                 </td>
-                <td style="width: 4.5%">
+                <td>
                     @{ if (total_ShouldBeOnWebSite == 0)
                         {
                             @total_ShouldBeOnWebSite;
