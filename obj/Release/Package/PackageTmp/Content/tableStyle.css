@@ -88,7 +88,7 @@
     .table-sticky th {
         background: #fff;
         position: sticky;
-        top: -1px;
+        top: 0;
         z-index: 990;
     }
 
@@ -130,6 +130,29 @@ td, th {
 
 th {
     background-color: rgb(235,235,235);
+    position: sticky;
+    top: 50px;
+}
+
+
+#mainreportheaders th {
+    background-color: rgb(235,235,235);
+    position: sticky;
+    top: 50px;
+}
+
+    #mainreportheaders tr:nth-child(1) {
+        position: sticky;
+        top: 50px;
+    }
+    #mainreportheaders tr:nth-child(2) {
+        position: sticky;
+        top: 90px;
+    }
+
+#mainreportheaders tr:nth-child(3) {
+    position: sticky;
+    top: 130px;
 }
 
 td {
@@ -179,16 +202,6 @@ caption {
     padding: 10px;
 }
 
-
-#reportheaders table {
-    position: sticky;
-    top: 0;
-}
-
-#newcarreport td:nth-child(7) {
-    text-align: right;
-    border: double;
-}
 
 
 

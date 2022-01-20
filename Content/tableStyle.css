@@ -135,25 +135,22 @@ th {
 }
 
 
-#reportheaders th {
+#mainreportheaders th {
     background-color: rgb(235,235,235);
     position: sticky;
     top: 50px;
 }
 
-    #reportheaders tr:nth-child(1) {
-        background-color: gray;
+    #mainreportheaders tr:nth-child(1) {
         position: sticky;
         top: 50px;
     }
-    #reportheaders tr:nth-child(2) {
-        background-color: aqua;
+    #mainreportheaders tr:nth-child(2) {
         position: sticky;
         top: 90px;
     }
 
-#reportheaders tr:nth-child(3) {
-    background-color: green;
+#mainreportheaders tr:nth-child(3) {
     position: sticky;
     top: 130px;
 }
