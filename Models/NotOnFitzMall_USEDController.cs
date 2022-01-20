@@ -51,7 +51,7 @@ namespace WebApplication6
 
             if (NewOrUsed == "")
             {
-                NewOrUsed = "N";  // default to new 
+                NewOrUsed = "U";  // default to used 
             }
 
             string ViewBagString = "";

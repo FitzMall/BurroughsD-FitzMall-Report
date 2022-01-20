@@ -262,8 +262,6 @@
     <Content Include="Views\InventoryNotOnFitzMall_USED_Report\InventoryNotOnFitzMall_USEDReport.cshtml" />
     <Content Include="Views\InventoryReportDrillDowns\DrillDown.cshtml" />
     <Content Include="Views\NotOnFitzMall_USED\DrillDown.cshtml" />
-    <Content Include="Views\NotOnFitzMalls\DrillDown_AllLocations.cshtml" />
-    <Content Include="Views\NotOnFitzMalls\DrillDown_AllStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
