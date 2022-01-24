@@ -383,30 +383,27 @@ namespace WebApplication6
         public ActionResult ExportToExcel(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
         {
             string ExcelOutput = "";
-
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
             var cd = new System.Net.Mime.ContentDisposition
             {
-                FileName = "InventoryReportDrillDown.csv",
+                FileName = "NotOnFitzMallNEW_" + Make + StatusCode + ".csv",
                 Inline = false
             };
-
-
 
 
             //
             var SORTED_InventoryReportDrillDowns = from sDD_init in db.NotOnFitzMalls.Where(d => d.MSRP > 0 && d.FitzWayVIN != "")
                                                    select sDD_init;
 
-
             ViewBag.PriceTitle = "MSRP";
 
             // handle nulls
             sortOrder = ("" + sortOrder);
-            Make = ("" + Make);
-            if (Make == "")
-            {
-                Make = "ALL";
-            }
+
             StoreBranch = ("" + StoreBranch);
             StoreBranch = ("" + StoreBranch.Trim());
 

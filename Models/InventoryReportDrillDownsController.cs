@@ -480,10 +480,17 @@ namespace WebApplication6.Views
         public ActionResult ExportToExcel(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
         {
             string ExcelOutput = "";
-            
+            // handle nulls
+            sortOrder = ("" + sortOrder);
+            Make = ("" + Make);
+
+            StoreBranch = ("" + StoreBranch);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());            
                 var cd = new System.Net.Mime.ContentDisposition
             {
-                FileName = "InventoryReportDrillDown.csv",
+                FileName = "CarsOnFitzMall_" +  NewOrUsed + "_" + Make + ".csv",
                 Inline = false
             };
 
@@ -494,14 +501,7 @@ namespace WebApplication6.Views
 
             ViewBag.PriceTitle = "MSRP";
 
-            // handle nulls
-            sortOrder = ("" + sortOrder);
-            Make = ("" + Make);
 
-            StoreBranch = ("" + StoreBranch);
-            StoreBranch = ("" + StoreBranch.Trim());
-            NewOrUsed = ("" + NewOrUsed);
-            NewOrUsed = ("" + NewOrUsed.Trim());
 
             if (NewOrUsed == "")
             {

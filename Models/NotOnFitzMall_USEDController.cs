@@ -38,9 +38,7 @@ namespace WebApplication6
 
             System.Diagnostics.Debug.WriteLine("Inventory DrillDown Controller- Getting View: Make:" + Make + " Store/Branch:" + StoreBranch + " Status: " + StatusCode + " " + NewOrUsed);
 
-            ViewBag.PriceTitle = "MSRP";
-
-            // handle nulls
+             // handle nulls
             sortOrder = ("" + sortOrder);
             Make = ("" + Make);
 
@@ -409,9 +407,19 @@ namespace WebApplication6
         {
             string ExcelOutput = "";
 
+            Make = ("" + Make);
+            if (Make == "")
+            {
+                Make = "ALL";
+            }
+            StoreBranch = ("" + StoreBranch);
+            StoreBranch = ("" + StoreBranch.Trim());
+            NewOrUsed = ("" + NewOrUsed);
+            NewOrUsed = ("" + NewOrUsed.Trim());
+
             var cd = new System.Net.Mime.ContentDisposition
             {
-                FileName = "InventoryReportDrillDown.csv",
+                FileName = "NotOnFitzMallUsed" + Make + ".csv",
                 Inline = false
             };
 
