@@ -12,7 +12,9 @@
         font-weight: lighter !important;
         position: static !important;
         border-left-width: 0px !important;
-        text-size-adjust: 62% !important;
+        margin-left: 0;
+        margin-right: 0 !important;
+        page-break-after:
     }
 
     a,
@@ -119,6 +121,7 @@ table {
     border-collapse: collapse;
     border: 2px solid rgb(200,200,200);
 }
+
 
 td, th {
     border: 1px solid rgb(190,190,190);

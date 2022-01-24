@@ -48,20 +48,12 @@ namespace WebApplication6
             StoreBranch = ("" + StoreBranch.Trim());
             NewOrUsed = ("" + NewOrUsed);
             NewOrUsed = ("" + NewOrUsed.Trim());
-
-            if (NewOrUsed == "")
-            {
-                NewOrUsed = "U";  // default to used 
-            }
-
+            NewOrUsed = "U";  // default to used 
+          
             string ViewBagString = "";
-            string NewOrUsedTitle = "NEW";
-            if (NewOrUsed == "U")
-            {
-                NewOrUsedTitle = "USED";
-                ViewBag.PriceTitle = "FitzWay Low Price";
-            }
-
+            string NewOrUsedTitle = "USED";
+            ViewBag.PriceTitle = "FitzWay Low Price";
+            
             ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
             if (StatusCode.ToString() != "0")
             {
@@ -97,30 +89,13 @@ namespace WebApplication6
                 {
                     if (Make == "ALL")
                     {
-                        if (NewOrUsed == "N")
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
                                                                select sDD;
-                        }
-                        else
-                        {
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                               select sDD;
-                        }
                     }
                     else
                     {
-                        if (NewOrUsed == "N")
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
                                                                select sDD;
-
-                        }
-                        else
-                        {
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                               select sDD;
-                        }
                     }
 
                 }
@@ -128,30 +103,13 @@ namespace WebApplication6
                 {
                     if (Make == "ALL")
                     {
-                        if (NewOrUsed == "N")
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
                                                                select sDD;
-                        }
-                        else
-                        {
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed && d.STORE_BRANCH == StoreBranch)
-                                                               select sDD;
-                        }
                     }
                     else
                     {
-                        if (NewOrUsed == "N")
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
                                                                select sDD;
-
-                        }
-                        else
-                        {
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.STAT_CODE == StatusCode && d.NEW_USED == NewOrUsed)
-                                                               select sDD;
-                        }
                     }
                 }
 
@@ -160,50 +118,22 @@ namespace WebApplication6
             {
                 if (StoreBranch == "")
                 {
-                    if (NewOrUsed == "N")
-                    {
-
-                        SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) ))
-                                                           select sDD;
-                    }
-                    else
-                    {
-
+    
                         SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                            select sDD;
-                    }
                 }
                 else
                 {
                     if (Make == "ALL")
                     {
-                        if (NewOrUsed == "N")
-                        {
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) ))
-                                                               select sDD;
-                        }
-                        else
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                                select sDD;
-                        }
-
-
 
                     }
                     else
                     {
-                        if (NewOrUsed == "N")
-                        {
-
-                            SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2) ))
-                                                               select sDD;
-                        }
-                        else
-                        {
                             SORTED_NotOnFitzMall_USED = from sDD in db.NotOnFitzMall_USED.Where(d => d.MAKE == Make && d.STORE_BRANCH == StoreBranch && d.NEW_USED == NewOrUsed && ((d.STAT_CODE == 1) || (d.STAT_CODE == 2)))
                                                                select sDD;
-                        }
                     }
                 }
             }
