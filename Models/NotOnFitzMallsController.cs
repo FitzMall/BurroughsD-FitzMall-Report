@@ -126,6 +126,11 @@ namespace WebApplication6
             }
 
             string sLocation = "";
+            ViewBag.StoreBranch = StoreBranch;
+            ViewBag.parStatusCode = StatusCode;
+            ViewBag.NewOrUsed = NewOrUsed;
+            ViewBag.Make = Make.ToUpper();
+            ViewBag.SortOrder = sortOrder;
 
             if (StatusCode > 0)
             {
