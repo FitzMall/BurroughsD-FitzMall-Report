@@ -158,6 +158,27 @@ th {
     top: 130px;
 }
 
+#usedreportheaders th {
+    background-color: rgb(235,235,235);
+    position: sticky;
+    top: 50px;
+}
+
+#usedreportheaders tr:nth-child(1) {
+    position: sticky;
+    top: 50px;
+}
+
+#usedreportheaders tr:nth-child(2) {
+    position: sticky;
+    top: 90px;
+}
+
+#usedreportheaders tr:nth-child(3) {
+    position: sticky;
+    top: 130px;
+}
+
 td {
     font-size: 125%;
     text-align: center;

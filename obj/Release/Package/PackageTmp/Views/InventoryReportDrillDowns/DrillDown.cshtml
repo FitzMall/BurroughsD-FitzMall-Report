@@ -207,9 +207,18 @@
                 </td>
             }
         }
-        <td>
-            @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.SERIAL_ }, new { target = "_blank" })
-        </td>
+                <td>
+                    @{ if (item.SERIAL_ != "XX" && item.SERIAL_ != "")
+                        {
+                            @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.SERIAL_ }, new { target = "_blank" })
+
+                        }
+                        else
+                        {
+                            @Html.ActionLink("" + item.SERIAL_, "GoToFitzMall", new { keywordSearch = item.STOCK_ }, new { target = "_blank" })
+                        }
+                    }
+                </td>
         <td>
             @Html.ActionLink("" + item.STOCK_, "GoToFitzMall", new { keywordSearch = item.STOCK_ }, new { target = "_blank" })
 

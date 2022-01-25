@@ -52,7 +52,7 @@ namespace WebApplication6
             string NewOrUsedTitle = "USED";
             ViewBag.PriceTitle = "FitzWay Low Price";
             
-            ViewBagString = NewOrUsedTitle + " Cars On FitzMall";
+            ViewBagString = NewOrUsedTitle + " Cars Not On FitzMall";
             if (StatusCode.ToString() != "0")
             {
                 ViewBagString += " Status: " + StatusCode.ToString();

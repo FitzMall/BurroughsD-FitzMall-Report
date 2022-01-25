@@ -15,13 +15,14 @@
     bool bPrintFormat = true;
 
 }
-<link href="~/Content/tableStyle.css" rel="stylesheet" type="text/css">
+
 <link href="~/Content/Site.css" rel="stylesheet" type="text/css">
+<link href="~/Content/tableStyle.css" rel="stylesheet" type="text/css">
 
 <h2 style="margin-left:15%">USED FitzMall.com SBOF Report  @DateTime.Now.ToShortDateString()</h2>
 
-<table class="table" style="margin-left: 15%; width: 60%;">
-    <thead>
+<table class="table" style="margin-left: 15%; width: 60%; margin-bottom: 0px">
+    <thead class="thead" id="usedreportheaders">
         <tr>
             <th colspan="2" scope="colgroup"></th>
             <th colspan="3" scope="colgroup">Used Vehicles On FitzMall</th>
@@ -140,7 +141,7 @@
                         }
                     }
 
-                    
+
                     @{
                         total_ShouldBeOnWebSite_1 += item.ShouldBeOnWebSite_1.Value;
                     }
