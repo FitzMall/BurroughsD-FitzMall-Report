@@ -14,19 +14,12 @@ namespace WebApplication6.Views
     {
         private InventoryEntities1 db = new InventoryEntities1();
 
-        // GET: InventoryReportDrillDowns
-        public ActionResult Index()
-        {
-            return View(db.InventoryReportDrillDowns.ToList());
-        }
 
         public ActionResult GoToFitzMall(string keywordSearch)
         {
 
             return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?KeyWordSearch=" + keywordSearch + "&Sort=&inventoryGrid_length=10&UseCriteria=true");
-                        
         }
-
 
         // GET: ReportInventories/DrillDown/5
         public ActionResult DrillDown(string StoreBranch, string Make, int? StatusCode, string NewOrUsed, string sortOrder)
@@ -373,102 +366,7 @@ namespace WebApplication6.Views
         }
 
 
-        // GET: InventoryReportDrillDowns/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryReportDrillDown inventoryReportDrillDown = db.InventoryReportDrillDowns.Find(id);
-            if (inventoryReportDrillDown == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryReportDrillDown);
-        }
-
-        // GET: InventoryReportDrillDowns/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: InventoryReportDrillDowns/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "STORE_BRANCH,SERIAL_,STOCK_,ORDER_,NEW_USED,ChromeStyleID,YEAR,MAKE,MAKE_PREFIX,CARLINE,CARLINE_CODE,DESC,RECEIVED_DATE,DAYS_IN_STOCK,MSRP,BASE_MSRP,INVOICE,INVEN_AMT,INTERNET_PRICE,CODED_COST,FREIGHT,STAT_CODE,LOCATION,EXT_COLOR,EXT_CLR_DESC,INT_COLOR,INT_CLR_DESC,CARLINE_CODE_DV,CREATE_DATE_DV,CREATED_BY_DV,DATE_ADDED_DR,EXT_CLR_CD,IN_STOCK,INV_AMT,MDL_NO,Id_Primary,CLR_DESC")] InventoryReportDrillDown inventoryReportDrillDown)
-        {
-            if (ModelState.IsValid)
-            {
-                db.InventoryReportDrillDowns.Add(inventoryReportDrillDown);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(inventoryReportDrillDown);
-        }
-
-        // GET: InventoryReportDrillDowns/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryReportDrillDown inventoryReportDrillDown = db.InventoryReportDrillDowns.Find(id);
-            if (inventoryReportDrillDown == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryReportDrillDown);
-        }
-
-        // POST: InventoryReportDrillDowns/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "STORE_BRANCH,SERIAL_,STOCK_,ORDER_,NEW_USED,ChromeStyleID,YEAR,MAKE,MAKE_PREFIX,CARLINE,CARLINE_CODE,DESC,RECEIVED_DATE,DAYS_IN_STOCK,MSRP,BASE_MSRP,INVOICE,INVEN_AMT,INTERNET_PRICE,CODED_COST,FREIGHT,STAT_CODE,LOCATION,EXT_COLOR,EXT_CLR_DESC,INT_COLOR,INT_CLR_DESC,CARLINE_CODE_DV,CREATE_DATE_DV,CREATED_BY_DV,DATE_ADDED_DR,EXT_CLR_CD,IN_STOCK,INV_AMT,MDL_NO,Id_Primary,CLR_DESC")] InventoryReportDrillDown inventoryReportDrillDown)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(inventoryReportDrillDown).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(inventoryReportDrillDown);
-        }
-
-        // GET: InventoryReportDrillDowns/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryReportDrillDown inventoryReportDrillDown = db.InventoryReportDrillDowns.Find(id);
-            if (inventoryReportDrillDown == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryReportDrillDown);
-        }
-
-        // POST: InventoryReportDrillDowns/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            InventoryReportDrillDown inventoryReportDrillDown = db.InventoryReportDrillDowns.Find(id);
-            db.InventoryReportDrillDowns.Remove(inventoryReportDrillDown);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
+             protected override void Dispose(bool disposing)
         {
             if (disposing)
             {

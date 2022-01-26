@@ -28,28 +28,7 @@ namespace WebApplication6.Models
 
         }
 
-        // GET: InventoryNotOnFitzMall_Report/Details/5
-
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report = db.InventoryNotOnFitzMall_Report.Find(id);
-            if (inventoryNotOnFitzMall_Report == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryNotOnFitzMall_Report);
-        }
-
-        // GET: InventoryNotOnFitzMall_Report/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-        // GET: InventoryNotOnFitzMall_Report
+              // GET: InventoryNotOnFitzMall_Report
         public ActionResult InventoryNotOnFitzMallReport()
         {
             
@@ -94,81 +73,6 @@ namespace WebApplication6.Models
                 return RedirectToAction("DrillDown", "NotOnFitzMalls", new { Make = Make.ToUpper(), StoreBranch = StoreBranch, StatusCode = parStatusCode, NewOrUsed = "N" });
             }
 
-        }
-
-   
-        // POST: InventoryNotOnFitzMall_Report/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "STOREBRANCH,LOCATION,MAKE,OnWebSite_1,OnWebSite_2,OnWebSite_4,OnWebSite_9,OnWebSite_12,OnWebSite_14,Reynolds_1,Reynolds_2,Reynolds_4,Reynolds_9,Reynolds_12,Reynolds_14,Id_Primary")] InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report)
-        {
-            if (ModelState.IsValid)
-            {
-                db.InventoryNotOnFitzMall_Report.Add(inventoryNotOnFitzMall_Report);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(inventoryNotOnFitzMall_Report);
-        }
-
-        // GET: InventoryNotOnFitzMall_Report/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report = db.InventoryNotOnFitzMall_Report.Find(id);
-            if (inventoryNotOnFitzMall_Report == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryNotOnFitzMall_Report);
-        }
-
-        // POST: InventoryNotOnFitzMall_Report/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "STOREBRANCH,LOCATION,MAKE,OnWebSite_1,OnWebSite_2,OnWebSite_4,OnWebSite_9,OnWebSite_12,OnWebSite_14,Reynolds_1,Reynolds_2,Reynolds_4,Reynolds_9,Reynolds_12,Reynolds_14,Id_Primary")] InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(inventoryNotOnFitzMall_Report).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(inventoryNotOnFitzMall_Report);
-        }
-
-        // GET: InventoryNotOnFitzMall_Report/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report = db.InventoryNotOnFitzMall_Report.Find(id);
-            if (inventoryNotOnFitzMall_Report == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inventoryNotOnFitzMall_Report);
-        }
-
-        // POST: InventoryNotOnFitzMall_Report/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            InventoryNotOnFitzMall_Report inventoryNotOnFitzMall_Report = db.InventoryNotOnFitzMall_Report.Find(id);
-            db.InventoryNotOnFitzMall_Report.Remove(inventoryNotOnFitzMall_Report);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
