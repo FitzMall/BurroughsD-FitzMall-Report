@@ -174,10 +174,6 @@ th {
     top: 90px;
 }
 
-#usedreportheaders tr:nth-child(3) {
-    position: sticky;
-    top: 130px;
-}
 
 td {
     font-size: 125%;
