@@ -18,7 +18,7 @@ namespace WebApplication6.Views
         public ActionResult GoToFitzMall(string keywordSearch)
         {
 
-            return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?KeyWordSearch=" + keywordSearch + "&Sort=&inventoryGrid_length=10&UseCriteria=true");
+            return Redirect("https://responsive.fitzmall.com/Inventory/SearchResults?UseCriteria=true&Page=1&Regions=ALL&Conditions=ALL&Makes=&KeyWordSearch=" + keywordSearch);
         }
 
         // GET: ReportInventories/DrillDown/5

@@ -13,6 +13,7 @@ using ClosedXML.Excel;
 using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace WebApplication6.Models
 {
@@ -82,6 +83,16 @@ namespace WebApplication6.Models
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public void ExecuteSQL(string sqltext)
+        {
+            // do a standard ADO.NET call.
+            string ConnectionString = "ccc";
+            var conn = new SqlConnection(ConnectionString);
+            var cmd = new SqlCommand(sqltext,conn);
+            cmd.ExecuteNonQuery();
+            // Add dispose code by using.
         }
 
         public ActionResult ExportToExcel()

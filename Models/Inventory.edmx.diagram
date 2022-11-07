@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="926509d896ae4658afd65211342c6399" Name="Diagram1" ZoomLevel="25">
+      <Diagram DiagramId="926509d896ae4658afd65211342c6399" Name="Diagram1" ZoomLevel="125">
         <EntityTypeShape EntityType="InventoryModel.Inventory" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="InventoryModel.InventoryHistory" Width="1.5" PointX="6.75" PointY="10.75" />
         <EntityTypeShape EntityType="InventoryModel.InventoryNotOnFitzMall_Report" Width="1.5" PointX="3.375" PointY="0.75" />
